@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+/*
+  Theme sombre minimal. Identite dev/gaming sobre : fond tres sombre legerement
+  bleute, accent cyan froid, une seule couleur chaude reservee aux etats.
+  Voir CLAUDE.md > Frontend : gamification visuelle avec moderation.
+*/
+@theme {
+  --color-surface-0: #0a0c11;
+  --color-surface-1: #11141c;
+  --color-surface-2: #181c26;
+  --color-border-subtle: #232936;
+
+  --color-content-primary: #e7ebf3;
+  --color-content-secondary: #9aa4b8;
+  --color-content-muted: #6b7484;
+
+  --color-accent: #35d0e8;
+  --color-accent-strong: #16b3cd;
+  --color-success: #3fd07f;
+  --color-danger: #f26d6d;
+  --color-warning: #e8b341;
+
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "Cascadia Code", monospace;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-surface-0);
+  color: var(--color-content-primary);
+  /* Grille discrete facon canvas de nodes. */
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
