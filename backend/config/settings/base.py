@@ -9,7 +9,7 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from .env_utils import env_bool, env_int, env_list, env_str
+from .env_utils import env_bool, env_int, env_json, env_list, env_str
 
 # backend/config/settings/base.py -> backend/
 BASE_DIR = Path(__file__).resolve().parents[2]
@@ -104,9 +104,9 @@ DATABASES = {
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Modele utilisateur personnalise des le depart : le remplacer apres la
-# premiere migration est tres couteux. Les champs metier (Profile, role, ...)
-# arrivent en Phase 2.
+# Modele utilisateur personnalise : le remplacer apres la premiere migration
+# serait tres couteux. Le role vit sur le User, les donnees pedagogiques sur
+# users.Profile.
 AUTH_USER_MODEL = "users.User"
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -199,3 +199,36 @@ LOGGING = {
     },
     "root": {"handlers": ["console"], "level": env_str("LOG_LEVEL", "INFO")},
 }
+
+# ---------------------------------------------------------------------------
+# Pedagogie : ponderation de l'XP par type d'exercice
+# ---------------------------------------------------------------------------
+# CLAUDE.md : « la pratique prime ». La production doit rapporter bien plus que
+# le rappel, et ces valeurs doivent rester CONFIGURABLES, jamais en dur dans le
+# code metier. Un exercice peut toujours surcharger la valeur de son type.
+# Surcharge possible via la variable d'environnement EXERCISE_XP_DEFAULTS (JSON).
+EXERCISE_XP_DEFAULTS = env_json(
+    "EXERCISE_XP_DEFAULTS",
+    {
+        # Rappel (echauffement) : volontairement faible.
+        "A": 5,
+        "B": 5,
+        "D": 5,
+        # Transition.
+        "C": 15,
+        # Production : le coeur du produit.
+        "H": 35,
+        "F": 40,
+        "E": 50,
+        "G": 60,
+        "I": 60,
+    },
+)
+
+#: Valeur de repli si un type n'est pas liste ci-dessus.
+EXERCISE_XP_FALLBACK = env_int("EXERCISE_XP_FALLBACK", 10)
+
+#: Types de nodes Blueprint acceptes en plus du catalogue de reference
+#: (common/blueprint_catalog.py). Permet d'enrichir le garde-fou d'auteur sans
+#: livrer de code.
+BLUEPRINT_EXTRA_NODE_TYPES = env_list("BLUEPRINT_EXTRA_NODE_TYPES", [])

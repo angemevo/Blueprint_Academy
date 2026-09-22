@@ -6,8 +6,9 @@ Philosophie : **Learn → Practice → Build → Validate → Progress**.
 La source de vérité du projet (vision, stack verrouillée, architecture, modèle
 de données, roadmap) est le fichier [CLAUDE.md](CLAUDE.md).
 
-> **État : Phase 1 terminée** — architecture et configuration. Les modèles
-> métier, l'API et l'interface applicative arrivent aux phases suivantes.
+> **État : Phase 2a terminée** — architecture, configuration et modèle de
+> données. La couche service, les validateurs et l'API arrivent en Phase 2b ;
+> l'interface applicative en Phase 3.
 
 ## Stack
 
@@ -113,14 +114,21 @@ build. Le dossier peut rester vide sur un réseau sans proxy.
 │   │   ├── urls.py            # racine
 │   │   ├── api_urls.py        # routes sous /api/
 │   │   └── views.py           # sonde /api/health/
-│   └── apps/                  # une app par domaine, toutes vides en Phase 1
-│       ├── users/             # seul modèle déclaré : User (AUTH_USER_MODEL)
-│       ├── learning/
-│       ├── exercises/         # + validators/ (registre, Phase 2)
-│       ├── progress/
-│       ├── gamification/
-│       ├── projects/
-│       └── validation/        # service isolé (interfaces, Phase 2)
+│   ├── common/                # abstractions partagées (pas une app Django)
+│   │   ├── models.py          # TimeStampedModel, PublishableModel, OrderedModel
+│   │   ├── enums.py           # Difficulty, CompletionStatus
+│   │   ├── schemas.py         # graphe normalisé + helper de validation JSON
+│   │   └── content_blocks.py  # grammaire des blocs de contenu rédactionnel
+│   └── apps/                  # une app par domaine métier
+│       ├── users/             # User (AUTH_USER_MODEL), rôle, Profile
+│       ├── learning/          # Skill, LearningPath, Module, Lesson
+│       ├── exercises/         # Exercise (types A–I), ExerciseAttempt
+│       │                      #   enums.py = taxonomie, schemas/ = contrats JSON
+│       │                      #   validators/ = registre (Phase 2b)
+│       ├── progress/          # LessonProgress, CourseProgress, SkillMastery
+│       ├── gamification/      # XPTransaction (ledger), Achievement
+│       ├── projects/          # Project, ProjectProgress
+│       └── validation/        # service isolé (interfaces, Phase 2b)
 └── frontend/
     ├── Dockerfile
     ├── app/                   # App Router
@@ -136,7 +144,13 @@ Chaque app backend suit la même arborescence : `models.py`, `admin.py`,
 
 - **Couche service obligatoire** : la logique métier vit dans
   `apps/<app>/services/`, jamais dans les vues ni les modèles.
-- **Contenu pédagogique piloté depuis l'admin**, sans toucher au code.
+- **Contenu pédagogique piloté depuis l'admin**, sans toucher au code : tout
+  `content` / `solution` est validé par un schéma JSON à la sauvegarde.
+- **La pratique prime** : seuls les exercices de production (types E/F/G/H/I,
+  `is_practice=True`) font progresser la maîtrise et déverrouillent les
+  prérequis. La règle est verrouillée par une contrainte en base.
+- **Pondération XP configurable** via `EXERCISE_XP_DEFAULTS` (settings ou
+  variable d'environnement), jamais en dur dans le code métier.
 - **Secrets en variables d'environnement** : `.env` n'est jamais commité.
 - **Auth** : access token JWT gardé en mémoire côté client, refresh token en
   cookie httpOnly (rotation activée) — réglages dans

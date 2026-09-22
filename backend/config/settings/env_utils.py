@@ -4,6 +4,7 @@ Volontairement minimalistes : aucune dependance supplementaire, un typage
 explicite et des valeurs par defaut sures.
 """
 
+import json
 import os
 
 _TRUE_VALUES = {"1", "true", "yes", "on"}
@@ -37,3 +38,18 @@ def env_list(name: str, default: list[str] | None = None) -> list[str]:
     if value is None or value.strip() == "":
         return list(default or [])
     return [item.strip() for item in value.split(",") if item.strip()]
+
+
+def env_json(name: str, default: dict | None = None) -> dict:
+    """Lit un objet JSON depuis l'environnement, fusionne avec le defaut."""
+    merged = dict(default or {})
+    value = os.environ.get(name)
+    if not value:
+        return merged
+    try:
+        parsed = json.loads(value)
+    except json.JSONDecodeError:
+        return merged
+    if isinstance(parsed, dict):
+        merged.update(parsed)
+    return merged
