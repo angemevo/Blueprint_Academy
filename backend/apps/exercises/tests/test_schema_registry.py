@@ -296,6 +296,42 @@ def test_selector_match_on_a_declared_variable_is_accepted():
     )
 
 
+def test_selector_on_an_author_named_class_requires_a_match():
+    """« Il faut un Set » ne valide rien : il faut dire lequel."""
+    errors = expect_errors(
+        ExerciseType.GRAPH_BUILD,
+        {
+            "prompt": "Mets le score a jour",
+            "palette": [*PALETTE, {"type": SET_VARIABLE}],
+            "variables": [{"name": "Score", "type": "integer"}],
+        },
+        {"required_nodes": [{"type": SET_VARIABLE}]},
+    )
+    assert any("match.variable" in message for message in errors["solution"])
+
+
+def test_selector_on_a_blueprint_function_requires_its_name():
+    """Un appel de fonction du Blueprint sans nom vise n'importe quel appel."""
+    errors = expect_errors(
+        ExerciseType.GRAPH_BUILD,
+        {
+            "prompt": "Appelle ta fonction",
+            "palette": [*PALETTE, {"type": "K2Node_CallFunction"}],
+        },
+        {"required_nodes": [{"type": "K2Node_CallFunction"}]},
+    )
+    assert any("match.function" in message for message in errors["solution"])
+
+
+def test_an_engine_function_needs_no_match():
+    """Le nom du moteur est deja dans l'identifiant : rien a preciser."""
+    validate_exercise_payload(
+        ExerciseType.GRAPH_BUILD,
+        {"prompt": "Affiche un message", "palette": PALETTE},
+        {"required_nodes": [{"type": PRINT_STRING}]},
+    )
+
+
 def test_unknown_match_key_is_rejected():
     """Le vocabulaire de `match` est ferme : une cle inventee ne filtrerait rien."""
     errors = expect_errors(

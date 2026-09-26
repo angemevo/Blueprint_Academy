@@ -23,7 +23,11 @@ from typing import Any
 
 from django.core.exceptions import ValidationError
 
-from common.blueprint_catalog import get_node_type, is_known_node_type
+from common.blueprint_catalog import (
+    expected_match_key,
+    get_node_type,
+    is_known_node_type,
+)
 from common.schemas import validate_against_schema
 
 from ..enums import GRAPH_BASED_TYPES, ExerciseType
@@ -211,11 +215,16 @@ def _check_requirements_reachable(
 def _check_selector_matches(
     content: Payload, selectors: list[tuple[str, Payload]], errors: ErrorCollector
 ) -> None:
-    """Un `match` doit designer quelque chose qui existe dans l'enonce.
+    """Un `match` doit etre present quand il faut, et designer ce qui existe.
 
-    Exiger un `Get` sur la variable « Health » alors que l'enonce ne declare
-    aucune variable de ce nom produit un exercice impossible, exactement comme
-    un node hors palette.
+    Deux fautes distinctes :
+
+    - un selecteur sur une classe dont le nom propre est choisi par l'auteur
+      (`K2Node_VariableSet`, `K2Node_CustomEvent`, un appel de fonction du
+      Blueprint) sans dire LEQUEL : l'exigence est satisfaite par n'importe
+      quel Set, ce qui ne valide rien ;
+    - un `match` qui cible une variable que l'enonce ne declare pas : exercice
+      impossible, exactement comme un node hors palette.
     """
     declared_variables = {
         variable["name"]
@@ -223,9 +232,18 @@ def _check_selector_matches(
         if "name" in variable
     }
     for origin, selector in selectors:
-        match = selector.get("match")
-        if not isinstance(match, dict):
-            continue
+        node_id = selector.get("type") or ""
+        match = selector.get("match") if isinstance(selector.get("match"), dict) else {}
+
+        required_key = expected_match_key(node_id)
+        if required_key and not match.get(required_key):
+            errors.add(
+                SOLUTION,
+                f"{origin} : '{node_id}' designe un element nomme par l'auteur ; "
+                f"preciser lequel avec match.{required_key}, sinon n'importe quel "
+                "node de ce type satisferait l'exigence",
+            )
+
         variable = match.get("variable")
         if variable and variable not in declared_variables:
             errors.add(

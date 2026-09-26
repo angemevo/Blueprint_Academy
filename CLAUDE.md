@@ -100,8 +100,16 @@ Règles :
 - A/B/D : échauffements courts, XP faible, ne valident ni ne déverrouillent rien.
 - Production contrainte (H, F) **avant** le free-build (E, G).
 - **Type I = épreuve de passage, toujours optionnelle.** C'est la preuve que
-  l'étudiant sait refaire dans le vrai Unreal ce qu'il a appris. **Chaque Skill
-  doit pouvoir être maîtrisé sans exercice de type I.**
+  l'étudiant sait refaire dans le vrai Unreal ce qu'il a appris. Il **compte
+  pleinement** dans la maîtrise — ce n'est pas un exercice au rabais — mais
+  aucune maîtrise ne peut en **dépendre** :
+  - le calcul de maîtrise doit pouvoir atteindre **100 %** avec les seuls
+    exercices de production **non-I** ; le type I y contribue **en bonus** ;
+  - un **contrôle d'intégrité** vérifie que chaque Skill dispose d'assez
+    d'exercices de production non-I pour être maîtrisé. Il s'exécute dans le
+    **test du seed** et au moment de **publier** une leçon ou un parcours —
+    publication refusée s'il échoue, pour protéger aussi le contenu créé
+    depuis l'admin.
 - Source de vérité de la taxonomie : `apps/exercises/enums.py`. Ne jamais
   redéclarer ces listes ailleurs.
 
@@ -111,8 +119,23 @@ Règles :
   plateforme. Il s'applique à **tous** les types de production : palettes,
   graphes fournis, solutions.
 - Les identifiants doivent être **dérivables mécaniquement du texte exporté
-  par l'éditeur UE5** (`Class=...`, `MemberName=...`). Un vrai export UE5 sert
-  de fixture de test.
+  par l'éditeur UE5**, sous la forme `<classe>[:<discriminant>]`. Un vrai
+  export UE5 sert de fixture de test.
+- Le discriminant n'apparaît **que pour un élément du moteur** : `MemberName`
+  d'un `EventReference` / `FunctionReference` porteur d'un `MemberParent`, nom
+  d'une macro standard sous `/Engine/`, ou `OperationName` d'un opérateur
+  promu.
+- **Les noms choisis par l'auteur du Blueprint ne sont jamais dans
+  l'identifiant** — variable, événement personnalisé, fonction ou macro du
+  Blueprint. Sinon il faudrait un type de node par variable de chaque projet.
+  Identifiant = la classe seule (`K2Node_VariableSet`), nom propre dans les
+  propriétés, vérifié par un sélecteur `match`. L'export distingue les deux cas
+  sans ambiguïté : `MemberParent` pour le moteur, `bSelfContext` + `MemberGuid`
+  pour le Blueprint.
+- Un **opérateur promu** (`K2Node_PromotableOperator`) s'identifie par son
+  `OperationName`, jamais par la fonction résolue : celle-ci dépend du type des
+  fils branchés (`Add_DoubleDouble` vs `Add_IntInt`) et produirait des faux
+  négatifs.
 - Les noms affichés sont **identiques** à ceux de l'éditeur UE5.
 - Extension sans livrer de code : `BLUEPRINT_EXTRA_NODE_TYPES`.
 - Évolution prévue : le catalogue décrira aussi les **pins** de chaque node

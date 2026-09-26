@@ -107,6 +107,11 @@ NORMALIZED_GRAPH_SCHEMA: dict[str, Any] = {
 # variable, « un appel de fonction » ne dit pas laquelle. Le champ `match`
 # contraint les donnees du node (`node["properties"]`), sans jamais imposer son
 # id ni sa position.
+#
+# C'est aussi la ou atterrissent les noms CHOISIS par l'auteur du Blueprint
+# (variable, evenement personnalise, fonction, macro) : ils n'ont rien a faire
+# dans un identifiant de type, sans quoi il faudrait un type par variable de
+# chaque projet. Voir `common.blueprint_catalog`.
 
 NODE_MATCH_SCHEMA: dict[str, Any] = {
     "type": "object",
@@ -114,8 +119,12 @@ NODE_MATCH_SCHEMA: dict[str, Any] = {
     "properties": {
         # Nom de la variable lue ou ecrite (Get / Set).
         "variable": _TEXT,
-        # Nom de la fonction ou de la macro appelee.
+        # Nom de la fonction appelee, quand elle est definie dans le Blueprint.
         "function": _TEXT,
+        # Nom de la macro instanciee, quand elle est definie dans le Blueprint.
+        "macro": _TEXT,
+        # Nom d'un evenement personnalise.
+        "event": _TEXT,
         # Classe ciblee (Cast To, Spawn Actor from Class...).
         "class": _TEXT,
         # Valeur litterale attendue sur une entree.
