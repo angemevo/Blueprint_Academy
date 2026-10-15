@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: blueprint
+          POSTGRES_USER: blueprint
+          POSTGRES_PASSWORD: blueprint
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U blueprint -d blueprint"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      DJANGO_SETTINGS_MODULE: config.settings.dev
+      DJANGO_SECRET_KEY: ci-only-not-secret
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: "5432"
+      POSTGRES_DB: blueprint
+      POSTGRES_USER: blueprint
+      POSTGRES_PASSWORD: blueprint
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements*.txt
+      - name: Installer
+        run: pip install -r requirements-dev.txt
+      - name: Lint
+        # Actif dès que l'issue d'outillage qualité a ajouté backend/ruff.toml
+        if: hashFiles('backend/ruff.toml') != ''
+        run: ruff check .
+      - name: Vérifier la configuration Django
+        run: python manage.py check
+      - name: Migrations à jour
+        run: python manage.py makemigrations --check --dry-run
+      - name: Tests
+        run: pytest
+
+  frontend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # Même image que le Dockerfile : le package-lock.json contient les binaires
+    # natifs Alpine (musl) de lightningcss et Tailwind, absents sur Ubuntu.
+    container: node:22-alpine
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - name: Installer
+        run: npm ci
+      - name: Lint
+        # Actif dès que l'issue d'outillage qualité a ajouté frontend/eslint.config.mjs
+        if: hashFiles('frontend/eslint.config.mjs') != ''
+        run: npm run lint
+      - name: Types
+        run: npm run typecheck
+      - name: Build
+        run: npm run build

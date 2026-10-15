@@ -33,3 +33,7 @@ Thumbs.db
 
 # Certificats racine specifiques au poste (voir certs/README.md)
 certs/*.crt
+
+# Equipe d'agents : journaux locaux des cycles
+logs/*
+!logs/.gitkeep

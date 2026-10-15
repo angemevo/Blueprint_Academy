@@ -316,3 +316,7 @@ construit.
 
 **Risque nº 1 = justesse du contenu Blueprint.** Chaque exercice doit être
 vérifiable sur un vrai projet Unreal avant publication.
+
+## Équipe d'agents
+
+Règles de travail de l'équipe d'agents : @.claude/equipe.md

@@ -1,0 +1,12 @@
+# Planning de l'équipe d'agents — à installer avec : crontab -e
+# Remplace CHEMIN par le chemin absolu du dépôt (ex. /home/gael/Blueprint_Academy).
+# Heures = heure locale de l'ordinateur (Abidjan, UTC+0).
+# L'ordinateur doit être allumé et connecté à ces heures.
+
+NTFY_TOPIC=remplace-par-un-sujet-secret
+
+# Lundi 20 h 05 : pilotage (plan de la semaine, file de validation, rapport)
+5 20 * * 1  CHEMIN/scripts/cycle.sh pilotage >> CHEMIN/logs/cron.log 2>&1
+
+# Mardi et jeudi 21 h 05 : un cycle tech par soir (une issue développée puis relue ; Docker doit pouvoir démarrer)
+5 21 * * 2,4  CHEMIN/scripts/cycle.sh tech >> CHEMIN/logs/cron.log 2>&1
