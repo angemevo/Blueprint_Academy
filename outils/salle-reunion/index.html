@@ -15,34 +15,35 @@
 *{box-sizing:border-box}
 html,body{margin:0;height:100%;background:var(--fond);color:var(--texte);font:14px/1.45 var(--sans)}
 button,select{font:inherit;color:inherit}
-.app{display:grid;grid-template-rows:52px 1fr;height:100vh}
+.app{display:grid;grid-template-rows:52px minmax(0,1fr);grid-template-columns:minmax(0,1fr);height:100vh}
 
 /* Barre du haut */
 .barre{display:flex;align-items:center;gap:14px;padding:0 16px;background:var(--barre);border-bottom:1px solid var(--bord)}
-.titre{display:flex;align-items:center;gap:10px;min-width:0}
+.titre{display:flex;align-items:center;gap:10px;min-width:60px}
 .titre h1{font-size:15px;font-weight:600;margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .pastille{width:9px;height:9px;border-radius:50%;background:var(--pale);flex:none}
 .pastille.direct{background:var(--erreur);box-shadow:0 0 0 4px #ef6a6a33;animation:pulse 1.6s infinite}
 .pastille.rejeu{background:var(--accent)}
 @keyframes pulse{50%{box-shadow:0 0 0 7px #ef6a6a11}}
-.etat{color:var(--doux);font-size:12.5px;white-space:nowrap}
+.etat{color:var(--doux);font-size:12.5px;white-space:nowrap;min-width:40px;overflow:hidden;text-overflow:ellipsis}
 .chrono{font-variant-numeric:tabular-nums;color:var(--doux);font-size:13px}
 .espace{flex:1}
-.ctrl{display:flex;gap:8px;align-items:center}
+.ctrl{display:flex;gap:8px;align-items:center;flex:none}
 .btn{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px 11px;cursor:pointer;white-space:nowrap}
 .btn:hover{background:#353535}
 .btn.actif{background:var(--accent);border-color:var(--accent);color:#fff}
 select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px 8px;max-width:270px}
 
 /* Corps */
-.corps{display:grid;grid-template-columns:1fr 360px;min-height:0}
-.scene{display:grid;grid-template-rows:minmax(220px,46%) 1fr;min-height:0;border-right:1px solid var(--bord)}
-.cote{display:grid;grid-template-rows:1fr 42%;min-height:0}
+.corps{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:0}
+.scene{display:grid;grid-template-rows:minmax(220px,46%) minmax(0,1fr);grid-template-columns:minmax(0,1fr);min-height:0;min-width:0;border-right:1px solid var(--bord)}
+.cote{display:grid;grid-template-rows:minmax(0,1fr) 42%;min-height:0;min-width:0}
 
 /* Tuiles */
-.tuiles{display:flex;flex-wrap:wrap;gap:12px;padding:14px;justify-content:center;align-content:center;min-height:0;overflow:auto}
-.vide{color:var(--pale);text-align:center;width:100%;font-size:15px}
-.tuile{flex:1 1 300px;max-width:560px;container-type:inline-size;position:relative;background:var(--tuile);border-radius:10px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;border:2px solid transparent;transition:border-color .2s,opacity .5s,transform .5s;animation:entree .45s ease-out;overflow:hidden}
+.zone-tuiles{position:relative;display:grid;grid-template-rows:minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr);min-width:0;padding:14px 14px 8px;min-height:0}
+.tuiles{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;align-content:center;min-height:0;min-width:0;overflow:hidden}
+.vide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--pale);font-size:15px;pointer-events:none}
+.tuile{flex:none;width:320px;height:180px;container-type:inline-size;position:relative;background:var(--tuile);border-radius:10px;display:flex;align-items:center;justify-content:center;border:2px solid transparent;transition:border-color .2s,opacity .5s,transform .5s;animation:entree .45s ease-out;overflow:hidden}
 .tuile.parle{border-color:var(--accent)}
 .tuile.agit{border-color:#4a4a4a}
 .tuile.partie{opacity:.0;transform:scale(.94)}
@@ -59,7 +60,11 @@ select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px
 .tuile.parle .onde i{animation:onde .8s infinite ease-in-out}
 .tuile.parle .onde i:nth-child(2){animation-delay:.15s}.tuile.parle .onde i:nth-child(3){animation-delay:.3s}
 @keyframes onde{50%{height:11px}}
-.anciens{width:100%;color:var(--pale);font-size:12px;text-align:center}
+.anciens{color:var(--pale);font-size:12px;text-align:center;min-height:16px;padding-top:6px}
+.quota{font-size:12px;color:var(--doux);white-space:nowrap;font-variant-numeric:tabular-nums}
+.quota.haut{color:var(--alerte)}.quota.critique{color:var(--erreur)}
+.case{display:flex;gap:5px;align-items:center;font-size:12.5px;color:var(--doux);white-space:nowrap;cursor:pointer}
+.sys a{color:var(--accent)}
 
 /* Terminaux */
 .terminaux{display:grid;grid-template-rows:36px 1fr;min-height:0;border-top:1px solid var(--bord);background:#0f0f0f}
@@ -108,7 +113,11 @@ select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px
 .bandeau button{margin-left:12px}
 
 @media (max-width:1000px){
-  .corps{grid-template-columns:1fr}
+  .corps{grid-template-columns:minmax(0,1fr)}
+  .barre{flex-wrap:wrap;height:auto;padding:8px 12px;row-gap:8px}
+  .ctrl{flex:1 1 100%;flex-wrap:wrap}
+  select{max-width:100%}
+  .app{grid-template-rows:auto 1fr}
   .cote{grid-template-rows:320px 220px;border-top:1px solid var(--bord)}
   .app{height:auto;min-height:100vh}
   .scene{min-height:640px}
@@ -121,6 +130,7 @@ select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px
     <div class="titre"><span class="pastille" id="pastille"></span><h1 id="titre">Salle de réunion des agents</h1></div>
     <span class="etat" id="etat">En attente d'un cycle…</span>
     <span class="chrono" id="chrono">00:00</span>
+    <span class="quota" id="quota" title="Consommation de ton abonnement Claude, d'après les cycles"></span>
     <span class="espace"></span>
     <div class="ctrl">
       <select id="choixCycle" title="Revoir un cycle passé"><option value="">Revoir un cycle…</option></select>
@@ -128,12 +138,17 @@ select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px
       <button class="btn" id="btnDirect" title="Suivre le cycle en cours">● Direct</button>
       <button class="btn" id="btnDemo" title="Rejouer une réunion d'exemple">Démo</button>
       <select id="choixVoix" title="Voix des agents"><option value="sons">Sons seuls</option></select>
+      <label class="case" title="Annoncer à voix haute chaque action des agents"><input type="checkbox" id="lireActions" checked> chaque action</label>
       <button class="btn" id="btnSon" title="Activer les sons et la voix">🔇 Son coupé</button>
     </div>
   </header>
   <main class="corps">
     <section class="scene">
-      <div class="tuiles" id="tuiles"><div class="vide">Personne dans la salle. Les agents rejoignent la réunion quand un cycle démarre.</div></div>
+      <div class="zone-tuiles" id="zoneTuiles">
+        <div class="tuiles" id="tuiles"></div>
+        <div class="vide" id="vide">Personne dans la salle. Les agents rejoignent la réunion quand un cycle démarre.</div>
+        <div class="anciens" id="anciens"></div>
+      </div>
       <div class="terminaux">
         <div class="onglets" id="onglets"></div>
         <pre class="console" id="console"></pre>
@@ -209,12 +224,17 @@ const Son = {
   sortie(){ this.ton([784, 659, 523]); },
   alerte(){ this.ton([440, 349, 440, 349], .14); },
   // Rend une promesse résolue à la fin de la phrase (utile pour rythmer le rejeu).
-  dire(texte, profil){
+  // options.action : annonce d'une action (courte, dite un peu plus vite) ;
+  // options.priorite : jamais sautée (entrées, sorties, PR, refus, messages).
+  dire(texte, profil, options = {}){
     if (!this.actif || this.moteur === "sons" || !texte) return Promise.resolve();
+    if (options.action && !$("lireActions").checked) return Promise.resolve();
     const phrase = nettoyerPourVoix(texte);
     if (!phrase) return Promise.resolve();
-    // En direct, on saute des phrases plutôt que de prendre du retard sur les agents.
-    if (Etat.mode !== "rejeu" && this.enAttente >= 3) return Promise.resolve();
+    // En direct, si les agents vont plus vite que la parole, on garde les annonces
+    // importantes et on saute les actions les plus anciennes plutôt que d'accumuler du retard.
+    if (Etat.mode !== "rejeu" && !options.priorite && this.enAttente >= 8) return Promise.resolve();
+    const vitesse = options.action ? 1.15 : 1;
     this.enAttente++;
     const fin = () => { this.enAttente = Math.max(0, this.enAttente - 1); };
     let promesse;
@@ -223,27 +243,27 @@ const Son = {
       const cle = (profil && profil.cle) || "defaut";
       const audio = fetch(`/api/voix?agent=${encodeURIComponent(cle)}&texte=${encodeURIComponent(phrase)}`)
         .then(r => r.ok ? r.blob() : Promise.reject(new Error("voix " + r.status)));
-      promesse = this.chaine.then(() => audio).then(b => this.jouer(b))
-        .catch(() => this.parlerNavigateur(phrase, profil));
+      promesse = this.chaine.then(() => audio).then(b => this.jouer(b, vitesse))
+        .catch(() => this.parlerNavigateur(phrase, profil, vitesse));
     } else {
-      promesse = this.chaine.then(() => this.parlerNavigateur(phrase, profil));
+      promesse = this.chaine.then(() => this.parlerNavigateur(phrase, profil, vitesse));
     }
     promesse = promesse.finally(fin);
     this.chaine = promesse.catch(() => {});
     return promesse;
   },
-  jouer(blob){
+  jouer(blob, vitesse = 1){
     return new Promise(resolve => {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("audio");
-      a.src = url; a.playbackRate = Etat.mode === "rejeu" ? Math.min(1.5, 0.95 + Etat.vitesse * .1) : 1;
+      a.src = url; a.playbackRate = vitesse * (Etat.mode === "rejeu" ? Math.min(1.5, 0.95 + Etat.vitesse * .1) : 1);
       this.lecteur = a;
       const fini = () => { URL.revokeObjectURL(url); resolve(); };
       a.onended = fini; a.onerror = fini;
       a.play().catch(fini);
     });
   },
-  parlerNavigateur(phrase, profil){
+  parlerNavigateur(phrase, profil, vitesse = 1){
     if (!("speechSynthesis" in window)) return Promise.resolve();
     return new Promise(resolve => {
       const u = new SpeechSynthesisUtterance(phrase);
@@ -251,7 +271,7 @@ const Son = {
       const v = this.voixNav.find(x => x.name === this.moteur) || this.voixNav[0];
       if (v) u.voice = v;
       const r = (profil && profil.voix) || {pitch:1, rate:1.05};
-      u.pitch = r.pitch; u.rate = r.rate * (Etat.mode === "rejeu" ? Math.min(1.4, 0.9 + Etat.vitesse * .15) : 1);
+      u.pitch = r.pitch; u.rate = r.rate * vitesse * (Etat.mode === "rejeu" ? Math.min(1.4, 0.9 + Etat.vitesse * .15) : 1);
       u.onend = resolve; u.onerror = resolve;
       speechSynthesis.speak(u);
       setTimeout(resolve, 15000); // garde-fou
@@ -281,6 +301,118 @@ function nettoyerPourVoix(t){
 }
 
 // ---------------------------------------------------------------------------
+// Ce que chaque agent dit quand il agit (première personne, comme en réunion)
+// ---------------------------------------------------------------------------
+const nomFichier = p => {
+  const b = (p || "").split("/").pop() || "";
+  return b.replace(/\.(py|tsx?|jsx?|mjs|json|md|txt|toml|ya?ml|css|html|sh|jsonl)$/i, "").replace(/[-_.]+/g, " ").trim() || "un fichier";
+};
+const nomBranche = b => (b || "").replace(/^origin\//, "").replace(/[-_/]+/g, " ");
+const REGLES_COMMANDES = [
+  [/pytest/, "Je lance les tests du backend."],
+  [/\bruff\b/, "Je vérifie le style du code Python."],
+  [/npm (run )?lint|eslint/, "Je vérifie le style du frontend."],
+  [/typecheck|\btsc\b/, "Je vérifie les types TypeScript."],
+  [/makemigrations.*--check/, "Je vérifie que les migrations sont à jour."],
+  [/makemigrations/, "Je génère les migrations."],
+  [/manage\.py migrate/, "J'applique les migrations."],
+  [/manage\.py check/, "Je vérifie la configuration de Django."],
+  [/pip install/, "J'installe les dépendances Python."],
+  [/npm audit/, "Je vérifie les failles de sécurité des dépendances."],
+  [/npm (install|ci)\b/, "J'installe les dépendances du frontend."],
+  [/npm run build|next build/, "Je compile le frontend."],
+  [/docker compose (up|restart)/, "Je démarre les conteneurs."],
+  [/docker compose (ps|logs)/, "Je regarde l'état des conteneurs."],
+  [/^gh issue view (\d+)/, m => `Je lis l'issue ${m[1]}.`],
+  [/^gh issue list/, "Je consulte la liste des issues."],
+  [/^gh issue comment (\d+)/, m => `Je commente l'issue ${m[1]}.`],
+  [/^gh issue edit (\d+)/, m => `Je mets à jour l'issue ${m[1]}.`],
+  [/^gh pr create/, "J'ouvre une pull request."],
+  [/^gh pr (view|diff) (\d+)/, m => `Je lis la pull request ${m[2]}.`],
+  [/^gh pr list/, "Je consulte les pull requests."],
+  [/^gh pr checkout (\d+)/, m => `Je récupère la pull request ${m[1]}.`],
+  [/^gh pr review (\d+)/, m => `Je publie ma revue de la pull request ${m[1]}.`],
+  [/^gh pr comment (\d+)/, m => `Je commente la pull request ${m[1]}.`],
+  [/^gh label/, "Je regarde les étiquettes."],
+  [/^gh /, "J'interroge GitHub."],
+  [/git( -C \S+)? status/, "Je regarde l'état du dépôt."],
+  [/git( -C \S+)? (diff|grep)/, "Je regarde les modifications."],
+  [/git( -C \S+)? log/, "Je consulte l'historique."],
+  [/git( -C \S+)? show/, "Je regarde un commit."],
+  [/git( -C \S+)? add/, "Je prépare les fichiers à enregistrer."],
+  [/git( -C \S+)? commit/, "J'enregistre un commit."],
+  [/git( -C \S+)? (switch|checkout) -[cb] (\S+)/, m => `Je crée la branche ${nomBranche(m[3])}.`],
+  [/git( -C \S+)? (switch|checkout) (\S+)/, m => `Je passe sur la branche ${nomBranche(m[3])}.`],
+  [/git( -C \S+)? pull/, "Je récupère les dernières modifications."],
+  [/git( -C \S+)? push/, "J'envoie mes modifications sur GitHub."],
+  [/git( -C \S+)? fetch/, "Je synchronise avec GitHub."],
+  [/git( -C \S+)? branch/, "Je regarde les branches."],
+  [/^git /, "J'utilise Git."],
+  [/^(ls|find|tree)\b/, "Je parcours les dossiers."],
+  [/^(cat|head|tail|less|wc)\b/, "Je lis un fichier."],
+  [/^(grep|rg)\b/, "Je cherche dans le code."],
+  [/^sed /, "Je modifie un fichier."],
+  [/^(mkdir|touch|cp|mv)\b/, "Je range des fichiers."],
+  [/^(python|node|npx)\b/, "J'exécute un script."],
+];
+function phraseCommande(c){
+  c = (c || "").trim();
+  for (const [motif, phrase] of REGLES_COMMANDES){
+    const m = c.match(motif);
+    if (m) return typeof phrase === "function" ? phrase(m) : phrase;
+  }
+  return "Je lance une commande.";
+}
+function phraseAction(nom, e){
+  e = e || {};
+  switch (nom){
+    case "Bash": return phraseCommande(e.command);
+    case "Read": return `Je lis le fichier ${nomFichier(e.file_path)}.`;
+    case "Write": return `Je crée le fichier ${nomFichier(e.file_path)}.`;
+    case "Edit": case "MultiEdit": return `Je modifie le fichier ${nomFichier(e.file_path)}.`;
+    case "NotebookEdit": return "Je modifie un notebook.";
+    case "Grep": return "Je cherche dans le code.";
+    case "Glob": return "Je liste des fichiers.";
+    case "TodoWrite": return "Je mets à jour ma liste de tâches.";
+    case "WebSearch": return "Je fais une recherche sur le web.";
+    case "WebFetch": return "Je consulte une page web.";
+    case "Skill": return "J'utilise une compétence.";
+    case "ToolSearch": return "Je cherche un outil.";
+    default: return "J'utilise l'outil " + nom.replace(/^mcp__/, "").replace(/__/g, " ").replace(/_/g, " ") + ".";
+  }
+}
+// Ce qui mérite d'être dit à la fin d'une action : résultats de tests, échecs, PR ouverte…
+function phraseResultat(appel, texte, erreur){
+  const c = (appel.input && appel.input.command) || "";
+  if (appel.nom === "Bash"){
+    if (/pytest/.test(c)){
+      const ok = texte.match(/(\d+) passed/), ko = texte.match(/(\d+) failed/), err = texte.match(/(\d+) errors?\b/);
+      if (ko || err) return [ko && `${ko[1]} tests en échec`, err && `${err[1]} erreurs`].filter(Boolean).join(" et ") + ".";
+      if (ok) return `${ok[1]} tests réussis.`;
+    }
+    if (/\bruff\b/.test(c) && /All checks passed/i.test(texte)) return "Aucune erreur de style.";
+    if (/makemigrations.*--check/.test(c) && /No changes detected/i.test(texte)) return "Les migrations sont à jour.";
+    if (/gh pr create/.test(c)){ const m = texte.match(/pull\/(\d+)/); if (m) return `La pull request ${m[1]} est ouverte.`; }
+    if (erreur && !appel.refuse){
+      if (/\bruff\b|lint|eslint/.test(c)){ const m = texte.match(/Found (\d+) errors?/); return m ? `Il reste ${m[1]} erreurs de style.` : "Il reste des erreurs de style."; }
+      if (/typecheck|\btsc\b/.test(c)) return "Il y a des erreurs de types.";
+      if (/makemigrations.*--check/.test(c)) return "Il manque des migrations.";
+    }
+  }
+  if (erreur && !appel.refuse) return "Ça n'a pas marché.";
+  return null;
+}
+// Pourquoi une commande a été refusée, et comment l'éviter
+function conseilRefus(c){
+  c = c || "";
+  if (/\bgit -C\b|docker compose -f\b|\/home\/[^ ]*Blueprint_Academy/.test(c)) return "forme avec chemin explicite (git -C, docker compose -f) : lancer la commande depuis la racine du dépôt";
+  if (/\bfor\b|\bwhile\b|;|&&|\|\||\|/.test(c)) return "commande composée : une commande simple à la fois";
+  if (/^sed -i|>\s*\S/.test(c)) return "modification de fichier par le shell : utiliser l'outil Edit";
+  if (/\/tmp\//.test(c)) return "fichier hors du dépôt : utiliser logs/";
+  return "commande hors de la liste autorisée (.claude/settings.json)";
+}
+
+// ---------------------------------------------------------------------------
 // État de la réunion
 // ---------------------------------------------------------------------------
 const Etat = {
@@ -298,9 +430,11 @@ function reinitialiser(titre){
   speechSynthesis.cancel();
   Object.assign(Etat, {debut:null, fin:null, terminalSel:null, epingle:false, nbMsg:0});
   Etat.participants.clear(); Etat.appels.clear(); Etat.convocations.clear();
-  $("tuiles").innerHTML = '<div class="vide">Personne dans la salle pour l’instant.</div>';
+  $("tuiles").innerHTML = ""; $("anciens").textContent = "";
+  $("vide").textContent = "Personne dans la salle pour l’instant."; $("vide").style.display = "";
   $("onglets").innerHTML = ""; $("console").innerHTML = ""; $("fil").innerHTML = ""; $("journal").innerHTML = "";
   $("nbMsg").textContent = ""; $("titre").textContent = titre || "Salle de réunion des agents";
+  $("quota").textContent = "";
   $("bandeau").classList.remove("visible");
 }
 
@@ -314,11 +448,25 @@ function participant(cle){
 }
 
 // -- Rendu des tuiles ----------------------------------------------------
+function disposer(){
+  const zone = $("tuiles"), tuiles = [...zone.children];
+  const n = tuiles.length; if (!n) return;
+  const W = zone.clientWidth, H = zone.clientHeight, g = 12;
+  let meilleur = 0;
+  for (let cols = 1; cols <= n; cols++){
+    const rows = Math.ceil(n / cols);
+    const w = Math.min((W - g * (cols - 1)) / cols, ((H - g * (rows - 1)) / rows) * 16 / 9);
+    if (w > meilleur) meilleur = w;
+  }
+  meilleur = Math.max(Math.min(160, W), Math.min(meilleur, 760));
+  for (const t of tuiles){ t.style.width = meilleur + "px"; t.style.height = meilleur * 9 / 16 + "px"; }
+}
+new ResizeObserver(disposer).observe(document.getElementById("tuiles"));
 function rejoindre(cle, motif){
   const p = participant(cle);
   if (p.present) return p;
   p.present = true; p.aParticipe = true;
-  const vide = $("tuiles").querySelector(".vide"); if (vide) vide.remove();
+  $("vide").style.display = "none";
   const t = el("div", "tuile");
   const av = el("div", "avatar", initiales(p.nom)); av.style.background = p.couleur;
   const st = el("div", "statut", motif ? court(motif, 80) : "vient d’arriver");
@@ -329,32 +477,33 @@ function rejoindre(cle, motif){
   t.append(st, av, et);
   $("tuiles").append(t);
   p.tuile = t; p.statutEl = st;
+  disposer();
   creerOnglet(p);
   if (!Etat.epingle) choisirTerminal(cle);
   systeme(`${p.nom} rejoint la réunion${motif ? " : " + court(motif, 90) : ""}`);
   journal("entrée", p.nom + (motif ? " — " + motif : ""), "ok");
-  if (!Etat.rattrapage){ Son.entree(); return Son.dire(`${p.nom} rejoint la réunion.`, PROFILS.pilote); }
+  if (!Etat.rattrapage){ Son.entree(); return Son.dire(`${p.nom} rejoint la réunion.`, PROFILS.pilote, {priorite:true}); }
 }
 
 function quitter(cle, bilan){
   const p = Etat.participants.get(cle);
   if (!p || !p.present) return;
   p.present = false;
-  if (p.tuile){ const t = p.tuile; t.classList.add("partie"); setTimeout(() => { t.remove(); afficherAnciens(); }, 550); }
+  if (p.tuile){ const t = p.tuile; p.tuile = null; t.classList.add("partie"); setTimeout(() => { t.remove(); disposer(); afficherAnciens(); }, 550); }
   if (p.onglet) p.onglet.classList.remove("travaille");
   if (bilan) message(cle, bilan, "rapport");
+  afficherAnciens();
   systeme(`${p.nom} quitte la réunion`);
   journal("sortie", p.nom);
-  if (!Etat.rattrapage){ Son.sortie(); }
+  if (!Etat.rattrapage){ Son.sortie(); Son.dire(`${p.nom} quitte la réunion.`, PROFILS.pilote, {priorite:true}); }
 }
 
 function afficherAnciens(){
   const pres = [...Etat.participants.values()].filter(p => p.present);
   const anciens = [...Etat.participants.values()].filter(p => !p.present && p.aParticipe);
-  const zone = $("tuiles");
-  zone.querySelectorAll(".anciens,.vide").forEach(e => e.remove());
-  if (!pres.length) zone.append(el("div", "vide", Etat.fin ? "Réunion terminée." : "Personne dans la salle pour l’instant."));
-  if (anciens.length) zone.append(el("div", "anciens", "Ont participé : " + anciens.map(p => p.nom).join(", ")));
+  $("vide").style.display = pres.length ? "none" : "";
+  if (!pres.length) $("vide").textContent = Etat.fin ? "Réunion terminée." : "Personne dans la salle pour l’instant.";
+  $("anciens").textContent = anciens.length ? "Ont participé : " + anciens.map(p => p.nom).join(", ") : "";
 }
 
 let minuteurParole = new Map();
@@ -505,12 +654,65 @@ async function traiter(evt){
     }
     if (sous === "api_retry"){ journal("réessai", `tentative ${evt.attempt}/${evt.max_retries} (${evt.error || "erreur"})`, "alerte"); return; }
     if (sous === "permission_denied" || /denied/i.test(sous || "")){
-      const quoi = court(JSON.stringify(evt.tool_input || evt.input || evt.tool_name || evt), 140);
-      journal("refus", quoi, "erreur"); systeme("Action refusée : " + quoi, "erreur"); return;
+      const appel = Etat.appels.get(evt.tool_use_id);
+      const qui = appel ? participant(appel.cle) : null;
+      const cmd = appel ? (appel.input.command || appel.input.file_path || appel.nom) : (evt.tool_name || "?");
+      if (appel) appel.refuse = true;
+      const texte = `Action refusée${qui ? " à " + qui.nom : ""} : ${court(cmd, 140)} — ${conseilRefus(cmd)}`;
+      journal("refus", texte, "erreur"); systeme(texte, "erreur");
+      if (appel) ecrireTerminal(appel.cle, ligneTerminal("err", "✗ refusé : " + conseilRefus(cmd)));
+      if (!Etat.rattrapage && qui) return Son.dire("Cette action m'a été refusée.", qui, {priorite:true});
+      return;
     }
+    if (sous === "task_started"){
+      // Sous-agent : déjà convoqué par son appel d'outil. Sinon : tâche lancée en arrière-plan.
+      if (!evt.subagent_type){
+        const appel = Etat.appels.get(evt.tool_use_id);
+        journal("arrière-plan", `${appel ? participant(appel.cle).nom + " : " : ""}${evt.description || "tâche"}`);
+      }
+      return;
+    }
+    if (sous === "task_progress"){
+      const cle = evt.subagent_type ? evt.subagent_type.toLowerCase() : null;
+      if (cle && Etat.participants.has(cle) && evt.description) statut(cle, evt.description.replace(/^Running /, ""), false);
+      return;
+    }
+    if (sous === "task_notification"){
+      journal("tâche finie", `${evt.summary || evt.task_id} (${evt.status || "?"})`, evt.status === "failed" ? "erreur" : null);
+      return;
+    }
+    if (sous === "vcs_state_changed"){
+      const texte = evt.kind === "commit" ? `Nouveau commit sur ${evt.branch}` : `Dépôt : ${evt.kind || "changement"}${evt.branch ? " sur " + evt.branch : ""}`;
+      systeme(texte, "ok"); journal("git", texte, "ok");
+      return;
+    }
+    if (sous === "code_change_published"){
+      const n = evt.identifier || "";
+      const ligne = el("div", "sys ok");
+      ligne.append(document.createTextNode(`Pull request #${n} ${evt.action === "created" ? "créée" : "mise à jour"} : `));
+      const a = el("a", null, evt.url || ""); a.href = evt.url || "#"; a.target = "_blank"; ligne.append(a);
+      ajouterFil(ligne); journal("pull request", `#${n} ${evt.action || ""} ${evt.url || ""}`, "ok");
+      if (!Etat.rattrapage) return Son.dire(`La pull request ${n} vient d'être ${evt.action === "created" ? "créée" : "mise à jour"} sur GitHub.`, PROFILS.pilote, {priorite:true});
+      return;
+    }
+    if (/^(task_updated|hook_progress|hook_started)$/.test(sous || "")) return;
+    if (sous === "hook_response"){ journal("hook", evt.hook_name || "?"); return; }
     journal(sous || "système", court(JSON.stringify(evt), 160));
     return;
   }
+  if (type === "rate_limit_event"){
+    const f = (evt.rate_limit_info && evt.rate_limit_info.unifiedWindows) || {};
+    const pct = w => w && w.utilization != null ? Math.round(w.utilization * 100) + " %" : "?";
+    const u = Math.max((f.five_hour || {}).utilization || 0, (f.seven_day || {}).utilization || 0);
+    const q = $("quota");
+    q.textContent = `⏱ ${pct(f.five_hour)} · 7 j ${pct(f.seven_day)}`;
+    q.title = `Quota de ton abonnement Claude : ${pct(f.five_hour)} de la fenêtre de 5 heures, ${pct(f.seven_day)} de la semaine`;
+    q.className = "quota" + (u >= .9 ? " critique" : u >= .7 ? " haut" : "");
+    if (evt.rate_limit_info && evt.rate_limit_info.status && evt.rate_limit_info.status !== "allowed")
+      alerter("Limite d’usage Claude atteinte : le cycle va s’interrompre ou ralentir.");
+    return;
+  }
+  if (type === "tool_progress") return; // battements de cœur des sous-agents
   if (type === "assistant"){
     const cle = proprietaire(evt);
     let attente = Promise.resolve();
@@ -519,7 +721,7 @@ async function traiter(evt){
         message(cle, b.text.trim());
         statut(cle, "parle", true);
         journal("message", participant(cle).nom + " : " + court(b.text.trim().replace(/\s+/g, " "), 120));
-        if (!Etat.rattrapage) attente = Son.dire(b.text, participant(cle));
+        if (!Etat.rattrapage) attente = Son.dire(b.text, participant(cle), {priorite:true});
       } else if (b.type === "thinking"){
         statut(cle, "réfléchit…", false);
       } else if (b.type === "tool_use"){
@@ -540,6 +742,7 @@ async function traiter(evt){
           ecrireTerminal(cle, ligneTerminal(b.name === "Bash" ? "cmd" : "action", o.texte, o.gras));
           statut(cle, o.statut, false);
           journal(b.name, participant(cle).nom + " : " + court(o.texte, 140));
+          if (!Etat.rattrapage) attente = Son.dire(phraseAction(b.name, e), participant(cle), {action:true});
         }
       }
     }
@@ -560,13 +763,15 @@ async function traiter(evt){
         continue;
       }
       if (!appel) continue;
+      const bilan = phraseResultat(appel, texte, b.is_error);
+      if (bilan && !Etat.rattrapage) Son.dire(bilan, participant(appel.cle), {action:true});
       const lignes = texte.replace(/\s+$/, "").split("\n");
       const visibles = lignes.slice(0, MAX_LIGNES_SORTIE).join("\n");
       if (visibles) ecrireTerminal(appel.cle, ligneTerminal(b.is_error ? "err" : "sortie", visibles));
       if (lignes.length > MAX_LIGNES_SORTIE) ecrireTerminal(appel.cle, ligneTerminal("masque", `… ${lignes.length - MAX_LIGNES_SORTIE} lignes masquées`));
       if (b.is_error){
         journal("erreur", `${participant(appel.cle).nom} : ${court(texte.replace(/\s+/g, " "), 140)}`, "erreur");
-        if (/permission|not allowed|denied|refus/i.test(texte)) systeme(`${participant(appel.cle).nom} : action refusée (${appel.nom})`, "alerte");
+        if (!appel.refuse && /permission|not allowed|denied|refus/i.test(texte)) systeme(`${participant(appel.cle).nom} : action refusée (${appel.nom})`, "alerte");
       }
     }
     return;
@@ -584,16 +789,13 @@ async function traiter(evt){
       const liste = refus.map(r => r.tool_name + (r.tool_input && r.tool_input.command ? " " + r.tool_input.command : "")).slice(0, 4).join(" ; ");
       journal("refus", `${refus.length} action(s) refusée(s) : ${liste}`, "erreur");
       // Une commande composée (boucle, ;, &&, |) n'est jamais couverte par les autorisations du projet.
-      const composee = refus.some(r => r.tool_input && /\bfor\b|\bwhile\b|;|&&|\|\||\|/.test(r.tool_input.command || ""));
-      const conseil = composee
-        ? "C’est une commande composée (boucle, « ; », « && » ou « | ») : les autorisations ne couvrent que les commandes simples. Les agents doivent lancer une commande à la fois (règle de .claude/equipe.md)."
-        : "Si la commande devrait être permise, ajoute-la dans .claude/settings.json.";
-      alerter(`${refus.length} action(s) refusée(s) pendant le cycle (${court(liste, 160)}). ${conseil}`);
+      const premiere = (refus[0].tool_input && refus[0].tool_input.command) || "";
+      alerter(`${refus.length} action(s) refusée(s) pendant le cycle. Exemple : ${court(premiere || liste, 120)} — ${conseilRefus(premiere)}. Le détail est dans la conversation.`);
     }
     for (const p of Etat.participants.values()) if (p.present) quitter(p.cle);
     journal("fin", "Fin de la session " + (sous || ""), sous === "success" ? "ok" : "erreur");
     $("etat").textContent = "Réunion terminée"; afficherAnciens();
-    if (!Etat.rattrapage && evt.result) return Son.dire("Fin de la réunion. " + evt.result, PROFILS.pilote);
+    if (!Etat.rattrapage && evt.result) return Son.dire("Fin de la réunion. " + evt.result, PROFILS.pilote, {priorite:true});
     return;
   }
   journal(type || "?", court(JSON.stringify(evt), 160));
@@ -675,6 +877,8 @@ setInterval(() => {
 }, 500);
 
 $("btnSon").onclick = () => Son.activer();
+try { if (localStorage.getItem("salle-actions") === "non") $("lireActions").checked = false; } catch {}
+$("lireActions").onchange = e => { try { localStorage.setItem("salle-actions", e.target.checked ? "oui" : "non"); } catch {} };
 $("choixVoix").onchange = e => { Son.moteur = Son.choixUtilisateur = e.target.value; try { localStorage.setItem("salle-voix", Son.moteur); } catch {} };
 fetch("/api/voix/etat").then(r => r.json()).then(d => { Son.piper = !!d.disponible; Son.choisirVoix(); }).catch(() => Son.choisirVoix());
 $("btnDirect").onclick = modeDirect;

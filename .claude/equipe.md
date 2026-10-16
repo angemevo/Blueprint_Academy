@@ -25,6 +25,9 @@ Les autorisations de `.claude/settings.json` ne reconnaissent que des commandes 
 
 - Lance chaque commande séparément : `gh issue view 1`, puis `gh issue view 2`.
 - Pour filtrer une sortie, utilise les options de l'outil (`gh … --json labels --jq '…'`, `git log -5`), pas un tube.
+- Tu es déjà à la racine du dépôt : pas de `git -C <chemin>`, pas de `docker compose -f <fichier>`, pas de chemin absolu vers le dépôt. Écris `git status`, `docker compose exec -T backend pytest`.
+- Pour créer ou modifier un fichier, utilise les outils Write et Edit, jamais `sed -i`, `echo … >` ou `cat > …`.
+- Pas de fichier dans `/tmp` : les brouillons (corps de PR, revues) vont dans `logs/`.
 
 ## Branches et PR
 
