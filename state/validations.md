@@ -20,8 +20,8 @@ Mise à jour : pilotage du 2026-10-16 (3e cycle).
 - [ ] Type I (normalisation de l'export UE5 en graphe) : aucune issue n'existe, alors que le type I fait partie du P0 et que #4 le renvoie à une « issue séparée ». Recommandation : rédiger cette issue en `a-cadrer` après le cadrage de #4, dont elle dépend.
 
 ### PR prêtes à merger
-- Aucune PR ouverte (vérifié avec `gh pr list --state all` le 2026-10-16).
-- À venir cette semaine : #1, puis #2. Recommandation : merger #1 en premier, pour que le lint s'applique à #2.
+- [ ] **PR #12 prête à merger** (issue #1, outillage qualité ruff et ESLint). Revue qualité du 2026-10-16 : ruff, lint, pytest (48 passed), makemigrations et typecheck passent dans les conteneurs ; aucune dépendance d'exécution changée dans le lockfile. Après le merge : lancer `npm audit` dans le conteneur frontend (commande refusée aux agents) pour situer les 8 vulnérabilités signalées par `npm install`, et ouvrir une issue pour épingler ruff sur une version mineure.
+- À venir cette semaine : #2. Recommandation : merger #12 en premier, pour que le lint s'applique à #2.
 
 ## Traité
 - [x] Poser `ready` sur deux issues : constaté le 2026-10-16 (pilotage, 3e cycle). `ready` est posé sur #1 et #2, ce qui correspond au repli recommandé. Les deux sont au plan S42.

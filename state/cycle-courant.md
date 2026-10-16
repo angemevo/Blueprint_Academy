@@ -26,8 +26,9 @@ Hors plan, à ne pas prendre : #3 à #11 (sans `ready`, ou avec des dépendances
 2. #3 « Validateurs A, B, C, D ». Dépend de : #2. Préalable : règle de score validée et #2 mergée.
 
 ## Dernière tâche traitée
-- Cycle : pilotage du 2026-10-16 (3e cycle du jour)
-- Issue / PR : aucune (pilotage)
-- Branche : aucune
-- Verdict qa : aucun
-- Prochaine action : le cycle tech prend #1 (branche `feat/1-outillage-qualite`), puis #2 (branche `feat/2-interfaces-validation`).
+- Cycle : tech du 2026-10-16 (terminé)
+- Issue / PR : #1 → PR #12 (https://github.com/angemevo/Blueprint_Academy/pull/12), ouverte par le `developpeur`
+- Branche : `feat/1-outillage-qualite` (poussée)
+- État : vérifications toutes au vert, relancées par la qa (ruff, lint, pytest 48/48, makemigrations --check, typecheck). E501 ignorée et migrations exclues dans `ruff.toml` (justifié dans la PR). `npm install` signale 8 vulnérabilités (7 élevées, 1 critique). Selon la qa, aucune dépendance d'exécution n'est ajoutée, mais l'origine reste non vérifiée (`npm audit` refusé).
+- Verdict qa : **OK** (revue publiée sur la PR, texte dans `logs/revue-12.md`). Remarques non bloquantes : épingler `ruff>=0.17,<0.18` ; aligner `eslint-config-next` (16.4.2) sur `next` (16.3.5).
+- Prochaine action : Ange merge la PR #12 (voir `state/validations.md`). Le prochain cycle tech prend #2 (branche `feat/2-interfaces-validation`), qui devra passer `ruff check .` si #12 est mergée.
