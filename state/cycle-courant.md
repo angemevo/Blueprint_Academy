@@ -2,30 +2,29 @@
 
 ## Plan de la semaine (2026-S42, du 12 au 18 octobre)
 
-Aucune issue planifiée cette semaine.
+**Aucune issue éligible : plan vide.**
 
-Raison : aucune issue n'a pu être vérifiée comme portant l'étiquette `ready`.
-- Pendant le cycle de pilotage du 2026-10-16, l'accès à GitHub (`gh`) a été refusé : l'espace de travail n'est pas marqué comme approuvé, donc les autorisations de `.claude/settings.json` sont ignorées en mode headless (voir `logs/2026-10-16_1114-pilotage.json`).
-- `state/validations.md` ne montre aucune case cochée par Ange, notamment pas le point « Poser `ready` sur les issues sans dépendance ».
+Vérifié sur GitHub par le pilotage du 2026-10-16 (2e cycle du jour, `gh` désormais accessible) :
+- 11 issues ouvertes (#1 à #11), **aucune ne porte l'étiquette `ready`**.
+- Aucune issue fermée, aucune PR (ouverte ou mergée).
+- `state/validations.md` : aucune case cochée par Ange.
+
+Une issue n'entre au plan que si elle porte `ready` et que ses dépendances sont mergées. Aucune ne remplit la première condition.
 
 Le cycle tech n'a donc rien à prendre. Il doit écrire « Plan de la semaine terminé » et s'arrêter.
 
-**Plan de la semaine terminé** (cycle tech du 2026-10-16 : aucune issue au plan, aucune PR connue en `VERDICT : CORRECTIONS` ; `gh` toujours refusé en mode headless, donc les PR ouvertes n'ont pas pu être listées).
-
 ## Candidats pour le prochain plan (pas planifiés, en attente de `ready`)
 
-Ces issues entrent au plan dès qu'Ange a posé `ready` et que le pilotage a été relancé avec l'accès à `gh`. Ordre recommandé :
+Issues sans dépendance, numéros confirmés sur GitHub. Ordre recommandé (voir `state/validations.md`) :
 
-1. Issue « Outillage qualité : ruff (backend) et ESLint (frontend) » : fichier `issues/01-outillage-qualite.md`, numéro GitHub présumé #1, à confirmer. Dépend de : aucune.
-2. Issue « Interfaces de validation et registre des validateurs » : fichier `issues/02-interfaces-validation.md`, numéro GitHub présumé #2, à confirmer. Dépend de : aucune.
+1. #2 « Interfaces de validation et registre des validateurs ». Dépend de : aucune.
+2. #5 « Authentification JWT ». Dépend de : aucune. Préalable : décision blacklist.
 
-Ensuite : issue « Authentification JWT » (`issues/05-auth-jwt.md`, numéro présumé #5), une fois la question de la blacklist tranchée.
-
-Les numéros présumés supposent que `scripts/creer-issues.sh` a été lancé une seule fois, sur un dépôt sans issue ni PR antérieure. Ils doivent être vérifiés sur GitHub.
+Repli si la décision blacklist n'est pas prise : #1 « Outillage qualité : ruff et ESLint » (dépend de : aucune) à la place de #5.
 
 ## Dernière tâche traitée
-- Cycle : cycle-tech du 2026-10-16, aucune tâche prise (plan vide)
+- Cycle : pilotage du 2026-10-16 (2e cycle du jour)
 - Issue / PR : aucune
 - Branche : aucune
 - Verdict qa : aucun
-- Prochaine action : Ange rend `gh` accessible au mode headless, pose `ready` sur les issues retenues, puis relance `scripts/cycle.sh pilotage`.
+- Prochaine action : Ange tranche la blacklist JWT (#5), pose `ready` sur #2 et #5 (ou #1 et #2), puis relance `scripts/cycle.sh pilotage`.

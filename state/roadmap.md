@@ -2,27 +2,31 @@
 
 Tenue par l'orchestrateur. Ange valide les changements de priorité. Source : section « Roadmap » de `CLAUDE.md`.
 
-Mise à jour : 2026-10-16 (pilotage S42). L'état GitHub n'a pas pu être lu ce jour-là (accès `gh` refusé) ; cette roadmap repose sur `issues/` et `state/`.
+Mise à jour : 2026-10-16 (pilotage S42, 2e cycle). État lu sur GitHub : numéros #1 à #11 confirmés, aucune issue `ready`, aucune PR.
 
 ## Phase en cours : 2b, services, validateurs et API (MVP / P0)
 
+### Fait (phase 2b)
+- Rien : aucune issue fermée, aucune PR.
+
 ### En cours
-- Rien. Aucune issue n'est `ready`, aucune PR n'a été ouverte par l'équipe.
+- Rien. Aucune issue n'est `ready`.
 
 ### Prêt à démarrer dès qu'Ange pose `ready` (pas de dépendance)
-1. Outillage qualité (ruff, ESLint) : `issues/01`, présumée #1
-2. Interfaces de validation et registre : `issues/02`, présumée #2
-3. Authentification JWT : `issues/05`, présumée #5 (question blacklist à trancher avant)
+- #1 Outillage qualité (ruff, ESLint)
+- #2 Interfaces de validation et registre
+- #5 Authentification JWT (décision blacklist à trancher avant)
 
 ### Ensuite, dans l'ordre des dépendances
-- Chaîne validation : Interfaces (02) → Validateurs A, B, C, D (03) → Soumission (09) → XP et niveaux (10)
-- Chaîne API : Auth (05) → Profil et permissions (06) → API catalogue (07) → API exercices (08) → Soumission (09)
-- Chemin critique : la chaîne API (4 issues avant la soumission). Au rythme de 2 issues par semaine, il faut faire avancer les deux chaînes en parallèle dès que possible.
+- Chaîne API (chemin critique, 5 issues jusqu'à la soumission) : #5 Auth → #6 Profil et permissions → #7 API catalogue → #8 API exercices → #9 Soumission
+- Chaîne validation : #2 Interfaces → #3 Validateurs A, B, C, D → #9 Soumission
+- Puis : #9 Soumission → #10 XP et niveaux
+- Une issue n'entre au plan que si ses dépendances sont mergées : la chaîne API avance donc d'au plus une issue par semaine. Ordre recommandé : S43 #2 + #5, S44 #3 + #6, S45 #1 + #7, S46 #8, S47 #9, S48 #10.
 
 ### À cadrer par Ange avant délégation (`a-cadrer`)
-- Moteur de validation de graphe (E, F, G, H) : `issues/04`
-- Calcul de la maîtrise des skills : `issues/11`
-- Pas encore d'issue : normalisation de l'export UE5 pour le type I (citée « issue séparée » dans `issues/04`, prévue au P0)
+- #4 Moteur de validation de graphe (E, F, G, H)
+- #11 Calcul de la maîtrise des skills
+- Pas encore d'issue : normalisation de l'export UE5 pour le type I (« issue séparée » citée dans #4, prévue au P0)
 
 ## Fait
 - Phase 1 : architecture et configuration
