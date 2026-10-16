@@ -10,6 +10,8 @@ Raison : aucune issue n'a pu être vérifiée comme portant l'étiquette `ready`
 
 Le cycle tech n'a donc rien à prendre. Il doit écrire « Plan de la semaine terminé » et s'arrêter.
 
+**Plan de la semaine terminé** (cycle tech du 2026-10-16 : aucune issue au plan, aucune PR connue en `VERDICT : CORRECTIONS` ; `gh` toujours refusé en mode headless, donc les PR ouvertes n'ont pas pu être listées).
+
 ## Candidats pour le prochain plan (pas planifiés, en attente de `ready`)
 
 Ces issues entrent au plan dès qu'Ange a posé `ready` et que le pilotage a été relancé avec l'accès à `gh`. Ordre recommandé :
@@ -22,6 +24,7 @@ Ensuite : issue « Authentification JWT » (`issues/05-auth-jwt.md`, numéro pr�
 Les numéros présumés supposent que `scripts/creer-issues.sh` a été lancé une seule fois, sur un dépôt sans issue ni PR antérieure. Ils doivent être vérifiés sur GitHub.
 
 ## Dernière tâche traitée
+- Cycle : cycle-tech du 2026-10-16, aucune tâche prise (plan vide)
 - Issue / PR : aucune
 - Branche : aucune
 - Verdict qa : aucun
