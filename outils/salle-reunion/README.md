@@ -27,4 +27,25 @@ Puis clique sur **Son coupé** pour activer les sons et la voix (le navigateur l
 
 `scripts/cycle.sh` enregistre chaque cycle dans `logs/<date>-<cycle>.jsonl` (format `stream-json` de Claude Code). `serveur.py` lit ces fichiers et les transmet à la page. Il n'utilise que Python, sans dépendance. Il n'écoute que sur ta machine (127.0.0.1) et ne consomme ni quota Claude ni données mobiles.
 
-La voix est celle de ton navigateur (synthèse vocale). Sous Ubuntu, Chrome et Firefox proposent en général une voix française. Si aucune n'est installée, les sons de connexion restent actifs.
+## Voix naturelles (recommandé)
+
+Sous Ubuntu, la voix du navigateur est souvent eSpeak, très robotique. Pour des voix humaines, installe **Piper**, une synthèse vocale neuronale qui tourne entièrement sur ta machine :
+
+```bash
+sudo apt install -y python3-venv     # si ce n'est pas déjà fait
+scripts/installer-voix.sh            # 2 voix : Jessica et Pierre, environ 140 Mo à télécharger
+scripts/installer-voix.sh --complet  # 4 voix : + Siwis et Tom, environ 270 Mo
+```
+
+C'est un téléchargement unique, à faire de préférence avec un bon signal. Ensuite, tout fonctionne hors connexion. Le script génère un exemple par agent dans `outils/salle-reunion/test-voix/` : écoute-les avec `aplay`.
+
+Relance ensuite `scripts/salle-reunion.sh` et choisis **Voix naturelles (Piper)** dans la liste des voix (choix par défaut quand Piper est installé).
+
+| Agent | Voix (installation de base) | Voix (installation complète) |
+| --- | --- | --- |
+| Pilote du cycle | Jessica | Siwis |
+| Orchestrateur | Pierre, plus posé | Tom |
+| Développeur | Pierre, plus vif | Pierre |
+| QA | Jessica, plus posée | Jessica |
+
+Sans Piper, la liste propose les voix françaises du navigateur, les plus naturelles en tête (sous Chrome, « Google français » est nettement meilleure qu'eSpeak, mais elle passe par Internet).

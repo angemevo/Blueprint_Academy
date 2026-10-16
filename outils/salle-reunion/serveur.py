@@ -17,8 +17,12 @@ Usage : python3 outils/salle-reunion/serveur.py [--port 8765] [--logs CHEMIN]
 from __future__ import annotations
 
 import argparse
+import hashlib
+import io
 import json
+import threading
 import time
+import wave
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -29,6 +33,71 @@ DOSSIER_LOGS = ICI.parent.parent / "logs"
 FICHIER_DEMO = ICI / "demo.jsonl"
 INTERVALLE = 0.4  # secondes entre deux lectures du fichier suivi
 BATTEMENT = 15  # secondes entre deux messages de maintien de connexion
+
+# --- Voix naturelles (Piper, synthèse neuronale locale) -----------------------
+# Installées par scripts/installer-voix.sh. Sans elles, l'interface se rabat sur la
+# synthèse vocale du navigateur.
+DOSSIER_VOIX = ICI / "voix"
+CACHE_VOIX = ICI / ".cache-voix"
+#: Pour chaque agent : modèles possibles par ordre de préférence
+#: (nom du modèle, locuteur, vitesse : > 1 plus lent, < 1 plus rapide).
+PROFILS_VOIX = {
+    "pilote": [("fr_FR-siwis-medium", None, 1.0), ("fr_FR-upmc-medium", 0, 1.0)],
+    "orchestrateur": [("fr_FR-tom-medium", None, 1.05), ("fr_FR-upmc-medium", 1, 1.1)],
+    "developpeur": [("fr_FR-upmc-medium", 1, 0.95)],
+    "qa": [("fr_FR-upmc-medium", 0, 1.08), ("fr_FR-siwis-medium", None, 1.0)],
+    "defaut": [("fr_FR-upmc-medium", 0, 1.0), ("fr_FR-siwis-medium", None, 1.0)],
+}
+try:
+    from piper import PiperVoice, SynthesisConfig
+except ImportError:  # Piper non installé : voix du navigateur
+    PiperVoice = None
+    SynthesisConfig = None
+
+
+class Voix:
+    """Charge les modèles Piper à la demande et met les phrases en cache disque."""
+
+    def __init__(self) -> None:
+        self.modeles: dict[str, object] = {}
+        self.verrou = threading.Lock()
+
+    def disponibles(self) -> list[str]:
+        if PiperVoice is None:
+            return []
+        return sorted(p.name.removesuffix(".onnx") for p in DOSSIER_VOIX.glob("*.onnx"))
+
+    def choisir(self, agent: str):
+        presents = set(self.disponibles())
+        for nom, locuteur, vitesse in PROFILS_VOIX.get(agent, []) + PROFILS_VOIX["defaut"]:
+            if nom in presents:
+                return nom, locuteur, vitesse
+        return None
+
+    def wav(self, agent: str, texte: str) -> bytes | None:
+        choix = self.choisir(agent)
+        if choix is None:
+            return None
+        nom, locuteur, vitesse = choix
+        cle = hashlib.sha1(f"{nom}|{locuteur}|{vitesse}|{texte}".encode()).hexdigest()
+        cache = CACHE_VOIX / f"{cle}.wav"
+        if cache.exists():
+            return cache.read_bytes()
+        with self.verrou:  # un modèle ONNX n'aime pas les appels concurrents
+            if nom not in self.modeles:
+                self.modeles[nom] = PiperVoice.load(DOSSIER_VOIX / f"{nom}.onnx")
+            tampon = io.BytesIO()
+            with wave.open(tampon, "wb") as sortie:
+                self.modeles[nom].synthesize_wav(
+                    texte, sortie, syn_config=SynthesisConfig(speaker_id=locuteur, length_scale=vitesse)
+                )
+        donnees = tampon.getvalue()
+        CACHE_VOIX.mkdir(exist_ok=True)
+        cache.write_bytes(donnees)
+        return donnees
+
+
+VOIX = Voix()
 
 
 def cycles(dossier: Path) -> list[Path]:
@@ -96,6 +165,20 @@ class Gestionnaire(BaseHTTPRequestHandler):
                 self.envoyer(200, chemin.read_bytes(), "application/x-ndjson; charset=utf-8")
         elif url.path == "/api/direct":
             self.flux_direct()
+        elif url.path == "/api/voix/etat":
+            self.envoyer_json({"disponible": bool(VOIX.disponibles()), "modeles": VOIX.disponibles()})
+        elif url.path == "/api/voix":
+            texte = params.get("texte", [""])[0].strip()[:400]
+            agent = params.get("agent", ["defaut"])[0]
+            try:
+                donnees = VOIX.wav(agent, texte) if texte else None
+            except Exception as exc:  # modèle corrompu, texte impossible à phonétiser...
+                self.envoyer_json({"erreur": str(exc)}, HTTPStatus.INTERNAL_SERVER_ERROR)
+                return
+            if donnees is None:
+                self.envoyer_json({"erreur": "voix Piper indisponible"}, HTTPStatus.NOT_FOUND)
+            else:
+                self.envoyer(200, donnees, "audio/wav")
         else:
             self.envoyer_json({"erreur": "introuvable"}, HTTPStatus.NOT_FOUND)
 
@@ -152,17 +235,50 @@ class Gestionnaire(BaseHTTPRequestHandler):
             return  # l'onglet a été fermé
 
 
+def tester_voix() -> None:
+    """Écrit un fichier WAV par agent dans outils/salle-reunion/test-voix/ et dit lequel écouter."""
+    if PiperVoice is None:
+        print("Piper n'est pas installé pour ce Python. Lance scripts/installer-voix.sh.")
+        raise SystemExit(1)
+    if not VOIX.disponibles():
+        print(f"Aucun modèle de voix dans {DOSSIER_VOIX}. Lance scripts/installer-voix.sh.")
+        raise SystemExit(1)
+    dossier = ICI / "test-voix"
+    dossier.mkdir(exist_ok=True)
+    phrases = {
+        "pilote": "Bonsoir à tous. On démarre le cycle tech : une issue ce soir.",
+        "developpeur": "Les tests passent. J'ouvre la pull request.",
+        "qa": "J'ai relu la PR. Verdict : approuvée.",
+        "orchestrateur": "Le plan de la semaine est prêt. Deux issues au programme.",
+    }
+    for agent, phrase in phrases.items():
+        debut = time.monotonic()
+        (dossier / f"{agent}.wav").write_bytes(VOIX.wav(agent, phrase))
+        nom, locuteur, _ = VOIX.choisir(agent)
+        detail = "" if locuteur is None else f" (locuteur {locuteur})"
+        print(f"{agent:13s} {nom}{detail}  {time.monotonic() - debut:.1f} s")
+    print(f"Écoute par exemple : aplay {dossier / 'developpeur.wav'}")
+
+
 def main() -> None:
     analyseur = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     analyseur.add_argument("--port", type=int, default=8765)
     analyseur.add_argument("--logs", type=Path, default=DOSSIER_LOGS)
+    analyseur.add_argument(
+        "--tester-voix", action="store_true", help="synthétise une phrase par agent et quitte"
+    )
     args = analyseur.parse_args()
+    if args.tester_voix:
+        tester_voix()
+        return
     Gestionnaire.dossier_logs = args.logs.resolve()
     Gestionnaire.dossier_logs.mkdir(parents=True, exist_ok=True)
     serveur = ThreadingHTTPServer(("127.0.0.1", args.port), Gestionnaire)
     serveur.daemon_threads = True
     print(f"Salle de réunion ouverte : http://127.0.0.1:{args.port}  (Ctrl+C pour fermer)")
     print(f"Journaux lus dans : {Gestionnaire.dossier_logs}")
+    modeles = VOIX.disponibles()
+    print("Voix : " + (", ".join(modeles) if modeles else "celle du navigateur (scripts/installer-voix.sh pour des voix naturelles)"))
     try:
         serveur.serve_forever()
     except KeyboardInterrupt:

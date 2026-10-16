@@ -127,6 +127,7 @@ select{background:#2c2c2c;border:1px solid #3a3a3a;border-radius:6px;padding:6px
       <select id="vitesse" title="Vitesse du rejeu"><option value="1">×1</option><option value="2">×2</option><option value="4">×4</option></select>
       <button class="btn" id="btnDirect" title="Suivre le cycle en cours">● Direct</button>
       <button class="btn" id="btnDemo" title="Rejouer une réunion d'exemple">Démo</button>
+      <select id="choixVoix" title="Voix des agents"><option value="sons">Sons seuls</option></select>
       <button class="btn" id="btnSon" title="Activer les sons et la voix">🔇 Son coupé</button>
     </div>
   </header>
@@ -163,6 +164,7 @@ const PROFILS = {
   developpeur:   {nom:"Développeur",     role:"Django · Next.js",            couleur:"#2f8f6b", voix:{pitch:1.15,rate:1.12}},
   qa:            {nom:"QA",              role:"Revue qualité",               couleur:"#3a7bd5", voix:{pitch:0.95,rate:1.05}},
 };
+for (const [cle, p] of Object.entries(PROFILS)) p.cle = cle;
 const COULEURS_LIBRES = ["#a3477d","#5d7f2a","#8c6d1f","#4f6bb3"];
 const OUTILS_AGENT = new Set(["Agent","Task"]);
 const MAX_LIGNES_SORTIE = 40;
@@ -176,19 +178,21 @@ const court = (t, n) => (t.length > n ? t.slice(0, n - 1) + "…" : t);
 // ---------------------------------------------------------------------------
 // Audio : sons de connexion (Web Audio) et voix (synthèse vocale du navigateur)
 // ---------------------------------------------------------------------------
-const Audio = {
-  actif:false, ctx:null, voix:null, fileParole:0,
+const Son = {
+  actif:false, ctx:null, moteur:"sons", piper:false, voixNav:[], voix:null, enAttente:0, chaine:Promise.resolve(),
   activer(){
     this.actif = !this.actif;
     if (this.actif && !this.ctx) this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-    if (!this.actif) speechSynthesis.cancel();
-    this.choisirVoix();
+    if (!this.actif){ speechSynthesis.cancel(); if (this.lecteur) this.lecteur.pause(); }
     $("btnSon").textContent = this.actif ? "🔊 Son activé" : "🔇 Son coupé";
     $("btnSon").classList.toggle("actif", this.actif);
   },
+  // Liste les voix françaises du navigateur, les plus naturelles d'abord (eSpeak en dernier).
   choisirVoix(){
-    const toutes = speechSynthesis.getVoices();
-    this.voix = toutes.find(v => /^fr(-|_)FR/i.test(v.lang)) || toutes.find(v => /^fr/i.test(v.lang)) || null;
+    const score = v => (/google|natural|neural|online|premium|enhanced|microsoft/i.test(v.name) ? 0 : 2)
+                     + (/espeak|mbrola/i.test(v.name) ? 3 : 0) + (/^fr[-_]FR/i.test(v.lang) ? 0 : 1);
+    this.voixNav = speechSynthesis.getVoices().filter(v => /^fr/i.test(v.lang)).sort((a, b) => score(a) - score(b));
+    remplirChoixVoix();
   },
   ton(freqs, duree = .11){
     if (!this.actif || !this.ctx) return;
@@ -206,24 +210,68 @@ const Audio = {
   alerte(){ this.ton([440, 349, 440, 349], .14); },
   // Rend une promesse résolue à la fin de la phrase (utile pour rythmer le rejeu).
   dire(texte, profil){
-    if (!this.actif || !("speechSynthesis" in window) || !texte) return Promise.resolve();
+    if (!this.actif || this.moteur === "sons" || !texte) return Promise.resolve();
     const phrase = nettoyerPourVoix(texte);
     if (!phrase) return Promise.resolve();
-    if (this.fileParole > 3) speechSynthesis.cancel(), this.fileParole = 0; // le direct ne doit pas prendre de retard
+    // En direct, on saute des phrases plutôt que de prendre du retard sur les agents.
+    if (Etat.mode !== "rejeu" && this.enAttente >= 3) return Promise.resolve();
+    this.enAttente++;
+    const fin = () => { this.enAttente = Math.max(0, this.enAttente - 1); };
+    let promesse;
+    if (this.moteur === "piper"){
+      // La synthèse démarre tout de suite ; la lecture attend la fin de la phrase précédente.
+      const cle = (profil && profil.cle) || "defaut";
+      const audio = fetch(`/api/voix?agent=${encodeURIComponent(cle)}&texte=${encodeURIComponent(phrase)}`)
+        .then(r => r.ok ? r.blob() : Promise.reject(new Error("voix " + r.status)));
+      promesse = this.chaine.then(() => audio).then(b => this.jouer(b))
+        .catch(() => this.parlerNavigateur(phrase, profil));
+    } else {
+      promesse = this.chaine.then(() => this.parlerNavigateur(phrase, profil));
+    }
+    promesse = promesse.finally(fin);
+    this.chaine = promesse.catch(() => {});
+    return promesse;
+  },
+  jouer(blob){
+    return new Promise(resolve => {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("audio");
+      a.src = url; a.playbackRate = Etat.mode === "rejeu" ? Math.min(1.5, 0.95 + Etat.vitesse * .1) : 1;
+      this.lecteur = a;
+      const fini = () => { URL.revokeObjectURL(url); resolve(); };
+      a.onended = fini; a.onerror = fini;
+      a.play().catch(fini);
+    });
+  },
+  parlerNavigateur(phrase, profil){
+    if (!("speechSynthesis" in window)) return Promise.resolve();
     return new Promise(resolve => {
       const u = new SpeechSynthesisUtterance(phrase);
-      u.lang = "fr-FR"; if (this.voix) u.voice = this.voix;
-      const v = (profil && profil.voix) || {pitch:1, rate:1.05};
-      u.pitch = v.pitch; u.rate = v.rate * (Etat.mode === "rejeu" ? Math.min(1.4, 0.9 + Etat.vitesse * .15) : 1);
-      const fin = () => { this.fileParole = Math.max(0, this.fileParole - 1); resolve(); };
-      u.onend = fin; u.onerror = fin;
-      this.fileParole++;
+      u.lang = "fr-FR";
+      const v = this.voixNav.find(x => x.name === this.moteur) || this.voixNav[0];
+      if (v) u.voice = v;
+      const r = (profil && profil.voix) || {pitch:1, rate:1.05};
+      u.pitch = r.pitch; u.rate = r.rate * (Etat.mode === "rejeu" ? Math.min(1.4, 0.9 + Etat.vitesse * .15) : 1);
+      u.onend = resolve; u.onerror = resolve;
       speechSynthesis.speak(u);
-      setTimeout(fin, 15000); // garde-fou
+      setTimeout(resolve, 15000); // garde-fou
     });
   },
 };
-speechSynthesis.onvoiceschanged = () => Audio.choisirVoix();
+function remplirChoixVoix(){
+  const s = $("choixVoix"); if (!s) return;
+  // Choix de l'utilisateur s'il en a fait un, sinon la meilleure voix disponible.
+  let garde = Son.choixUtilisateur || null;
+  try { garde = garde || localStorage.getItem("salle-voix"); } catch {}
+  s.innerHTML = "";
+  if (Son.piper) s.append(new Option("Voix naturelles (Piper)", "piper"));
+  for (const v of Son.voixNav) s.append(new Option("Navigateur : " + v.name, v.name));
+  s.append(new Option("Sons seuls", "sons"));
+  const valeurs = [...s.options].map(o => o.value);
+  Son.moteur = garde && valeurs.includes(garde) ? garde : valeurs[0];
+  s.value = Son.moteur;
+}
+speechSynthesis.onvoiceschanged = () => Son.choisirVoix();
 
 function nettoyerPourVoix(t){
   t = t.replace(/```[\s\S]*?```/g, " ").replace(/`([^`]*)`/g, "$1").replace(/[#*_>|]/g, " ")
@@ -285,7 +333,7 @@ function rejoindre(cle, motif){
   if (!Etat.epingle) choisirTerminal(cle);
   systeme(`${p.nom} rejoint la réunion${motif ? " : " + court(motif, 90) : ""}`);
   journal("entrée", p.nom + (motif ? " — " + motif : ""), "ok");
-  if (!Etat.rattrapage){ Audio.entree(); return Audio.dire(`${p.nom} rejoint la réunion.`, PROFILS.pilote); }
+  if (!Etat.rattrapage){ Son.entree(); return Son.dire(`${p.nom} rejoint la réunion.`, PROFILS.pilote); }
 }
 
 function quitter(cle, bilan){
@@ -297,7 +345,7 @@ function quitter(cle, bilan){
   if (bilan) message(cle, bilan, "rapport");
   systeme(`${p.nom} quitte la réunion`);
   journal("sortie", p.nom);
-  if (!Etat.rattrapage){ Audio.sortie(); }
+  if (!Etat.rattrapage){ Son.sortie(); }
 }
 
 function afficherAnciens(){
@@ -379,7 +427,7 @@ function journal(type, texte, genre){
 }
 function alerter(texte){
   $("bandeauTexte").textContent = texte; $("bandeau").classList.add("visible");
-  if (!Etat.rattrapage) Audio.alerte();
+  if (!Etat.rattrapage) Son.alerte();
 }
 
 // ---------------------------------------------------------------------------
@@ -470,7 +518,7 @@ async function traiter(evt){
         message(cle, b.text.trim());
         statut(cle, "parle", true);
         journal("message", participant(cle).nom + " : " + court(b.text.trim().replace(/\s+/g, " "), 120));
-        if (!Etat.rattrapage) attente = Audio.dire(b.text, participant(cle));
+        if (!Etat.rattrapage) attente = Son.dire(b.text, participant(cle));
       } else if (b.type === "thinking"){
         statut(cle, "réfléchit…", false);
       } else if (b.type === "tool_use"){
@@ -539,7 +587,7 @@ async function traiter(evt){
     for (const p of Etat.participants.values()) if (p.present) quitter(p.cle);
     journal("fin", "Fin de la session " + (sous || ""), sous === "success" ? "ok" : "erreur");
     $("etat").textContent = "Réunion terminée"; afficherAnciens();
-    if (!Etat.rattrapage && evt.result) return Audio.dire("Fin de la réunion. " + evt.result, PROFILS.pilote);
+    if (!Etat.rattrapage && evt.result) return Son.dire("Fin de la réunion. " + evt.result, PROFILS.pilote);
     return;
   }
   journal(type || "?", court(JSON.stringify(evt), 160));
@@ -620,7 +668,9 @@ setInterval(() => {
   $("chrono").textContent = (h ? h + ":" : "") + String(m).padStart(2, "0") + ":" + String(ss).padStart(2, "0");
 }, 500);
 
-$("btnSon").onclick = () => Audio.activer();
+$("btnSon").onclick = () => Son.activer();
+$("choixVoix").onchange = e => { Son.moteur = Son.choixUtilisateur = e.target.value; try { localStorage.setItem("salle-voix", Son.moteur); } catch {} };
+fetch("/api/voix/etat").then(r => r.json()).then(d => { Son.piper = !!d.disponible; Son.choisirVoix(); }).catch(() => Son.choisirVoix());
 $("btnDirect").onclick = modeDirect;
 $("btnDemo").onclick = () => { $("choixCycle").value = ""; modeRejeu("demo", "Démo · cycle tech (exemple)"); };
 $("choixCycle").onchange = e => { if (e.target.value) modeRejeu(e.target.value, "Rejeu · " + e.target.selectedOptions[0].textContent); };

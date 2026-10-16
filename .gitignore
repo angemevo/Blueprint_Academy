@@ -37,3 +37,9 @@ certs/*.crt
 # Equipe d'agents : journaux locaux des cycles
 logs/*
 !logs/.gitkeep
+
+# Salle de réunion : voix Piper et caches locaux
+outils/salle-reunion/.venv/
+outils/salle-reunion/voix/
+outils/salle-reunion/.cache-voix/
+outils/salle-reunion/test-voix/
