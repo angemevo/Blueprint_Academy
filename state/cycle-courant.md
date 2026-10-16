@@ -2,31 +2,32 @@
 
 ## Plan de la semaine (2026-S42, du 12 au 18 octobre)
 
-**Aucune issue éligible : plan vide.**
+Établi par le pilotage du 2026-10-16 (3e cycle du jour). Vérifié sur GitHub avec des commandes `gh` simples :
+- `ready` posé sur #1 et #2. Retiré de #10 et #11 (mis à jour sur GitHub le 2026-10-16 vers 19 h 22).
+- Aucune issue fermée, aucune PR (ni ouverte ni mergée).
+- Quota : la semaine précédente n'a eu aucun cycle, donc aucun cycle coupé. Le plan peut compter 2 issues.
 
-Vérifié sur GitHub par le pilotage du 2026-10-16 (2e cycle du jour, `gh` désormais accessible) :
-- 11 issues ouvertes (#1 à #11), **aucune ne porte l'étiquette `ready`**.
-- Aucune issue fermée, aucune PR (ouverte ou mergée).
-- `state/validations.md` : aucune case cochée par Ange.
+Ordre de traitement :
 
-Une issue n'entre au plan que si elle porte `ready` et que ses dépendances sont mergées. Aucune ne remplit la première condition.
+1. **#1 « Outillage qualité : ruff (backend) et ESLint (frontend) »**
+   - Dépend de : aucune. Étiquettes : `ready`, `phase-2b`, `outillage`.
+   - L'issue autorise explicitement la modification de `requirements-dev.txt`, de `package.json` et du lockfile. Le lockfile se régénère **dans le conteneur**.
+   - Passe en premier : une fois #1 mergée, le lint devient une vérification obligatoire pour toutes les PR suivantes, #2 comprise (`.claude/equipe.md`).
+2. **#2 « Interfaces de validation et registre des validateurs »**
+   - Dépend de : aucune. Étiquettes : `ready`, `phase-2b`, `backend`.
+   - Si #1 est mergée avant la fin de #2 : rebaser sur `master`, puis faire passer `ruff check .` avant d'ouvrir la PR. Si #1 n'est pas mergée, #2 ne doit pas attendre : elle est indépendante.
+   - Ouvre la chaîne de validation (#2 → #3 → #9).
 
-Le cycle tech n'a donc rien à prendre. Il doit écrire « Plan de la semaine terminé » et s'arrêter.
+Hors plan, à ne pas prendre : #3 à #11 (sans `ready`, ou avec des dépendances non mergées). #4 et #11 sont `a-cadrer`.
 
-**Plan de la semaine terminé** (cycle tech du 2026-10-16, 3e cycle) : aucune PR ouverte, plan vide. Anomalie : #10 et #11 portent désormais `ready`, mais elles dépendent de #9 (non mergée) et #11 est encore `a-cadrer`. Elles n'ont pas été prises, et le point est ajouté dans `state/validations.md`.
+## Candidats pour le prochain plan (S43, en attente de `ready`)
 
-## Candidats pour le prochain plan (pas planifiés, en attente de `ready`)
-
-Issues sans dépendance, numéros confirmés sur GitHub. Ordre recommandé (voir `state/validations.md`) :
-
-1. #2 « Interfaces de validation et registre des validateurs ». Dépend de : aucune.
-2. #5 « Authentification JWT ». Dépend de : aucune. Préalable : décision blacklist.
-
-Repli si la décision blacklist n'est pas prise : #1 « Outillage qualité : ruff et ESLint » (dépend de : aucune) à la place de #5.
+1. #5 « Authentification JWT ». Dépend de : aucune. Préalable : décision blacklist (`state/validations.md`). C'est la tête du chemin critique (#5 → #6 → #7 → #8 → #9).
+2. #3 « Validateurs A, B, C, D ». Dépend de : #2. Préalable : règle de score validée et #2 mergée.
 
 ## Dernière tâche traitée
-- Cycle : tech du 2026-10-16 (3e cycle du jour)
-- Issue / PR : aucune
+- Cycle : pilotage du 2026-10-16 (3e cycle du jour)
+- Issue / PR : aucune (pilotage)
 - Branche : aucune
 - Verdict qa : aucun
-- Prochaine action : Ange retire `ready` de #10 et #11, tranche la blacklist JWT (#5), pose `ready` sur #2 et #5 (ou #1 et #2), puis relance `scripts/cycle.sh pilotage`.
+- Prochaine action : le cycle tech prend #1 (branche `feat/1-outillage-qualite`), puis #2 (branche `feat/2-interfaces-validation`).
