@@ -15,6 +15,7 @@ Ce dépôt est le projet pilote de l'équipe d'agents (phase 1 : pôle Tech). Le
 | `scripts/creer-issues.sh` | Crée les étiquettes et les issues sur GitHub |
 | `scripts/cycle.sh` | Lance un cycle sans toi (cron) |
 | `.github/` | CI (backend et frontend) et modèles d'issue et de PR |
+| `outils/salle-reunion/` | Interface pour suivre les cycles comme une réunion |
 
 `CLAUDE.md` n'a reçu qu'une section de deux lignes à la fin, qui importe `.claude/equipe.md`.
 
@@ -48,16 +49,27 @@ scripts/creer-issues.sh
 
 Puis traite `state/validations.md` : réponds aux questions des issues concernées et pose l'étiquette `ready` sur celles que tu acceptes. **Les agents ne prennent jamais une issue sans `ready`.**
 
-## 4. Premier cycle, à la main
+## 4. Approuver le dossier pour Claude Code (une seule fois)
+
+En mode automatique (`claude -p`), Claude Code ignore les autorisations de `.claude/settings.json` tant que tu n'as pas approuvé le dossier. Sans elles, les agents ne peuvent lancer ni `gh` ni les tests.
+
+```bash
+cd ~/Blueprint_Academy
+claude          # accepte la question sur la confiance accordée au dossier, puis tape /exit
+```
+
+`scripts/cycle.sh` vérifie ce point et s'arrête avec un message clair s'il manque.
+
+## 5. Premier cycle, à la main
 
 ```bash
 scripts/cycle.sh pilotage   # plan de la semaine, file de validation, rapport
 scripts/cycle.sh tech       # une issue développée puis relue
 ```
 
-Regarde le résultat dans `logs/` et sur GitHub : PR ouverte, commentaire `VERDICT : …` de l'agent qa.
+Pour suivre le cycle comme une réunion, ouvre la salle dans un autre terminal : `scripts/salle-reunion.sh` (voir `outils/salle-reunion/README.md`). Le résultat reste aussi sur GitHub : PR ouverte, commentaire `VERDICT : …` de l'agent qa.
 
-## 5. Planifier
+## 6. Planifier
 
 ```bash
 crontab -e   # colle scripts/crontab.exemple, avec le chemin du dépôt

@@ -23,7 +23,8 @@ fi
 
 mkdir -p logs
 STAMP="$(date +%F_%H%M)"
-LOG="logs/${STAMP}-${CYCLE}.json"
+# Un événement JSON par ligne : la salle de réunion (outils/salle-reunion) le lit en direct
+LOG="logs/${STAMP}-${CYCLE}.jsonl"
 
 notifier() {
   if [ -n "${NTFY_TOPIC:-}" ]; then
@@ -70,12 +71,42 @@ if ! docker compose up -d --wait postgres backend frontend >/dev/null 2>&1; then
   exit 1
 fi
 
+# En mode -p, Claude Code ignore les autorisations de .claude/settings.json tant que le dossier
+# n'a pas été approuvé une fois en session interactive : sans elles, les agents ne peuvent ni
+# lancer gh ni les tests. On s'arrête tout de suite plutôt que de consommer du quota pour rien.
+CONFIG_CLAUDE="${CLAUDE_CONFIG_DIR:-$HOME}/.claude.json"
+if ! python3 - "$CONFIG_CLAUDE" "$(git rev-parse --show-toplevel)" <<'PY'
+import json, sys
+try:
+    projets = json.load(open(sys.argv[1])).get("projects", {})
+except (OSError, ValueError):
+    sys.exit(1)
+sys.exit(0 if projets.get(sys.argv[2], {}).get("hasTrustDialogAccepted") else 1)
+PY
+then
+  printf '{"type":"cycle_start","cycle":"%s","started_at":"%s"}\n{"type":"system","subtype":"dossier_non_approuve","message":"Lance claude une fois dans le dépôt et accepte l approbation du dossier."}\n{"type":"cycle_end","cycle":"%s","exit_code":3,"ended_at":"%s"}\n' \
+    "$CYCLE" "$(date -Iseconds)" "$CYCLE" "$(date -Iseconds)" > "$LOG"
+  notifier "Cycle annulé : dossier non approuvé. Lance « claude » une fois dans $REPO_DIR et accepte."
+  echo "Dossier non approuvé par Claude Code : lance « claude » une fois dans $REPO_DIR et accepte." >&2
+  exit 3
+fi
+
+# Le texte des sous-agents n'est transmis qu'avec une version récente de Claude Code
+OPTIONS_FLUX=(--output-format stream-json --verbose)
+if claude --help 2>/dev/null | grep -q -- "--forward-subagent-text"; then
+  OPTIONS_FLUX+=(--forward-subagent-text)
+fi
+
+# Marqueur de début, utile à la salle de réunion
+printf '{"type":"cycle_start","cycle":"%s","started_at":"%s"}\n' "$CYCLE" "$(date -Iseconds)" > "$LOG"
+
 # Le cycle lui-même. timeout = garde-fou si une session ne s'arrête pas.
 timeout 90m claude -p "/cycle-$CYCLE" \
   --permission-mode acceptEdits \
   --permission-prompts none \
-  --output-format json > "$LOG" 2>&1
+  "${OPTIONS_FLUX[@]}" >> "$LOG" 2>> "logs/${STAMP}-${CYCLE}.err"
 STATUT=$?
+printf '{"type":"cycle_end","cycle":"%s","exit_code":%d,"ended_at":"%s"}\n' "$CYCLE" "$STATUT" "$(date -Iseconds)" >> "$LOG"
 
 # Les agents peuvent finir sur une branche de travail : on revient sur la branche principale
 if [ "$(git branch --show-current)" != "$BRANCHE" ]; then
@@ -97,7 +128,7 @@ if [ -n "$(git status --porcelain -- state reports)" ]; then
 fi
 
 if [ "$STATUT" -eq 0 ]; then
-  RESUME="$(command -v jq >/dev/null && jq -r '.result // empty' "$LOG" 2>/dev/null | head -c 600)"
+  RESUME="$(command -v jq >/dev/null && grep '"type":"result"' "$LOG" | tail -1 | jq -r '.result // empty' 2>/dev/null | head -c 600)"
   notifier "${RESUME:-Cycle terminé.}"
 else
   notifier "Cycle arrêté (code $STATUT) : quota atteint ou erreur. Voir $LOG"
