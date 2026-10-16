@@ -18,7 +18,8 @@ selon CLAUDE.md. Chaque message est range sous le champ fautif (`content` ou
 """
 
 from collections.abc import Callable
-from dataclasses import dataclass, field as dataclass_field
+from dataclasses import dataclass
+from dataclasses import field as dataclass_field
 from typing import Any
 
 from django.core.exceptions import ValidationError

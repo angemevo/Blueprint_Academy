@@ -1,0 +1,22 @@
+# Configuration ruff (lint uniquement : `ruff format` est hors périmètre).
+target-version = "py312"
+line-length = 100
+
+# Les migrations sont générées par `makemigrations` et ne se retouchent pas à
+# la main : les passer au lint n'apporte rien et pousserait à les modifier.
+extend-exclude = ["**/migrations/*.py"]
+
+[lint]
+select = [
+    "E",   # pycodestyle (erreurs)
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+]
+ignore = [
+    # Longueur de ligne : c'est le rôle d'un formateur, et `ruff format` est
+    # hors périmètre. Raccourcir à la main les ~50 lignes concernées (dont le
+    # catalogue de nodes, verrouillé) serait un reformatage sans gain de sûreté.
+    "E501",
+]
