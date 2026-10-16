@@ -19,6 +19,13 @@ Quand une issue autorise un changement de dépendances, installe-les dans le con
 
 Une migration nouvelle est permise si l'issue la demande ; elle est créée avec `makemigrations`, jamais écrite à la main, et citée dans la PR.
 
+## Une commande à la fois
+
+Les autorisations de `.claude/settings.json` ne reconnaissent que des commandes simples. Une boucle (`for`, `while`), un enchaînement (`;`, `&&`, `||`) ou un tube (`|`) vers une autre commande est refusé, même si chaque morceau est autorisé seul.
+
+- Lance chaque commande séparément : `gh issue view 1`, puis `gh issue view 2`.
+- Pour filtrer une sortie, utilise les options de l'outil (`gh … --json labels --jq '…'`, `git log -5`), pas un tube.
+
 ## Branches et PR
 
 - Branche principale : `master`. Jamais de push, de merge ni de commit direct dessus.

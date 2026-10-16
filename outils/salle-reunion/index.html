@@ -426,8 +426,9 @@ function journal(type, texte, genre){
   if ($("defilement").checked) j.scrollTop = j.scrollHeight;
 }
 function alerter(texte){
+  if (Etat.rattrapage){ systeme(texte, "alerte"); return; } // cycle déjà vu : pas de popup
   $("bandeauTexte").textContent = texte; $("bandeau").classList.add("visible");
-  if (!Etat.rattrapage) Son.alerte();
+  Son.alerte();
 }
 
 // ---------------------------------------------------------------------------
@@ -582,7 +583,12 @@ async function traiter(evt){
     if (refus.length){
       const liste = refus.map(r => r.tool_name + (r.tool_input && r.tool_input.command ? " " + r.tool_input.command : "")).slice(0, 4).join(" ; ");
       journal("refus", `${refus.length} action(s) refusée(s) : ${liste}`, "erreur");
-      alerter(`${refus.length} action(s) refusée(s) pendant le cycle (${court(liste, 160)}). Si c’est « gh », le dossier n’est sans doute pas approuvé : lance « claude » une fois dans le dépôt et accepte.`);
+      // Une commande composée (boucle, ;, &&, |) n'est jamais couverte par les autorisations du projet.
+      const composee = refus.some(r => r.tool_input && /\bfor\b|\bwhile\b|;|&&|\|\||\|/.test(r.tool_input.command || ""));
+      const conseil = composee
+        ? "C’est une commande composée (boucle, « ; », « && » ou « | ») : les autorisations ne couvrent que les commandes simples. Les agents doivent lancer une commande à la fois (règle de .claude/equipe.md)."
+        : "Si la commande devrait être permise, ajoute-la dans .claude/settings.json.";
+      alerter(`${refus.length} action(s) refusée(s) pendant le cycle (${court(liste, 160)}). ${conseil}`);
     }
     for (const p of Etat.participants.values()) if (p.present) quitter(p.cle);
     journal("fin", "Fin de la session " + (sous || ""), sous === "success" ? "ok" : "erreur");
