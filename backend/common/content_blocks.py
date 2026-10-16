@@ -148,7 +148,7 @@ CONTENT_BLOCKS_SCHEMA: dict[str, Any] = {
                         "if": {"properties": {"type": {"const": block_type}}},
                         "then": block_schema,
                     }
-                    for block_type, block_schema in zip(BLOCK_TYPES, _BLOCK_SCHEMAS)
+                    for block_type, block_schema in zip(BLOCK_TYPES, _BLOCK_SCHEMAS, strict=True)
                 ],
             },
         },
