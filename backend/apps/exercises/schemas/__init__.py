@@ -590,9 +590,9 @@ def validate_exercise_payload(exercise_type: str, content: Any, solution: Any) -
 # faire. C'est l'erreur d'auteur la plus couteuse, parce qu'elle est invisible a
 # la relecture - le contenu semble correct, seul le comportement est faux.
 #
-# Implementation prevue, une fois `apps.validation` en place :
+# Implementation prevue, une fois le validateur de graphe enregistre :
 #
-#     from apps.validation.services import get_validator
+#     from apps.exercises.validators import get_validator
 #
 #     def _reject_already_solved(exercise_type, content, solution, errors):
 #         graph_key = {"F": "broken_graph", "H": "partial_graph"}[exercise_type]
@@ -604,5 +604,5 @@ def validate_exercise_payload(exercise_type: str, content: Any, solution: Any) -
 #                                 "l'exercice serait reussi sans modification")
 #
 # A appeler depuis `validate_exercise_payload`, apres l'etape 3b. L'import doit
-# rester LOCAL a la fonction : `apps.validation` est une app isolee, et
-# `apps.exercises.schemas` est importe au chargement des modeles.
+# rester LOCAL a la fonction : les validateurs dependent de `apps.validation`,
+# app isolee, et `apps.exercises.schemas` est importe au chargement des modeles.
