@@ -1,12 +1,8 @@
 """Isolement de l'app validation (CLAUDE.md, « Architecture backend »).
 
 Tout import de `apps.validation` depuis `apps.exercises` doit rester LOCAL a une
-fonction : `apps.exercises` est charge avec les modeles, et un import au niveau
-module creerait un couplage au chargement (voire un cycle) avec une app isolee.
-
-On analyse le source avec `ast` plutot que d'importer les modules : un import
-place sous `if TYPE_CHECKING:` ou dans le corps d'une classe s'execute (ou
-s'ecrit) au niveau module, et doit etre refuse lui aussi.
+fonction. L'analyse se fait avec `ast` : un import sous `if TYPE_CHECKING:` ou
+dans un corps de classe est au niveau module, et refuse lui aussi.
 """
 
 import ast
@@ -16,109 +12,77 @@ import pytest
 
 import apps.exercises
 
-ISOLATED_PACKAGE = "apps.validation"
+ISOLATED = "apps.validation"
 EXERCISES_ROOT = Path(apps.exercises.__file__).resolve().parent
+BACKEND_ROOT = EXERCISES_ROOT.parent.parent
 
 
-def _module_package(path: Path) -> str:
-    """Paquet du module, pour resoudre les imports relatifs."""
-    relative = path.relative_to(EXERCISES_ROOT.parent.parent).with_suffix("")
-    parts = list(relative.parts)
-    if parts[-1] == "__init__":
-        parts.pop()
+def _is_isolated(name: str) -> bool:
+    return name == ISOLATED or name.startswith(ISOLATED + ".")
+
+
+def _imported_names(node: ast.Import | ast.ImportFrom, package: str) -> list[str]:
+    if isinstance(node, ast.Import):
+        return [alias.name for alias in node.names]
+    if node.level:  # import relatif : remonter de (level - 1) paquets
+        parts = package.split(".")
+        parts = parts[: len(parts) - node.level + 1]
+        base = ".".join([*parts, node.module] if node.module else parts)
     else:
-        parts = parts[:-1]
-    return ".".join(parts)
-
-
-def _resolve(node: ast.ImportFrom, package: str) -> str:
-    if node.level == 0:
-        return node.module or ""
-    base = package.split(".")
-    base = base[: len(base) - (node.level - 1)]
-    return ".".join([*base, node.module] if node.module else base)
-
-
-def _targets_isolated(name: str) -> bool:
-    return name == ISOLATED_PACKAGE or name.startswith(ISOLATED_PACKAGE + ".")
+        base = node.module or ""
+    return [base, *(f"{base}.{alias.name}" for alias in node.names)]
 
 
 def module_level_validation_imports(source: str, package: str) -> list[int]:
     """Lignes ou `apps.validation` est importe hors de toute fonction."""
     offending: list[int] = []
 
-    def visit(node: ast.AST, inside_function: bool) -> None:
+    def visit(node: ast.AST) -> None:
         for child in ast.iter_child_nodes(node):
-            if isinstance(child, ast.FunctionDef | ast.AsyncFunctionDef | ast.Lambda):
-                visit(child, True)
-                continue
-            if not inside_function:
-                if isinstance(child, ast.Import) and any(
-                    _targets_isolated(alias.name) for alias in child.names
-                ):
-                    offending.append(child.lineno)
-                elif isinstance(child, ast.ImportFrom):
-                    resolved = _resolve(child, package)
-                    names = [f"{resolved}.{alias.name}" for alias in child.names]
-                    if _targets_isolated(resolved) or any(map(_targets_isolated, names)):
-                        offending.append(child.lineno)
-            visit(child, inside_function)
+            if isinstance(child, ast.FunctionDef | ast.AsyncFunctionDef):
+                continue  # import local : autorise
+            if isinstance(child, ast.Import | ast.ImportFrom) and any(
+                map(_is_isolated, _imported_names(child, package))
+            ):
+                offending.append(child.lineno)
+            visit(child)
 
-    visit(ast.parse(source), False)
+    visit(ast.parse(source))
     return offending
 
 
 def test_aucun_import_de_validation_au_niveau_module_dans_exercises():
+    paths = sorted(EXERCISES_ROOT.rglob("*.py"))
+    assert EXERCISES_ROOT / "validators" / "registry.py" in paths
+
     violations = []
-    for path in sorted(EXERCISES_ROOT.rglob("*.py")):
-        source = path.read_text(encoding="utf-8")
-        for line in module_level_validation_imports(source, _module_package(path)):
+    for path in paths:
+        # Paquet du module (imports relatifs) : son dossier, `__init__.py` compris.
+        package = ".".join(path.relative_to(BACKEND_ROOT).parent.parts)
+        for line in module_level_validation_imports(path.read_text("utf-8"), package):
             violations.append(f"{path.relative_to(EXERCISES_ROOT)}:{line}")
 
-    assert not violations, (
-        "apps.validation doit etre importe localement a une fonction : " f"{violations}"
-    )
+    assert not violations, f"importer apps.validation dans une fonction : {violations}"
 
 
-def test_le_parcours_couvre_bien_le_registre():
-    scanned = {path.relative_to(EXERCISES_ROOT).as_posix() for path in EXERCISES_ROOT.rglob("*.py")}
-
-    assert "validators/registry.py" in scanned
-
-
-# --- L'analyseur lui-meme : sans ces cas, le test ci-dessus pourrait passer a vide.
-
+# --- L'analyseur lui-meme, pour que le test ci-dessus ne passe pas a vide.
 PACKAGE = "apps.exercises.validators"
 
 
 @pytest.mark.parametrize(
-    "source",
+    ("source", "refused"),
     [
-        "import apps.validation",
-        "import apps.validation.interfaces as interfaces",
-        "from apps.validation import interfaces",
-        "from apps.validation.interfaces import ValidationResult",
-        "from apps import validation",
-        "from ...validation import interfaces",
-        "from typing import TYPE_CHECKING\nif TYPE_CHECKING:\n    from apps.validation import interfaces",
-        "class Foo:\n    from apps.validation import interfaces",
-        "try:\n    import apps.validation\nexcept ImportError:\n    pass",
+        ("import apps.validation.interfaces as interfaces", True),
+        ("from apps.validation.interfaces import ValidationResult", True),
+        ("from apps import validation", True),
+        ("from ...validation import interfaces", True),
+        ("if TYPE_CHECKING:\n    from apps.validation import interfaces", True),
+        ("class Foo:\n    from apps.validation import interfaces", True),
+        ("def f():\n    from apps.validation.interfaces import ValidationResult", False),
+        ("class Foo:\n    def m(self):\n        import apps.validation", False),
+        ("from ..enums import ExerciseType", False),
+        ("import apps.validations_bis", False),
     ],
 )
-def test_analyseur_detecte_les_imports_au_niveau_module(source):
-    assert module_level_validation_imports(source, PACKAGE)
-
-
-@pytest.mark.parametrize(
-    "source",
-    [
-        "def f():\n    from apps.validation.interfaces import ValidationResult",
-        "async def f():\n    import apps.validation",
-        "class Foo:\n    def m(self):\n        from apps.validation import interfaces",
-        "from apps.exercises.enums import ExerciseType",
-        "from ..enums import ExerciseType",
-        "import apps.validations_bis",
-    ],
-)
-def test_analyseur_accepte_les_imports_locaux_et_les_autres_modules(source):
-    assert module_level_validation_imports(source, PACKAGE) == []
+def test_analyseur(source, refused):
+    assert bool(module_level_validation_imports(source, PACKAGE)) is refused

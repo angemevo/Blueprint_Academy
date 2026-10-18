@@ -1,11 +1,7 @@
-"""Registre `exercise_type -> Validator`.
+"""Registre `exercise_type -> Validator`, indexe par les valeurs de `ExerciseType`.
 
-Les cles sont les valeurs de `ExerciseType` (`apps/exercises/enums.py`), seule
-source de la taxonomie : le registre ne declare aucune liste de types, il
-refuse simplement ce que l'enum ne connait pas.
-
-Les contrats (`Validator`, `ValidationResult`) vivent dans `apps.validation`,
-app isolee : ils ne sont importes que LOCALEMENT, a l'interieur des fonctions
+Aucune liste de types ici : l'enum est la seule source de la taxonomie. Les
+contrats vivent dans `apps.validation`, app isolee, importee LOCALEMENT
 (CLAUDE.md, « Architecture backend »).
 """
 
@@ -36,16 +32,13 @@ class ValidatorRegistry:
     """Associe a chaque type d'exercice une instance unique de validateur."""
 
     def __init__(self) -> None:
-        # Annote en `Any` : nommer `Validator` ici obligerait a importer
-        # `apps.validation` au niveau module.
+        # `Any` : nommer `Validator` imposerait d'importer apps.validation ici.
         self._validators: dict[ExerciseType, Any] = {}
 
     def register(self, *exercise_types: str) -> Callable[[type], type]:
-        """Decorateur : `@register(ExerciseType.MCQ)` sur une classe de validateur.
+        """Decorateur de classe : `@register(ExerciseType.MCQ)`, un ou plusieurs types.
 
-        Un meme validateur peut servir plusieurs types. L'enregistrement est
-        atomique : si l'un des types est inconnu ou deja pris, aucun n'est
-        enregistre.
+        Atomique : si un type est inconnu ou deja pris, aucun n'est enregistre.
         """
         if not exercise_types:
             raise ValueError("register() attend au moins un type d'exercice.")
@@ -82,9 +75,6 @@ class ValidatorRegistry:
             raise UnsupportedExerciseType(
                 f"Aucun validateur enregistre pour le type {key.value!r} ({key.label})."
             ) from exc
-
-    def registered_types(self) -> frozenset[ExerciseType]:
-        return frozenset(self._validators)
 
 
 #: Registre de la plateforme, rempli par les validateurs concrets a leur import.
