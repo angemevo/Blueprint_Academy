@@ -26,6 +26,16 @@ Hors plan, à ne pas prendre : #3 à #11 (sans `ready`, ou avec des dépendances
 2. #3 « Validateurs A, B, C, D ». Dépend de : #2. Préalable : règle de score validée et #2 mergée.
 
 ## Dernière tâche traitée
+- Cycle : tech du 2026-10-18
+- Issue / PR : #2 → PR #14 **en brouillon** (https://github.com/angemevo/Blueprint_Academy/pull/14), ouverte par le `developpeur`
+- Branche : `feat/2-interfaces-validation` (poussée, 399 lignes modifiées, aucune migration)
+- État : pytest 78/78, ruff OK, makemigrations --check OK, lint frontend OK. `npm run typecheck` **échoue** sur `.next/dev/types/validator.ts`, généré par `next dev` dans le conteneur (TS6196 / TS6133). La PR ne touche aucun fichier frontend, donc l'échec existe aussi sur `master`. Il est hors périmètre de #2 : la PR est en brouillon pour cette seule raison.
+- Verdict qa : **OK** (publié en commentaire sur la PR, sous la forme `VERDICT : APPROUVÉE`). La qa a relancé les vérifications sur le commit `e8cc439` : le typecheck échoue de la même façon sur `master`, il est donc hors périmètre. Cause : `frontend/tsconfig.json` inclut `.next/dev/types/**/*.ts` et active `noUnusedLocals`. Le brouillon `logs/revue-14.md` n'a pas été écrit, faute des outils Write et Edit côté qa.
+- Remarques non bloquantes : (1) le docstring de `HintService` présente l'indice comme la « seule voie » par laquelle la solution atteint le client, ce qui est plus strict que CLAUDE.md et reste à confirmer par Ange ; (2) `frozen=True` ne fige pas le contenu des listes `feedback` et `hints` ; (3) les validateurs de #3 et #4 devront avoir un constructeur sans paramètre et ne s'importer que sous un seul nom de module.
+- Prochaine action : Ange passe #14 en « ready » (`gh pr ready 14`) et la merge. Ensuite : ouvrir une issue d'outillage pour le typecheck, et poser `ready` sur #3 une fois sa règle de score validée. Le plan S42 est épuisé : le prochain cycle de pilotage établit le plan S43.
+- Hors cycle : la PR #13 « Sécurité : mise à jour de Next.js (npm audit fix) » (`fix/securite-dependances`, ouverte par angemevo le 2026-10-18) n'a pas encore de revue qa.
+
+## Tâche précédente
 - Cycle : tech du 2026-10-16 (terminé)
 - Issue / PR : #1 → PR #12 (https://github.com/angemevo/Blueprint_Academy/pull/12), ouverte par le `developpeur`
 - Branche : `feat/1-outillage-qualite` (poussée)

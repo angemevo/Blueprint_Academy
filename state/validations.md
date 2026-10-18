@@ -20,10 +20,12 @@ Mise à jour : pilotage du 2026-10-16 (3e cycle).
 - [ ] Type I (normalisation de l'export UE5 en graphe) : aucune issue n'existe, alors que le type I fait partie du P0 et que #4 le renvoie à une « issue séparée ». Recommandation : rédiger cette issue en `a-cadrer` après le cadrage de #4, dont elle dépend.
 
 ### PR prêtes à merger
-- [ ] **PR #12 prête à merger** (issue #1, outillage qualité ruff et ESLint). Revue qualité du 2026-10-16 : ruff, lint, pytest (48 passed), makemigrations et typecheck passent dans les conteneurs ; aucune dépendance d'exécution changée dans le lockfile. Après le merge : lancer `npm audit` dans le conteneur frontend (commande refusée aux agents) pour situer les 8 vulnérabilités signalées par `npm install`, et ouvrir une issue pour épingler ruff sur une version mineure.
-- À venir cette semaine : #2. Recommandation : merger #12 en premier, pour que le lint s'applique à #2.
+- [ ] **PR #14 prête à merger** (issue #2, interfaces de validation et registre). Revue qualité du 2026-10-18, verdict OK : pytest (78 passed), ruff, makemigrations --check et lint passent. L'échec du typecheck est identique sur `master`, donc hors périmètre. La PR est encore en brouillon : `gh pr ready 14`, puis merger. Points de design à confirmer : la signature de `HintService.next_hint(exercise, submission, result, hints_used) -> str | None`, `feedback` / `hints` typés `list[str]`, et le docstring de `HintService` qui fait de l'indice la « seule voie » par laquelle la solution atteint le client (plus strict que CLAUDE.md).
+- [ ] **Typecheck frontend cassé sur `master`** (constaté le 2026-10-18). `frontend/tsconfig.json` inclut `.next/dev/types/**/*.ts`, que `next dev` régénère. Avec `noUnusedLocals` / `noUnusedParameters`, ce fichier donne TS6196 et TS6133. Tant que ce n'est pas corrigé, aucune PR ne passe la vérification obligatoire. Recommandation : ouvrir une issue d'outillage `ready`, par exemple pour sortir `.next/dev/types` de l'`include`.
+- [ ] **PR #13 « Sécurité : mise à jour de Next.js (npm audit fix) »** : ouverte le 2026-10-18, sans revue qa. Elle sera relue au prochain cycle tech, si tu le souhaites.
 
 ## Traité
+- [x] PR #12 mergée (issue #1, outillage qualité), constaté le 2026-10-18. Restent à faire : lancer `npm audit` (la PR #13 semble s'en charger) et ouvrir une issue pour épingler ruff sur une version mineure.
 - [x] Poser `ready` sur deux issues : constaté le 2026-10-16 (pilotage, 3e cycle). `ready` est posé sur #1 et #2, ce qui correspond au repli recommandé. Les deux sont au plan S42.
 - [x] Retirer `ready` de #10 et #11 : constaté le 2026-10-16 (pilotage, 3e cycle). Seules #1 et #2 portent `ready`.
 - [x] Rendre GitHub accessible aux cycles headless : constaté par le pilotage du 2026-10-16 (2e cycle). `gh issue list`, `gh issue view` et `gh pr list` fonctionnent. Reste le point sur la création de PR, ci-dessus.
