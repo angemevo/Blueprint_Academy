@@ -56,7 +56,11 @@
       "Bash(gh pr create *)",
       "Bash(gh pr review *)",
       "Bash(gh pr comment *)",
-      "Bash(gh pr checkout *)"
+      "Bash(gh pr checkout *)",
+      "Bash(python3 scripts/captures.py *)",
+      "Bash(gh pr list)",
+      "Bash(gh issue list)",
+      "Bash(gh pr checks *)"
     ],
     "deny": [
       "Read(./.env)",
@@ -83,10 +87,15 @@
       "Bash(gh repo *)",
       "Bash(gh secret *)",
       "Bash(gh api *)",
-      "Bash(gh issue edit * --add-label ready*)",
       "Bash(rm -rf *)",
       "Bash(curl *)",
-      "Bash(wget *)"
+      "Bash(wget *)",
+      "Edit(./scripts/**)",
+      "Edit(./outils/**)",
+      "Bash(gh release *)",
+      "Bash(gh pr edit * --add-label a-valider-ange*)",
+      "Bash(gh pr edit * --remove-label a-valider-ange*)",
+      "Bash(gh issue edit * --remove-label point-hebdo*)"
     ]
   }
 }

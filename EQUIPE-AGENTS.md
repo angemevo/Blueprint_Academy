@@ -1,5 +1,7 @@
 # Équipe d'agents — mise en route sur Blueprint Academy
 
+> **L'équipe tourne désormais en autonomie sur GitHub** : voir [`docs/equipe-cloud.md`](docs/equipe-cloud.md). Ce qui suit décrit l'installation d'origine, sur ton ordinateur, toujours utilisable pour lancer un cycle à la main (`scripts/cycle.sh tech`).
+
 Ce dépôt est le projet pilote de l'équipe d'agents (phase 1 : pôle Tech). Les agents développent et relisent ; Ange tranche et merge. Tout tourne avec Claude Code et l'abonnement Claude Pro.
 
 ## Ce qui a été ajouté

@@ -1,6 +1,6 @@
-# File de validation d'Ange
+# Questions pour Ange
 
-Coche la case, ou écris ta réponse sous le point. L'orchestrateur lit ce fichier au début de chaque cycle de pilotage.
+Tenu par l'orchestrateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont recopiées dans le point hebdo du dimanche, où Ange répond en commentaire. Les questions techniques ci-dessous datent d'avant l'autonomie : l'orchestrateur les tranche lui-même au prochain pilotage.
 
 Mise à jour : pilotage du 2026-10-16 (3e cycle).
 

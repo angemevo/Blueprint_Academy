@@ -1,5 +1,8 @@
 Closes #
 
+## Ce que ça change pour l'utilisateur
+
+
 ## Ce qui a été fait
 -
 
