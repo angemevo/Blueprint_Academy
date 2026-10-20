@@ -1,32 +1,24 @@
 # Questions pour Ange
 
-Tenu par l'orchestrateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont recopiées dans le point hebdo du dimanche, où Ange répond en commentaire. Les questions techniques ci-dessous datent d'avant l'autonomie : l'orchestrateur les tranche lui-même au prochain pilotage.
+Tenu par l'orchestrateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont recopiées dans le point hebdo du dimanche, où Ange répond en commentaire.
 
-Mise à jour : pilotage du 2026-10-16 (3e cycle).
+Mise à jour : pilotage du 2026-10-20 (semaine 2026-S43). Aucune réponse d'Ange trouvée : aucun point hebdo n'avait encore été publié.
 
 ## En attente
 
-### Bloquant pour la semaine prochaine (S43) : à traiter en premier
-- [ ] **#5 Authentification JWT : activer `token_blacklist` et `BLACKLIST_AFTER_ROTATION` ?** Sans ta réponse, #5 ne peut pas être `ready`. Or c'est la tête du chemin critique (#5 → #6 → #7 → #8 → #9), et chaque semaine de retard repousse la soumission d'autant. Recommandation : oui, pour qu'un refresh volé ou déconnecté ne soit plus réutilisable. Écris la décision en commentaire de l'issue, puis pose `ready`.
-- [ ] **Création de PR en mode headless à vérifier.** Le cycle tech va ouvrir sa première PR (#1). Des commandes composées ou avec `$(...)` ont déjà été refusées. Ce cycle-ci, `git -C <dossier> show` a aussi été refusé (approbation requise). Recommandation : vérifier que `gh pr create --title ... --body-file <fichier>` et les commandes `git` utiles au cycle tech (`git switch -c`, `git add <fichier>`, `git commit`, `git push`) sont autorisées dans `.claude/settings.json`, avant le prochain cycle tech.
+- [ ] **Q1 — Règle de score des exercices de rappel et de transition (#3).** Contexte : A et B tout ou rien ; C (ordre) et D (paires) au prorata des éléments justes ; « réussi » seulement à 100. Options : A : accepter ; B : tout ou rien aussi pour C et D. Recommandation : A, parce qu'un score partiel motive sans valider à tort. Sans réponse le 2026-10-25 : A appliquée, `ready` posé sur #3 dès que #2 est mergée.
+- [ ] **Q2 — Courbe de niveaux (#10).** Contexte : les niveaux se règlent par une liste de seuils d'XP dans les réglages, modifiable sans toucher au code. Options : A : accepter le principe ; B : niveaux à pas fixe. Recommandation : A, valeurs de départ proposées par l'équipe avant la livraison de #9 (vers S47). Sans réponse le 2026-10-25 : A appliquée.
+- [ ] **Q3 — Cadrage du moteur de validation de graphe (#4).** Contexte : la proposition de l'équipe est en commentaire de l'issue #4 (score = part des exigences, interdits = jamais « réussi », node verrouillé supprimé = refus). Les cas de test doivent être vérifiés dans Unreal. Options : A : valider ce cadrage, puis fournir des exports de vrais Blueprints ; B : le modifier. Recommandation : A. Pas d'application par défaut (vérification Unreal) : #4 reste `a-cadrer` sans réponse. Date de relance : 2026-10-25.
+- [ ] **Q4 — Calcul de la maîtrise (#11).** Contexte : formule, bonus du type I, seuil du contrôle de contenu, à fixer avant #11, qui ne sert qu'après #9 (vers S47). Options : A : l'équipe rédige une proposition après #4 ; B : tu la rédiges. Recommandation : A. Sans réponse le 2026-10-25 : A appliquée (proposition rédigée, validation d'Ange toujours requise).
+- [ ] **Q5 — Issue pour le type I (export Unreal en graphe).** Contexte : le type I fait partie du MVP mais aucune issue n'existe. Options : A : l'équipe rédige l'issue en `a-cadrer` après le cadrage de #4 ; B : on la reporte après le MVP. Recommandation : A. Sans réponse le 2026-10-25 : A appliquée.
 
-### Décisions sur des issues
-- [ ] #3 Validateurs A, B, C, D : valider la règle de score proposée (A et B tout ou rien, C et D au prorata, correct seulement à 100). Recommandation : accepter, puis poser `ready` dès que #2 est mergée, pour la mettre au plan S43.
-- [ ] #10 XP et niveaux : valider le principe d'un réglage `XP_LEVEL_THRESHOLDS`. Recommandation : oui, avec des valeurs initiales à fixer avant que #9 soit mergée (vers S47).
-
-### Issues `a-cadrer` (jamais confiées aux agents avant ton cadrage)
-- [ ] #4 Moteur de validation de graphe (E, F, G, H) : répondre aux 5 questions et écrire les cas de test à partir de vrais Blueprints vérifiés dans Unreal. Recommandation : commencer maintenant. C'est le cœur pédagogique et le délai le plus long de la phase 2b. Des places restent libres dans le plan de S44 à S46.
-- [ ] #11 Calcul de la maîtrise des skills : fixer la formule, le bonus du type I, le seuil du contrôle d'intégrité et les réglages. Recommandation : après #4. Elle ne sert qu'une fois #9 livrée.
-- [ ] Type I (normalisation de l'export UE5 en graphe) : aucune issue n'existe, alors que le type I fait partie du P0 et que #4 le renvoie à une « issue séparée ». Recommandation : rédiger cette issue en `a-cadrer` après le cadrage de #4, dont elle dépend.
-
-### PR prêtes à merger
-- [ ] **PR #14 prête à merger** (issue #2, interfaces de validation et registre). Revue qualité du 2026-10-18, verdict OK : pytest (78 passed), ruff, makemigrations --check et lint passent. L'échec du typecheck est identique sur `master`, donc hors périmètre. La PR est encore en brouillon : `gh pr ready 14`, puis merger. Points de design à confirmer : la signature de `HintService.next_hint(exercise, submission, result, hints_used) -> str | None`, `feedback` / `hints` typés `list[str]`, et le docstring de `HintService` qui fait de l'indice la « seule voie » par laquelle la solution atteint le client (plus strict que CLAUDE.md).
-- [ ] **Typecheck frontend cassé sur `master`** (constaté le 2026-10-18). `frontend/tsconfig.json` inclut `.next/dev/types/**/*.ts`, que `next dev` régénère. Avec `noUnusedLocals` / `noUnusedParameters`, ce fichier donne TS6196 et TS6133. Tant que ce n'est pas corrigé, aucune PR ne passe la vérification obligatoire. Recommandation : ouvrir une issue d'outillage `ready`, par exemple pour sortir `.next/dev/types` de l'`include`.
-- [ ] **PR #13 « Sécurité : mise à jour de Next.js (npm audit fix) »** : ouverte le 2026-10-18, sans revue qa. Elle sera relue au prochain cycle tech, si tu le souhaites.
+## À confirmer au passage (non bloquant)
+- Le texte de la PR #14 présente l'indice (tuteur V2) comme la « seule voie » par laquelle la solution atteint l'étudiant, plus strict que `CLAUDE.md`. Sans objection d'Ange le 2026-10-25, l'équipe adoucit la formulation dans une prochaine PR.
 
 ## Traité
-- [x] PR #12 mergée (issue #1, outillage qualité), constaté le 2026-10-18. Restent à faire : lancer `npm audit` (la PR #13 semble s'en charger) et ouvrir une issue pour épingler ruff sur une version mineure.
-- [x] Poser `ready` sur deux issues : constaté le 2026-10-16 (pilotage, 3e cycle). `ready` est posé sur #1 et #2, ce qui correspond au repli recommandé. Les deux sont au plan S42.
-- [x] Retirer `ready` de #10 et #11 : constaté le 2026-10-16 (pilotage, 3e cycle). Seules #1 et #2 portent `ready`.
-- [x] Rendre GitHub accessible aux cycles headless : constaté par le pilotage du 2026-10-16 (2e cycle). `gh issue list`, `gh issue view` et `gh pr list` fonctionnent. Reste le point sur la création de PR, ci-dessus.
-- [x] Confirmer les numéros GitHub des issues : constaté le 2026-10-16. #1 à #11 correspondent aux fichiers `issues/01` à `issues/11` (titres identiques, une seule exécution de `scripts/creer-issues.sh`).
+- [x] Blacklist JWT (#5) : tranchée par l'équipe le 2026-10-20 (réglage de sécurité), activée, `ready` posé. Voir `state/decisions.md`.
+- [x] Création de PR en mode headless : la PR #14 a été créée, donc `gh pr create` et `git push` fonctionnent. En revanche `gh pr ready` est refusé (approbation requise) : voir le plan.
+- [x] Typecheck frontend cassé : issue #15 créée, `ready`.
+- [x] Épingler ruff : issue #16 créée, `ready`.
+- [x] PR #12 mergée (issue #1).
+- [x] Questions techniques d'avant l'autonomie : traitées ci-dessus.

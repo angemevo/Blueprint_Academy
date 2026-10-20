@@ -1,0 +1,91 @@
+{
+  "semaine": "2026-S43",
+  "meteo": "orange",
+  "en_bref": [
+    "Les outils de contrôle qualité du code sont en place, et le socle des vérifications d'exercices est écrit et relu, mais pas encore mis en service.",
+    "Un contrôle automatique du site est en panne et gêne toutes les livraisons ; une correction est planifiée en premier.",
+    "On attend ta réponse à 5 questions avant le 25 octobre ; sans réponse, nos recommandations s'appliquent."
+  ],
+  "livre": [
+    {
+      "titre": "Contrôle automatique de la qualité du code",
+      "pour_l_utilisateur": "Rien de visible pour les étudiants. Chaque modification est désormais vérifiée automatiquement pour rester propre et homogène, ce qui limite les erreurs et accélère les relectures.",
+      "pr": 12,
+      "issue": 1
+    }
+  ],
+  "en_cours": [
+    {"titre": "Socle de correction des exercices (cadre commun des vérificateurs)", "etat": "en revue"},
+    {"titre": "Mise à jour de sécurité du site (correction d'une faille critique)", "etat": "en revue"},
+    {"titre": "Correction du contrôle automatique du site", "etat": "en développement"},
+    {"titre": "Inscription et connexion des étudiants", "etat": "en développement"}
+  ],
+  "semaine_prochaine": [
+    "Réparer le contrôle automatique du site, qui bloque les livraisons.",
+    "Commencer l'inscription et la connexion des étudiants, avec une déconnexion qui invalide vraiment la session.",
+    "Figer la version de l'outil de contrôle du code, pour des résultats reproductibles.",
+    "Si tu valides la règle de score (Q1), démarrer la correction des exercices de type question, QCM, ordre et association."
+  ],
+  "decisions_prises": [
+    {
+      "decision": "La déconnexion d'un étudiant rend sa session inutilisable, même si quelqu'un l'avait copiée.",
+      "pourquoi": "C'est un choix de sécurité réversible, sans effet sur la pédagogie : l'équipe le tranche seule."
+    }
+  ],
+  "risques": [
+    {
+      "risque": "Une livraison terminée (socle de correction des exercices) reste en brouillon : la commande qui la déclare prête est refusée à l'équipe automatique.",
+      "ce_qu_on_fait": "Le cycle suivant réessaie après la réparation du contrôle du site. Si cela échoue encore, un clic de ta part sur « Prêt pour la revue » sur la livraison n°14 suffira."
+    },
+    {
+      "risque": "Le chemin vers la première soumission d'exercice est long : 5 étapes à enchaîner, environ une par semaine.",
+      "ce_qu_on_fait": "Les étapes sont ordonnées au plus tôt ; la prochaine démarre cette semaine."
+    },
+    {
+      "risque": "Le cœur de la correction des exercices de construction demande tes cas de test vérifiés dans Unreal.",
+      "ce_qu_on_fait": "Nous avons rédigé une proposition de cadrage (voir la question Q3) pour que tu n'aies qu'à valider ou corriger."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Valides-tu la règle de score des exercices de rappel et d'ordre ?",
+      "contexte": "Question et QCM : tout ou rien. Remettre dans l'ordre et associer : points proportionnels aux éléments justes. Seul 100 % compte comme « réussi ».",
+      "options": ["A : accepter cette règle", "B : tout ou rien aussi pour l'ordre et l'association"],
+      "recommandation": "A, parce qu'un score partiel motive sans valider à tort.",
+      "sans_reponse_le": "2026-10-25"
+    },
+    {
+      "id": "Q2",
+      "question": "Valides-tu une courbe de niveaux réglable (liste de seuils d'expérience modifiable sans toucher au code) ?",
+      "contexte": "Les valeurs de départ seront proposées par l'équipe avant la livraison de l'attribution d'expérience, vers fin novembre.",
+      "options": ["A : oui, courbe réglable", "B : niveaux à pas fixe"],
+      "recommandation": "A, parce que tu pourras ajuster la progression après les premiers tests d'étudiants.",
+      "sans_reponse_le": "2026-10-25"
+    },
+    {
+      "id": "Q3",
+      "question": "Valides-tu le cadrage du moteur de correction des exercices de construction (réparer, compléter, construire, défi) ?",
+      "contexte": "Notre proposition est dans les commentaires de l'issue n°4. Les cas de test devront ensuite être vérifiés dans le vrai Unreal avec des exemples fournis par toi.",
+      "options": ["A : valider, puis fournir des exemples vérifiés dans Unreal", "B : le modifier"],
+      "recommandation": "A, parce que c'est le cœur pédagogique et le délai le plus long de la phase en cours.",
+      "sans_reponse_le": "2026-10-25"
+    },
+    {
+      "id": "Q4",
+      "question": "Qui rédige la formule de maîtrise des compétences ?",
+      "contexte": "La formule dit comment la maîtrise monte ou baisse selon les réussites, les échecs et les indices. Elle ne sert qu'après la soumission d'exercices (vers fin novembre).",
+      "options": ["A : l'équipe rédige une proposition après le cadrage du moteur, tu la valides", "B : tu la rédiges"],
+      "recommandation": "A, parce que tu gardes la décision finale sans la charge de rédaction.",
+      "sans_reponse_le": "2026-10-25"
+    },
+    {
+      "id": "Q5",
+      "question": "Prépare-t-on une issue pour les exercices « à faire dans Unreal puis coller l'export » ?",
+      "contexte": "Ces exercices font partie du MVP, mais aucune tâche ne les couvre encore. Ils dépendent du cadrage du moteur de correction.",
+      "options": ["A : l'équipe rédige la tâche à cadrer après Q3", "B : on la reporte après le MVP"],
+      "recommandation": "A, parce qu'ils sont dans le périmètre du MVP et que leur délai est long.",
+      "sans_reponse_le": "2026-10-25"
+    }
+  ]
+}

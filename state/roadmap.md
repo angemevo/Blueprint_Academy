@@ -1,29 +1,27 @@
 # Roadmap
 
-Tenue par l'orchestrateur. Ange valide les changements de priorité. Source : section « Roadmap » de `CLAUDE.md`.
+Tenue par l'orchestrateur. Source : section « Roadmap » de `CLAUDE.md`.
 
-Mise à jour : 2026-10-16 (pilotage S42, 3e cycle). État lu sur GitHub : #1 à #11 ouvertes, `ready` sur #1 et #2 seulement, aucune PR.
+Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #12 mergée, PR #13 et #14 ouvertes.
 
 ## Phase en cours : 2b, services, validateurs et API (MVP / P0)
 
-### Fait (phase 2b)
-- Rien : aucune issue fermée, aucune PR.
+### Fait
+- #1 Outillage qualité (PR #12)
 
-### En cours (plan S42)
-- #1 Outillage qualité (ruff, ESLint)
-- #2 Interfaces de validation et registre
+### En cours
+- #2 Interfaces de validation (PR #14, approuvée, en brouillon)
+- #15 Typecheck frontend, #5 Auth JWT, #16 Épingler ruff (`ready`, plan S44)
 
 ### Ensuite, dans l'ordre des dépendances
-- Chaîne API (chemin critique, 5 issues jusqu'à la soumission) : #5 Auth → #6 Profil et permissions → #7 API catalogue → #8 API exercices → #9 Soumission
-- Chaîne validation : #2 Interfaces → #3 Validateurs A, B, C, D → #9 Soumission
-- Puis : #9 Soumission → #10 XP et niveaux
-- Une issue n'entre au plan que si ses dépendances sont mergées : la chaîne API avance donc d'au plus une issue par semaine. Ordre recommandé : S43 #5 + #3, S44 #6, S45 #7, S46 #8, S47 #9, S48 #10. Il reste une place libre en S44, S45 et S46 : #4 pourra la prendre une fois cadrée.
-- Condition pour démarrer S43 : la blacklist JWT (#5) et la règle de score (#3) sont tranchées, et `ready` est posé sur ces deux issues.
+- Chaîne API : #5 → #6 → #7 → #8 → #9 (une issue par semaine environ)
+- Chaîne validation : #2 → #3 → #9
+- Puis #9 → #10 XP et niveaux
 
-### À cadrer par Ange avant délégation (`a-cadrer`)
-- #4 Moteur de validation de graphe (E, F, G, H)
-- #11 Calcul de la maîtrise des skills
-- Pas encore d'issue : normalisation de l'export UE5 pour le type I (« issue séparée » citée dans #4, prévue au P0)
+### À cadrer par Ange (`a-cadrer`)
+- #4 Moteur de validation de graphe (proposition de l'équipe en commentaire, Q3)
+- #11 Maîtrise des skills (Q4)
+- Type I : issue à rédiger après #4 (Q5)
 
 ## Fait
 - Phase 1 : architecture et configuration
