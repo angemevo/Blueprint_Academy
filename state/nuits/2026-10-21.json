@@ -92,6 +92,10 @@
     {
       "quand": "2026-10-21T23:18:49+00:00",
       "texte": "PR #18 mergée : Authentification JWT : inscription, connexion, refresh, déconnexion."
+    },
+    {
+      "quand": "2026-10-21T23:20:50+00:00",
+      "texte": "PR #19 mergée : Épingler ruff sur une version mineure."
     }
   ],
   "incidents": [
