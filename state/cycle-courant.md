@@ -21,4 +21,6 @@ Candidates si les dépendances sont mergées en cours de semaine :
 Hors plan : #4 et #11 (`a-cadrer`), #7 à #10 (dépendances non mergées).
 
 ## Dernière tâche traitée
+- #15, branche fix/15-typecheck-next-dev-types, PR #17 ouverte (non brouillon), qa APPROUVÉE (2026-10-21, verdict publié par le pilote du cycle car qa n'a pas pu écrire). Réserve : cas « .next/dev/types présent » non observé directement. Aucune réponse d'Ange à lire (pas de point hebdo ouvert).
+- Prochaine action : le portier merge #17 ; ensuite #5, puis #16. Restent à traiter : PR #14 (brouillon, à passer en « prête ») et PR #13 (sans revue qa).
 - Cycle : tech du 2026-10-18, #2 → PR #14 en brouillon, qa APPROUVÉE.
