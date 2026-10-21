@@ -1,0 +1,50 @@
+{
+  "nuit": "2026-10-21",
+  "equipes": [
+    {
+      "debut": "2026-10-21T23:03:18+00:00",
+      "run": "39690773662"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "revue",
+      "cible": "pr 13",
+      "titre": "Relecture de la mise à jour de sécurité de Next.js",
+      "minutes": 25,
+      "pourquoi": "Ouverte par Ange, aucune relecture qa pour l'instant.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "dev",
+      "cible": "issue 5",
+      "titre": "Inscription, connexion et déconnexion des utilisateurs (JWT)",
+      "minutes": 90,
+      "pourquoi": "Tête du chemin critique du plan de la semaine, sans dépendance.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 16",
+      "titre": "Figer la version de l'outil de qualité du code (ruff)",
+      "minutes": 30,
+      "pourquoi": "Petite tâche d'outillage du plan, sans dépendance.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [
+    {
+      "quand": "2026-10-21T23:04:37+00:00",
+      "texte": "PR #14 mergée : Interfaces de validation et registre des validateurs."
+    }
+  ],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "88530b42a7be6bc92cf78a0a40555bb7288643bd2562daeef7a549c6dc992f61"
+}
