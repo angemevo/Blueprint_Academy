@@ -1,6 +1,25 @@
-"""Point d'extension : registre des validateurs d'exercices.
+"""Registre des validateurs de soumission, indexe par type d'exercice.
 
-Le registre `exercise_type -> Validator` et les validateurs concrets (types
-A-G) sont implementes en Phase 2, en s'appuyant sur les interfaces de l'app
-`apps.validation`. Rien ici en Phase 1.
+Un validateur concret se declare avec `@register(ExerciseType.MCQ)` ; le
+service de soumission appelle `get_validator(exercise.type).validate(...)`.
+Les validateurs concrets arrivent dans les issues suivantes.
 """
+
+from .registry import (
+    UnsupportedExerciseType,
+    ValidatorAlreadyRegistered,
+    ValidatorRegistry,
+    default_registry,
+)
+
+register = default_registry.register
+get_validator = default_registry.get
+
+__all__ = [
+    "UnsupportedExerciseType",
+    "ValidatorAlreadyRegistered",
+    "ValidatorRegistry",
+    "default_registry",
+    "get_validator",
+    "register",
+]

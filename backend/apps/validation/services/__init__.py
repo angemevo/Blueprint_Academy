@@ -1,6 +1,7 @@
 """Couche service de l'app validation (isolee du reste du domaine).
 
-Points d'extension prevus par CLAUDE.md, implementes en Phase 2 :
+Contrats declares dans `apps.validation.interfaces` (registre dans
+`apps.exercises.validators`) :
 
 - `Validator.validate(exercise, submission) -> ValidationResult`
   avec `ValidationResult(is_correct, score, feedback, hints)` ;
