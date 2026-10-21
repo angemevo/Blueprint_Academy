@@ -44,6 +44,7 @@ CACHE_VOIX = ICI / ".cache-voix"
 PROFILS_VOIX = {
     "pilote": [("fr_FR-siwis-medium", None, 1.0), ("fr_FR-upmc-medium", 0, 1.0)],
     "orchestrateur": [("fr_FR-tom-medium", None, 1.05), ("fr_FR-upmc-medium", 1, 1.1)],
+    "organisateur": [("fr_FR-tom-medium", None, 1.05), ("fr_FR-upmc-medium", 1, 1.1)],
     "developpeur": [("fr_FR-upmc-medium", 1, 0.95)],
     "qa": [("fr_FR-upmc-medium", 0, 1.08), ("fr_FR-siwis-medium", None, 1.0)],
     "defaut": [("fr_FR-upmc-medium", 0, 1.0), ("fr_FR-siwis-medium", None, 1.0)],
@@ -250,6 +251,7 @@ def tester_voix() -> None:
         "developpeur": "Les tests passent. J'ouvre la pull request.",
         "qa": "J'ai relu la PR. Verdict : approuvée.",
         "orchestrateur": "Le plan de la semaine est prêt. Deux issues au programme.",
+        "organisateur": "Bonjour Ange. Le plan de la semaine est prêt, et la date de fin estimée est à jour.",
     }
     for agent, phrase in phrases.items():
         debut = time.monotonic()

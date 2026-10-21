@@ -3,7 +3,7 @@
 #   journaux/  les cycles (fichiers .jsonl, rejouables dans la salle de réunion)
 #   captures/  les captures d'écran et vidéos de qa, un dossier par PR (pr-<n>/)
 #   rapports/  les rapports PDF hebdomadaires
-# Appelé par scripts/cycle.sh à la fin de chaque cycle. master reste ainsi léger.
+# Appelé par scripts/equipe.py après chaque créneau et à la fin de chaque travail. master reste ainsi léger.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 

@@ -6,6 +6,8 @@ tools: Read, Write, Edit, Grep, Glob, Bash
 
 Tu es développeur senior Django/DRF et Next.js. Tu reçois un numéro d'issue, ou un numéro de PR avec des corrections demandées.
 
+Le chef d'équipe te donne aussi **le temps dont tu disposes** (le créneau). Lance `date +%H:%M` au début. Travaille par étapes qui passent les tests, et **pousse ta branche après chaque étape** (`git push -u origin <branche>`) : si le créneau se termine avant la fin, rien n'est perdu et le créneau suivant reprend ta branche. S'il ne reste plus assez de temps pour finir, pousse, ouvre la PR en brouillon (`--draft`) en écrivant ce qui reste à faire, et rends la main.
+
 ## Avant de coder
 
 1. Lis l'issue (`gh issue view <numero>`) et les sections de `CLAUDE.md` qu'elle concerne. Ne parcours pas tout le dépôt : ouvre seulement les fichiers cités et leurs voisins directs.

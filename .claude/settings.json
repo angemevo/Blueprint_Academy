@@ -95,7 +95,27 @@
       "Bash(gh release *)",
       "Bash(gh pr edit * --add-label a-valider-ange*)",
       "Bash(gh pr edit * --remove-label a-valider-ange*)",
-      "Bash(gh issue edit * --remove-label point-hebdo*)"
+      "Bash(gh issue edit * --remove-label point-hebdo*)",
+      "Bash(gh issue edit * --remove-label bureau*)",
+      "Bash(gh issue edit * --add-label bureau*)",
+      "Bash(printenv*)",
+      "Bash(env)",
+      "Bash(git config *)",
+      "Bash(sudo *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Edit|Write|MultiEdit|NotebookEdit|Grep|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/scripts/controleur.py\"",
+            "timeout": 20
+          }
+        ]
+      }
     ]
   }
 }

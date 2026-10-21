@@ -1,0 +1,261 @@
+{
+  "objectif": "MVP",
+  "maj": "2026-10-21",
+  "par": "première estimation, à affiner par l'organisateur au pilotage",
+  "echelle": {
+    "1": "petite : un créneau",
+    "2": "moyenne : un ou deux créneaux",
+    "3": "grosse : deux ou trois créneaux",
+    "5": "très grosse : à découper en plusieurs issues"
+  },
+  "vitesse_provisoire": 2.0,
+  "debut_equipe": "2026-10-21",
+  "lots": [
+    {
+      "titre": "Architecture et configuration du projet",
+      "phase": "1 · Architecture",
+      "points": 5,
+      "issue": null,
+      "etat": "fait",
+      "fait_le": "2026-10-15"
+    },
+    {
+      "titre": "Modèle de données, types d'exercices et contrôle du contenu",
+      "phase": "2 · Backend",
+      "points": 8,
+      "issue": null,
+      "etat": "fait",
+      "fait_le": "2026-10-15"
+    },
+    {
+      "titre": "Outils de contrôle qualité du code",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 1,
+      "etat": "fait",
+      "fait_le": "2026-10-16"
+    },
+    {
+      "titre": "Réparation du contrôle des types du site",
+      "phase": "2 · Backend",
+      "points": 1,
+      "issue": 15,
+      "etat": "fait",
+      "fait_le": "2026-10-21"
+    },
+    {
+      "titre": "Socle de correction des exercices",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 2,
+      "etat": "en_cours"
+    },
+    {
+      "titre": "Version figée de l'outil de contrôle du code",
+      "phase": "2 · Backend",
+      "points": 1,
+      "issue": 16,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Inscription, connexion et déconnexion",
+      "phase": "2 · Backend",
+      "points": 3,
+      "issue": 5,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Profil et droits (étudiant, formateur, admin)",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 6,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Catalogue : parcours, modules et leçons",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 7,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Exercices consultables sans révéler la solution",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 8,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Correction des exercices de rappel (question, QCM, ordre, association)",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 3,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Correction des exercices de construction de graphe",
+      "phase": "2 · Backend",
+      "points": 5,
+      "issue": 4,
+      "etat": "a_faire",
+      "attend_ange": true
+    },
+    {
+      "titre": "Soumission d'un exercice et historique des tentatives",
+      "phase": "2 · Backend",
+      "points": 3,
+      "issue": 9,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Points d'expérience et niveaux",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 10,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Maîtrise des compétences",
+      "phase": "2 · Backend",
+      "points": 3,
+      "issue": 11,
+      "etat": "a_faire",
+      "attend_ange": true
+    },
+    {
+      "titre": "Lecture d'un export Unreal (exercice réalisé dans Unreal)",
+      "phase": "2 · Backend",
+      "points": 5,
+      "issue": null,
+      "etat": "a_faire",
+      "attend_ange": true
+    },
+    {
+      "titre": "Progression et prérequis entre compétences",
+      "phase": "2 · Backend",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Données du tableau de bord étudiant",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Socle du site : thème sombre, navigation, session",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Écrans d'inscription et de connexion",
+      "phase": "3 · Écrans du site",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Vitrine publique : accueil et catalogue",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Pages parcours, module et leçon",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Espace d'exercice et exercices question / QCM",
+      "phase": "3 · Écrans du site",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Exercices par glisser-déposer (ordre, association)",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Canvas Blueprint fidèle à l'éditeur Unreal",
+      "phase": "3 · Écrans du site",
+      "points": 5,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Exercices de construction sur le canvas",
+      "phase": "3 · Écrans du site",
+      "points": 5,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Exercice « coller un export Unreal »",
+      "phase": "3 · Écrans du site",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Tableau de bord étudiant",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Création du contenu depuis l'admin",
+      "phase": "4 · Admin",
+      "points": 3,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Contrôle d'intégrité à la publication d'une leçon",
+      "phase": "4 · Admin",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Parcours de départ « Blueprint Fundamentals »",
+      "phase": "5 · Contenu de départ",
+      "points": 5,
+      "issue": null,
+      "etat": "a_faire",
+      "attend_ange": true
+    },
+    {
+      "titre": "Tests de bout en bout du parcours étudiant",
+      "phase": "6 · Tests",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Mise en ligne avec Docker",
+      "phase": "7 · Mise en production",
+      "points": 2,
+      "issue": null,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Documentation",
+      "phase": "8 · Documentation",
+      "points": 1,
+      "issue": null,
+      "etat": "a_faire"
+    }
+  ]
+}

@@ -1,9 +1,13 @@
 name: CI
 
+# Lancée à chaque push d'Ange, sur n'importe quelle branche : la coche apparaît aussi sur ses PR.
+# Pas de déclencheur « pull_request » : depuis juin 2026, GitHub exige qu'un humain approuve la CI
+# des PR ouvertes par son robot, et ces demandes expiraient la nuit. Pour les PR de l'équipe,
+# c'est le portier (scripts/portier.py) qui relance ces mêmes vérifications avant de merger et
+# affiche sa coche « Portier » sur la PR.
 on:
-  pull_request:
   push:
-    branches: [master]
+  workflow_dispatch:
 
 jobs:
   backend:

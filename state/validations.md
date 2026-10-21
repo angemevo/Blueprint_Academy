@@ -1,6 +1,6 @@
 # Questions pour Ange
 
-Tenu par l'orchestrateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont recopiées dans le point hebdo du dimanche, où Ange répond en commentaire.
+Tenu par l'organisateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont posées à Ange dans son bureau (rapport du dimanche et rapport du matin), où il répond en commentaire.
 
 Mise à jour : pilotage du 2026-10-20 (semaine 2026-S43). Aucune réponse d'Ange trouvée : aucun point hebdo n'avait encore été publié.
 

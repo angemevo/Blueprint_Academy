@@ -1,6 +1,6 @@
 # Équipe d'agents — mise en route sur Blueprint Academy
 
-> **L'équipe tourne désormais en autonomie sur GitHub** : voir [`docs/equipe-cloud.md`](docs/equipe-cloud.md). Ce qui suit décrit l'installation d'origine, sur ton ordinateur, toujours utilisable pour lancer un cycle à la main (`scripts/cycle.sh tech`).
+> **L'équipe tourne désormais en autonomie sur GitHub, organisée autour d'un organisateur (ton seul interlocuteur), d'un chef d'équipe et d'un contrôleur** : voir [`docs/equipe-cloud.md`](docs/equipe-cloud.md). Ce qui suit décrit l'installation d'origine, sur ton ordinateur, devenue historique. On peut toujours lancer un créneau à la main avec `scripts/cycle.sh tech`, ou une nuit avec `scripts/cycle.sh nuit`.
 
 Ce dépôt est le projet pilote de l'équipe d'agents (phase 1 : pôle Tech). Les agents développent et relisent ; Ange tranche et merge. Tout tourne avec Claude Code et l'abonnement Claude Pro.
 
@@ -9,8 +9,8 @@ Ce dépôt est le projet pilote de l'équipe d'agents (phase 1 : pôle Tech). Le
 | Élément | Rôle |
 | --- | --- |
 | `.claude/equipe.md` | Règles de l'équipe, importées par `CLAUDE.md` |
-| `.claude/agents/` | `orchestrateur`, `developpeur`, `qa` |
-| `.claude/commands/` | `/cycle-pilotage` et `/cycle-tech` |
+| `.claude/agents/` | `organisateur`, `developpeur`, `qa` |
+| `.claude/commands/` | `/planifier-nuit`, `/creneau`, `/courrier`, `/cycle-pilotage` |
 | `.claude/settings.json` | Ce que les agents peuvent faire sans demander, et ce qui leur est interdit |
 | `state/` | Mémoire de l'équipe : roadmap, cycle courant, décisions, validations, quota |
 | `issues/` | Premier lot de 11 issues de la phase 2b |

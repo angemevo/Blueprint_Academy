@@ -5,8 +5,14 @@
 
 NTFY_TOPIC=remplace-par-un-sujet-secret
 
-# Lundi 20 h 05 : pilotage (plan de la semaine, file de validation, rapport)
-5 20 * * 1  CHEMIN/scripts/cycle.sh pilotage >> CHEMIN/logs/cron.log 2>&1
+# Historique : l'équipe tourne désormais sur GitHub (docs/equipe-cloud.md). N'installe ce planning
+# que si tu veux la faire tourner sur ton ordinateur à la place (jamais les deux à la fois).
 
-# Mardi et jeudi 21 h 05 : un cycle tech par soir (une issue développée puis relue ; Docker doit pouvoir démarrer)
-5 21 * * 2,4  CHEMIN/scripts/cycle.sh tech >> CHEMIN/logs/cron.log 2>&1
+# Dimanche 19 h : pilotage de l'organisateur (bilan, estimation, plan, rapport PDF)
+0 19 * * 0  CHEMIN/scripts/cycle.sh pilotage >> CHEMIN/logs/cron.log 2>&1
+
+# Chaque soir 21 h 05 : une équipe de nuit (créneaux enchaînés ; Docker doit pouvoir démarrer)
+5 21 * * *  CHEMIN/scripts/cycle.sh nuit >> CHEMIN/logs/cron.log 2>&1
+
+# Chaque matin 7 h 40 : rapport de la nuit dans le bureau de l'organisateur
+40 7 * * *  CHEMIN/scripts/cycle.sh matin >> CHEMIN/logs/cron.log 2>&1

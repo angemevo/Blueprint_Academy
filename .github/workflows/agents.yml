@@ -1,46 +1,64 @@
 # L'équipe d'agents travaille ici, sur les serveurs de GitHub, sans l'ordinateur d'Ange.
 # Elle utilise l'abonnement Claude Pro d'Ange (secret CLAUDE_CODE_OAUTH_TOKEN).
-# Guide de mise en route : docs/equipe-cloud.md
+# Ce qui se passe et quand : docs/equipe-cloud.md. Le travail lui-même : scripts/equipe.py.
 name: Équipe d'agents
 
 on:
   schedule:
     # Heures UTC = heures d'Abidjan.
-    - cron: "0 19 * * 0"   # dimanche 19 h : pilotage, bilan de la semaine et rapport PDF
-    - cron: "20 23 * * *"  # chaque soir 23 h 20 : un cycle tech
-    - cron: "20 4 * * *"   # chaque nuit 4 h 20 : un cycle tech (autre fenêtre de 5 h du quota)
+    # Équipes de nuit : chacune travaille jusqu'à 5 h 20, jamais après 7 h 30. Si une équipe tourne
+    # encore, la suivante attend son tour ; si GitHub oublie un horaire, les autres le rattrapent.
+    - cron: "5 20 * * *"   # 20 h 05 : première équipe (jusqu'à 1 h 30 environ)
+    - cron: "35 23 * * *"  # 23 h 35 : deuxième équipe (prend le relais, jusqu'à 7 h 30 au plus tard)
+    - cron: "5 3 * * *"    # 3 h 05 : relève de secours
+    - cron: "40 7 * * *"   # 7 h 40 : rapport de la nuit dans le bureau (sans Claude)
+    - cron: "0 19 * * 0"   # dimanche 19 h : pilotage, bilan, estimation et rapport PDF
+  issue_comment:
+    types: [created]       # Ange écrit dans son bureau : l'organisateur lui répond
   workflow_dispatch:
     inputs:
-      cycle:
-        description: "Cycle à lancer"
+      mode:
+        description: "Travail à lancer"
         type: choice
-        options: [tech, pilotage, rapport]
-        default: tech
-
-# Un seul cycle à la fois : le suivant attend que le précédent ait fini.
-concurrency:
-  group: equipe-agents
-  cancel-in-progress: false
+        options: [nuit, courrier, matin, pilotage, tech, rapport]
+        default: nuit
 
 permissions:
   contents: write
   pull-requests: write
   issues: write
+  statuses: write
 
 jobs:
-  cycle:
+  equipe:
+    # Un commentaire ne déclenche l'équipe que s'il vient d'Ange, dans son bureau.
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.event.comment.user.login == 'angemevo' &&
+       contains(github.event.issue.labels.*.name, 'bureau'))
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 350
+    # Le courrier a sa propre file : il répond même pendant que l'équipe de nuit travaille.
+    concurrency:
+      group: ${{ (github.event_name == 'issue_comment' || inputs.mode == 'courrier') && 'organisateur' || 'equipe-agents' }}
+      cancel-in-progress: false
     env:
-      CYCLE: ${{ inputs.cycle || (github.event.schedule == '0 19 * * 0' && 'pilotage' || 'tech') }}
+      MODE: >-
+        ${{ inputs.mode
+            || (github.event_name == 'issue_comment' && 'courrier')
+            || (github.event.schedule == '0 19 * * 0' && 'pilotage')
+            || (github.event.schedule == '40 7 * * *' && 'matin')
+            || 'nuit' }}
       GH_TOKEN: ${{ github.token }}
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
       NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
       # Part maximale du quota hebdomadaire Claude que l'équipe peut utiliser (le reste est pour Ange).
       QUOTA_MAX_SEMAINE: ${{ vars.QUOTA_MAX_SEMAINE || '0.70' }}
+      DUREE_EQUIPE_MIN: ${{ vars.DUREE_EQUIPE_MIN || '320' }}
       NEXT_TELEMETRY_DISABLED: "1"
     steps:
       - name: Vérifier la clé de l'abonnement Claude
+        if: env.MODE != 'rapport'
         run: |
           if [ -z "$CLAUDE_CODE_OAUTH_TOKEN" ]; then
             echo "::error::Secret CLAUDE_CODE_OAUTH_TOKEN absent. Voir docs/equipe-cloud.md, étape 1."
@@ -55,24 +73,33 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Installer Claude Code et les outils des rapports
+      - name: Installer les outils
         run: |
-          npm install -g @anthropic-ai/claude-code
-          pip install --quiet reportlab==4.2.5 playwright==1.48.0
-          python -m playwright install --with-deps chromium
-          sudo apt-get install -y -q fonts-dejavu-core >/dev/null
           git config --global user.name "Équipe d'agents"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          cp .env.example .env
+          # Le réseau de GitHub a parfois des ratés : trois essais avant d'abandonner
+          essayer() { for i in 1 2 3; do "$@" && return 0; sleep 20; done; return 1; }
+          if [ "$MODE" != "rapport" ]; then
+            essayer npm install -g --no-fund --no-audit @anthropic-ai/claude-code
+          fi
+          if [ "$MODE" = "pilotage" ] || [ "$MODE" = "rapport" ]; then
+            essayer pip install --quiet reportlab==4.2.5
+            sudo apt-get install -y -q fonts-dejavu-core >/dev/null
+          fi
+          if [ "$MODE" = "nuit" ] || [ "$MODE" = "tech" ]; then
+            essayer pip install --quiet playwright==1.48.0
+            essayer python -m playwright install --with-deps chromium
+            cp .env.example .env
+          fi
 
-      - name: Cycle ${{ env.CYCLE }}
-        run: scripts/cycle.sh "$CYCLE"
+      - name: Travail de l'équipe (${{ env.MODE }})
+        run: scripts/cycle.sh "$MODE"
 
-      - name: Garder les journaux du cycle
+      - name: Garder les journaux
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: journaux-${{ env.CYCLE }}-${{ github.run_id }}
+          name: journaux-${{ env.MODE }}-${{ github.run_id }}
           path: logs/
           retention-days: 30
           if-no-files-found: ignore

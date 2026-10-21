@@ -2,12 +2,17 @@
 """Portier de l'équipe d'agents : merge les PR approuvées par qa, sans intervention d'Ange.
 
 Ce script, et non un agent, décide du merge. Une PR n'est mergée que si :
-  1. elle vient d'une branche feat/* ou fix/* du dépôt (pas d'un fork), et n'est pas en brouillon ;
+  1. elle vient d'une branche feat/* ou fix/* du dépôt (pas d'un fork) ; une PR en brouillon
+     approuvée par qa est d'abord passée en « prête » ;
   2. son dernier verdict, publié par l'équipe ou par Ange APRÈS le dernier commit, est
      « VERDICT : APPROUVÉE » ;
   3. elle ne touche aucun fichier protégé (sinon : étiquette a-valider-ange, Ange décide) ;
   4. elle reste petite (TAILLE_MAX lignes hors lockfiles et migrations) ;
-  5. toutes les vérifications passent à nouveau, relancées ici sur le code de la PR.
+  5. toutes les vérifications passent à nouveau, relancées ici sur le code de la PR fusionné
+     avec master (ce qui sera réellement livré).
+Le résultat s'affiche sur la PR comme une coche « Portier » verte ou rouge : c'est le contrôle
+qui fait foi pour les PR de l'équipe (GitHub ne lance pas la CI sur les PR de son robot sans
+l'approbation d'un humain).
 Si une vérification échoue ou si la PR est en conflit, le portier publie « VERDICT : CORRECTIONS »
 avec le détail : le developpeur reprend la PR au cycle suivant.
 
@@ -22,6 +27,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 RACINE = Path(__file__).resolve().parent.parent
@@ -92,6 +98,14 @@ def verifications(fichiers: list[str]) -> list[tuple[str, list[str]]]:
     return etapes
 
 
+def statut(sha: str, etat: str, description: str) -> None:
+    """Coche « Portier » sur le dernier commit de la PR (success, failure ou pending)."""
+    ok, depot = lancer(["gh", "repo", "view", "--json", "nameWithOwner", "--jq", ".nameWithOwner"], timeout=60)
+    if ok and sha:
+        lancer(["gh", "api", "-X", "POST", f"repos/{depot.strip()}/statuses/{sha}", "-f", f"state={etat}",
+                "-f", "context=Portier (tests de l'équipe)", "-f", f"description={description[:140]}"], timeout=60)
+
+
 def commenter(numero: int, corps: str) -> None:
     fichier = RACINE / "logs" / f"portier-{numero}.md"
     fichier.parent.mkdir(exist_ok=True)
@@ -110,14 +124,30 @@ def noter_livraison(pr: dict) -> None:
         f.write(f"| {dt.date.today().isoformat()} | #{pr['number']} | {titre} | {issues} |\n")
 
 
+def lire_pr(numero: int) -> dict:
+    champs = ("number,title,url,headRefName,headRefOid,isDraft,isCrossRepository,mergeable,files,"
+              "commits,reviews,comments,labels,closingIssuesReferences")
+    for _ in range(4):  # GitHub calcule « mergeable » en différé
+        pr = gh_json("pr", "view", str(numero), "--json", champs)
+        if pr["mergeable"] != "UNKNOWN":
+            break
+        time.sleep(5)
+    return pr
+
+
 def traiter(numero: int, essai: bool) -> str | None:
-    pr = gh_json("pr", "view", str(numero), "--json",
-                 "number,title,url,headRefName,isDraft,isCrossRepository,mergeable,files,"
-                 "commits,reviews,comments,labels,closingIssuesReferences")
-    if pr["isDraft"] or pr["isCrossRepository"] or not re.match(r"^(feat|fix)/", pr["headRefName"]):
+    pr = lire_pr(numero)
+    if pr["isCrossRepository"] or not re.match(r"^(feat|fix)/", pr["headRefName"]):
         return None
     if dernier_verdict(pr) != "APPROUV":
         return None
+    if pr["isDraft"]:
+        # qa a approuvé : le brouillon n'a plus de raison d'être (les agents n'ont pas ce droit)
+        if essai:
+            return f"PR #{numero} serait passée en « prête » puis vérifiée."
+        ok, sortie = lancer(["gh", "pr", "ready", str(numero)], timeout=60)
+        if not ok:
+            return f"PR #{numero} : impossible de la passer en « prête » ({sortie[:200]})."
     fichiers = [f["path"] for f in pr["files"]]
     etiquettes = {e["name"] for e in pr["labels"]}
 
@@ -148,9 +178,19 @@ def traiter(numero: int, essai: bool) -> str | None:
     if essai:
         return f"PR #{numero} serait vérifiée puis mergée."
     lancer(["git", "restore", "--", "frontend/next-env.d.ts"])  # réécrit par le serveur de dev
-    ok, sortie = lancer(["git", "fetch", "-q", "origin", f"pull/{numero}/head"])
+    statut(pr["headRefOid"], "pending", "Le portier relance toutes les vérifications")
+    # pull/<n>/merge : la PR déjà fusionnée avec master par GitHub, c'est-à-dire ce qui sera livré
+    ok, sortie = lancer(["git", "fetch", "-q", "origin", f"pull/{numero}/merge"])
+    if not ok:
+        ok, sortie = lancer(["git", "fetch", "-q", "origin", f"pull/{numero}/head"])
+    # L'état de l'équipe (state/, reports/) peut être en cours d'écriture : on le met de côté le temps des tests
+    ok_etat, etat = lancer(["git", "status", "--porcelain", "--", "state", "reports"])
+    mis_de_cote = ok_etat and bool(etat.strip()) and lancer(
+        ["git", "stash", "push", "-u", "-q", "-m", f"portier PR {numero}", "--", "state", "reports"])[0]
     ok = ok and lancer(["git", "switch", "-q", "--detach", "FETCH_HEAD"])[0]
     if not ok:
+        if mis_de_cote:
+            lancer(["git", "stash", "pop", "-q"])
         return f"PR #{numero} : impossible de récupérer le code ({sortie[:200]})."
     echecs = []
     try:
@@ -161,6 +201,8 @@ def traiter(numero: int, essai: bool) -> str | None:
                 echecs.append((nom, "\n".join(sortie.splitlines()[-40:])))
     finally:
         lancer(["git", "switch", "-q", "master"])
+        if mis_de_cote:
+            lancer(["git", "stash", "pop", "-q"])
         # Les dépendances installées pour la PR reviennent à celles de master
         for nom, cmd in verifications(fichiers):
             if nom.startswith("Dépendances"):
@@ -170,9 +212,11 @@ def traiter(numero: int, essai: bool) -> str | None:
         details = "\n\n".join(f"{i}. **{nom}** échoue :\n\n```\n{sortie}\n```"
                               for i, (nom, sortie) in enumerate(echecs, 1))
         commenter(numero, "VERDICT : CORRECTIONS (portier)\n\nqa avait approuvé, mais les vérifications "
-                          f"relancées avant le merge échouent :\n\n{details}")
+                          f"relancées avant le merge (sur la PR fusionnée avec master) échouent :\n\n{details}")
+        statut(pr["headRefOid"], "failure", "Échec : " + ", ".join(nom for nom, _ in echecs))
         return f"PR #{numero} : vérifications en échec, renvoyée au developpeur."
 
+    statut(pr["headRefOid"], "success", "Tests, lint, types et migrations : tout passe")
     ok, sortie = lancer(["gh", "pr", "merge", str(numero), "--merge", "--delete-branch"], timeout=180)
     if not ok:
         return f"PR #{numero} : merge refusé par GitHub ({sortie[:200]})."

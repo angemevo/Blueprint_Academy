@@ -2,13 +2,13 @@
 """Rapport hebdomadaire de l'équipe d'agents, en PDF, pour Ange.
 
 Sources :
-  - reports/hebdo/<semaine>.json, écrit par l'orchestrateur au cycle de pilotage (le récit) ;
+  - reports/hebdo/<semaine>.json, écrit par l'organisateur au pilotage du dimanche (le récit) ;
   - GitHub (PR mergées, issues), state/quota.json, state/livraisons.md (les chiffres) ;
   - les captures et vidéos de qa (branche livrables, ou logs/captures/ en local).
 
 Usage :
   python3 scripts/rapport.py --semaine 2026-S43             # écrit logs/rapports/2026-S43.pdf
-  python3 scripts/rapport.py --semaine 2026-S43 --publier   # + release GitHub + issue « Point hebdo »
+  python3 scripts/rapport.py --semaine 2026-S43 --publier   # + release GitHub + bureau de l'organisateur
   python3 scripts/rapport.py --semaine 2026-S43 --donnees essai.json   # sans GitHub (test)
 """
 from __future__ import annotations
@@ -22,6 +22,8 @@ import tempfile
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+import avancement
+import bureau
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER
 from reportlab.lib.pagesizes import A4
@@ -30,8 +32,7 @@ from reportlab.lib.units import mm
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.platypus import (Image, KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table,
-                                TableStyle)
+from reportlab.platypus import Image, KeepTogether, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
 RACINE = Path(__file__).resolve().parent.parent
 MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre",
@@ -115,7 +116,7 @@ def donnees_github(semaine: str) -> dict:
     merges = [m for m in merges if debut <= dt.date.fromisoformat(m["mergedAt"][:10]) <= fin]
     ouvertes = gh("pr", "list", "--state", "open", "--limit", "30", "--json", "number,title,url,labels,isDraft")
     issues = gh("issue", "list", "--state", "all", "--limit", "200", "--json", "number,state,labels,closedAt")
-    issues = [i for i in issues if not any(e["name"] == "point-hebdo" for e in i["labels"])]
+    issues = [i for i in issues if not any(e["name"] in ("point-hebdo", "bureau") for e in i["labels"])]
     fermees_semaine = [i for i in issues if i["state"] == "CLOSED" and i.get("closedAt")
                        and debut <= dt.date.fromisoformat(i["closedAt"][:10]) <= fin]
     return {
@@ -125,6 +126,7 @@ def donnees_github(semaine: str) -> dict:
         "issues_fermees": sum(i["state"] == "CLOSED" for i in issues),
         "issues_fermees_semaine": len(fermees_semaine),
         "depot": gh("repo", "view", "--json", "nameWithOwner")["nameWithOwner"],
+        "avancement": avancement.calculer(),
     }
 
 
@@ -136,20 +138,18 @@ def quota() -> dict:
 
 
 def cycles_semaine(semaine: str) -> tuple[int, int]:
+    """Créneaux de travail de la semaine (state/nuits/), et combien ont été coupés par le quota."""
     debut, fin = bornes(semaine)
     faits = coupes = 0
-    try:
-        for ligne in (RACINE / "state" / "quota.md").read_text(encoding="utf-8").splitlines():
-            morceaux = [m.strip() for m in ligne.strip("|").split("|")]
-            try:
-                jour = dt.date.fromisoformat(morceaux[0])
-            except (ValueError, IndexError):
-                continue
-            if debut <= jour <= fin:
-                faits += 1
-                coupes += "coupé" in ligne
-    except OSError:
-        pass
+    for f in sorted((RACINE / "state" / "nuits").glob("*.json")):
+        try:
+            nuit = json.loads(f.read_text(encoding="utf-8"))
+            jour = dt.date.fromisoformat(nuit["nuit"])
+        except (OSError, ValueError, KeyError):
+            continue
+        if debut <= jour <= fin:
+            faits += sum(c.get("statut") != "a_faire" for c in nuit.get("creneaux", []))
+            coupes += sum(c.get("statut") == "quota" for c in nuit.get("creneaux", []))
     return faits, coupes
 
 
@@ -185,7 +185,7 @@ def captures_de(pr: int | None, dossiers: list[Path]) -> tuple[list[tuple[Path, 
 # Mise en page
 # ---------------------------------------------------------------------------
 def bandeau(semaine: str, recit: dict) -> Table:
-    t = Table([[P("Blueprint Academy · point hebdo", "titre")],
+    t = Table([[P("Blueprint Academy · rapport hebdo", "titre")],
                [P(f"Semaine {semaine.split('-S')[1]} · {periode(semaine)} · rapport de l'équipe d'agents",
                   "soustitre")]],
               colWidths=[180 * mm])
@@ -253,16 +253,23 @@ def construire(semaine: str, recit: dict, auto: dict, sortie: Path) -> None:
     h = [bandeau(semaine, recit), Spacer(1, 10), meteo(recit), Spacer(1, 8)]
     if recit.get("en_bref"):
         h += [P("En bref", "h2"), *puces(recit["en_bref"])]
+    av = auto.get("avancement") or {}
+    fin = dt.date.fromisoformat(av["fin_estimee"]) if av.get("fin_estimee") else None
     h += [Spacer(1, 8), tuiles([
         (str(len(auto["merges"])), "livraisons cette semaine"),
-        (str(len(auto["pr_ouvertes"])), "en cours de revue"),
-        (str(auto["issues_ouvertes"]), "tâches restantes"),
+        (f"{av['pourcentage']} %" if av else "–", "du MVP terminé"),
+        (fin.strftime("%d/%m") if fin else "–", "fin estimée du MVP"),
         (f"{round(sept * 100)} %" if sept is not None else "–", "du quota Claude de la semaine"),
     ]), Spacer(1, 8)]
-    if total:
+    if av.get("points_total"):
+        h += [P(f"Avancement du MVP : {av['lots_faits']} lots terminés sur {av['lots_total']} "
+                f"({av['points_faits']} points sur {av['points_total']})", "doux"),
+              Spacer(1, 3), barre(av["points_faits"], av["points_total"]), Spacer(1, 4),
+              *[P(ligne, "p") for ligne in avancement.texte(av).replace("**", "").splitlines()[1:]]]
+    elif total:
         h += [P(f"Avancement des tâches prévues : {auto['issues_fermees']} terminées sur {total}", "doux"),
               Spacer(1, 3), barre(auto["issues_fermees"], total)]
-    h.append(P(f"{cycles} cycle(s) de travail cette semaine" + (f", dont {coupes} interrompu(s) par la limite d'usage."
+    h.append(P(f"{cycles} créneau(x) de travail cette semaine" + (f", dont {coupes} interrompu(s) par la limite d'usage."
                                                                if coupes else "."), "doux"))
 
     # Livré
@@ -317,7 +324,7 @@ def construire(semaine: str, recit: dict, auto: dict, sortie: Path) -> None:
     if not questions:
         h.append(P("Aucune décision n'est attendue de toi cette semaine.", "p"))
     else:
-        h.append(P("Réponds en commentaire de l'issue « Point hebdo » de cette semaine, par exemple "
+        h.append(P("Réponds-moi dans le bureau de l'organisateur (le lien est dans l'e-mail de GitHub), par exemple "
                    "« Q1 : A ». Sans réponse à la date indiquée, l'équipe applique sa recommandation.", "doux"))
         for qn in questions:
             bloc = [P(f"{qn.get('id', '?')} · {qn.get('question', '')}", "h3")]
@@ -351,12 +358,12 @@ def construire(semaine: str, recit: dict, auto: dict, sortie: Path) -> None:
     sortie.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(str(sortie), pagesize=A4, leftMargin=15 * mm, rightMargin=15 * mm,
                             topMargin=14 * mm, bottomMargin=16 * mm,
-                            title=f"Blueprint Academy — point hebdo {semaine}", author="Équipe d'agents")
+                            title=f"Blueprint Academy — rapport de la semaine {semaine}", author="Équipe d'agents")
     doc.build(h, onFirstPage=pied, onLaterPages=pied)
 
 
 # ---------------------------------------------------------------------------
-# Publication : release GitHub (le PDF) et issue « Point hebdo » (les questions)
+# Publication : release GitHub (le PDF) et bureau de l'organisateur (les questions)
 # ---------------------------------------------------------------------------
 def publier(semaine: str, recit: dict, auto: dict, pdf: Path) -> None:
     depot, tag = auto["depot"], f"rapport-{semaine}"
@@ -365,22 +372,22 @@ def publier(semaine: str, recit: dict, auto: dict, pdf: Path) -> None:
     if existe:
         subprocess.run(["gh", "release", "upload", tag, str(pdf), "--clobber"], cwd=RACINE, check=True)
     else:
-        subprocess.run(["gh", "release", "create", tag, str(pdf), "--title", f"Point hebdo {semaine}",
+        subprocess.run(["gh", "release", "create", tag, str(pdf), "--title", f"Rapport de la semaine {semaine}",
                         "--notes", notes, "--latest=false"], cwd=RACINE, check=True)
     lien = f"https://github.com/{depot}/releases/download/{tag}/{pdf.name}"
 
-    subprocess.run(["gh", "label", "create", "point-hebdo", "--color", "3D5AFE", "--force",
-                    "--description", "Point hebdomadaire de l'équipe d'agents pour Ange"], cwd=RACINE,
-                   capture_output=True)
     couleur, libelle = METEO.get(recit.get("meteo", "vert"), METEO["vert"])
-    corps = [f"**Météo : {libelle}**", "", f"📄 **[Lire le rapport PDF]({lien})**", ""]
+    corps = [f"## 📄 Rapport de la semaine {semaine.split('-S')[1]} · météo : {libelle}", "",
+             f"**[Lire le rapport PDF]({lien})** (captures d'écran et vidéos des nouveautés)", ""]
     if recit.get("en_bref"):
-        corps += ["## En bref", *[f"- {e}" for e in recit["en_bref"]], ""]
+        corps += ["**En bref**", *[f"- {e}" for e in recit["en_bref"]], ""]
+    if auto.get("avancement"):
+        corps += ["**Avancement**", avancement.texte(auto["avancement"]), ""]
     questions = recit.get("questions") or []
     corps.append("## Tes décisions")
     if questions:
-        corps.append("Réponds en commentaire, par exemple `Q1 : A`. Sans réponse à la date indiquée, "
-                     "l'équipe applique sa recommandation.\n")
+        corps.append("Réponds-moi ici en commentaire, par exemple `Q1 : A`, ou en une phrase. Sans réponse à la date "
+                     "indiquée, l'équipe applique sa recommandation.\n")
         for qn in questions:
             corps.append(f"**{qn.get('id')} · {qn.get('question')}**")
             if qn.get("contexte"):
@@ -396,26 +403,12 @@ def publier(semaine: str, recit: dict, auto: dict, pdf: Path) -> None:
     a_valider = [p for p in auto["pr_ouvertes"] if any(e["name"] == "a-valider-ange" for e in p.get("labels", []))]
     if a_valider:
         corps += ["", "## PR qui attendent ton feu vert"] + [f"- #{p['number']} {p['title']}" for p in a_valider]
-    fichier = RACINE / "logs" / f"point-hebdo-{semaine}.md"
-    fichier.write_text("\n".join(corps), encoding="utf-8")
 
-    precedentes = gh("issue", "list", "--label", "point-hebdo", "--state", "open", "--json", "number,title")
-    titre = f"Point hebdo {semaine} : rapport et décisions"
-    meme = [i for i in precedentes if i["title"] == titre]
-    if meme:
-        subprocess.run(["gh", "issue", "edit", str(meme[0]["number"]), "--body-file", str(fichier)],
-                       cwd=RACINE, check=True)
-        numero = meme[0]["number"]
-    else:
-        url = subprocess.run(["gh", "issue", "create", "--title", titre, "--label", "point-hebdo",
-                              "--assignee", depot.split("/")[0], "--body-file", str(fichier)],
-                             cwd=RACINE, check=True, capture_output=True, text=True).stdout.strip()
-        numero = int(url.rstrip("/").split("/")[-1])
-    for i in precedentes:
-        if i["number"] != numero:
-            subprocess.run(["gh", "issue", "close", str(i["number"]), "--comment",
-                            f"Remplacé par le point de la semaine suivante : #{numero}."], cwd=RACINE)
-    print(f"Rapport publié : {lien} · issue #{numero}")
+    # Le dimanche, le rapport ouvre le bureau de la semaine qui commence (l'ancien est fermé)
+    aujourdhui = dt.date.today()
+    lundi = bureau.lundi_de(aujourdhui + dt.timedelta(days=1 if aujourdhui.weekday() == 6 else 0))
+    numero = bureau.ouvrir(lundi, corps_extra="\n".join(corps))
+    print(f"Rapport publié : {lien} · bureau #{numero}")
 
 
 def main() -> int:
@@ -432,7 +425,7 @@ def main() -> int:
     except (OSError, ValueError) as e:
         print(f"Récit absent ou illisible ({fichier_recit.name} : {e}) : rapport avec les seuls chiffres.",
               file=sys.stderr)
-        recit = {"meteo": "orange", "en_bref": ["L'orchestrateur n'a pas écrit le bilan de la semaine : "
+        recit = {"meteo": "orange", "en_bref": ["L'organisateur n'a pas écrit le bilan de la semaine : "
                                                  "ce rapport ne contient que les chiffres."]}
     auto = json.loads(args.donnees.read_text()) if args.donnees else donnees_github(args.semaine)
     sortie = args.sortie or RACINE / "logs" / "rapports" / f"{args.semaine}.pdf"
