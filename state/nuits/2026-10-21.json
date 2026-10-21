@@ -28,7 +28,7 @@
       "titre": "Inscription, connexion et déconnexion des utilisateurs (JWT)",
       "minutes": 90,
       "pourquoi": "Tête du chemin critique du plan de la semaine, sans dépendance.",
-      "statut": "a_faire",
+      "statut": "reporte",
       "tentatives": 0
     },
     {
@@ -38,6 +38,26 @@
       "titre": "Figer la version de l'outil de qualité du code (ruff)",
       "minutes": 30,
       "pourquoi": "Petite tâche d'outillage du plan, sans dépendance.",
+      "statut": "reporte",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "dev",
+      "cible": "issue 5",
+      "titre": "Connexion des étudiants : inscription, connexion, rafraîchissement et déconnexion",
+      "minutes": 90,
+      "pourquoi": "Tête du chemin critique du plan de la semaine, sans dépendance, reportée plus tôt cette nuit.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 5,
+      "type": "dev",
+      "cible": "issue 16",
+      "titre": "Fixer la version de l'outil de qualité du code (ruff)",
+      "minutes": 30,
+      "pourquoi": "Petite tâche d'outillage sans dépendance, reportée plus tôt cette nuit.",
       "statut": "a_faire",
       "tentatives": 0
     }
@@ -52,7 +72,12 @@
       "texte": "PR #13 mergée : Sécurité : mise à jour de Next.js (npm audit fix)."
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "quand": "2026-10-21T23:15:56+00:00",
+      "texte": "23 h 15 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
+    }
+  ],
   "rapporte": false,
-  "empreinte_consignes": "88530b42a7be6bc92cf78a0a40555bb7288643bd2562daeef7a549c6dc992f61"
+  "empreinte_consignes": "9408230342d108578cd570fc73f1b6337a26b2e1ebb7bfecb369f953d71b9b75"
 }
