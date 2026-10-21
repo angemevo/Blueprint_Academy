@@ -62,6 +62,16 @@
       "titre": "Fixer la version de l'outil de qualité du code (ruff)",
       "minutes": 30,
       "pourquoi": "Petite tâche d'outillage sans dépendance, reportée plus tôt cette nuit.",
+      "statut": "reporte",
+      "tentatives": 0
+    },
+    {
+      "n": 6,
+      "type": "dev",
+      "cible": "issue 16",
+      "titre": "Fixer la version de l'outil de qualité du code (ruff) pour que les vérifications donnent toujours le même résultat",
+      "minutes": 30,
+      "pourquoi": "Seule issue prête restante : les autres (#2, #5, #15) sont déjà livrées et #3 et #6 ne sont pas encore prêtes.",
       "statut": "a_faire",
       "tentatives": 0
     }
@@ -84,8 +94,12 @@
     {
       "quand": "2026-10-21T23:15:56+00:00",
       "texte": "23 h 15 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
+    },
+    {
+      "quand": "2026-10-21T23:18:52+00:00",
+      "texte": "23 h 18 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
     }
   ],
   "rapporte": false,
-  "empreinte_consignes": "9408230342d108578cd570fc73f1b6337a26b2e1ebb7bfecb369f953d71b9b75"
+  "empreinte_consignes": "d72a64d076b00a589d83b9c45ff109eae7c9ab164180f987380525e3cff43a04"
 }
