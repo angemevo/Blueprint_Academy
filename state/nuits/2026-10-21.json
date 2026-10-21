@@ -72,8 +72,12 @@
       "titre": "Fixer la version de l'outil de qualité du code (ruff) pour que les vérifications donnent toujours le même résultat",
       "minutes": 30,
       "pourquoi": "Seule issue prête restante : les autres (#2, #5, #15) sont déjà livrées et #3 et #6 ne sont pas encore prêtes.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-21T23:19:10+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-10-21_2319-creneau-6-dev-issue16.jsonl",
+      "resume": "La version de l'outil de qualité du code (ruff) est maintenant fixée sur la série 0.17, donc une mise à jour de l'outil ne fera plus échouer les livraisons sans qu'on ait touché au code. La PR #19 est ouverte, et la relecture qualité l'a approuvée. Les 91 tests et les autres vérifications passent. Le portier peut la fusionner."
     }
   ],
   "merges": [
