@@ -14,8 +14,12 @@
       "titre": "Relecture de la mise à jour de sécurité de Next.js",
       "minutes": 25,
       "pourquoi": "Ouverte par Ange, aucune relecture qa pour l'instant.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-21T23:05:03+00:00",
+      "minutes_reelles": 10,
+      "journal": "2026-10-21_2305-creneau-1-revue-pr13.jsonl",
+      "resume": "La mise à jour de sécurité de Next.js (PR #13) a été relue par qa, qui l'approuve. Les tests, les contrôles de style et de types passent, et rien ne change pour l'étudiant. Une seule remarque, sans conséquence: le texte de la PR mentionne un réglage déjà livré par ailleurs. Le portier peut maintenant la fusionner."
     },
     {
       "n": 2,
