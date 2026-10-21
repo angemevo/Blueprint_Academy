@@ -6,3 +6,4 @@
 |---|---|---|---|
 | 2026-10-21 | #17 | Typecheck frontend : ignorer les types générés par next dev | #15 |
 | 2026-10-21 | #14 | Interfaces de validation et registre des validateurs | #2 |
+| 2026-10-21 | #13 | Sécurité : mise à jour de Next.js (npm audit fix) | - |

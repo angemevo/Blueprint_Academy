@@ -46,6 +46,10 @@
     {
       "quand": "2026-10-21T23:04:37+00:00",
       "texte": "PR #14 mergée : Interfaces de validation et registre des validateurs."
+    },
+    {
+      "quand": "2026-10-21T23:15:53+00:00",
+      "texte": "PR #13 mergée : Sécurité : mise à jour de Next.js (npm audit fix)."
     }
   ],
   "incidents": [],
