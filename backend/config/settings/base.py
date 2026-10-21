@@ -42,6 +42,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     "rest_framework",
     "corsheaders",
+    "rest_framework_simplejwt.token_blacklist",
 ]
 
 # Une app par domaine metier. Voir CLAUDE.md > Architecture backend.
@@ -160,7 +161,7 @@ SIMPLE_JWT = {
         days=env_int("JWT_REFRESH_TOKEN_LIFETIME_DAYS", 7)
     ),
     "ROTATE_REFRESH_TOKENS": True,
-    "BLACKLIST_AFTER_ROTATION": False,
+    "BLACKLIST_AFTER_ROTATION": True,
     "UPDATE_LAST_LOGIN": True,
     "AUTH_HEADER_TYPES": ("Bearer",),
     "SIGNING_KEY": SECRET_KEY,
