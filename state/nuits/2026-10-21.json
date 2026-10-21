@@ -48,8 +48,12 @@
       "titre": "Connexion des étudiants : inscription, connexion, rafraîchissement et déconnexion",
       "minutes": 90,
       "pourquoi": "Tête du chemin critique du plan de la semaine, sans dépendance, reportée plus tôt cette nuit.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-21T23:16:14+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-21_2316-creneau-4-dev-issue5.jsonl",
+      "resume": "Le système de connexion des étudiants (inscription, connexion, rafraîchissement, déconnexion) est prêt dans la PR #18. Il est sécurisé : le rôle est toujours « étudiant » et une session volée ou fermée ne peut plus être réutilisée. Le relecteur (qa) l'a approuvé après vérification des tests et des contrôles. Le portier peut maintenant la fusionner."
     },
     {
       "n": 5,

@@ -25,3 +25,5 @@ Hors plan : #4 et #11 (`a-cadrer`), #7 à #10 (dépendances non mergées).
 - Prochaine action : le portier merge #17 ; ensuite #5, puis #16. Restent à traiter : PR #14 (brouillon, à passer en « prête ») et PR #13 (sans revue qa).
 - Créneau 1 (2026-10-21) : revue de la PR #13 (mise à jour de sécurité de Next.js), qa APPROUVÉE. Réserve non bloquante : la description de la PR parle d'une exclusion dans tsconfig.json que le diff ne contient pas (déjà sur master via #17). Prochaine action : le portier merge #13.
 - Cycle : tech du 2026-10-18, #2 → PR #14 en brouillon, qa APPROUVÉE.
+
+- Créneau 4 (2026-10-21) : issue #5, branche feat/5-auth-jwt, PR #18 ouverte (non brouillon), qa APPROUVÉE (91 tests OK). Prochaine action : le portier merge #18.
