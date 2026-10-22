@@ -1,0 +1,18 @@
+{
+  "titre": "Catalogue des parcours en lecture publique",
+  "date": "2026-10-22 23:07",
+  "captures": [
+    {
+      "fichier": "01-la-liste-publique-des-parcours-sans-conn.png",
+      "legende": "La liste publique des parcours, sans connexion : c'est ce que la vitrine affichera. Seuls les parcours publiés apparaissent, triés par ordre.",
+      "adresse": "http://localhost:8000/api/learning-paths/"
+    },
+    {
+      "fichier": "02-une-lecon-sans-connexion-est-refusee-401.png",
+      "legende": "Une leçon sans connexion est refusée (401) : le contenu pédagogique est réservé aux inscrits.",
+      "adresse": "http://localhost:8000/api/lessons/1/"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

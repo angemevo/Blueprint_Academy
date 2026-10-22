@@ -1,0 +1,6 @@
+{"titre":"Catalogue des parcours en lecture publique","etapes":[
+{"aller":"/api/learning-paths/"},
+{"capture":"La liste publique des parcours, sans connexion : c'est ce que la vitrine affichera. Seuls les parcours publiés apparaissent, triés par ordre."},
+{"aller":"/api/lessons/1/"},
+{"capture":"Une leçon sans connexion est refusée (401) : le contenu pédagogique est réservé aux inscrits."}
+]}
