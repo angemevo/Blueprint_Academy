@@ -12,5 +12,6 @@ app_name = "api"
 
 urlpatterns = [
     path("auth/", include("apps.users.urls")),
+    path("users/", include("apps.users.users_urls")),
     path("health/", HealthView.as_view(), name="health"),
 ]

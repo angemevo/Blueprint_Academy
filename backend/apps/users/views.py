@@ -12,8 +12,14 @@ from rest_framework_simplejwt.serializers import (
     TokenRefreshSerializer,
 )
 
-from .serializers import RegisterSerializer, UserSerializer
+from .serializers import (
+    MeSerializer,
+    ProfileSerializer,
+    RegisterSerializer,
+    UserSerializer,
+)
 from .services import auth as auth_service
+from .services import profile as profile_service
 
 
 class _AuthView(APIView):
@@ -70,3 +76,21 @@ class LogoutView(_AuthView):
         response = Response(status=status.HTTP_204_NO_CONTENT)
         auth_service.clear_refresh_cookie(response)
         return response
+
+
+class MeView(APIView):
+    """Utilisateur et profil courants (IsAuthenticated par defaut)."""
+
+    authentication_classes = [JWTAuthentication]
+
+    def get(self, request):
+        profile_service.get_or_create_profile(request.user)
+        return Response(MeSerializer(request.user).data)
+
+    def patch(self, request):
+        profile = profile_service.get_or_create_profile(request.user)
+        serializer = ProfileSerializer(profile, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        profile_service.update_profile(request.user, serializer.validated_data)
+        request.user.refresh_from_db()
+        return Response(MeSerializer(request.user).data)
