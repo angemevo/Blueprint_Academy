@@ -88,6 +88,10 @@
     {
       "quand": "2026-10-22T23:26:33+00:00",
       "texte": "PR #22 mergée : API du catalogue en lecture : parcours, modules, leçons."
+    },
+    {
+      "quand": "2026-10-22T23:30:17+00:00",
+      "texte": "PR #23 mergée : API exercices en lecture, sans fuite de solution."
     }
   ],
   "incidents": [
