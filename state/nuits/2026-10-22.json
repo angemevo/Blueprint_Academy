@@ -62,6 +62,16 @@
       "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
       "minutes": 75,
       "pourquoi": "Dépend de #7, traitée juste avant.",
+      "statut": "reporte",
+      "tentatives": 0
+    },
+    {
+      "n": 6,
+      "type": "dev",
+      "cible": "issue 8",
+      "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
+      "minutes": 75,
+      "pourquoi": "Sa dépendance (#7, catalogue) est mergée et c'est la seule issue prête non traitée ; suite du chemin critique.",
       "statut": "a_faire",
       "tentatives": 0
     }
@@ -80,8 +90,12 @@
     {
       "quand": "2026-10-22T23:04:40+00:00",
       "texte": "23 h 04 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
+    },
+    {
+      "quand": "2026-10-22T23:26:36+00:00",
+      "texte": "23 h 26 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
     }
   ],
   "rapporte": false,
-  "empreinte_consignes": "facd05dd197853b8e030a0af19894947edeca65a894d51b60bdf5e368cf4bcec"
+  "empreinte_consignes": "925180d6aab5e17dc5d56f97142f982226935d7df721dc3476556d010518229b"
 }
