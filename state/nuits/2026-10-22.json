@@ -42,7 +42,12 @@
       "tentatives": 0
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "quand": "2026-10-22T23:04:37+00:00",
+      "texte": "PR #21 mergée : Profil courant et permissions par rôle."
+    }
+  ],
   "incidents": [],
   "rapporte": false,
   "empreinte_consignes": "119390c24ffe1b5ac2a363c9f1437fb1b30cd1d2d94d0825a2783c032a7aa6ec"
