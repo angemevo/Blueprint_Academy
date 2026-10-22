@@ -43,10 +43,19 @@ class LessonDetailSerializer(serializers.ModelSerializer):
     skills_taught = SkillSerializer(many=True, read_only=True)
     required_skills = SkillSerializer(many=True, read_only=True)
     module_id = serializers.IntegerField(read_only=True)
+    exercises = serializers.SerializerMethodField()
 
     class Meta:
         model = Lesson
         fields = [
             "id", "title", "slug", "summary", "content", "estimated_minutes",
             "xp_reward", "order", "module_id", "skills_taught", "required_skills",
+            "exercises",
         ]
+
+    def get_exercises(self, lesson):
+        from apps.exercises.serializers import ExerciseLessonItemSerializer
+        from apps.exercises.services.catalog import lesson_exercises
+
+        user = self.context["request"].user
+        return ExerciseLessonItemSerializer(lesson_exercises(lesson, user), many=True).data

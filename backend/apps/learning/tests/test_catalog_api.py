@@ -103,5 +103,5 @@ def test_detail_query_count_bounded(data, django_assert_num_queries):
 def test_lesson_query_count_bounded(data, django_assert_num_queries):
     les = Lesson.objects.get(module__learning_path__slug="p0", module__slug="m0", slug="l0")
     c = client_for(Role.STUDENT)
-    with django_assert_num_queries(3):  # lecon, skills enseignes, prerequis
+    with django_assert_num_queries(4):  # lecon, skills enseignes, prerequis, exercices
         c.get(f"/api/lessons/{les.id}/")
