@@ -13,5 +13,7 @@ app_name = "api"
 urlpatterns = [
     path("auth/", include("apps.users.urls")),
     path("users/", include("apps.users.users_urls")),
+    path("learning-paths/", include("apps.learning.urls")),
+    path("lessons/", include("apps.learning.lessons_urls")),
     path("health/", HealthView.as_view(), name="health"),
 ]
