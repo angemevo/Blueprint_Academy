@@ -6,6 +6,12 @@
       "run": "39690773662",
       "fin": "2026-10-21T23:20:53+00:00",
       "raison_fin": "planning épuisé"
+    },
+    {
+      "debut": "2026-10-22T01:46:14+00:00",
+      "run": "39707524874",
+      "fin": "2026-10-22T01:47:33+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -108,6 +114,10 @@
     {
       "quand": "2026-10-21T23:18:52+00:00",
       "texte": "23 h 18 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
+    },
+    {
+      "quand": "2026-10-22T01:47:33+00:00",
+      "texte": "1 h 47 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte (13, 14, 17, 18 et 19 sont mergées). Les seules issues étiquetées ready (2, 5, 15, 16) sont déjà livrées par ces PR. Les suivantes (#6 profil, #3 validateurs) ne sont pas encore prêtes : #6 n'a pas l'étiquette ready, #3 attend la réponse d'Ange à Q1 (par défaut le 25 octobre). #4 e"
     }
   ],
   "rapporte": false,
