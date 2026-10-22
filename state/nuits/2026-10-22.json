@@ -1,0 +1,45 @@
+{
+  "nuit": "2026-10-22",
+  "equipes": [
+    {
+      "debut": "2026-10-22T23:01:02+00:00",
+      "run": "39868905900"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 6",
+      "titre": "Profil de l'utilisateur connecté et droits par rôle (étudiant, instructeur, admin)",
+      "minutes": 60,
+      "pourquoi": "L'authentification (#5) est livrée : c'est la suite du chemin critique.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "dev",
+      "cible": "issue 7",
+      "titre": "Consultation des parcours, modules et leçons par l'API",
+      "minutes": 60,
+      "pourquoi": "Dépend de #6, traitée juste avant.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 8",
+      "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
+      "minutes": 75,
+      "pourquoi": "Dépend de #7, traitée juste avant.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "119390c24ffe1b5ac2a363c9f1437fb1b30cd1d2d94d0825a2783c032a7aa6ec"
+}

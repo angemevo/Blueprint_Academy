@@ -12,3 +12,4 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 - 2026-10-20 — Épingler ruff sur une version mineure : issue #16 `ready` — lint reproductible pour le portier — agent
 - 2026-10-20 — Règle de score de #3, courbe de niveaux de #10, cadrage de #4 : renvoyés à Ange (Q1 à Q3), choix pédagogiques ou à vérifier dans Unreal — agent
 - 2026-10-15 — Le moteur de validation de graphe et la formule de maîtrise sont cadrés par Ange avant délégation — cœur pédagogique, risque n° 1 du projet — Ange
+- 2026-10-22 — Étiquette ready posée sur #6, #7, #8 (dépendances mergées ou traitées plus tôt la même nuit) — agent (chef d'équipe)
