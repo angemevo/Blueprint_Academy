@@ -28,11 +28,31 @@
       "titre": "Consultation des parcours, modules et leçons par l'API",
       "minutes": 60,
       "pourquoi": "Dépend de #6, traitée juste avant.",
-      "statut": "a_faire",
+      "statut": "reporte",
       "tentatives": 0
     },
     {
       "n": 3,
+      "type": "dev",
+      "cible": "issue 8",
+      "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
+      "minutes": 75,
+      "pourquoi": "Dépend de #7, traitée juste avant.",
+      "statut": "reporte",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "dev",
+      "cible": "issue 7",
+      "titre": "Consultation des parcours, modules et leçons par l'API",
+      "minutes": 60,
+      "pourquoi": "La dépendance #6 est mergée : c'est la suite du chemin critique.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 5,
       "type": "dev",
       "cible": "issue 8",
       "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
@@ -48,7 +68,12 @@
       "texte": "PR #21 mergée : Profil courant et permissions par rôle."
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "quand": "2026-10-22T23:04:40+00:00",
+      "texte": "23 h 04 — nouvelles consignes de l'organisateur : le chef d'équipe refait le planning."
+    }
+  ],
   "rapporte": false,
-  "empreinte_consignes": "119390c24ffe1b5ac2a363c9f1437fb1b30cd1d2d94d0825a2783c032a7aa6ec"
+  "empreinte_consignes": "facd05dd197853b8e030a0af19894947edeca65a894d51b60bdf5e368cf4bcec"
 }
