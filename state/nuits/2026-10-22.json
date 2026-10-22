@@ -48,8 +48,12 @@
       "titre": "Consultation des parcours, modules et leçons par l'API",
       "minutes": 60,
       "pourquoi": "La dépendance #6 est mergée : c'est la suite du chemin critique.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-22T23:04:58+00:00",
+      "minutes_reelles": 21,
+      "journal": "2026-10-22_2304-creneau-4-dev-issue7.jsonl",
+      "resume": "Le créneau est arrivé sans tâche ni durée, donc rien n'a été lancé et aucun code n'a changé. Le travail précédent n'est pas touché : la PR #22 sur l'API de consultation des parcours et des leçons, approuvée par qa, attend le portier. Il faudra replanifier ce créneau avec une tâche précise, ou avec `auto` pour que l'équipe en choisisse une."
     },
     {
       "n": 5,

@@ -33,3 +33,7 @@ Hors plan : #4 et #11 (`a-cadrer`), #7 à #10 (dépendances non mergées).
 ## Issue #6
 Branche feat/6-profil-permissions, PR #21, prête pour revue.
 - Créneau 1 (2026-10-22) : issue #6, branche feat/6-profil-permissions, PR #21 ouverte (non brouillon), qa APPROUVÉE (101 tests OK). Prochaine action : le portier merge #21.
+
+- Issue #7 : branche feat/7-api-catalogue, PR #22, ouverte (vérifications passées).
+
+- Créneau 4 (2026-10-22) : issue #7, branche feat/7-api-catalogue, PR #22 ouverte (non brouillon), qa APPROUVÉE (110 tests OK). Prochaine action : le portier merge #22.
