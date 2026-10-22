@@ -70,6 +70,10 @@
     {
       "quand": "2026-10-22T23:04:37+00:00",
       "texte": "PR #21 mergée : Profil courant et permissions par rôle."
+    },
+    {
+      "quand": "2026-10-22T23:26:33+00:00",
+      "texte": "PR #22 mergée : API du catalogue en lecture : parcours, modules, leçons."
     }
   ],
   "incidents": [

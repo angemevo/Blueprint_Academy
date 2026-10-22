@@ -10,3 +10,4 @@
 | 2026-10-21 | #18 | Authentification JWT : inscription, connexion, refresh, déconnexion | #5 |
 | 2026-10-21 | #19 | Épingler ruff sur une version mineure | #16 |
 | 2026-10-22 | #21 | Profil courant et permissions par rôle | #6 |
+| 2026-10-22 | #22 | API du catalogue en lecture : parcours, modules, leçons | #7 |
