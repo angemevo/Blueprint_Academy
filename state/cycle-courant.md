@@ -29,3 +29,7 @@ Hors plan : #4 et #11 (`a-cadrer`), #7 à #10 (dépendances non mergées).
 - Créneau 4 (2026-10-21) : issue #5, branche feat/5-auth-jwt, PR #18 ouverte (non brouillon), qa APPROUVÉE (91 tests OK). Prochaine action : le portier merge #18.
 
 - Créneau 6 (2026-10-21) : issue #16, branche fix/16-epingler-ruff, PR #19 ouverte (non brouillon), qa APPROUVÉE (ruff~=0.17.0, 91 tests OK). Prochaine action : le portier merge #19.
+
+## Issue #6
+Branche feat/6-profil-permissions, PR #21, prête pour revue.
+- Créneau 1 (2026-10-22) : issue #6, branche feat/6-profil-permissions, PR #21 ouverte (non brouillon), qa APPROUVÉE (101 tests OK). Prochaine action : le portier merge #21.

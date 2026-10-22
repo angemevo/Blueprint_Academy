@@ -14,8 +14,12 @@
       "titre": "Profil de l'utilisateur connecté et droits par rôle (étudiant, instructeur, admin)",
       "minutes": 60,
       "pourquoi": "L'authentification (#5) est livrée : c'est la suite du chemin critique.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-22T23:02:33+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-10-22_2302-creneau-1-dev-issue6.jsonl",
+      "resume": "L'issue 6 est réalisée, et la PR #21 est ouverte et approuvée par la relecture. Un utilisateur connecté peut maintenant consulter et modifier son propre profil. Les droits des trois rôles (étudiant, instructeur, admin) sont posés, et l'XP, le niveau et le rôle ne peuvent pas être modifiés par l'utilisateur. Si le portier valide la PR, il la fusionnera ensuite."
     },
     {
       "n": 2,
