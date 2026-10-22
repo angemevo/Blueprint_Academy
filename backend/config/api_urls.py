@@ -15,5 +15,6 @@ urlpatterns = [
     path("users/", include("apps.users.users_urls")),
     path("learning-paths/", include("apps.learning.urls")),
     path("lessons/", include("apps.learning.lessons_urls")),
+    path("exercises/", include("apps.exercises.urls")),
     path("health/", HealthView.as_view(), name="health"),
 ]
