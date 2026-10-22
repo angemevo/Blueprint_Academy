@@ -72,8 +72,12 @@
       "titre": "Consultation des exercices par l'API, sans jamais révéler les solutions",
       "minutes": 75,
       "pourquoi": "Sa dépendance (#7, catalogue) est mergée et c'est la seule issue prête non traitée ; suite du chemin critique.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-22T23:26:51+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-22_2326-creneau-6-dev-issue8.jsonl",
+      "resume": "L'API qui permet aux étudiants de consulter un exercice est prête (PR #23). Elle ne révèle jamais la solution ni le texte des indices, et le détail d'une leçon liste maintenant ses exercices. qa a approuvé la PR : 145 tests passent, avec un test de fuite pour chaque type A à I et un test du mélange du type C. Le portier peut la merger. Une réserve reste à traiter avec la soumission des exercices : le type D (association de nodes) n'est pas mélangé, donc l'ordre des colonnes peut révéler les paires."
     }
   ],
   "merges": [

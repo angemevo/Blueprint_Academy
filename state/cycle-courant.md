@@ -37,3 +37,8 @@ Branche feat/6-profil-permissions, PR #21, prête pour revue.
 - Issue #7 : branche feat/7-api-catalogue, PR #22, ouverte (vérifications passées).
 
 - Créneau 4 (2026-10-22) : issue #7, branche feat/7-api-catalogue, PR #22 ouverte (non brouillon), qa APPROUVÉE (110 tests OK). Prochaine action : le portier merge #22.
+
+## Issue #8
+- Branche feat/8-api-exercices, PR #23, prête pour relecture.
+
+- Créneau 6 (2026-10-22) : issue #8, branche feat/8-api-exercices, PR #23 ouverte (non brouillon), qa APPROUVÉE (145 tests OK). Réserve non bloquante : le type D n'est pas mélangé (l'ordre des colonnes peut révéler les paires), à traiter avec la soumission. Prochaine action : le portier merge #23.
