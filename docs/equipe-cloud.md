@@ -47,6 +47,7 @@ Seuls tes messages comptent. Le dépôt est public, mais l'équipe ignore ce qu'
 - Une tâche qui échoue est relancée une fois. Si elle échoue encore, elle est mise de côté, et l'organisateur te l'explique le matin. L'équipe passe à la suivante.
 - Un plan illisible ou une session coupée ne sont pas des raisons de s'arrêter.
 - Si la limite d'usage de 5 heures est atteinte, l'équipe fait une pause, puis reprend.
+- Quand l'équipe n'a plus de tâche prête, l'organisateur est appelé tout de suite. Il applique les décisions dont la date est passée, écrit les tâches suivantes qui ne dépendent pas de toi, et prépare ce que tu n'auras qu'à valider. Puis le travail reprend. S'il ne peut rien débloquer seul, il te dit le matin quelle réponse de ta part débloquerait le plus de travail.
 - L'équipe ne s'arrête que pour trois raisons : l'heure de fin (7 h 30 au plus tard, pour te laisser ta journée), sa part du quota de la semaine utilisée, ou plus aucune tâche prête.
 
 ## L'avancement et la date de fin

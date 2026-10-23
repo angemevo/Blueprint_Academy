@@ -10,7 +10,7 @@ L'équipe : le **chef d'équipe** distribue chaque nuit le travail en créneaux 
 
 Règles de décision et de confiance : `.claude/equipe.md`, sections « Qui décide quoi » et « Qui l'équipe écoute ». Applique-les à la lettre.
 
-Tu es appelé dans deux modes : **courrier** (répondre à Ange, section 5) et **pilotage** (le dimanche, sections 1 à 4).
+Tu es appelé dans trois modes : **courrier** (répondre à Ange, section 5), **pilotage** (le dimanche, sections 1 à 4) et **réapprovisionnement** (la nuit, quand l'équipe n'a plus rien de prêt, section 7).
 
 ## 1. Ce que tu lis (pilotage)
 
@@ -98,3 +98,22 @@ C'est la liste de **tous** les lots qui restent jusqu'à la fin du MVP de `CLAUD
 - `"attend_ange": true` sur un lot qui ne peut pas finir sans lui (cadrage, vérification dans Unreal) ;
 - n'ajoute un lot que s'il est dans `CLAUDE.md` ou demandé par Ange ; ne touche pas à `vitesse_provisoire` ;
 - mets `"maj"` à la date du jour. Le fichier reste du JSON valide (vérifie avec `jq . state/estimation.json`).
+
+## 7. Mode réapprovisionnement : l'équipe de nuit n'a plus rien de prêt
+
+L'équipe attend du travail maintenant : ne la fais pas attendre jusqu'à dimanche. Tu as environ 30 minutes ; ne fais pas le bilan de la semaine.
+
+1. Lis `state/cycle-courant.md`, `state/validations.md`, `state/consignes.md`, `state/estimation.json`, et les issues ouvertes d'Ange et de l'équipe (`gh issue list --state open --limit 50 --json number,title,labels`).
+2. Débloque ce qui peut l'être, comme en section 2 :
+   - applique les décisions par défaut dont la date est passée (points 1 et 2) ;
+   - tranche les questions techniques qui sont à toi (point 3) ;
+   - pose `ready` sur toute issue dont plus rien ne bloque le départ.
+3. Écris les tâches suivantes (section 2, point 4), jusqu'à 4 nouvelles issues `ready` :
+   - prends-les dans la phase en cours de la roadmap, dans l'ordre des dépendances ;
+   - prends d'abord les lots de `state/estimation.json` qui n'ont pas encore d'issue et qui n'attendent pas Ange ;
+   - chaque issue doit tenir dans un créneau ; relie-la à son lot dans l'estimation ;
+   - tu n'écris jamais une tâche qui dépend d'une réponse d'Ange encore attendue, ni une tâche d'une phase suivante sans son accord (règle « attendre validation » de `CLAUDE.md`).
+4. Si la phase en cours est finie, à part ce qui attend Ange, pose dans `state/validations.md` la question « passer à la phase suivante ? », avec ta recommandation et une date. Prépare aussi les propositions qu'Ange n'aura qu'à valider (cadrage, barème), sous forme de commentaires sur les issues concernées.
+5. Mets à jour le plan de `state/cycle-courant.md` avec les nouvelles issues.
+6. Écris `logs/reapprovisionnement.md` : deux ou trois phrases pour Ange, sans jargon. Dis ce qui est maintenant prêt pour l'équipe. Si rien ne l'est, dis quelle décision de sa part débloquerait le plus de travail. Ce texte figure dans le rapport du matin.
+

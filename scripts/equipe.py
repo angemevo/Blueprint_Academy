@@ -299,8 +299,10 @@ class Nuit:
 
 
 def empreinte_consignes() -> str:
+    """Change seulement quand l'organisateur transmet une consigne d'Ange (state/consignes.md).
+    Pas cycle-courant.md : le chef d'équipe l'écrit lui-même après chaque créneau."""
     h = hashlib.sha256()
-    for nom in ("consignes.md", "cycle-courant.md", "validations.md"):
+    for nom in ("consignes.md",):
         try:
             h.update((ETAT / nom).read_bytes())
         except OSError:
@@ -352,6 +354,22 @@ def nouvel_essai(nuit: Nuit, c: dict, **changements) -> dict:
     garde.update({"n": len(nuit.d["creneaux"]) + 1, "statut": "a_faire", **changements})
     nuit.d["creneaux"].append(garde)
     return garde
+
+
+def reapprovisionner(nuit: Nuit) -> bool:
+    """Plus rien de prêt : l'organisateur prépare tout de suite les tâches suivantes, sans attendre dimanche."""
+    rendu = LOGS / "reapprovisionnement.md"
+    rendu.unlink(missing_ok=True)
+    nuit.d["reapprovisionnements"] = nuit.d.get("reapprovisionnements", 0) + 1
+    s = session_claude("/reapprovisionner", "organisateur-reapprovisionnement", 35)
+    revenir_sur_master("Réapprovisionnement")
+    texte = rendu.read_text(encoding="utf-8").strip() if rendu.exists() else ""
+    if texte:
+        nuit.incident(f"l'organisateur a préparé la suite : {texte[:600]}")
+    elif not s.reussie:
+        nuit.incident("l'organisateur n'a pas pu préparer de nouvelles tâches (session interrompue).")
+    sauver_etat(f"Organisateur : nouvelles tâches pour la nuit du {nuit.cle}")
+    return s.reussie
 
 
 def invite_creneau(c: dict) -> str:
@@ -508,11 +526,14 @@ def mode_nuit(un_seul: bool = False) -> int:
                 c["statut"] = "reporte"
             nuit.incident("nouvelles consignes de l'organisateur : le chef d'équipe refait le planning.")
         if not nuit.a_faire():
-            if planifications >= 3:
+            if planifications >= 6:
                 raison = "planning épuisé"
                 break
             planifications += 1
             if not planifier(nuit, int((fin_equipe - time.monotonic()) / MINUTE)):
+                # Avant de s'arrêter, l'organisateur prépare la suite (deux fois par nuit au plus)
+                if nuit.d.get("reapprovisionnements", 0) < 2 and reapprovisionner(nuit):
+                    continue
                 raison = "plus de tâche prête"
                 break
             sauver_etat(f"Équipe de nuit du {nuit.cle} : planning")
