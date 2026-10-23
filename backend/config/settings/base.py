@@ -229,6 +229,17 @@ EXERCISE_XP_DEFAULTS = env_json(
 #: Valeur de repli si un type n'est pas liste ci-dessus.
 EXERCISE_XP_FALLBACK = env_int("EXERCISE_XP_FALLBACK", 10)
 
+#: Courbe de niveaux : XP cumulee necessaire pour atteindre chaque niveau
+#: (le premier element est le niveau 1). Courbe douce de depart, modifiable
+#: sans code via XP_LEVEL_THRESHOLDS (entiers separes par des virgules).
+XP_LEVEL_THRESHOLDS = sorted(
+    int(v)
+    for v in env_list(
+        "XP_LEVEL_THRESHOLDS",
+        ["0", "100", "250", "450", "700", "1000", "1350", "1750", "2200", "2700"],
+    )
+)
+
 #: Types de nodes Blueprint acceptes en plus du catalogue de reference
 #: (common/blueprint_catalog.py). Permet d'enrichir le garde-fou d'auteur sans
 #: livrer de code.

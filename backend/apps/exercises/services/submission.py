@@ -1,6 +1,7 @@
 """Soumission d'un exercice : allocation du numero, validation, enregistrement.
 
-La soumission ne touche ni a l'XP ni a la maitrise (issues dediees).
+L'XP est attribuee par le service de gamification a la premiere reussite ;
+la maitrise reste hors perimetre (issue dediee).
 """
 
 from dataclasses import asdict
@@ -61,6 +62,11 @@ def submit_exercise(
             hints_used=hints_used,
             duration_seconds=duration_seconds,
         )
+        if result.is_correct:
+            # Import local : evite un couplage au chargement des apps.
+            from apps.gamification.services.xp import award_exercise_xp
+
+            award_exercise_xp(user, exercise)
     return attempt, result
 
 
