@@ -19,3 +19,4 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 - 2026-10-23 — Q1 (« A et B », contradictoire) et Q3 (cadrage non validé explicitement) : reposées à Ange — agent
 
 - 2026-10-23 — Q1 : option A, score partiel pour les exercices C et D (ordre et paires) ; #3 `ready` (#2 mergée via la PR #14) — Ange
+- 2026-10-23 — Q3 : cadrage du moteur de validation de graphe (#4) validé tel que proposé (option A) ; cas de test encore « à vérifier dans Unreal », #4 reste `a-cadrer` jusqu'aux exports du 24 octobre — Ange
