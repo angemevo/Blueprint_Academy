@@ -53,3 +53,5 @@ Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, 
 - Créneau 3 (2026-10-23) : issue #10, branche feat/10-xp-niveaux, PR #28 ouverte (non brouillon), qa APPROUVÉE (201 tests OK). Réserve non bloquante : pas de test de concurrence. Prochaine action : le portier merge #28.
 
 - Créneau 4 (2026-10-23) : issue #25, branche feat/25-*, PR #29 ouverte (non brouillon), qa APPROUVÉE (207 tests OK, aucune migration). Réserve non bloquante : requêtes multiples par leçon dans la vue d'ensemble. Prochaine action : le portier merge #29.
+
+- Créneau 5 (2026-10-23) : issue #26, branche feat/26-dashboard-api, PR #30 ouverte (non brouillon), qa APPROUVÉE (212 tests OK). Prochaine action : le portier merge #30.

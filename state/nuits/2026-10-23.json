@@ -70,8 +70,12 @@
       "titre": "Données du tableau de bord de l'étudiant (XP, niveau, progression)",
       "minutes": 60,
       "pourquoi": "Dernière de la chaîne : nécessite #10 et #25, placées avant.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-23T23:17:39+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-23_2317-creneau-5-dev-issue26.jsonl",
+      "resume": "L'API des données du tableau de bord étudiant est prête (PR #30). Elle renvoie l'XP, le niveau, les parcours en cours, la prochaine leçon, les 5 dernières tentatives et la maîtrise des compétences. La relecture qualité (qa) l'a approuvée : 212 tests passent. Il ne reste plus qu'à la fusionner (portier) ; l'écran du tableau de bord viendra ensuite."
     }
   ],
   "merges": [
