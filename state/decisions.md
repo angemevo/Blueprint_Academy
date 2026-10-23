@@ -20,3 +20,6 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 
 - 2026-10-23 — Q1 : option A, score partiel pour les exercices C et D (ordre et paires) ; #3 `ready` (#2 mergée via la PR #14) — Ange
 - 2026-10-23 — Q3 : cadrage du moteur de validation de graphe (#4) validé tel que proposé (option A) ; cas de test encore « à vérifier dans Unreal », #4 reste `a-cadrer` jusqu'aux exports du 24 octobre — Ange
+
+## 2026-10-23 - Validateurs A/B/C/D (#3)
+- Barème appliqué comme proposé dans l'issue : A et B tout-ou-rien ; C = part des éléments bien placés ; D = part des paires correctes (plafonné à 99 s'il y a des paires en trop). Format de soumission choisi : A `{"answer"}`, B `{"selected_option_ids"}`, C `{"order"}`, D `{"pairs":[{left_id,right_id}]}`. Chargement des validateurs dans `ExercisesConfig.ready()`.

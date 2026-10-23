@@ -14,8 +14,12 @@
       "titre": "Correction automatique des exercices d'échauffement (question, QCM, ordre, association)",
       "minutes": 60,
       "pourquoi": "Seule issue prête dont les dépendances sont mergées (#2) et dont la règle de score a été validée par Ange (Q1) ; elle débloque la soumission d'exercices (#9).",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-23T23:04:18+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-23_2304-creneau-1-dev-issue3.jsonl",
+      "resume": "Les échauffements (question, QCM, remise dans l'ordre, association) sont maintenant corrigés automatiquement côté serveur, avec le barème de l'issue (question et QCM tout ou rien, ordre et association au prorata). Le retour fait à l'étudiant ne donne jamais la bonne réponse. La PR #24 est ouverte, approuvée par qa avec 184 tests au vert, et le portier peut la fusionner. Une décision technique est notée pour l'équipe : le format de ce que l'étudiant envoie."
     }
   ],
   "merges": [],
