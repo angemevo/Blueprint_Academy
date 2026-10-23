@@ -1,0 +1,25 @@
+{
+  "nuit": "2026-10-23",
+  "equipes": [
+    {
+      "debut": "2026-10-23T23:02:46+00:00",
+      "run": "40036707425"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 3",
+      "titre": "Correction automatique des exercices d'échauffement (question, QCM, ordre, association)",
+      "minutes": 60,
+      "pourquoi": "Seule issue prête dont les dépendances sont mergées (#2) et dont la règle de score a été validée par Ange (Q1) ; elle débloque la soumission d'exercices (#9).",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "735cd86aa3a6b182108230bc0742595c7f8cb89cfbf9154648c2000a8db20bb7"
+}
