@@ -29,3 +29,9 @@ class ExerciseLessonItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
         fields = ["id", "title", "type"]
+
+
+class SubmissionSerializer(serializers.Serializer):
+    submission = serializers.JSONField()
+    duration_seconds = serializers.IntegerField(required=False, min_value=0, allow_null=True)
+    hints_used = serializers.IntegerField(required=False, min_value=0, max_value=32767, default=0)
