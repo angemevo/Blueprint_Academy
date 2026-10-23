@@ -94,6 +94,10 @@
     {
       "quand": "2026-10-23T23:17:34+00:00",
       "texte": "PR #29 mergée : Progression des leçons et verrouillage par prérequis de Skills."
+    },
+    {
+      "quand": "2026-10-23T23:20:14+00:00",
+      "texte": "PR #30 mergée : Données du tableau de bord étudiant (API)."
     }
   ],
   "incidents": [
