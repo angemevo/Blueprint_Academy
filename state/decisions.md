@@ -13,3 +13,7 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 - 2026-10-20 — Règle de score de #3, courbe de niveaux de #10, cadrage de #4 : renvoyés à Ange (Q1 à Q3), choix pédagogiques ou à vérifier dans Unreal — agent
 - 2026-10-15 — Le moteur de validation de graphe et la formule de maîtrise sont cadrés par Ange avant délégation — cœur pédagogique, risque n° 1 du projet — Ange
 - 2026-10-22 — Étiquette ready posée sur #6, #7, #8 (dépendances mergées ou traitées plus tôt la même nuit) — agent (chef d'équipe)
+- 2026-10-23 — Q2 : principe de la courbe de niveaux par liste de seuils validé ; valeurs de départ proposées avant #9 — Ange
+- 2026-10-23 — Q4 : principe de maîtrise : réussir sans erreur, en moins de temps que la moyenne, avec peu de tentatives ; formule chiffrée à rédiger par l'équipe puis à valider par Ange — Ange
+- 2026-10-23 — Q5 : option A (issue du type I en `a-cadrer`, à créer au prochain pilotage) ; Ange fournit des exports Unreal le samedi 24 octobre — Ange
+- 2026-10-23 — Q1 (« A et B », contradictoire) et Q3 (cadrage non validé explicitement) : reposées à Ange — agent
