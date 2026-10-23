@@ -22,7 +22,12 @@
       "resume": "Les échauffements (question, QCM, remise dans l'ordre, association) sont maintenant corrigés automatiquement côté serveur, avec le barème de l'issue (question et QCM tout ou rien, ordre et association au prorata). Le retour fait à l'étudiant ne donne jamais la bonne réponse. La PR #24 est ouverte, approuvée par qa avec 184 tests au vert, et le portier peut la fusionner. Une décision technique est notée pour l'équipe : le format de ce que l'étudiant envoie."
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "quand": "2026-10-23T23:06:52+00:00",
+      "texte": "PR #24 mergée : Validateurs des types A, B, C, D."
+    }
+  ],
   "incidents": [],
   "rapporte": false,
   "empreinte_consignes": "735cd86aa3a6b182108230bc0742595c7f8cb89cfbf9154648c2000a8db20bb7"
