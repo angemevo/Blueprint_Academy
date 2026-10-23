@@ -17,3 +17,5 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 - 2026-10-23 — Q4 : principe de maîtrise : réussir sans erreur, en moins de temps que la moyenne, avec peu de tentatives ; formule chiffrée à rédiger par l'équipe puis à valider par Ange — Ange
 - 2026-10-23 — Q5 : option A (issue du type I en `a-cadrer`, à créer au prochain pilotage) ; Ange fournit des exports Unreal le samedi 24 octobre — Ange
 - 2026-10-23 — Q1 (« A et B », contradictoire) et Q3 (cadrage non validé explicitement) : reposées à Ange — agent
+
+- 2026-10-23 — Q1 : option A, score partiel pour les exercices C et D (ordre et paires) ; #3 `ready` (#2 mergée via la PR #14) — Ange
