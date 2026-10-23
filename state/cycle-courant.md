@@ -49,3 +49,5 @@ Branche feat/6-profil-permissions, PR #21, prête pour revue.
 Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, courbe validée par Ange) -> #25 (progression et prérequis) -> #26 (données du tableau de bord). Hors plan : #4 et #11 (`a-cadrer`, attendent Ange / exports du 24 octobre).
 
 - Créneau 2 (2026-10-23) : issue #9, branche feat/9-soumission-exercice, PR #27 ouverte (non brouillon), qa APPROUVÉE (196 tests OK). Prochaine action : le portier merge #27. Point à trancher dans l'issue XP : la limite d'essais compte aussi les tentatives réussies.
+
+- Créneau 3 (2026-10-23) : issue #10, branche feat/10-xp-niveaux, PR #28 ouverte (non brouillon), qa APPROUVÉE (201 tests OK). Réserve non bloquante : pas de test de concurrence. Prochaine action : le portier merge #28.

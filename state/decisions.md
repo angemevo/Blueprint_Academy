@@ -23,3 +23,5 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 
 ## 2026-10-23 - Validateurs A/B/C/D (#3)
 - Barème appliqué comme proposé dans l'issue : A et B tout-ou-rien ; C = part des éléments bien placés ; D = part des paires correctes (plafonné à 99 s'il y a des paires en trop). Format de soumission choisi : A `{"answer"}`, B `{"selected_option_ids"}`, C `{"order"}`, D `{"pairs":[{left_id,right_id}]}`. Chargement des validateurs dans `ExercisesConfig.ready()`.
+
+- 2026-10-23 (#10) : courbe XP_LEVEL_THRESHOLDS = 0,100,250,450,700,1000,1350,1750,2200,2700 (niveaux 1-10), réglage env modifiable ; principe validé par Ange (Q2).
