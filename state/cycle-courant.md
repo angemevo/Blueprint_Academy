@@ -44,3 +44,6 @@ Branche feat/6-profil-permissions, PR #21, prête pour revue.
 - Créneau 6 (2026-10-22) : issue #8, branche feat/8-api-exercices, PR #23 ouverte (non brouillon), qa APPROUVÉE (145 tests OK). Réserve non bloquante : le type D n'est pas mélangé (l'ordre des colonnes peut révéler les paires), à traiter avec la soumission. Prochaine action : le portier merge #23.
 
 - Créneau 1 (2026-10-23) : issue #3, branche feat/3-validateurs-abcd, PR #24 ouverte (non brouillon), qa APPROUVÉE (184 tests OK). Prochaine action : le portier merge #24.
+
+## Réapprovisionnement (2026-10-23)
+Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, courbe validée par Ange) -> #25 (progression et prérequis) -> #26 (données du tableau de bord). Hors plan : #4 et #11 (`a-cadrer`, attendent Ange / exports du 24 octobre).

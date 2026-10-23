@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-10-21",
+  "maj": "2026-10-23",
   "par": "première estimation, à affiner par l'organisateur au pilotage",
   "echelle": {
     "1": "petite : un créneau",
@@ -48,49 +48,56 @@
       "phase": "2 · Backend",
       "points": 2,
       "issue": 2,
-      "etat": "en_cours"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Version figée de l'outil de contrôle du code",
       "phase": "2 · Backend",
       "points": 1,
       "issue": 16,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Inscription, connexion et déconnexion",
       "phase": "2 · Backend",
       "points": 3,
       "issue": 5,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Profil et droits (étudiant, formateur, admin)",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 6,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Catalogue : parcours, modules et leçons",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 7,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Exercices consultables sans révéler la solution",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 8,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Correction des exercices de rappel (question, QCM, ordre, association)",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 3,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Correction des exercices de construction de graphe",
@@ -134,14 +141,14 @@
       "titre": "Progression et prérequis entre compétences",
       "phase": "2 · Backend",
       "points": 3,
-      "issue": null,
+      "issue": 25,
       "etat": "a_faire"
     },
     {
       "titre": "Données du tableau de bord étudiant",
       "phase": "2 · Backend",
       "points": 2,
-      "issue": null,
+      "issue": 26,
       "etat": "a_faire"
     },
     {

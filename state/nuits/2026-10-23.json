@@ -28,7 +28,17 @@
       "texte": "PR #24 mergée : Validateurs des types A, B, C, D."
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "quand": "2026-10-23T23:07:13+00:00",
+      "texte": "23 h 07 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et toutes les issues marquées prêtes (#2, #3, #5, #6, #7, #8, #15, #16) sont déjà livrées par des PR mergées (elles restent seulement ouvertes). La suite, #9 (soumission d'un exercice), n'a pas l'étiquette ready ; #10 dépend de #9 et attend la décision d'Ange sur la courbe de nivea"
+    },
+    {
+      "quand": "2026-10-23T23:07:57+00:00",
+      "texte": "23 h 07 — l'organisateur a préparé la suite : L'équipe a maintenant quatre tâches prêtes : l'enregistrement des tentatives d'un étudiant, les points d'expérience et les niveaux (avec la courbe que vous avez validée), la progression dans les leçons avec le verrouillage par compétences, puis les données du futur tableau de bord. Elles couvrent la fin du socle serveur hors correction des graphes et maîtrise. Ce qui débloquerait ensuite le plus de travail : les exports Unreal du samedi 24 octobre (correction des graphes) et la validation de la formule de maîtrise."
+    }
+  ],
   "rapporte": false,
-  "empreinte_consignes": "735cd86aa3a6b182108230bc0742595c7f8cb89cfbf9154648c2000a8db20bb7"
+  "empreinte_consignes": "735cd86aa3a6b182108230bc0742595c7f8cb89cfbf9154648c2000a8db20bb7",
+  "reapprovisionnements": 1
 }
