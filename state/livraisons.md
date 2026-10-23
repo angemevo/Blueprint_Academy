@@ -13,3 +13,4 @@
 | 2026-10-22 | #22 | API du catalogue en lecture : parcours, modules, leçons | #7 |
 | 2026-10-22 | #23 | API exercices en lecture, sans fuite de solution | #8 |
 | 2026-10-23 | #24 | Validateurs des types A, B, C, D | #3 |
+| 2026-10-23 | #27 | Soumission d'un exercice et enregistrement des tentatives | #9 |

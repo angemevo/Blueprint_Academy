@@ -70,6 +70,10 @@
     {
       "quand": "2026-10-23T23:06:52+00:00",
       "texte": "PR #24 mergée : Validateurs des types A, B, C, D."
+    },
+    {
+      "quand": "2026-10-23T23:11:27+00:00",
+      "texte": "PR #27 mergée : Soumission d'un exercice et enregistrement des tentatives."
     }
   ],
   "incidents": [
