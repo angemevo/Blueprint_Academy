@@ -6,6 +6,8 @@ Mise à jour : pilotage du 2026-10-20 (semaine 2026-S43). Aucune réponse d'Ange
 
 ## En attente
 
+- [ ] **Q6 — Passer à la phase 3 (écrans du site) ?** Contexte : toute la partie serveur de la phase 2 est livrée (connexion, catalogue, exercices, correction des rappels, soumission, points et niveaux, progression, tableau de bord). Il ne reste que trois lots qui attendent Ange (correction des graphes #4 après les exports Unreal du 24 octobre, maîtrise #11, lecture d'un export Unreal). Options : A : démarrer la phase 3 maintenant (socle du site, connexion, vitrine) pendant que les lots en attente se débloquent ; B : attendre la fin complète de la phase 2. Recommandation : A, parce que l'équipe n'a plus rien de prêt et que la phase 3 produit des écrans qu'Ange pourra voir. Sans réponse le 2026-11-01 : A appliquée par défaut.
+- [ ] **Q7 — Formule de maîtrise (#11).** Une proposition chiffrée est en commentaire de l'issue #11 (voir Q4bis). Ange la valide ou la corrige.
 - [ ] **Q4bis — Formule de maîtrise (#11).** Principe reçu d'Ange : maîtrise = réussir sans erreur, plus vite que la moyenne, avec le moins de tentatives. L'équipe rédige la formule chiffrée (poids, seuils) avant #11 ; Ange la valide. Pas de date : validation écrite requise.
 
 ## À confirmer au passage (non bloquant)

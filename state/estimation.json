@@ -112,14 +112,16 @@
       "phase": "2 · Backend",
       "points": 3,
       "issue": 9,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Points d'expérience et niveaux",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 10,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Maîtrise des compétences",
@@ -142,14 +144,16 @@
       "phase": "2 · Backend",
       "points": 3,
       "issue": 25,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Données du tableau de bord étudiant",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 26,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-23"
     },
     {
       "titre": "Socle du site : thème sombre, navigation, session",

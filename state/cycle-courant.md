@@ -55,3 +55,6 @@ Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, 
 - Créneau 4 (2026-10-23) : issue #25, branche feat/25-*, PR #29 ouverte (non brouillon), qa APPROUVÉE (207 tests OK, aucune migration). Réserve non bloquante : requêtes multiples par leçon dans la vue d'ensemble. Prochaine action : le portier merge #29.
 
 - Créneau 5 (2026-10-23) : issue #26, branche feat/26-dashboard-api, PR #30 ouverte (non brouillon), qa APPROUVÉE (212 tests OK). Prochaine action : le portier merge #30.
+
+## Réapprovisionnement (2026-10-23, 2e passe)
+Toute la phase 2 prête est mergée (#2 à #10, #25, #26 fermées). Rien n'est `ready`. Restent #4 (exports Unreal du 24 octobre), #11 (formule proposée en commentaire, attend Ange), lecture d'un export Unreal. Question Q6 posée : passer à la phase 3. Aucune issue de la phase 3 écrite avant accord (règle « attendre validation »).
