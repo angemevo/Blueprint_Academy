@@ -20,6 +20,46 @@
       "minutes_reelles": 2,
       "journal": "2026-10-23_2304-creneau-1-dev-issue3.jsonl",
       "resume": "Les échauffements (question, QCM, remise dans l'ordre, association) sont maintenant corrigés automatiquement côté serveur, avec le barème de l'issue (question et QCM tout ou rien, ordre et association au prorata). Le retour fait à l'étudiant ne donne jamais la bonne réponse. La PR #24 est ouverte, approuvée par qa avec 184 tests au vert, et le portier peut la fusionner. Une décision technique est notée pour l'équipe : le format de ce que l'étudiant envoie."
+    },
+    {
+      "n": 2,
+      "type": "dev",
+      "cible": "issue 9",
+      "titre": "Soumission d'un exercice : l'étudiant envoie sa réponse et chaque tentative est enregistrée",
+      "minutes": 75,
+      "pourquoi": "Tête de la chaîne restante (#9 → #10/#25 → #26) ; ses dépendances #3 et #8 sont mergées.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 10",
+      "titre": "Points d'expérience (XP) et niveaux : gagner de l'XP en réussissant, calcul du niveau",
+      "minutes": 60,
+      "pourquoi": "Suit #9, traitée plus tôt cette nuit ; la courbe de niveaux est déjà validée par Ange.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "dev",
+      "cible": "issue 25",
+      "titre": "Progression dans les leçons et déverrouillage selon les compétences requises",
+      "minutes": 75,
+      "pourquoi": "Dépend de #9 (placée avant) et #7 (mergée).",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 5,
+      "type": "dev",
+      "cible": "issue 26",
+      "titre": "Données du tableau de bord de l'étudiant (XP, niveau, progression)",
+      "minutes": 60,
+      "pourquoi": "Dernière de la chaîne : nécessite #10 et #25, placées avant.",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [
