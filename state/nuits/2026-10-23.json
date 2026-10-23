@@ -78,6 +78,10 @@
     {
       "quand": "2026-10-23T23:11:27+00:00",
       "texte": "PR #27 mergée : Soumission d'un exercice et enregistrement des tentatives."
+    },
+    {
+      "quand": "2026-10-23T23:14:29+00:00",
+      "texte": "PR #28 mergée : Attribution d'XP par le ledger et calcul du niveau."
     }
   ],
   "incidents": [
