@@ -2,7 +2,8 @@
 
 Un validateur concret se declare avec `@register(ExerciseType.MCQ)` ; le
 service de soumission appelle `get_validator(exercise.type).validate(...)`.
-Les validateurs concrets arrivent dans les issues suivantes.
+Les validateurs concrets sont charges par `ExercisesConfig.ready()`
+(`load_validators`) : recall.py pour A, B, C, D.
 """
 
 from .registry import (
@@ -23,3 +24,8 @@ __all__ = [
     "get_validator",
     "register",
 ]
+
+
+def load_validators() -> None:
+    """Importe les modules de validateurs concrets (enregistrement par decorateur)."""
+    from . import recall  # noqa: F401

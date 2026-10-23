@@ -6,3 +6,8 @@ class ExercisesConfig(AppConfig):
     name = "apps.exercises"
     label = "exercises"
     verbose_name = "Exercices"
+
+    def ready(self) -> None:
+        from .validators import load_validators
+
+        load_validators()
