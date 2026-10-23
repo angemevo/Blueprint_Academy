@@ -15,3 +15,4 @@
 | 2026-10-23 | #24 | Validateurs des types A, B, C, D | #3 |
 | 2026-10-23 | #27 | Soumission d'un exercice et enregistrement des tentatives | #9 |
 | 2026-10-23 | #28 | Attribution d'XP par le ledger et calcul du niveau | #10 |
+| 2026-10-23 | #29 | Progression des leçons et verrouillage par prérequis de Skills | #25 |
