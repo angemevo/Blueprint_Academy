@@ -116,6 +116,6 @@
       "texte": "1 h 52 — Le chef d'équipe n'a plus de tâche prête : Toutes les issues prêtes (#2, #5, #6, #7, #8, #15, #16) sont déjà livrées (PR mergées) et aucune PR n'est ouverte. Les issues restantes (#3, #9, #10) n'ont pas l'étiquette ready, et #4 et #11 attendent Ange. #3 attend la réponse à la question Q1 (par défaut le 2026-10-25)."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "empreinte_consignes": "925180d6aab5e17dc5d56f97142f982226935d7df721dc3476556d010518229b"
 }
