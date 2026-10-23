@@ -7,6 +7,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from apps.learning.services import catalog
+from apps.progress.services import dashboard
 from apps.progress.services import lessons as svc
 
 
@@ -53,3 +54,10 @@ class ProgressView(APIView):
     def get(self, request):
         paths = catalog.paths_queryset(request.user)
         return Response({"results": svc.progress_overview(request.user, paths)})
+
+
+class DashboardView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response(dashboard.build_dashboard(request.user))
