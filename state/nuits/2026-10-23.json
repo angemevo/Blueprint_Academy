@@ -56,8 +56,12 @@
       "titre": "Progression dans les leçons et déverrouillage selon les compétences requises",
       "minutes": 75,
       "pourquoi": "Dépend de #9 (placée avant) et #7 (mergée).",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-23T23:14:34+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-23_2314-creneau-4-dev-issue25.jsonl",
+      "resume": "L'étudiant peut désormais marquer une leçon comme commencée puis terminée, et voir sa progression en pourcentage par parcours. Une leçon dont les compétences de départ ne sont pas encore acquises est signalée comme verrouillée, avec la liste de ce qui manque. Le travail est approuvé par le contrôle qualité et attend le feu vert du portier. Les écrans correspondants viendront dans une étape ultérieure."
     },
     {
       "n": 5,

@@ -51,3 +51,5 @@ Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, 
 - Créneau 2 (2026-10-23) : issue #9, branche feat/9-soumission-exercice, PR #27 ouverte (non brouillon), qa APPROUVÉE (196 tests OK). Prochaine action : le portier merge #27. Point à trancher dans l'issue XP : la limite d'essais compte aussi les tentatives réussies.
 
 - Créneau 3 (2026-10-23) : issue #10, branche feat/10-xp-niveaux, PR #28 ouverte (non brouillon), qa APPROUVÉE (201 tests OK). Réserve non bloquante : pas de test de concurrence. Prochaine action : le portier merge #28.
+
+- Créneau 4 (2026-10-23) : issue #25, branche feat/25-*, PR #29 ouverte (non brouillon), qa APPROUVÉE (207 tests OK, aucune migration). Réserve non bloquante : requêtes multiples par leçon dans la vue d'ensemble. Prochaine action : le portier merge #29.
