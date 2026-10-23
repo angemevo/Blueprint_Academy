@@ -28,8 +28,12 @@
       "titre": "Soumission d'un exercice : l'étudiant envoie sa réponse et chaque tentative est enregistrée",
       "minutes": 75,
       "pourquoi": "Tête de la chaîne restante (#9 → #10/#25 → #26) ; ses dépendances #3 et #8 sont mergées.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-23T23:08:17+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-23_2308-creneau-2-dev-issue9.jsonl",
+      "resume": "L'étudiant peut maintenant envoyer sa réponse à un exercice, et chaque tentative est enregistrée avec son numéro, son score, sa durée et les indices utilisés. Une limite d'essais est respectée, et les exercices de construction (types E à I) répondent « pas encore disponible ». La PR #27 est relue et approuvée par qa (196 tests OK), et attend le portier. Reste à décider dans la future issue XP si les tentatives réussies comptent dans la limite d'essais."
     },
     {
       "n": 3,
