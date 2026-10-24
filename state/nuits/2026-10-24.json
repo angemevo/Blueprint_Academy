@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-10-24",
+  "equipes": [
+    {
+      "debut": "2026-10-24T22:17:31+00:00",
+      "run": "40137868403"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-10-24T22:18:30+00:00",
+      "texte": "22 h 18 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue étiquetée ready : la phase 2 est mergée, #4 et #11 attendent Ange (exports Unreal, formule de maîtrise) et la phase 3 attend sa validation (question Q6)."
+    },
+    {
+      "quand": "2026-10-24T22:18:51+00:00",
+      "texte": "22 h 18 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe ce matin : toute la partie serveur réalisable sans Ange est livrée. Les trois lots restants attendent Ange : la correction des graphes (après les exports Unreal de ce samedi), la formule de maîtrise et la lecture d'un export Unreal. Les écrans du site (phase 3) ne peuvent pas démarrer sans son accord.\n\nLa décision qui débloquerait le plus de travail est la question Q6 : passer à la phase 3. Une réponse « oui » donne à l'équipe plusieurs jours de travail visible (connexion, vitrine, catalogue). Sans réponse le 1er novembre, l'équipe démarre la phase 3 par défaut. A"
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
