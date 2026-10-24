@@ -1,6 +1,6 @@
 {
   "five_hour": {
-    "utilization": 0.32,
+    "utilization": 0.34,
     "resetsAt": 1792891800,
     "status": "allowed"
   },
@@ -10,5 +10,5 @@
     "status": "allowed"
   },
   "status": "allowed",
-  "maj": "2026-10-24T22:18:51+00:00"
+  "maj": "2026-10-24T22:19:24+00:00"
 }

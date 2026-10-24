@@ -58,3 +58,6 @@ Nouvelles issues `ready`, dans l'ordre : #9 (soumission) -> #10 (XP et niveaux, 
 
 ## Réapprovisionnement (2026-10-23, 2e passe)
 Toute la phase 2 prête est mergée (#2 à #10, #25, #26 fermées). Rien n'est `ready`. Restent #4 (exports Unreal du 24 octobre), #11 (formule proposée en commentaire, attend Ange), lecture d'un export Unreal. Question Q6 posée : passer à la phase 3. Aucune issue de la phase 3 écrite avant accord (règle « attendre validation »).
+
+## Réapprovisionnement (2026-10-24)
+Rien de nouveau : Q6 (phase 3) sans réponse, échéance 2026-11-01 ; #4 et #11 attendent Ange (exports Unreal du jour, formule de maîtrise). Aucune issue écrite.
