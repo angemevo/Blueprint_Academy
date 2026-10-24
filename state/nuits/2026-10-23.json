@@ -6,6 +6,12 @@
       "run": "40036707425",
       "fin": "2026-10-23T23:21:51+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-10-24T01:55:45+00:00",
+      "run": "40051920757",
+      "fin": "2026-10-24T01:57:02+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -122,6 +128,10 @@
     {
       "quand": "2026-10-23T23:21:51+00:00",
       "texte": "23 h 21 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : toute la phase 2 est mergée. Les issues restantes (#4 et #11) attendent les exports Unreal du 24 octobre et la réponse d Ange (passage à la phase 3)."
+    },
+    {
+      "quand": "2026-10-24T01:57:02+00:00",
+      "texte": "1 h 57 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : tout ce qui était prêt est livré. Les issues restantes (#4, #11) attendent Ange ou les exports Unreal, et la phase 3 attend son accord."
     }
   ],
   "rapporte": false,
