@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-10-24T22:17:31+00:00",
-      "run": "40137868403"
+      "run": "40137868403",
+      "fin": "2026-10-24T22:19:35+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-10-24T22:19:24+00:00",
       "texte": "22 h 19 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Toute la partie serveur qui pouvait avancer sans vous est livrée. Les trois lots restants (correction des graphes, maîtrise des compétences, lecture d'un export Unreal) attendent vos exports Unreal du samedi 24 octobre et votre accord sur la formule de maîtrise.\n\nCe qui débloquerait le plus de travail : répondre « oui » à la question Q6 (démarrer la phase 3, les écrans du site). Sans réponse, l'équipe l'applique d'elle-même le 1er novembre. Dès que les exports arrivent, l'équipe prépare la correction des graphes."
+    },
+    {
+      "quand": "2026-10-24T22:19:35+00:00",
+      "texte": "22 h 19 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue étiquetée ready. Les issues #4 et #11 attendent Ange (exports Unreal, formule de maîtrise) et la phase 3 attend sa réponse à la question Q6."
     }
   ],
   "rapporte": false,
