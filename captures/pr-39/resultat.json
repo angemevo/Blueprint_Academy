@@ -1,0 +1,23 @@
+{
+  "titre": "Vitrine publique : accueil et catalogue sans compte",
+  "date": "2026-10-25 22:37",
+  "captures": [
+    {
+      "fichier": "01-un-visiteur-arrive-sur-l-accueil-la-prom.png",
+      "legende": "Un visiteur arrive sur l'accueil : la promesse (opérationnel dans Unreal dès le premier jour, apprendre en pratiquant) et deux boutons, voir le catalogue ou créer un compte.",
+      "adresse": "http://localhost:3000/"
+    },
+    {
+      "fichier": "02-le-catalogue-est-public-tant-qu-aucun-pa.png",
+      "legende": "Le catalogue est public. Tant qu'aucun parcours n'est publié depuis l'admin, un message clair l'indique au lieu d'une page vide.",
+      "adresse": "http://localhost:3000/catalogue"
+    },
+    {
+      "fichier": "03-un-parcours-inexistant-ou-non-publie-aff.png",
+      "legende": "Un parcours inexistant ou non publié affiche une page introuvable, sans fuite de contenu.",
+      "adresse": "http://localhost:3000/catalogue/inconnu"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

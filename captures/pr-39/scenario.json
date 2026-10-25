@@ -1,0 +1,14 @@
+{
+  "titre": "Vitrine publique : accueil et catalogue sans compte",
+  "etapes": [
+    {"aller": "/"},
+    {"attendre": 1000},
+    {"capture": "Un visiteur arrive sur l'accueil : la promesse (opérationnel dans Unreal dès le premier jour, apprendre en pratiquant) et deux boutons, voir le catalogue ou créer un compte."},
+    {"aller": "/catalogue"},
+    {"attendre": 1500},
+    {"capture": "Le catalogue est public. Tant qu'aucun parcours n'est publié depuis l'admin, un message clair l'indique au lieu d'une page vide."},
+    {"aller": "/catalogue/inconnu"},
+    {"attendre": 1000},
+    {"capture": "Un parcours inexistant ou non publié affiche une page introuvable, sans fuite de contenu."}
+  ]
+}
