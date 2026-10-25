@@ -158,6 +158,10 @@
     {
       "quand": "2026-10-25T23:17:32+00:00",
       "texte": "PR #46 mergée : Exercice « remettre dans l'ordre » par glisser-déposer."
+    },
+    {
+      "quand": "2026-10-25T23:21:50+00:00",
+      "texte": "PR #47 mergée : Exercice d'association par glisser-déposer (type D)."
     }
   ],
   "incidents": [
