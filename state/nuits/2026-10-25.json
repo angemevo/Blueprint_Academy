@@ -56,8 +56,12 @@
       "titre": "Vitrine publique : accueil, catalogue et détail d'un parcours",
       "minutes": 70,
       "pourquoi": "Dépend de #31, traitée plus tôt cette nuit.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T22:35:46+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2235-creneau-4-dev-issue33.jsonl",
+      "resume": "La vitrine publique est faite (PR #39). Un visiteur peut voir l'accueil, la liste des parcours publiés et le détail d'un parcours (modules et leçons dans l'ordre), sans créer de compte. Le contrôle qualité a approuvé la PR et la livraison revient au portier. Reste à corriger plus tard : les accents manquants dans les textes de l'interface."
     },
     {
       "n": 5,

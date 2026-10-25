@@ -90,3 +90,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 2 (2026-10-25) : issue #31, PR #37 ouverte (non brouillon), qa APPROUVÉE (tests, typecheck, lint, build OK). Non bloquant : restreindre `next` aux chemins relatifs (issue connexion), accents manquants dans quelques textes. Prochaine action : le portier merge #37.
 
 - Créneau 3 (2026-10-25) : issue #32, PR #38 ouverte (non brouillon), qa APPROUVÉE (pytest 226, tests frontend 9, typecheck et lint OK). Réserve non bloquante : textes côté client sans accents. Prochaine action : le portier merge #38.
+
+- Créneau 4 (2026-10-25) : issue #33, branche feat/33-vitrine-publique, PR #39 ouverte (non brouillon), qa APPROUVÉE (frontend 14 tests OK). Non bloquant : accents manquants dans les textes, détail rendu à la demande. Prochaine action : le portier merge #39.
