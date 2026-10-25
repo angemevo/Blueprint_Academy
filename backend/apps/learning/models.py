@@ -105,6 +105,17 @@ class LearningPath(TimeStampedModel, PublishableModel, OrderedModel):
     def __str__(self) -> str:
         return self.title
 
+    def _check_publishable(self) -> None:
+        if self.is_published:
+            # Import local : evite un cycle learning <-> exercises.
+            from apps.learning.services.integrity import ensure_publishable
+
+            ensure_publishable(self)
+
+    def save(self, *args, **kwargs):
+        self._check_publishable()
+        return super().save(*args, **kwargs)
+
 
 class Module(TimeStampedModel, PublishableModel, OrderedModel):
     """Chapitre d'un parcours, regroupant des lecons."""
@@ -199,4 +210,12 @@ class Lesson(TimeStampedModel, PublishableModel, OrderedModel):
         # Le contenu est valide a la sauvegarde, quelle que soit la porte
         # d'entree : admin, API, shell ou commande de seed.
         validate_lesson_content(self.content)
+        self._check_publishable()
         return super().save(*args, **kwargs)
+
+    def _check_publishable(self) -> None:
+        if self.is_published:
+            # Import local : evite un cycle learning <-> exercises.
+            from apps.learning.services.integrity import ensure_publishable
+
+            ensure_publishable(self)

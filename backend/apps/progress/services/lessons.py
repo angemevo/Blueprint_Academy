@@ -6,6 +6,7 @@ Une lecon est accessible si tous les Skills prerequis sont maitrises
 La maitrise ne vient que des exercices de production (A/B/D ne debloquent rien).
 """
 
+from django.conf import settings
 from django.db import transaction
 from django.utils import timezone
 
@@ -35,7 +36,7 @@ def mastered_skill_ids(user) -> set[int]:
     return {
         m.skill_id
         for m in SkillMastery.objects.filter(
-            user=user, mastery_score__gte=SkillMastery.MASTERED_THRESHOLD
+            user=user, mastery_score__gte=settings.MASTERY_SETTINGS["mastered_threshold"]
         )
     }
 

@@ -11,6 +11,7 @@ Surtout : la maitrise ne progresse QUE sur des exercices de PRODUCTION
 la transition (type C) n'y contribuent jamais - « la pratique prime ».
 """
 
+from django.conf import settings
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 
@@ -119,9 +120,6 @@ class SkillMastery(TimeStampedModel):
     Un QCM reussi ne le fait pas bouger : c'est la regle centrale du produit.
     """
 
-    #: Seuil a partir duquel un skill est considere comme acquis.
-    MASTERED_THRESHOLD = 70
-
     user = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
@@ -165,4 +163,5 @@ class SkillMastery(TimeStampedModel):
 
     @property
     def is_mastered(self) -> bool:
-        return self.mastery_score >= self.MASTERED_THRESHOLD
+        # Seuil configurable : settings.MASTERY_SETTINGS["mastered_threshold"].
+        return self.mastery_score >= settings.MASTERY_SETTINGS["mastered_threshold"]
