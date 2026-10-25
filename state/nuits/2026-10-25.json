@@ -166,6 +166,10 @@
     {
       "quand": "2026-10-25T23:21:50+00:00",
       "texte": "PR #47 mergée : Exercice d'association par glisser-déposer (type D)."
+    },
+    {
+      "quand": "2026-10-25T23:24:51+00:00",
+      "texte": "PR #48 mergée : Tableau de bord étudiant."
     }
   ],
   "incidents": [

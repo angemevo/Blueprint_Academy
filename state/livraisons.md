@@ -25,3 +25,4 @@
 | 2026-10-25 | #45 | Espace d'exercice et exercices question / QCM | #41 |
 | 2026-10-25 | #46 | Exercice « remettre dans l'ordre » par glisser-déposer | #42 |
 | 2026-10-25 | #47 | Exercice d'association par glisser-déposer (type D) | #43 |
+| 2026-10-25 | #48 | Tableau de bord étudiant | #44 |
