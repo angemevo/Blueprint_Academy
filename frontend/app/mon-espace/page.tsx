@@ -1,12 +1,12 @@
 "use client";
 
 import { AuthGuard } from "@/components/auth-guard";
-import { PlaceholderPage } from "@/components/placeholder-page";
+import { DashboardView } from "@/components/dashboard-view";
 
 export default function MonEspacePage() {
   return (
     <AuthGuard>
-      <PlaceholderPage title="Mon espace" />
+      <DashboardView />
     </AuthGuard>
   );
 }
