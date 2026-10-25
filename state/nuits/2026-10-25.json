@@ -142,6 +142,10 @@
     {
       "quand": "2026-10-25T23:09:40+00:00",
       "texte": "PR #40 mergée : Page de leçon et navigation dans le module."
+    },
+    {
+      "quand": "2026-10-25T23:14:38+00:00",
+      "texte": "PR #45 mergée : Espace d'exercice et exercices question / QCM."
     }
   ],
   "incidents": [

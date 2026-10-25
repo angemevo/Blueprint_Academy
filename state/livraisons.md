@@ -22,3 +22,4 @@
 | 2026-10-25 | #38 | Écrans d'inscription et de connexion | #32 |
 | 2026-10-25 | #39 | Vitrine publique : accueil, catalogue et détail d'un parcours | #33 |
 | 2026-10-25 | #40 | Page de leçon et navigation dans le module | #34 |
+| 2026-10-25 | #45 | Espace d'exercice et exercices question / QCM | #41 |
