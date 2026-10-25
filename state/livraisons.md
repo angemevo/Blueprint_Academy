@@ -17,3 +17,4 @@
 | 2026-10-23 | #28 | Attribution d'XP par le ledger et calcul du niveau | #10 |
 | 2026-10-23 | #29 | Progression des leçons et verrouillage par prérequis de Skills | #25 |
 | 2026-10-23 | #30 | Données du tableau de bord étudiant (API) | #26 |
+| 2026-10-25 | #36 | Calcul de la maîtrise des skills et contrôle d'intégrité | #11 |

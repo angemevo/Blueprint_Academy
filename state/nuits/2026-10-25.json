@@ -62,7 +62,12 @@
       "tentatives": 0
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "quand": "2026-10-25T22:28:46+00:00",
+      "texte": "PR #36 mergée : Calcul de la maîtrise des skills et contrôle d'intégrité."
+    }
+  ],
   "incidents": [],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
