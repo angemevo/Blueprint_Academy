@@ -131,14 +131,6 @@
       "etat": "a_faire"
     },
     {
-      "titre": "Lecture d'un export Unreal (exercice réalisé dans Unreal)",
-      "phase": "2 · Backend",
-      "points": 5,
-      "issue": null,
-      "etat": "a_faire",
-      "attend_ange": true
-    },
-    {
       "titre": "Progression et prérequis entre compétences",
       "phase": "2 · Backend",
       "points": 3,
@@ -207,13 +199,6 @@
       "titre": "Exercices de construction sur le canvas",
       "phase": "3 · Écrans du site",
       "points": 5,
-      "issue": null,
-      "etat": "a_faire"
-    },
-    {
-      "titre": "Exercice « coller un export Unreal »",
-      "phase": "3 · Écrans du site",
-      "points": 2,
       "issue": null,
       "etat": "a_faire"
     },

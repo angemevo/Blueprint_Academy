@@ -28,3 +28,5 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 
 - 2026-10-25 — Q6 : passage à la phase 3 (écrans du site) accepté ; issues #31 à #34 créées `ready` — Ange
 - 2026-10-25 — Q7 : formule de maîtrise proposée en commentaire de #11 validée ; #11 `ready` — Ange
+
+- 2026-10-25 — Ange : l'import/export vers Unreal (exercice type I, lecture d'un export, « coller un export ») ne fait PAS partie du MVP ; prévu en V3 voire V4. Objectif n°1 du MVP : une plateforme d'apprentissage du Blueprint avec une interface similaire à Unreal. → lots retirés de l'estimation du MVP ; plus aucune issue type I avant V3 ; exports Unreal en texte plus nécessaires pour le MVP. Note : CLAUDE.md (protégé) cite encore le type I dans le MVP, à aligner par Ange.

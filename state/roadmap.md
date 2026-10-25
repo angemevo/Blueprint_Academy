@@ -21,7 +21,7 @@ Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #
 ### À cadrer par Ange (`a-cadrer`)
 - #4 Moteur de validation de graphe (proposition de l'équipe en commentaire, Q3)
 - #11 Maîtrise des skills (Q4)
-- Type I : issue à rédiger après #4 (Q5)
+- Type I (import Unreal) : reporté en V3 ou V4 (décision d’Ange, 2026-10-25), hors MVP
 
 ## Fait
 - Phase 1 : architecture et configuration
