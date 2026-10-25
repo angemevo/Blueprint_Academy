@@ -76,6 +76,46 @@
       "minutes_reelles": 30,
       "journal": "2026-10-25_2238-creneau-5-dev-issue34.jsonl",
       "resume": "Rien de nouveau à faire: ce créneau n'était qu'un rappel de sécurité et le travail du créneau 5 est déjà fini. La page de leçon (PR #40) est approuvée et attend la fusion par le portier."
+    },
+    {
+      "n": 6,
+      "type": "dev",
+      "cible": "issue 41",
+      "titre": "Espace d'exercice et exercices question / QCM : l'étudiant peut répondre à ses premiers exercices",
+      "minutes": 60,
+      "pourquoi": "Premier de la file et socle des deux exercices suivants ; ses dépendances (#34, #9) sont mergées.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 7,
+      "type": "dev",
+      "cible": "issue 42",
+      "titre": "Exercice « remettre dans l'ordre » par glisser-déposer",
+      "minutes": 60,
+      "pourquoi": "Dépend de #41, traitée juste avant ; apporte le socle de glisser-déposer.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 8,
+      "type": "dev",
+      "cible": "issue 43",
+      "titre": "Exercice d'association par glisser-déposer",
+      "minutes": 60,
+      "pourquoi": "Réutilise le socle de #41 et #42, traitées plus tôt cette nuit.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 9,
+      "type": "dev",
+      "cible": "issue 44",
+      "titre": "Tableau de bord étudiant : niveau, XP et progression visibles",
+      "minutes": 45,
+      "pourquoi": "Indépendante (dépendances mergées) ; dernière du plan, elle donne à l'étudiant une vue d'ensemble.",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [
