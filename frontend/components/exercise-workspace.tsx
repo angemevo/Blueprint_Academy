@@ -1,7 +1,7 @@
 "use client";
 
 import { useMutation } from "@tanstack/react-query";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, lazy, useCallback, useEffect, useRef, useState } from "react";
 
 import { ApiError } from "@/lib/api-client";
 import {
@@ -10,6 +10,8 @@ import {
   type SubmissionPayload,
   type SubmissionResult,
 } from "@/lib/exercises";
+
+const LazyOrdering = lazy(() => import("@/components/ordering-input"));
 
 type McqOption = { id: string; text: string };
 
@@ -66,9 +68,20 @@ function McqInput({ content, disabled, onChange }: InputProps) {
   );
 }
 
+function OrderingWorkspace({ content, disabled, onChange }: InputProps) {
+  const items = (content.items as { id: string; label: string }[] | undefined) ?? [];
+  const handle = useCallback((order: string[]) => onChange({ order }), [onChange]);
+  return (
+    <Suspense fallback={<p role="status" className="text-content-muted">Chargement...</p>}>
+      <LazyOrdering items={items} disabled={disabled} onChange={handle} />
+    </Suspense>
+  );
+}
+
 const INPUTS: Record<string, (p: InputProps) => React.ReactElement> = {
   A: QuestionInput,
   B: McqInput,
+  C: OrderingWorkspace,
 };
 
 function errorMessage(error: unknown): string {
@@ -110,7 +123,8 @@ export function ExerciseWorkspace({ exercise }: { exercise: ExerciseDetail }) {
     setRound((r) => r + 1);
   };
 
-  const question = typeof exercise.content.question === "string" ? exercise.content.question : "";
+  const rawQuestion = exercise.content.question ?? exercise.content.prompt;
+  const question = typeof rawQuestion === "string" ? rawQuestion : "";
 
   return (
     <section aria-label="Espace d'exercice" className="py-12">
