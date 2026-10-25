@@ -3,6 +3,7 @@
 import { useMutation } from "@tanstack/react-query";
 import { Suspense, lazy, useCallback, useEffect, useRef, useState } from "react";
 
+import { GraphWorkspace } from "@/components/graph-workspace";
 import { ApiError } from "@/lib/api-client";
 import {
   submitExercise,
@@ -10,6 +11,7 @@ import {
   type SubmissionPayload,
   type SubmissionResult,
 } from "@/lib/exercises";
+import { isGraphExerciseType } from "@/lib/node-catalog";
 
 const LazyOrdering = lazy(() => import("@/components/ordering-input"));
 const LazyMatching = lazy(() => import("@/components/matching-input"));
@@ -146,7 +148,12 @@ export function ExerciseWorkspace({ exercise }: { exercise: ExerciseDetail }) {
   return (
     <section aria-label="Espace d'exercice" className="py-12">
       <h1 className="text-3xl font-semibold text-content-primary">{exercise.title}</h1>
-      {!Input ? (
+      {isGraphExerciseType(exercise.type) ? (
+        <div className="mt-6 space-y-4">
+          <p className="text-content-primary">{question}</p>
+          <GraphWorkspace type={exercise.type} content={exercise.content} />
+        </div>
+      ) : !Input ? (
         <p role="status" className="mt-6 text-content-secondary">
           Ce type d&apos;exercice sera bientôt disponible.
         </p>
