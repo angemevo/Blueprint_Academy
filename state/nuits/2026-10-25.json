@@ -132,6 +132,36 @@
       "minutes_reelles": 2,
       "journal": "2026-10-25_2321-creneau-9-dev-issue44.jsonl",
       "resume": "La page « Mon espace » du tableau de bord étudiant est faite (PR #48). Elle montre le niveau et l'XP avec une barre de progression, les parcours en cours, la maîtrise des compétences, les dernières activités et un bouton « Continuer ». Les états de chargement, vide et erreur sont gérés, et un visiteur non connecté est renvoyé vers la connexion. Le contrôle qualité a approuvé la PR : tous les tests et vérifications passent. Il reste deux réserves non bloquantes: la barre d'XP n'est pas calculée à l'intérieur du niveau, et le lien « Continuer » suppose que la prochaine leçon est dans le premier "
+    },
+    {
+      "n": 10,
+      "type": "dev",
+      "cible": "issue 49",
+      "titre": "Ajouter au catalogue de nodes la description des pins (entrées/sorties et leurs types) et un endpoint pour la lire",
+      "minutes": 75,
+      "pourquoi": "Première de la chaîne du canvas : #50 et #51 en dépendent.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 11,
+      "type": "dev",
+      "cible": "issue 50",
+      "titre": "Afficher un graphe Blueprint dans le canvas, en lecture seule, avec l'aspect des nodes d'Unreal",
+      "minutes": 90,
+      "pourquoi": "Dépend de #49 traitée juste avant ; base du simulateur d'entraînement.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 12,
+      "type": "dev",
+      "cible": "issue 51",
+      "titre": "Permettre d'ajouter des nodes, de tirer des liens et de compiler en local dans le canvas",
+      "minutes": 90,
+      "pourquoi": "Dépend de #50 traitée juste avant ; complète le canvas utilisable.",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [
