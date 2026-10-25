@@ -1,0 +1,10 @@
+{"titre":"Le tableau de bord d'un nouvel étudiant",
+"etapes":[
+{"aller":"/inscription"},
+{"remplir":"#username","texte":"qb26157"},
+{"remplir":"#email","texte":"qb26157@example.com"},
+{"remplir":"#password","texte":"Motdepasse-Solide-2026"},
+{"cliquer":"text=Creer mon compte"},
+{"attendre":3500},
+{"capture":"Un nouvel étudiant arrive sur son espace : niveau 1, 0 XP, barre de progression et un message qui l'invite à découvrir le catalogue."}
+]}

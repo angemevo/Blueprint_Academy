@@ -1,0 +1,13 @@
+{
+  "titre": "Le tableau de bord d'un nouvel étudiant",
+  "date": "2026-10-25 23:23",
+  "captures": [
+    {
+      "fichier": "01-un-nouvel-etudiant-arrive-sur-son-espace.png",
+      "legende": "Un nouvel étudiant arrive sur son espace : niveau 1, 0 XP, barre de progression et un message qui l'invite à découvrir le catalogue.",
+      "adresse": "http://localhost:3000/mon-espace"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}
