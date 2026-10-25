@@ -104,3 +104,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 7 (2026-10-25) : issue #42, branche feat/42-exercice-ordre-dnd, PR #46 ouverte (non brouillon), qa APPROUVÉE (28 tests frontend, 226 backend OK). Réserve non bloquante : glisser-déposer souris/clavier non simulé dans les tests. Prochaine action : le portier merge #46.
 
 - Créneau 8 (2026-10-25) : issue #43, branche feat/43-exercice-association-dnd, PR #47 ouverte (non brouillon), qa APPROUVÉE (227 tests backend, 30 tests frontend OK). Réserves non bloquantes : test de mélange peu probant avec 2 paires, pas de signal visuel au remplacement d'un partenaire. Prochaine action : le portier merge #47.
+
+- Créneau 9 (2026-10-25) : issue #44, branche feat/44-tableau-de-bord, PR #48 ouverte (non brouillon), qa APPROUVÉE (34 tests frontend, 227 backend OK). Réserves non bloquantes : barre XP = total/seuil suivant, lien « Continuer » via le premier parcours. Prochaine action : le portier merge #48.

@@ -126,8 +126,12 @@
       "titre": "Tableau de bord étudiant : niveau, XP et progression visibles",
       "minutes": 45,
       "pourquoi": "Indépendante (dépendances mergées) ; dernière du plan, elle donne à l'étudiant une vue d'ensemble.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:21:54+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2321-creneau-9-dev-issue44.jsonl",
+      "resume": "La page « Mon espace » du tableau de bord étudiant est faite (PR #48). Elle montre le niveau et l'XP avec une barre de progression, les parcours en cours, la maîtrise des compétences, les dernières activités et un bouton « Continuer ». Les états de chargement, vide et erreur sont gérés, et un visiteur non connecté est renvoyé vers la connexion. Le contrôle qualité a approuvé la PR : tous les tests et vérifications passent. Il reste deux réserves non bloquantes: la barre d'XP n'est pas calculée à l'intérieur du niveau, et le lien « Continuer » suppose que la prochaine leçon est dans le premier "
     }
   ],
   "merges": [
