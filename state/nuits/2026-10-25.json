@@ -70,6 +70,10 @@
     {
       "quand": "2026-10-25T22:28:46+00:00",
       "texte": "PR #36 mergée : Calcul de la maîtrise des skills et contrôle d'intégrité."
+    },
+    {
+      "quand": "2026-10-25T22:32:45+00:00",
+      "texte": "PR #37 mergée : Socle du site : thème sombre, navigation, session."
     }
   ],
   "incidents": [],
