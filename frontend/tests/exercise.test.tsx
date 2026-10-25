@@ -132,4 +132,35 @@ describe("ExerciseWorkspace", () => {
     expect(screen.getByText(/bientôt disponible/)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Valider" })).not.toBeInTheDocument();
   });
+
+  const orderEx: ExerciseDetail = {
+    ...base, id: 7, type: "C", title: "Ordre C",
+    content: {
+      prompt: "Remets dans l'ordre",
+      items: [{ id: "i1", label: "Event BeginPlay" }, { id: "i2", label: "Print String" }, { id: "i3", label: "Delay" }],
+    },
+  };
+
+  it("type C : réordonner puis envoyer produit le bon corps", async () => {
+    const spy = vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      json(200, { is_correct: false, score: 33, feedback: ["1 élément(s) sur 3 bien placé(s)."],
+        hints: [], attempt_number: 1 }),
+    );
+    renderWs(orderEx);
+    fireEvent.click(await screen.findByRole("button", { name: "Descendre Event BeginPlay" }));
+    fireEvent.click(screen.getByRole("button", { name: "Valider" }));
+    expect(await screen.findByText(/Raté · score 33/)).toBeInTheDocument();
+    expect(body(spy).submission).toEqual({ order: ["i2", "i1", "i3"] });
+  });
+
+  it("type C : affiche le résultat partiel", async () => {
+    vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      json(200, { is_correct: false, score: 33, feedback: ["1 élément(s) sur 3 bien placé(s)."],
+        hints: [], attempt_number: 1 }),
+    );
+    renderWs(orderEx);
+    fireEvent.click(await screen.findByRole("button", { name: "Valider" }));
+    expect(await screen.findByText("1 élément(s) sur 3 bien placé(s).")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Réessayer" })).toBeInTheDocument();
+  });
 });
