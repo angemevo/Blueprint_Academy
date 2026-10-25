@@ -5,6 +5,8 @@ export type CatalogPin = {
   label: string;
   direction: "input" | "output";
   type: string;
+  /** Absent du catalogue actuel : prévu pour les pins obligatoires. */
+  required?: boolean;
 };
 
 export type CatalogNode = {

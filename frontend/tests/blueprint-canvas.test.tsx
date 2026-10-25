@@ -75,7 +75,7 @@ describe("chargement à la demande", () => {
       expect(src).not.toMatch(/^import .*blueprint-canvas/m);
     }
     expect(readFileSync("components/graph-workspace.tsx", "utf8")).toContain(
-      'import("@/components/blueprint-canvas")',
+      'import("@/components/blueprint-editor")',
     );
   });
 });
@@ -97,7 +97,7 @@ describe("buildFlow", () => {
 });
 
 describe("ExerciseWorkspace (production)", () => {
-  it("type H : charge le canvas à la demande, lecture seule, sans solution", async () => {
+  it("type H : charge le canvas à la demande, éditable, sans solution", async () => {
     const spy = vi.spyOn(globalThis, "fetch").mockResolvedValue(
       new Response(JSON.stringify(catalog), {
         status: 200, headers: { "content-type": "application/json" },
@@ -114,7 +114,7 @@ describe("ExerciseWorkspace (production)", () => {
         <ExerciseWorkspace exercise={ex} />
       </QueryClientProvider>,
     );
-    expect(screen.getByText(/Édition bientôt disponible/)).toBeInTheDocument();
+    expect(screen.getByText(/Clic droit pour ajouter/)).toBeInTheDocument();
     expect(await screen.findByText("Print String")).toBeInTheDocument();
     expect(String(spy.mock.calls[0]?.[0])).toContain("node-catalog/");
     expect(screen.queryByRole("button", { name: "Valider" })).not.toBeInTheDocument();

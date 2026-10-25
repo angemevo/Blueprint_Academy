@@ -64,7 +64,6 @@ function PinRow({ pin }: { pin: CatalogPin }) {
         id={pin.name}
         type={isInput ? "target" : "source"}
         position={isInput ? Position.Left : Position.Right}
-        isConnectable={false}
         style={{ background: color, border: "none", width: 8, height: 8 }}
       />
       {isInput && shape}
@@ -111,7 +110,7 @@ function BlueprintNode({ data }: NodeProps<Node<BlueprintNodeData>>) {
   );
 }
 
-const nodeTypes = { blueprint: BlueprintNode };
+export const nodeTypes = { blueprint: BlueprintNode };
 
 const hasPin = (def: CatalogNode | null, name: string | undefined, direction: string) =>
   !!name && !!def?.pins.some((p) => p.name === name && p.direction === direction);
