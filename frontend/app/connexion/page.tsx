@@ -1,5 +1,5 @@
-import { PlaceholderPage } from "@/components/placeholder-page";
+import { AuthForm } from "@/components/auth-form";
 
 export default function ConnexionPage() {
-  return <PlaceholderPage title="Connexion" />;
+  return <AuthForm mode="login" />;
 }
