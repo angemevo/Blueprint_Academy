@@ -1,0 +1,23 @@
+{
+  "titre": "Inscription et connexion d'un étudiant",
+  "date": "2026-10-25 22:34",
+  "captures": [
+    {
+      "fichier": "01-mot-de-passe-trop-faible-le-message-du-s.png",
+      "legende": "Mot de passe trop faible : le message du serveur s'affiche sous le champ concerné, l'étudiant sait quoi corriger.",
+      "adresse": "http://localhost:3000/inscription"
+    },
+    {
+      "fichier": "02-compte-cree-et-connecte-automatiquement-.png",
+      "legende": "Compte créé et connecté automatiquement : l'étudiant arrive dans son espace (page provisoire).",
+      "adresse": "http://localhost:3000/mon-espace"
+    },
+    {
+      "fichier": "03-page-de-connexion-avec-un-lien-vers-l-in.png",
+      "legende": "Page de connexion, avec un lien vers l'inscription.",
+      "adresse": "http://localhost:3000/connexion"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

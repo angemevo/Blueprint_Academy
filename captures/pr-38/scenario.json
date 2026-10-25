@@ -1,0 +1,18 @@
+{
+  "titre": "Inscription et connexion d'un étudiant",
+  "etapes": [
+    {"aller": "/inscription"},
+    {"remplir": "#username", "texte": "etudiant-qa"},
+    {"remplir": "#email", "texte": "etudiant-qa@example.com"},
+    {"remplir": "#password", "texte": "123"},
+    {"cliquer": "text=Creer mon compte"},
+    {"attendre": 1500},
+    {"capture": "Mot de passe trop faible : le message du serveur s'affiche sous le champ concerné, l'étudiant sait quoi corriger."},
+    {"remplir": "#password", "texte": "Secret-Blueprint-2026"},
+    {"cliquer": "text=Creer mon compte"},
+    {"attendre": 3000},
+    {"capture": "Compte créé et connecté automatiquement : l'étudiant arrive dans son espace (page provisoire)."},
+    {"aller": "/connexion"},
+    {"capture": "Page de connexion, avec un lien vers l'inscription."}
+  ]
+}
