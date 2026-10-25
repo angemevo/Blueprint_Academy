@@ -86,6 +86,10 @@
     {
       "quand": "2026-10-25T22:35:42+00:00",
       "texte": "PR #38 mergée : Écrans d'inscription et de connexion."
+    },
+    {
+      "quand": "2026-10-25T22:38:27+00:00",
+      "texte": "PR #39 mergée : Vitrine publique : accueil, catalogue et détail d'un parcours."
     }
   ],
   "incidents": [],
