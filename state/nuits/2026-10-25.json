@@ -154,8 +154,12 @@
       "titre": "Afficher un graphe Blueprint dans le canvas, en lecture seule, avec l'aspect des nodes d'Unreal",
       "minutes": 90,
       "pourquoi": "Dépend de #49 traitée juste avant ; base du simulateur d'entraînement.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:29:21+00:00",
+      "minutes_reelles": 3,
+      "journal": "2026-10-25_2329-creneau-11-dev-issue50.jsonl",
+      "resume": "Le canvas Blueprint en lecture seule est prêt (PR #53, issue #50), et la relecture qa l'a approuvé. Dans l'espace d'exercice, les étudiants voient le graphe de départ des exercices de production avec des nodes proches de ceux d'Unreal, et le message « édition bientôt disponible ». Les couleurs restent des approximations à comparer aux captures d'Ange. Le portier peut maintenant fusionner la PR, et l'édition du canvas vient ensuite."
     },
     {
       "n": 12,
