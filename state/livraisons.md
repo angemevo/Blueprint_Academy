@@ -27,3 +27,4 @@
 | 2026-10-25 | #47 | Exercice d'association par glisser-déposer (type D) | #43 |
 | 2026-10-25 | #48 | Tableau de bord étudiant | #44 |
 | 2026-10-25 | #52 | Pins dans le catalogue de nodes et endpoint node-catalog | #49 |
+| 2026-10-25 | #53 | Canvas Blueprint en lecture seule | #50 |
