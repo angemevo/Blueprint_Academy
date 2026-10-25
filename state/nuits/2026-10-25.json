@@ -140,8 +140,12 @@
       "titre": "Ajouter au catalogue de nodes la description des pins (entrées/sorties et leurs types) et un endpoint pour la lire",
       "minutes": 75,
       "pourquoi": "Première de la chaîne du canvas : #50 et #51 en dépendent.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:26:27+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2326-creneau-10-dev-issue49.jsonl",
+      "resume": "Le catalogue de nodes décrit maintenant les connecteurs (pins) de 19 nodes courants, et le canvas pourra les lire via `GET /api/node-catalog/`, réservé aux utilisateurs connectés. La PR #52 est approuvée par qa (230 tests OK) et attend le portier. Les noms de pins ne sont pas confirmés par un vrai export Unreal : ils sont tous marqués « à vérifier dans Unreal ». 45 nodes restent sans pins, et deux réserves mineures sont à reprendre plus tard."
     },
     {
       "n": 11,

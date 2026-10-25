@@ -109,3 +109,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 
 ## Réapprovisionnement (2026-10-25, 2e passe)
 #41 à #44 mergées (PR #45 à #48) et fermées. Nouvelles issues `ready`, dans l'ordre : #49 (pins dans le catalogue, backend) -> #50 (canvas en lecture seule, dépend de #49) -> #51 (canvas : ajout de nodes et liens, dépend de #50). Hors plan : #4 (`a-cadrer`). Ensuite : soumission des exercices de construction (attend #4), phase 4 (admin) seulement après accord d'Ange.
+
+- Créneau 10 (2026-10-25) : issue #49, branche feat/49-pins-catalogue, PR #52 ouverte (non brouillon), qa APPROUVÉE (230 tests OK). Réserves non bloquantes : test manquant sur les clés du tableau de pins ; API ne signale pas les pins non confirmés. 45 nodes sans pins, noms « à vérifier dans Unreal ». Prochaine action : le portier merge #52.
