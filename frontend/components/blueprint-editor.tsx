@@ -23,11 +23,14 @@ import { pinColor } from "@/lib/blueprint-style";
 import {
   addLink,
   checkLink,
+  type Link,
   compileGraph,
   filterPalette,
   normalizeGraph,
 } from "@/lib/graph-editing";
-import type { CatalogNode, NormalizedGraph } from "@/lib/node-catalog";
+import type { CatalogNode, GraphNode, NormalizedGraph } from "@/lib/node-catalog";
+
+const extra = (g?: GraphNode) => ({ gtype: g?.type, glabel: g?.label, gprops: g?.properties });
 
 type Props = {
   graph: NormalizedGraph;
@@ -49,7 +52,7 @@ export default function BlueprintEditor({
       ...n,
       draggable: !locked.has(n.id),
       deletable: !locked.has(n.id),
-      data: { ...n.data, gtype: graph.nodes.find((g) => g.id === n.id)?.type },
+      data: { ...n.data, ...extra(graph.nodes.find((g) => g.id === n.id)) },
     }));
     return { nodes: nodes as Node[], edges: flow.edges };
   }, [graph, catalog, locked]);
@@ -68,6 +71,8 @@ export default function BlueprintEditor({
       normalizeGraph({
         nodes: ns.map((n) => ({
           id: n.id, type: String(n.data.gtype), position: n.position,
+          ...(n.data.glabel ? { label: n.data.glabel as string } : {}),
+          ...(n.data.gprops ? { properties: n.data.gprops as Record<string, unknown> } : {}),
         })),
         edges: es.map((e) => ({
           from: e.source, to: e.target,
@@ -98,15 +103,19 @@ export default function BlueprintEditor({
     if (error) return setMessage(error);
     setMessage(null);
     const next = addLink(current, catalog, link);
-    const color = pinColor(
-      catalog.find((n) => n.id === current.nodes.find((x) => x.id === link.from)?.type)
-        ?.pins.find((p) => p.name === link.from_pin)?.type ?? "",
-    );
-    const es: Edge[] = next.edges.map((e, i) => ({
-      id: `l${i}-${e.from}-${e.to}-${e.to_pin}`,
-      source: e.from, target: e.to, sourceHandle: e.from_pin, targetHandle: e.to_pin,
-      style: { stroke: color, strokeWidth: 2 },
-    }));
+    const type = catalog
+      .find((n) => n.id === current.nodes.find((x) => x.id === link.from)?.type)
+      ?.pins.find((p) => p.name === link.from_pin)?.type ?? "";
+    const same = (e: Edge, l: Link) =>
+      e.source === l.from && e.target === l.to && e.sourceHandle === l.from_pin && e.targetHandle === l.to_pin;
+    // Les liens existants gardent leur style ; une entrée de données remplacée disparaît.
+    const kept = edges.filter((e) =>
+      next.edges.some((x) => same(e, { from: x.from, to: x.to, from_pin: x.from_pin ?? "", to_pin: x.to_pin ?? "" })));
+    const es: Edge[] = [...kept, {
+      id: `l${++counter.current}-${link.from}-${link.to}-${link.to_pin}`,
+      source: link.from, target: link.to, sourceHandle: link.from_pin, targetHandle: link.to_pin,
+      style: { stroke: pinColor(type), strokeWidth: 2 },
+    }];
     commit(nodes, es);
   };
 
@@ -117,7 +126,7 @@ export default function BlueprintEditor({
       id: `new_${counter.current}`,
       type: "blueprint",
       position: { x: menu.fx, y: menu.fy },
-      data: { title: def.label, definition: def, gtype: def.id },
+      data: { title: def.label, definition: def, ...extra({ id: "", type: def.id }) },
     };
     commit([...nodes, node], edges);
     setMenu(null);

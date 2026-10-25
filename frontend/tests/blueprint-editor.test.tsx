@@ -1,7 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 
-import { buildFlow } from "@/components/blueprint-canvas";
 import BlueprintEditor from "@/components/blueprint-editor";
 import { addLink, checkLink, compileGraph, filterPalette, normalizeGraph } from "@/lib/graph-editing";
 import type { CatalogNode, NormalizedGraph } from "@/lib/node-catalog";
@@ -28,6 +27,11 @@ const graph: NormalizedGraph = {
   edges: [],
 };
 const link = (from: string, to: string, from_pin: string, to_pin: string) => ({ from, to, from_pin, to_pin });
+
+const pressDelete = () => {
+  fireEvent.keyDown(document.body, { key: "Delete", code: "Delete" });
+  fireEvent.keyUp(document.body, { key: "Delete", code: "Delete" });
+};
 
 describe("édition du graphe", () => {
   it("ajoute un node via le menu de clic droit, filtré par la palette", () => {
@@ -62,13 +66,34 @@ describe("édition du graphe", () => {
     expect(checkLink(graph, wrong, link("n3", "n2", "Value", "InString"))).toMatch(/incompatibles/);
   });
 
-  it("empêche la suppression d'un node verrouillé", () => {
-    const flow = buildFlow(graph, catalog);
-    expect(flow.nodes.length).toBe(3);
-    render(<BlueprintEditor graph={graph} catalog={catalog} lockedNodeIds={["n1"]} />);
-    const locked = document.querySelector('[data-id="n1"]')!;
-    expect(locked.className).not.toMatch(/selectable.*draggable/);
-    expect(locked.classList.contains("draggable")).toBe(false);
+  it("supprime un node libre mais jamais un node verrouillé", async () => {
+    const onChange = vi.fn();
+    render(<BlueprintEditor graph={graph} catalog={catalog} lockedNodeIds={["n1"]} onChange={onChange} />);
+    const ids = () => onChange.mock.lastCall?.[0].nodes.map((n: { id: string }) => n.id);
+    fireEvent.click(document.querySelector('[data-id="n1"]')!);
+    pressDelete();
+    await new Promise((r) => setTimeout(r, 50));
+    expect(document.querySelector('[data-id="n1"]')).not.toBeNull();
+    expect(ids() ?? ["n1"]).toContain("n1");
+    fireEvent.click(document.querySelector('[data-id="n2"]')!);
+    pressDelete();
+    await waitFor(() => expect(document.querySelector('[data-id="n2"]')).toBeNull());
+    expect(ids()).toEqual(expect.arrayContaining(["n1", "n3"]));
+    expect(ids()).not.toContain("n2");
+  });
+
+  it("conserve properties et label des nodes de départ dans la sortie", () => {
+    const onChange = vi.fn();
+    const start: NormalizedGraph = {
+      nodes: [{ id: "n1", type: "Begin", label: "Début", properties: { variable: "Health" } }],
+      edges: [],
+    };
+    render(<BlueprintEditor graph={start} catalog={catalog} palette={["Print"]} onChange={onChange} />);
+    fireEvent.contextMenu(document.querySelector(".react-flow__pane")!);
+    fireEvent.click(screen.getByRole("option", { name: "Print String" }));
+    expect(onChange.mock.lastCall?.[0].nodes[0]).toEqual(
+      expect.objectContaining({ id: "n1", label: "Début", properties: { variable: "Health" } }),
+    );
   });
 
   it("compile localement et signale les nodes jamais exécutés", () => {

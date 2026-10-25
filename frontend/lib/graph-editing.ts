@@ -92,6 +92,7 @@ export function normalizeGraph(graph: NormalizedGraph): NormalizedGraph {
     nodes: graph.nodes.map((n) => ({
       id: n.id,
       type: n.type,
+      ...(n.label ? { label: n.label } : {}),
       ...(n.properties ? { properties: n.properties } : {}),
       ...(n.position ? { position: n.position } : {}),
     })),
