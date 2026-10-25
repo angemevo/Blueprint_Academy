@@ -70,8 +70,12 @@
       "titre": "Page de leçon et navigation dans le module",
       "minutes": 55,
       "pourquoi": "Dépend de #31, dernière du plan de la semaine.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T22:38:32+00:00",
+      "minutes_reelles": 30,
+      "journal": "2026-10-25_2238-creneau-5-dev-issue34.jsonl",
+      "resume": "Rien de nouveau à faire: ce créneau n'était qu'un rappel de sécurité et le travail du créneau 5 est déjà fini. La page de leçon (PR #40) est approuvée et attend la fusion par le portier."
     }
   ],
   "merges": [
