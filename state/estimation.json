@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-10-23",
+  "maj": "2026-10-25",
   "par": "première estimation, à affiner par l'organisateur au pilotage",
   "echelle": {
     "1": "petite : un créneau",
@@ -128,8 +128,7 @@
       "phase": "2 · Backend",
       "points": 3,
       "issue": 11,
-      "etat": "a_faire",
-      "attend_ange": true
+      "etat": "a_faire"
     },
     {
       "titre": "Lecture d'un export Unreal (exercice réalisé dans Unreal)",
@@ -159,28 +158,28 @@
       "titre": "Socle du site : thème sombre, navigation, session",
       "phase": "3 · Écrans du site",
       "points": 3,
-      "issue": null,
+      "issue": 31,
       "etat": "a_faire"
     },
     {
       "titre": "Écrans d'inscription et de connexion",
       "phase": "3 · Écrans du site",
       "points": 2,
-      "issue": null,
+      "issue": 32,
       "etat": "a_faire"
     },
     {
       "titre": "Vitrine publique : accueil et catalogue",
       "phase": "3 · Écrans du site",
       "points": 3,
-      "issue": null,
+      "issue": 33,
       "etat": "a_faire"
     },
     {
       "titre": "Pages parcours, module et leçon",
       "phase": "3 · Écrans du site",
       "points": 3,
-      "issue": null,
+      "issue": 34,
       "etat": "a_faire"
     },
     {

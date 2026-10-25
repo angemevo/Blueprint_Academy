@@ -61,3 +61,6 @@ Toute la phase 2 prête est mergée (#2 à #10, #25, #26 fermées). Rien n'est `
 
 ## Réapprovisionnement (2026-10-24)
 Rien de nouveau : Q6 (phase 3) sans réponse, échéance 2026-11-01 ; #4 et #11 attendent Ange (exports Unreal du jour, formule de maîtrise). Aucune issue écrite.
+
+## Consigne d'Ange (2026-10-25)
+Plan mis à jour : 1. #11 (maîtrise, formule validée) ; 2. #31 socle du site ; 3. #32 écrans connexion ; 4. #33 vitrine ; 5. #34 page de leçon. #4 reste `a-cadrer` (exports Unreal en texte attendus).
