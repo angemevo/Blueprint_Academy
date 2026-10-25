@@ -94,3 +94,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 4 (2026-10-25) : issue #33, branche feat/33-vitrine-publique, PR #39 ouverte (non brouillon), qa APPROUVÉE (frontend 14 tests OK). Non bloquant : accents manquants dans les textes, détail rendu à la demande. Prochaine action : le portier merge #39.
 
 - Créneau 5 (2026-10-25) : issue #34, branche feat/34-page-lecon, PR #40 ouverte (non brouillon), qa APPROUVÉE (226 tests backend, 19 frontend OK). Prochaine action : le portier merge #40.
+
+## Réapprovisionnement (2026-10-25, nuit)
+#11 et #31 à #34 mergées et fermées. Nouvelles issues `ready`, dans l'ordre : #41 (espace d'exercice, types A et B) -> #42 (ordre, glisser-déposer) -> #43 (association) -> #44 (tableau de bord). #42 et #43 dépendent de #41. Hors plan : #4 (`a-cadrer`). Canvas Blueprint : à écrire au prochain passage, après #41.

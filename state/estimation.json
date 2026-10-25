@@ -128,7 +128,8 @@
       "phase": "2 · Backend",
       "points": 3,
       "issue": 11,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Progression et prérequis entre compétences",
@@ -151,41 +152,52 @@
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 31,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Écrans d'inscription et de connexion",
       "phase": "3 · Écrans du site",
       "points": 2,
       "issue": 32,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Vitrine publique : accueil et catalogue",
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 33,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Pages parcours, module et leçon",
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 34,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Espace d'exercice et exercices question / QCM",
       "phase": "3 · Écrans du site",
       "points": 2,
-      "issue": null,
+      "issue": 41,
       "etat": "a_faire"
     },
     {
-      "titre": "Exercices par glisser-déposer (ordre, association)",
+      "titre": "Exercice « remettre dans l'ordre » par glisser-déposer",
       "phase": "3 · Écrans du site",
-      "points": 3,
-      "issue": null,
+      "points": 2,
+      "issue": 42,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Exercice d'association par glisser-déposer",
+      "phase": "3 · Écrans du site",
+      "points": 2,
+      "issue": 43,
       "etat": "a_faire"
     },
     {

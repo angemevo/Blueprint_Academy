@@ -31,3 +31,5 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 
 - 2026-10-25 — Ange : l'import/export vers Unreal (exercice type I, lecture d'un export, « coller un export ») ne fait PAS partie du MVP ; prévu en V3 voire V4. Objectif n°1 du MVP : une plateforme d'apprentissage du Blueprint avec une interface similaire à Unreal. → lots retirés de l'estimation du MVP ; plus aucune issue type I avant V3 ; exports Unreal en texte plus nécessaires pour le MVP. Note : CLAUDE.md (protégé) cite encore le type I dans le MVP, à aligner par Ange.
 - 2026-10-25 — Ange : 38 captures d'éditeur et de graphes fournies (dossier « Capture UE », branche des livrables). Décision : elles servent à cadrer #4 et l'aspect du canvas ; cas de test rédigés à partir d'elles, tous marqués « à vérifier dans Unreal ». #4 reste `a-cadrer` jusqu'à la validation de ces cas par Ange.
+
+- 2026-10-25 — Réapprovisionnement : issues #41 à #44 créées `ready` (phase 3 acceptée par Ange) ; lot « glisser-déposer » scindé en deux (ordre, association) ; mélange de la colonne droite du type D ajouté à #43 (réserve de qa sur #8) — agent (organisateur)
