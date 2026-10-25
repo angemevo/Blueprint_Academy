@@ -45,7 +45,14 @@ export default async function PathDetailPage({ params }: Props) {
               )}
               <ol className="mt-3 list-decimal pl-6 text-content-secondary">
                 {module.lessons.map((lesson) => (
-                  <li key={lesson.id}>{lesson.title}</li>
+                  <li key={lesson.id}>
+                    <Link
+                      href={`/catalogue/${path.slug}/lecons/${lesson.id}`}
+                      className="text-accent hover:underline"
+                    >
+                      {lesson.title}
+                    </Link>
+                  </li>
                 ))}
               </ol>
             </li>
