@@ -163,4 +163,42 @@ describe("ExerciseWorkspace", () => {
     expect(await screen.findByText("1 élément(s) sur 3 bien placé(s).")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Réessayer" })).toBeInTheDocument();
   });
+
+  const matchEx: ExerciseDetail = {
+    ...base, id: 8, type: "D", title: "Association D",
+    content: {
+      prompt: "Associe",
+      left: [{ id: "l1", label: "Branch" }, { id: "l2", label: "Delay" }],
+      right: [{ id: "r2", label: "Attend" }, { id: "r1", label: "Choisit" }],
+    },
+  };
+
+  it("type D : associer puis envoyer produit le bon corps", async () => {
+    const spy = vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      json(200, { is_correct: false, score: 50, feedback: ["1 paire(s) sur 2 correcte(s)."],
+        hints: [], attempt_number: 1 }),
+    );
+    renderWs(matchEx);
+    fireEvent.change(await screen.findByLabelText("Associer Branch à"), { target: { value: "r1" } });
+    expect(screen.getByRole("button", { name: "Valider" })).toBeEnabled();
+    fireEvent.change(screen.getByLabelText("Associer Delay à"), { target: { value: "r2" } });
+    fireEvent.click(screen.getByRole("button", { name: "Valider" }));
+    expect(await screen.findByText(/Raté · score 50/)).toBeInTheDocument();
+    expect(screen.getByText("1 paire(s) sur 2 correcte(s).")).toBeInTheDocument();
+    expect(body(spy).submission).toEqual({
+      pairs: [{ left_id: "l1", right_id: "r1" }, { left_id: "l2", right_id: "r2" }],
+    });
+  });
+
+  it("type D : un élément de droite ne sert qu'une fois", async () => {
+    const spy = vi.spyOn(globalThis, "fetch").mockResolvedValue(
+      json(200, { is_correct: false, score: 0, feedback: [], hints: [], attempt_number: 1 }),
+    );
+    renderWs(matchEx);
+    fireEvent.change(await screen.findByLabelText("Associer Branch à"), { target: { value: "r1" } });
+    fireEvent.change(screen.getByLabelText("Associer Delay à"), { target: { value: "r1" } });
+    fireEvent.click(screen.getByRole("button", { name: "Valider" }));
+    await screen.findByText(/Raté/);
+    expect(body(spy).submission).toEqual({ pairs: [{ left_id: "l2", right_id: "r1" }] });
+  });
 });
