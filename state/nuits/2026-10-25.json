@@ -14,8 +14,12 @@
       "titre": "Calcul de la maîtrise des skills (formule validée par Ange)",
       "minutes": 60,
       "pourquoi": "Première du plan de la semaine et seule issue backend prête ; la formule est validée.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T22:22:45+00:00",
+      "minutes_reelles": 5,
+      "journal": "2026-10-25_2222-creneau-1-dev-issue11.jsonl",
+      "resume": "Le calcul de la maîtrise des compétences est écrit selon la formule qu'Ange a validée, et la PR #36 est approuvée par qa après une boucle de corrections. Seuls les exercices de production font progresser la maîtrise, un échec ne la fait jamais baisser, et le type I n'est qu'un bonus (jamais nécessaire pour atteindre 100 %). Un contrôle empêche aussi de publier une leçon ou un parcours si une compétence manque d'exercices de production (au moins 3, dont 1 contraint). Le portier va fusionner la PR. Le branchement de ce contrôle au test du seed reste à faire, car il n'y a pas encore de seed dans "
     },
     {
       "n": 2,

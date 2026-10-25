@@ -78,3 +78,11 @@ Rien de nouveau : Q6 (phase 3) sans réponse, échéance 2026-11-01 ; #4 et #11 
 
 ## Consigne d'Ange (2026-10-25)
 Plan mis à jour : 1. #11 (maîtrise, formule validée) ; 2. #31 socle du site ; 3. #32 écrans connexion ; 4. #33 vitrine ; 5. #34 page de leçon. #4 reste `a-cadrer` (exports Unreal en texte attendus).
+
+## Issue #11
+Branche feat/11-maitrise-skills, PR #36, en attente de relecture QA.
+
+## Reprise PR #36 (issue #11) : CORRECTIONS demandées par qa
+Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exercise` avec un validateur de production factice (la maîtrise bouge pour E/F/G/H, pas pour A/B), et corriger le nom du test « reaches_100 » qui vérifie 94.
+
+- Créneau 1 (2026-10-25) : issue #11 (maîtrise des skills), branche feat/11-maitrise-skills, PR #36 ouverte (non brouillon), qa APPROUVÉE après une boucle de corrections (226 tests OK). Prochaine action : le portier merge #36.
