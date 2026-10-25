@@ -1,0 +1,13 @@
+{
+  "titre": "Page d'exercice : accès réservé aux connectés",
+  "date": "2026-10-25 23:13",
+  "captures": [
+    {
+      "fichier": "01-un-visiteur-qui-ouvre-directement-un-exe.png",
+      "legende": "Un visiteur qui ouvre directement un exercice est renvoyé vers la connexion : les exercices (question, QCM) sont réservés aux étudiants inscrits. Une fois connecté, l'étudiant répond et voit son score.",
+      "adresse": "http://localhost:3000/connexion?next=%2Fcatalogue%2Ffundamentals%2Flecons%2F1%2Fexercices%2F1"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

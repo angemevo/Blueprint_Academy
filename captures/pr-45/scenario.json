@@ -1,0 +1,8 @@
+{
+  "titre": "Page d'exercice : accès réservé aux connectés",
+  "etapes": [
+    {"aller": "/catalogue/fundamentals/lecons/1/exercices/1"},
+    {"attendre": 2500},
+    {"capture": "Un visiteur qui ouvre directement un exercice est renvoyé vers la connexion : les exercices (question, QCM) sont réservés aux étudiants inscrits. Une fois connecté, l'étudiant répond et voit son score."}
+  ]
+}
