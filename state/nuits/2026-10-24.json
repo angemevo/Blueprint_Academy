@@ -6,6 +6,12 @@
       "run": "40137868403",
       "fin": "2026-10-24T22:19:35+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-10-25T01:31:59+00:00",
+      "run": "40150961814",
+      "fin": "2026-10-25T01:32:52+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -30,6 +36,10 @@
     {
       "quand": "2026-10-24T22:19:35+00:00",
       "texte": "22 h 19 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue étiquetée ready. Les issues #4 et #11 attendent Ange (exports Unreal, formule de maîtrise) et la phase 3 attend sa réponse à la question Q6."
+    },
+    {
+      "quand": "2026-10-25T01:32:52+00:00",
+      "texte": "1 h 32 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête. Les issues restantes (#4, #11) attendent Ange (exports Unreal, formule de maîtrise) et le passage à la phase 3 attend sa réponse à la question Q6."
     }
   ],
   "rapporte": false,
