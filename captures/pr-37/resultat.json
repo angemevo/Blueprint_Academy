@@ -1,0 +1,23 @@
+{
+  "titre": "Socle du site : menu, accès réservé, page introuvable",
+  "date": "2026-10-25 22:31",
+  "captures": [
+    {
+      "fichier": "01-l-accueil-en-theme-sombre-avec-le-menu-e.png",
+      "legende": "L'accueil en thème sombre avec le menu en haut (Accueil, Catalogue, Connexion). Un visiteur voit « Connexion » ; c'est la base commune de tous les futurs écrans.",
+      "adresse": "http://localhost:3000/"
+    },
+    {
+      "fichier": "02-un-visiteur-qui-tente-d-ouvrir-mon-espac.png",
+      "legende": "Un visiteur qui tente d'ouvrir « Mon espace » est renvoyé vers la page de connexion (l'adresse garde sa destination). Les pages réservées sont donc protégées.",
+      "adresse": "http://localhost:3000/connexion?next=%2Fmon-espace"
+    },
+    {
+      "fichier": "03-une-adresse-inexistante-affiche-une-page.png",
+      "legende": "Une adresse inexistante affiche une page « introuvable » claire avec un lien de retour, au lieu d'une erreur brute.",
+      "adresse": "http://localhost:3000/page-inconnue"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

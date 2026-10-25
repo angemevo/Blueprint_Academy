@@ -1,0 +1,14 @@
+{
+  "titre": "Socle du site : menu, accès réservé, page introuvable",
+  "etapes": [
+    {"aller": "/"},
+    {"attendre": 1500},
+    {"capture": "L'accueil en thème sombre avec le menu en haut (Accueil, Catalogue, Connexion). Un visiteur voit « Connexion » ; c'est la base commune de tous les futurs écrans."},
+    {"aller": "/mon-espace"},
+    {"attendre": 2500},
+    {"capture": "Un visiteur qui tente d'ouvrir « Mon espace » est renvoyé vers la page de connexion (l'adresse garde sa destination). Les pages réservées sont donc protégées."},
+    {"aller": "/page-inconnue"},
+    {"attendre": 1000},
+    {"capture": "Une adresse inexistante affiche une page « introuvable » claire avec un lien de retour, au lieu d'une erreur brute."}
+  ]
+}
