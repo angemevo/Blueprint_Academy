@@ -1,6 +1,7 @@
 import pytest
 from django.core.exceptions import ValidationError
 
+from apps.exercises.enums import ExerciseType
 from apps.exercises.models import Exercise, ExerciseAttempt
 from apps.exercises.tests.test_exercise_api import SPECS
 from apps.learning.models import LearningPath, Lesson, Module, Skill
@@ -51,12 +52,61 @@ def test_recall_never_moves_mastery(user, skill):
     assert not SkillMastery.objects.exists()
 
 
-def test_perfect_non_i_reaches_100_without_type_i(user, skill):
+def test_without_average_default_speed_bonus_gives_94(user, skill):
     exos = [ex(skill, t, i) for i, t in enumerate("FHE")]
     for e in exos:
         attempt(user, e, duration=1)  # pas de moyenne : bonus par defaut
-    # (60+20+5)/90 -> 94 % ; la vitesse relative donne le reste
+    # (60+20+5)/90 -> 94 %
     assert mastery(user, skill).mastery_score == 94
+
+
+def test_100_reachable_with_three_non_i_faster_than_average(user, skill):
+    other = User.objects.create_user(username="o", password="x")
+    for i, t in enumerate("FHE"):
+        e = ex(skill, t, i)
+        ExerciseAttempt.objects.create(
+            user=other, exercise=e, is_correct=True, duration_seconds=100
+        )
+        attempt(user, e, duration=10)
+    assert mastery(user, skill).mastery_score == 100
+    assert mastery(user, skill).is_mastered
+
+
+@pytest.fixture
+def fake_validators():
+    """Validateur factice (toujours correct) pour F et H ; registre nettoye ensuite."""
+    from apps.exercises.validators import default_registry, register
+    from apps.validation.interfaces import ValidationResult
+
+    @register("F", "H")
+    class AlwaysCorrect:
+        def validate(self, exercise, submission):
+            return ValidationResult(is_correct=True, score=100)
+
+    yield
+    default_registry._validators.pop(ExerciseType("F"), None)
+    default_registry._validators.pop(ExerciseType("H"), None)
+
+
+def test_submit_production_moves_mastery(user, skill, fake_validators):
+    from apps.exercises.services.submission import submit_exercise
+
+    for t in "FH":
+        submit_exercise(user, ex(skill, t, ord(t)), {}, duration_seconds=5)
+    assert mastery(user, skill).attempts_count == 2
+    assert mastery(user, skill).successes_count == 2
+    assert mastery(user, skill).mastery_score > 0
+
+
+def test_submit_recall_creates_no_mastery(user, skill):
+    from apps.exercises.services.submission import submit_exercise
+
+    for t in "AB":
+        e = ex(skill, t, ord(t))
+        content, solution = SPECS[t]
+        submit_exercise(user, e, solution)
+    assert ExerciseAttempt.objects.filter(user=user).count() == 2
+    assert not SkillMastery.objects.exists()
 
 
 def test_speed_faster_than_average_gives_100(user, skill):
