@@ -98,8 +98,12 @@
       "titre": "Exercice « remettre dans l'ordre » par glisser-déposer",
       "minutes": 60,
       "pourquoi": "Dépend de #41, traitée juste avant ; apporte le socle de glisser-déposer.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:14:42+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2314-creneau-7-dev-issue42.jsonl",
+      "resume": "Les étudiants peuvent maintenant faire les exercices « remettre dans l'ordre ». Ils déplacent les éléments à la souris, au clavier ou avec des boutons Monter/Descendre, valident, puis voient combien d'éléments étaient bien placés. La PR #46 est ouverte et qa l'approuve : tous les tests et vérifications passent, sans migration. Le glisser-déposer à la souris n'est pas simulé dans les tests, seulement les boutons. Le portier doit maintenant la fusionner. Le type D (association de nodes) vient ensuite."
     },
     {
       "n": 8,
