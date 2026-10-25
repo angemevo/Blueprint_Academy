@@ -56,11 +56,28 @@ def shuffle_ordering_items(items: list, solution_order: list, rng=random) -> lis
     return shuffled[::-1]
 
 
+def shuffle_matching_right(right: list, left: list, pairs: list, rng=random) -> list:
+    """Melange la colonne de droite du type D sans reveler les paires.
+
+    La colonne de gauche garde l'ordre de l'auteur ; l'ordre de droite ne doit
+    jamais etre celui des partenaires des elements de gauche.
+    """
+    partner = {p["left_id"]: p["right_id"] for p in pairs}
+    solution_order = [partner.get(i["id"]) for i in left]
+    return shuffle_ordering_items(right, solution_order, rng=rng)
+
+
 def public_content(exercise: Exercise) -> dict:
-    """Contenu destine au client ; le type C est melange a chaque appel."""
+    """Contenu destine au client ; les types C et D sont melanges a chaque appel."""
     content = deepcopy(exercise.content)
     if exercise.type == ExerciseType.ORDERING:
         content["items"] = shuffle_ordering_items(
             content.get("items", []), exercise.solution.get("order", [])
+        )
+    if exercise.type == ExerciseType.NODE_MATCHING:
+        content["right"] = shuffle_matching_right(
+            content.get("right", []),
+            content.get("left", []),
+            exercise.solution.get("pairs", []),
         )
     return content

@@ -88,7 +88,11 @@ def test_no_solution_leak_for_every_type(lesson, t):
     for forbidden in ("solution", "hints\"", "required_nodes", "accepted_answers",
                       "correct_option_ids", "pairs", "feedback"):
         assert forbidden not in raw
-    if t != "C":
+    if t == "D":  # colonne de droite melangee : meme contenu, autre ordre
+        assert data["content"]["left"] == ex.content["left"]
+        by_id = lambda i: i["id"]  # noqa: E731
+        assert sorted(data["content"]["right"], key=by_id) == sorted(ex.content["right"], key=by_id)
+    elif t != "C":
         assert data["content"] == ex.content
     assert data["type"] == t and data["hints_count"] == 1
     assert data["time_limit_seconds"] == 60 and data["max_attempts"] == 3
@@ -118,6 +122,22 @@ def test_ordering_is_shuffled_and_never_the_solution(lesson):
         assert ids != ex.solution["order"]
         seen.add(tuple(ids))
     assert len(seen) > 1
+
+
+def test_matching_right_column_is_shuffled_and_hides_pairs(lesson):
+    ex = make(lesson, "D")
+    c = client_for(Role.STUDENT)
+    expected = [p["right_id"] for p in ex.solution["pairs"]]  # partenaires dans l'ordre de gauche
+    seen = set()
+    for _ in range(30):
+        body = c.get(f"/api/exercises/{ex.pk}/").json()
+        assert [i["id"] for i in body["content"]["left"]] == ["l1", "l2"]
+        ids = [i["id"] for i in body["content"]["right"]]
+        assert sorted(ids) == sorted(expected)
+        assert ids != expected
+        assert SECRET not in json.dumps(body)
+        seen.add(tuple(ids))
+    assert seen
 
 
 @pytest.mark.parametrize("seed", range(20))

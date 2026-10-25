@@ -12,6 +12,7 @@ import {
 } from "@/lib/exercises";
 
 const LazyOrdering = lazy(() => import("@/components/ordering-input"));
+const LazyMatching = lazy(() => import("@/components/matching-input"));
 
 type McqOption = { id: string; text: string };
 
@@ -78,10 +79,26 @@ function OrderingWorkspace({ content, disabled, onChange }: InputProps) {
   );
 }
 
+function MatchingWorkspace({ content, disabled, onChange }: InputProps) {
+  const left = (content.left as { id: string; label: string }[] | undefined) ?? [];
+  const right = (content.right as { id: string; label: string }[] | undefined) ?? [];
+  const handle = useCallback(
+    (pairs: { left_id: string; right_id: string }[]) =>
+      onChange(pairs.length ? { pairs } : null),
+    [onChange],
+  );
+  return (
+    <Suspense fallback={<p role="status" className="text-content-muted">Chargement...</p>}>
+      <LazyMatching left={left} right={right} disabled={disabled} onChange={handle} />
+    </Suspense>
+  );
+}
+
 const INPUTS: Record<string, (p: InputProps) => React.ReactElement> = {
   A: QuestionInput,
   B: McqInput,
   C: OrderingWorkspace,
+  D: MatchingWorkspace,
 };
 
 function errorMessage(error: unknown): string {
