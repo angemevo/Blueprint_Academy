@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-10-25T22:21:34+00:00",
-      "run": "40239775758"
+      "run": "40239775758",
+      "fin": "2026-10-25T23:38:30+00:00",
+      "raison_fin": "part du quota Claude atteinte"
     }
   ],
   "creneaux": [
@@ -250,6 +252,10 @@
     {
       "quand": "2026-10-25T23:26:09+00:00",
       "texte": "23 h 26 — l'organisateur a préparé la suite : Le tableau de bord et les trois premiers types d'exercices sont livrés. Trois nouvelles tâches sont prêtes pour l'équipe : décrire les connecteurs des nodes Blueprint, afficher un graphe qui ressemble à celui d'Unreal, puis permettre de le construire (ajout de nodes, liens, compilation). Trois tâches sont donc prêtes. La correction des exercices de construction (#4) attend toujours votre validation des cas de test tirés de vos captures ; c'est elle qui débloquerait le plus de travail ensuite."
+    },
+    {
+      "quand": "2026-10-25T23:38:30+00:00",
+      "texte": "23 h 38 — l'équipe a atteint sa part du quota Claude : elle s'arrête pour laisser ta part intacte."
     }
   ],
   "rapporte": false,
