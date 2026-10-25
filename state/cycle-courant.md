@@ -86,3 +86,5 @@ Branche feat/11-maitrise-skills, PR #36, en attente de relecture QA.
 Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exercise` avec un validateur de production factice (la maîtrise bouge pour E/F/G/H, pas pour A/B), et corriger le nom du test « reaches_100 » qui vérifie 94.
 
 - Créneau 1 (2026-10-25) : issue #11 (maîtrise des skills), branche feat/11-maitrise-skills, PR #36 ouverte (non brouillon), qa APPROUVÉE après une boucle de corrections (226 tests OK). Prochaine action : le portier merge #36.
+
+- Créneau 2 (2026-10-25) : issue #31, PR #37 ouverte (non brouillon), qa APPROUVÉE (tests, typecheck, lint, build OK). Non bloquant : restreindre `next` aux chemins relatifs (issue connexion), accents manquants dans quelques textes. Prochaine action : le portier merge #37.

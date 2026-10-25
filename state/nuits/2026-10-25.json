@@ -28,8 +28,12 @@
       "titre": "Socle du site : thème sombre, navigation, connexion de l'utilisateur",
       "minutes": 70,
       "pourquoi": "Les trois écrans suivants en dépendent : elle passe avant.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T22:28:51+00:00",
+      "minutes_reelles": 3,
+      "journal": "2026-10-25_2228-creneau-2-dev-issue31.jsonl",
+      "resume": "Le socle du site est prêt (PR #37). Il comprend le thème sombre, une barre de navigation qui change selon que l'on est connecté ou visiteur, et une page réservée qui renvoie un visiteur vers la connexion. L'accueil provisoire et la page 404 sont aussi là. Le contrôle qualité a approuvé la PR : les tests, les vérifications et la construction du site passent. Il reste deux détails à régler plus tard, des accents manquants dans quelques textes et la sécurisation de la redirection après connexion, qui se fera avec l'écran de connexion. Le portier peut maintenant livrer la PR."
     },
     {
       "n": 3,
