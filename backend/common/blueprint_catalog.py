@@ -59,7 +59,7 @@ Evolution prevue (CLAUDE.md) : le catalogue decrira aussi les PINS de chaque
 node et sera servi par l'API au canvas.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field, replace
 
 from django.conf import settings
 
@@ -107,6 +107,42 @@ MATCH_KEY_BY_CLASS = {
 }
 
 
+class PinDirection:
+    INPUT = "input"
+    OUTPUT = "output"
+
+
+class PinType:
+    """Types de pins (couleurs de l'editeur). `exec` = pin d'execution."""
+
+    EXEC = "exec"
+    BOOL = "bool"
+    INT = "int"
+    FLOAT = "float"
+    STRING = "string"
+    NAME = "name"
+    OBJECT = "object"
+    STRUCT = "struct"
+    WILDCARD = "wildcard"
+
+
+PIN_TYPES = frozenset(
+    v for k, v in vars(PinType).items() if not k.startswith("_")
+)
+PIN_DIRECTIONS = frozenset({PinDirection.INPUT, PinDirection.OUTPUT})
+
+
+@dataclass(frozen=True)
+class Pin:
+    """Un pin de node. `name` = PinName de l'export UE5, `label` = nom affiche
+    (vide pour un pin d'execution sans etiquette dans l'editeur)."""
+
+    name: str
+    direction: str
+    type: str
+    label: str = ""
+
+
 @dataclass(frozen=True)
 class NodeType:
     """Une entree du catalogue."""
@@ -121,6 +157,8 @@ class NodeType:
     member_parent: str = ""
     #: Observe dans un export reel, par opposition a « lu dans la doc ».
     verified: bool = False
+    #: Pins du node. Vide = pins non confirmes (le canvas ne peut pas le dessiner).
+    pins: tuple[Pin, ...] = field(default=(), compare=False)
 
 
 def derive_node_id(class_path: str, discriminant: str | None = None) -> str:
@@ -264,8 +302,99 @@ _CORE: tuple[NodeType, ...] = (
     _node(_BPG + ".K2Node_CallFunction", "PrintString", "Print String", NodeCategory.UTILITY, _KISMET_SYSTEM, verified=True),
 )
 
+# ---------------------------------------------------------------------------
+# Pins
+# ---------------------------------------------------------------------------
+# TOUS les noms ci-dessous sont a verifier dans Unreal : ils viennent de la
+# documentation et de la memoire de l'editeur, pas d'un export controle.
+# Un node absent de ce tableau reste sans pins (non confirme).
+_I, _O = PinDirection.INPUT, PinDirection.OUTPUT
+_X, _B, _N = PinType.EXEC, PinType.BOOL, PinType.INT
+_F, _S, _W = PinType.FLOAT, PinType.STRING, PinType.WILDCARD
+
+
+def _exec_in(name: str = "execute", label: str = "") -> Pin:
+    return Pin(name, _I, _X, label)
+
+
+def _exec_out(name: str = "then", label: str = "") -> Pin:
+    return Pin(name, _O, _X, label)
+
+
+def _operator(result: str = _W) -> tuple[Pin, ...]:
+    # A verifier dans Unreal : noms A / B / Return Value.
+    return (
+        Pin("A", _I, _W, "A"),
+        Pin("B", _I, _W, "B"),
+        Pin("ReturnValue", _O, result, "Return Value"),
+    )
+
+
+_PINS: dict[str, tuple[Pin, ...]] = {
+    # A verifier dans Unreal pour chaque entree.
+    "K2Node_Event:ReceiveBeginPlay": (_exec_out(),),
+    "K2Node_Event:ReceiveTick": (_exec_out(), Pin("DeltaSeconds", _O, _F, "Delta Seconds")),
+    "K2Node_Event:ReceiveActorBeginOverlap": (
+        _exec_out(),
+        Pin("OtherActor", _O, PinType.OBJECT, "Other Actor"),
+    ),
+    "K2Node_Event:ReceiveActorEndOverlap": (
+        _exec_out(),
+        Pin("OtherActor", _O, PinType.OBJECT, "Other Actor"),
+    ),
+    "K2Node_IfThenElse": (
+        _exec_in(),
+        Pin("Condition", _I, _B, "Condition"),
+        _exec_out("then", "True"),
+        _exec_out("else", "False"),
+    ),
+    "K2Node_ExecutionSequence": (
+        _exec_in(),
+        _exec_out("then_0", "Then 0"),
+        _exec_out("then_1", "Then 1"),
+    ),
+    "K2Node_MacroInstance:ForLoop": (
+        _exec_in(),
+        Pin("FirstIndex", _I, _N, "First Index"),
+        Pin("LastIndex", _I, _N, "Last Index"),
+        _exec_out("LoopBody", "Loop Body"),
+        Pin("Index", _O, _N, "Index"),
+        _exec_out("Completed", "Completed"),
+    ),
+    "K2Node_CallFunction:Delay": (
+        _exec_in(),
+        Pin("Duration", _I, _F, "Duration"),
+        _exec_out("then", "Completed"),
+    ),
+    "K2Node_CallFunction:PrintString": (
+        _exec_in(),
+        _exec_out(),
+        Pin("InString", _I, _S, "In String"),
+        Pin("bPrintToScreen", _I, _B, "Print to Screen"),
+        Pin("bPrintToLog", _I, _B, "Print to Log"),
+        Pin("Duration", _I, _F, "Duration"),
+    ),
+    "K2Node_VariableGet": (Pin("Value", _O, _W, ""),),
+    "K2Node_VariableSet": (
+        _exec_in(),
+        _exec_out(),
+        Pin("Value", _I, _W, ""),
+        Pin("Output_Get", _O, _W, ""),
+    ),
+    "K2Node_PromotableOperator:Add": _operator(),
+    "K2Node_PromotableOperator:Subtract": _operator(),
+    "K2Node_PromotableOperator:Multiply": _operator(),
+    "K2Node_PromotableOperator:Divide": _operator(),
+    "K2Node_PromotableOperator:Greater": _operator(_B),
+    "K2Node_PromotableOperator:Less": _operator(_B),
+    "K2Node_PromotableOperator:Equal": _operator(_B),
+    "K2Node_PromotableOperator:NotEqual": _operator(_B),
+}
+
 #: Noyau du catalogue, indexe par identifiant.
-CORE_NODE_TYPES: dict[str, NodeType] = {node.id: node for node in _CORE}
+CORE_NODE_TYPES: dict[str, NodeType] = {
+    node.id: replace(node, pins=_PINS.get(node.id, ())) for node in _CORE
+}
 
 
 def known_node_types() -> dict[str, NodeType]:

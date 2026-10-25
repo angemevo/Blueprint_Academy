@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .serializers import ExerciseDetailSerializer, SubmissionSerializer
-from .services import catalog, submission
+from .services import catalog, node_catalog, submission
 
 
 class ExerciseDetailView(generics.RetrieveAPIView):
@@ -37,3 +37,10 @@ class ExerciseSubmitView(APIView):
         except submission.ValidatorNotAvailable as exc:
             return Response({"detail": str(exc)}, status=status.HTTP_501_NOT_IMPLEMENTED)
         return Response(submission.serialize_result(attempt, result))
+
+
+class NodeCatalogView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        return Response(node_catalog.serialize_node_catalog())
