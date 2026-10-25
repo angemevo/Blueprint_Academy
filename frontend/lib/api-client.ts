@@ -3,8 +3,8 @@
  *
  * Choix structurants (voir CLAUDE.md > Auth) :
  * - `credentials: "include"` pour que le cookie httpOnly de refresh circule ;
- * - l'access token restera en memoire (jamais en localStorage) et sera injecte
- *   ici par le store d'auth en Phase 3.
+ * - l'access token reste en memoire (jamais en localStorage) et est injecte
+ *   ici via `setAccessTokenProvider` (voir lib/session.ts).
  */
 
 /** URL de base cote navigateur, surchargeable par variable d'environnement. */
@@ -26,6 +26,13 @@ export class ApiError extends Error {
   }
 }
 
+let accessTokenProvider: () => string | null = () => null;
+
+/** Branche la source du jeton d'acces (le store d'auth, en memoire). */
+export function setAccessTokenProvider(provider: () => string | null) {
+  accessTokenProvider = provider;
+}
+
 type RequestOptions = Omit<RequestInit, "body"> & {
   body?: unknown;
   /** Force l'URL de base (utile depuis un server component). */
@@ -37,12 +44,14 @@ async function request<T>(path: string, options: RequestOptions = {}): Promise<T
   const base = baseUrl ?? (typeof window === "undefined" ? INTERNAL_API_BASE_URL : API_BASE_URL);
   const url = `${base.replace(/\/$/, "")}/${path.replace(/^\//, "")}`;
 
+  const token = accessTokenProvider();
   const response = await fetch(url, {
     ...init,
     credentials: "include",
     headers: {
       Accept: "application/json",
       ...(body === undefined ? {} : { "Content-Type": "application/json" }),
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
       ...headers,
     },
     ...(body === undefined ? {} : { body: JSON.stringify(body) }),
