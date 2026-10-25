@@ -1,0 +1,13 @@
+{
+  "titre": "Page de leçon : accès réservé aux connectés",
+  "date": "2026-10-25 22:40",
+  "captures": [
+    {
+      "fichier": "01-un-visiteur-qui-ouvre-directement-une-le.png",
+      "legende": "Un visiteur qui ouvre directement une leçon est renvoyé vers la page de connexion (l'adresse garde sa destination) : le contenu des leçons est réservé aux étudiants inscrits.",
+      "adresse": "http://localhost:3000/connexion?next=%2Fcatalogue%2Ffundamentals%2Flecons%2F1"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

@@ -1,0 +1,8 @@
+{
+  "titre": "Page de leçon : accès réservé aux connectés",
+  "etapes": [
+    {"aller": "/catalogue/fundamentals/lecons/1"},
+    {"attendre": 2500},
+    {"capture": "Un visiteur qui ouvre directement une leçon est renvoyé vers la page de connexion (l'adresse garde sa destination) : le contenu des leçons est réservé aux étudiants inscrits."}
+  ]
+}
