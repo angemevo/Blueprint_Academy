@@ -21,3 +21,4 @@
 | 2026-10-25 | #37 | Socle du site : thème sombre, navigation, session | #31 |
 | 2026-10-25 | #38 | Écrans d'inscription et de connexion | #32 |
 | 2026-10-25 | #39 | Vitrine publique : accueil, catalogue et détail d'un parcours | #33 |
+| 2026-10-25 | #40 | Page de leçon et navigation dans le module | #34 |

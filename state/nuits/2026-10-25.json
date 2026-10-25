@@ -94,6 +94,10 @@
     {
       "quand": "2026-10-25T22:38:27+00:00",
       "texte": "PR #39 mergée : Vitrine publique : accueil, catalogue et détail d'un parcours."
+    },
+    {
+      "quand": "2026-10-25T23:09:40+00:00",
+      "texte": "PR #40 mergée : Page de leçon et navigation dans le module."
     }
   ],
   "incidents": [],
