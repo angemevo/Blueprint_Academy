@@ -39,9 +39,14 @@ export function Navbar() {
             </button>
           </>
         ) : (
-          <Link href="/connexion" className={linkClass}>
-            Connexion
-          </Link>
+          <>
+            <Link href="/connexion" className={linkClass}>
+              Connexion
+            </Link>
+            <Link href="/inscription" className={linkClass}>
+              Inscription
+            </Link>
+          </>
         )}
       </nav>
     </header>
