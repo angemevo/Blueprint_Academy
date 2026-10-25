@@ -1,5 +1,19 @@
 # Cycle courant
 
+## Plan de la semaine (2026-S44, du 26 octobre au 1er novembre) : mise à jour du pilotage du 2026-10-25
+
+Ordre de traitement (toutes `ready`) :
+1. **#11 « Calcul de la maîtrise des skills »** (backend, formule validée par Ange le 2026-10-25).
+2. **#31 « Socle du site : thème sombre, navigation, session »** (frontend).
+3. **#32 « Écrans d'inscription et de connexion »**, dépend de #31.
+4. **#33 « Vitrine publique : accueil, catalogue et détail d'un parcours »**, dépend de #31.
+5. **#34 « Page de leçon et navigation dans le module »**, dépend de #31.
+
+Hors plan : #4 (`a-cadrer`, cadrage à refaire depuis les captures d'Ange, cas « à vérifier dans Unreal »). Plus de type I au MVP. Quota hebdo à 63 % : plan limité à 5 issues.
+Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-01).
+
+(Ancien plan ci-dessous, conservé pour l'historique.)
+
 ## Plan de la semaine (2026-S44, du 26 octobre au 1er novembre)
 
 Établi par le pilotage du 2026-10-20, vérifié sur GitHub. Aucune réponse d'Ange (pas de point hebdo publié). Quota : aucun cycle coupé la semaine passée, le plan peut compter plus de 4 issues.

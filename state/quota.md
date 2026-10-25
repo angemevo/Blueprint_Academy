@@ -13,3 +13,4 @@ Une ligne par cycle. « coupé » = arrêté par la limite d'usage Pro.
 | 2026-10-18 | cycle-tech | #2 / PR #14 | terminé |
 | 2026-10-20 | cycle-pilotage | - | terminé |
 | 2026-10-21 | cycle-tech | #15 / PR #17 | terminé |
+| 2026-10-25 | pilotage | - | terminé |

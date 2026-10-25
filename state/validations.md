@@ -2,13 +2,11 @@
 
 Tenu par l'organisateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont posées à Ange dans son bureau (rapport du dimanche et rapport du matin), où il répond en commentaire.
 
-Mise à jour : pilotage du 2026-10-20 (semaine 2026-S43). Aucune réponse d'Ange trouvée : aucun point hebdo n'avait encore été publié.
+Mise à jour : pilotage du 2026-10-25 (semaine 2026-S43). Réponses d'Ange du 23 et du 25 octobre appliquées.
 
 ## En attente
-
-
-## À confirmer au passage (non bloquant)
-- Le texte de la PR #14 présente l'indice (tuteur V2) comme la « seule voie » par laquelle la solution atteint l'étudiant, plus strict que `CLAUDE.md`. Sans objection d'Ange le 2026-10-25, l'équipe adoucit la formulation dans une prochaine PR.
+- **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (protégé, seul Ange le modifie). Options : A (Ange modifie, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A. Sans réponse le 2026-11-01 : B (consigne du 2026-10-25 déjà appliquée).
+- **Q2** : adoucir la formulation de la PR #14 sur l'indice. Options : A oui / B non. Recommandation : A. Sans réponse le 2026-11-01 : A.
 
 ## Traité
 - [x] 2026-10-25 : Q6 (phase 3) : Ange répond oui. Issues #31 à #34 `ready`.
