@@ -42,6 +42,6 @@
       "texte": "1 h 32 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête. Les issues restantes (#4, #11) attendent Ange (exports Unreal, formule de maîtrise) et le passage à la phase 3 attend sa réponse à la question Q6."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
