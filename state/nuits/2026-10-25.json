@@ -168,8 +168,24 @@
       "titre": "Permettre d'ajouter des nodes, de tirer des liens et de compiler en local dans le canvas",
       "minutes": 90,
       "pourquoi": "Dépend de #50 traitée juste avant ; complète le canvas utilisable.",
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:33:11+00:00",
+      "minutes_reelles": 5,
+      "journal": "2026-10-25_2333-creneau-12-dev-issue51.jsonl",
+      "resume": "L'étudiant peut désormais ajouter des nodes par clic droit, tirer des liens (les connexions incohérentes sont refusées avec un message), supprimer et déplacer des nodes (les nodes verrouillés sont protégés), et compiler en local. La PR #54 est ouverte avec ses tests, mais qa demande encore un dernier ajustement : la taille dépasse un peu la limite de 400 lignes. Le développeur reprendra la PR à la prochaine planification, puis qa la relira avant que le portier la livre."
+    },
+    {
+      "n": 13,
+      "type": "dev",
+      "cible": "issue 51",
+      "titre": "Permettre d'ajouter des nodes, de tirer des liens et de compiler en local dans le canvas",
+      "minutes": 90,
+      "pourquoi": "Dépend de #50 traitée juste avant ; complète le canvas utilisable.",
       "statut": "a_faire",
-      "tentatives": 0
+      "tentatives": 0,
+      "suites": 1,
+      "dernier_probleme": "travail commencé, à terminer"
     }
   ],
   "merges": [

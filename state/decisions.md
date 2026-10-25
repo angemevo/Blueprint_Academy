@@ -35,3 +35,6 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 - 2026-10-25 — Réapprovisionnement : issues #41 à #44 créées `ready` (phase 3 acceptée par Ange) ; lot « glisser-déposer » scindé en deux (ordre, association) ; mélange de la colonne droite du type D ajouté à #43 (réserve de qa sur #8) — agent (organisateur)
 
 - 2026-10-25 — Réapprovisionnement : canvas découpé en #49 (pins du catalogue), #50 (lecture seule, ajout de @xyflow/react autorisé), #51 (édition) ; pins non confirmés marqués « à vérifier dans Unreal » — agent (organisateur)
+
+## 2026-10-25 #51 compilation locale
+Pins obligatoires absents du catalogue : avertissement sur entrée exec non reliée, `required` optionnel prévu. Libellés à vérifier dans Unreal.

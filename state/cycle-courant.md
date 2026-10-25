@@ -113,3 +113,11 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 10 (2026-10-25) : issue #49, branche feat/49-pins-catalogue, PR #52 ouverte (non brouillon), qa APPROUVÉE (230 tests OK). Réserves non bloquantes : test manquant sur les clés du tableau de pins ; API ne signale pas les pins non confirmés. 45 nodes sans pins, noms « à vérifier dans Unreal ». Prochaine action : le portier merge #52.
 
 - Créneau 11 (2026-10-25) : issue #50, branche feat/50-canvas-lecture-seule, PR #53 ouverte (non brouillon), qa APPROUVÉE (230 tests backend, 39 frontend OK). Prochaine action : le portier merge #53.
+
+- Issue #51 : branche feat/51-canvas-edition, PR #54, en attente de relecture QA.
+
+- Issue #51 / PR #54 : qa CORRECTIONS (4 points dans logs/revue-54.md : properties perdues dans la sortie, couleur des liens, test de node verrouillé, taille < 400). Le developpeur reprend la PR au prochain cycle.
+
+- Issue #51 / PR #54, 2e relecture : qa CORRECTIONS, un seul point restant (taille 465 lignes > 400, resserrer ou justifier dans le corps de la PR ; voir logs/revue-54.md). Points 1 à 3 corrigés.
+
+- Créneau 12 (2026-10-25) : issue #51, branche feat/51-canvas-edition, PR #54 ouverte (non brouillon), qa CORRECTIONS (2 passes). Points 1 à 3 corrigés ; reste la taille (465 lignes pour une cible de 400) : resserrer ou corriger le corps de la PR avec le chiffre réel. Prochaine action : reprise du développeur, puis qa.
