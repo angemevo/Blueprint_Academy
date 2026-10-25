@@ -106,3 +106,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 8 (2026-10-25) : issue #43, branche feat/43-exercice-association-dnd, PR #47 ouverte (non brouillon), qa APPROUVÉE (227 tests backend, 30 tests frontend OK). Réserves non bloquantes : test de mélange peu probant avec 2 paires, pas de signal visuel au remplacement d'un partenaire. Prochaine action : le portier merge #47.
 
 - Créneau 9 (2026-10-25) : issue #44, branche feat/44-tableau-de-bord, PR #48 ouverte (non brouillon), qa APPROUVÉE (34 tests frontend, 227 backend OK). Réserves non bloquantes : barre XP = total/seuil suivant, lien « Continuer » via le premier parcours. Prochaine action : le portier merge #48.
+
+## Réapprovisionnement (2026-10-25, 2e passe)
+#41 à #44 mergées (PR #45 à #48) et fermées. Nouvelles issues `ready`, dans l'ordre : #49 (pins dans le catalogue, backend) -> #50 (canvas en lecture seule, dépend de #49) -> #51 (canvas : ajout de nodes et liens, dépend de #50). Hors plan : #4 (`a-cadrer`). Ensuite : soumission des exercices de construction (attend #4), phase 4 (admin) seulement après accord d'Ange.

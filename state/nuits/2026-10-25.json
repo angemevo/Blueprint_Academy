@@ -180,9 +180,17 @@
     {
       "quand": "2026-10-25T23:11:01+00:00",
       "texte": "23 h 11 — l'organisateur a préparé la suite : Quatre nouvelles tâches sont prêtes pour l'équipe : l'écran pour faire un exercice (questions et QCM), deux exercices à glisser-déposer (remettre dans l'ordre, associer), puis le tableau de bord de l'étudiant. Les cinq tâches précédentes (maîtrise des compétences et premiers écrans du site) sont terminées. Rien ne manque pour l'instant ; le moteur de correction des graphes attend toujours que vous validiez les cas de test tirés de vos captures."
+    },
+    {
+      "quand": "2026-10-25T23:25:04+00:00",
+      "texte": "23 h 25 — Le chef d'équipe n'a plus de tâche prête : Toutes les issues prêtes (41 à 44) ont déjà été traitées cette nuit et leurs PR sont approuvées ou mergées ; aucune PR ouverte ne attend de revue ou de correction. Les autres tâches (#4) attendent un cadrage. L'organisateur doit réapprovisionner."
+    },
+    {
+      "quand": "2026-10-25T23:26:09+00:00",
+      "texte": "23 h 26 — l'organisateur a préparé la suite : Le tableau de bord et les trois premiers types d'exercices sont livrés. Trois nouvelles tâches sont prêtes pour l'équipe : décrire les connecteurs des nodes Blueprint, afficher un graphe qui ressemble à celui d'Unreal, puis permettre de le construire (ajout de nodes, liens, compilation). Trois tâches sont donc prêtes. La correction des exercices de construction (#4) attend toujours votre validation des cas de test tirés de vos captures ; c'est elle qui débloquerait le plus de travail ensuite."
     }
   ],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }

@@ -184,27 +184,44 @@
       "phase": "3 · Écrans du site",
       "points": 2,
       "issue": 41,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Exercice « remettre dans l'ordre » par glisser-déposer",
       "phase": "3 · Écrans du site",
       "points": 2,
       "issue": 42,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Exercice d'association par glisser-déposer",
       "phase": "3 · Écrans du site",
       "points": 2,
       "issue": 43,
+      "etat": "fait",
+      "fait_le": "2026-10-25"
+    },
+    {
+      "titre": "Pins dans le catalogue de nodes et endpoint",
+      "phase": "3 · Écrans du site",
+      "points": 2,
+      "issue": 49,
       "etat": "a_faire"
     },
     {
-      "titre": "Canvas Blueprint fidèle à l'éditeur Unreal",
+      "titre": "Canvas Blueprint : pins du catalogue et lecture seule",
       "phase": "3 · Écrans du site",
-      "points": 5,
-      "issue": null,
+      "points": 3,
+      "issue": 50,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Canvas Blueprint : ajout de nodes, liens et compilation locale",
+      "phase": "3 · Écrans du site",
+      "points": 3,
+      "issue": 51,
       "etat": "a_faire"
     },
     {
@@ -218,8 +235,9 @@
       "titre": "Tableau de bord étudiant",
       "phase": "3 · Écrans du site",
       "points": 3,
-      "issue": null,
-      "etat": "a_faire"
+      "issue": 44,
+      "etat": "fait",
+      "fait_le": "2026-10-25"
     },
     {
       "titre": "Création du contenu depuis l'admin",
