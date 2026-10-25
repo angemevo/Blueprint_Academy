@@ -55,7 +55,14 @@ export function LessonView({ pathSlug, lessonId }: { pathSlug: string; lessonId:
         ) : (
           <ul className="mt-2 list-disc pl-6 text-content-secondary">
             {data.exercises.map((e) => (
-              <li key={e.id}>{e.title}</li>
+              <li key={e.id}>
+                <Link
+                  href={`/catalogue/${pathSlug}/lecons/${data.id}/exercices/${e.id}`}
+                  className="text-accent hover:underline"
+                >
+                  {e.title}
+                </Link>
+              </li>
             ))}
           </ul>
         )}
