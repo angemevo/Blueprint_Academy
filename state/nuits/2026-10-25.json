@@ -112,8 +112,12 @@
       "titre": "Exercice d'association par glisser-déposer",
       "minutes": 60,
       "pourquoi": "Réutilise le socle de #41 et #42, traitées plus tôt cette nuit.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:17:36+00:00",
+      "minutes_reelles": 3,
+      "journal": "2026-10-25_2317-creneau-8-dev-issue43.jsonl",
+      "resume": "L'exercice d'association (type D) est prêt dans la PR #47. L'étudiant relie des éléments de deux colonnes par glisser-déposer ou avec une liste de choix au clavier, et voit son score partiel. La colonne de droite est mélangée à chaque lecture, sans jamais montrer la solution. Le contrôle qualité a approuvé la PR : tous les tests passent. Il reste deux détails mineurs, notés dans la revue, et le portier peut fusionner."
     },
     {
       "n": 9,
