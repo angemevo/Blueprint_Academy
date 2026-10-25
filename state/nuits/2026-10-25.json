@@ -1,0 +1,65 @@
+{
+  "nuit": "2026-10-25",
+  "equipes": [
+    {
+      "debut": "2026-10-25T22:21:34+00:00",
+      "run": "40239775758"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 11",
+      "titre": "Calcul de la maîtrise des skills (formule validée par Ange)",
+      "minutes": 60,
+      "pourquoi": "Première du plan de la semaine et seule issue backend prête ; la formule est validée.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "dev",
+      "cible": "issue 31",
+      "titre": "Socle du site : thème sombre, navigation, connexion de l'utilisateur",
+      "minutes": 70,
+      "pourquoi": "Les trois écrans suivants en dépendent : elle passe avant.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 32",
+      "titre": "Écrans d'inscription et de connexion",
+      "minutes": 55,
+      "pourquoi": "Dépend de #31, traitée plus tôt cette nuit.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "dev",
+      "cible": "issue 33",
+      "titre": "Vitrine publique : accueil, catalogue et détail d'un parcours",
+      "minutes": 70,
+      "pourquoi": "Dépend de #31, traitée plus tôt cette nuit.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 5,
+      "type": "dev",
+      "cible": "issue 34",
+      "titre": "Page de leçon et navigation dans le module",
+      "minutes": 55,
+      "pourquoi": "Dépend de #31, dernière du plan de la semaine.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
