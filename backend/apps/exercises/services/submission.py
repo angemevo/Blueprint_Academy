@@ -1,7 +1,7 @@
 """Soumission d'un exercice : allocation du numero, validation, enregistrement.
 
 L'XP est attribuee par le service de gamification a la premiere reussite ;
-la maitrise reste hors perimetre (issue dediee).
+la maitrise des skills est recalculee par apps.progress.services.mastery.
 """
 
 from dataclasses import asdict
@@ -67,6 +67,10 @@ def submit_exercise(
             from apps.gamification.services.xp import award_exercise_xp
 
             award_exercise_xp(user, exercise)
+        if exercise.is_practice:
+            from apps.progress.services.mastery import update_skill_mastery
+
+            update_skill_mastery(user, exercise, result.is_correct)
     return attempt, result
 
 

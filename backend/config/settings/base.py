@@ -244,3 +244,35 @@ XP_LEVEL_THRESHOLDS = sorted(
 #: (common/blueprint_catalog.py). Permet d'enrichir le garde-fou d'auteur sans
 #: livrer de code.
 BLUEPRINT_EXTRA_NODE_TYPES = env_list("BLUEPRINT_EXTRA_NODE_TYPES", [])
+
+# ---------------------------------------------------------------------------
+# Pedagogie : maitrise des skills (formule validee par Ange, 2026-10-25)
+# ---------------------------------------------------------------------------
+# Seuls les exercices de production comptent. Tous ces chiffres sont des
+# reglages : rien n'est ecrit en dur dans apps/progress/services/mastery.py.
+MASTERY_SETTINGS = env_json(
+    "MASTERY_SETTINGS",
+    {
+        # Points d'une reussite.
+        "success_base": 60,
+        # Bonus selon le numero de la tentative reussie (1re, 2e ; 0 ensuite).
+        "attempt_bonuses": [20, 10],
+        # Bonus de vitesse : temps inferieur a la moyenne des autres etudiants.
+        "speed_bonus": 10,
+        # Bonus de vitesse quand la moyenne (ou la duree) est inconnue.
+        "speed_bonus_default": 5,
+        # Penalite par indice consulte, plafonnee.
+        "hint_penalty": 5,
+        "hint_penalty_max": 10,
+        # Bonus maximal du type I, en points de maitrise (plafond 100).
+        "unreal_bonus_max": 10,
+        # Skill maitrisee a partir de ce score (%).
+        "mastered_threshold": 80,
+        # Ponderation par difficulte d'exercice (defaut 1).
+        "difficulty_weights": {},
+        # Controle d'integrite avant publication.
+        "min_production_exercises": 3,
+        "min_constrained_exercises": 1,
+        "constrained_types": ["F", "H"],
+    },
+)
