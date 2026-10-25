@@ -97,3 +97,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 
 ## Réapprovisionnement (2026-10-25, nuit)
 #11 et #31 à #34 mergées et fermées. Nouvelles issues `ready`, dans l'ordre : #41 (espace d'exercice, types A et B) -> #42 (ordre, glisser-déposer) -> #43 (association) -> #44 (tableau de bord). #42 et #43 dépendent de #41. Hors plan : #4 (`a-cadrer`). Canvas Blueprint : à écrire au prochain passage, après #41.
+
+- Issue #41 : branche feat/41-exercise-workspace, PR ouverte, en attente de qa.
+- Créneau 6 (2026-10-25) : issue #41, branche feat/41-exercise-workspace, PR #45 ouverte (non brouillon), qa APPROUVÉE (typecheck, lint, 26 tests front, 226 tests back OK). Prochaine action : le portier merge #45.

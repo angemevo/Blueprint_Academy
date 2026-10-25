@@ -84,8 +84,12 @@
       "titre": "Espace d'exercice et exercices question / QCM : l'étudiant peut répondre à ses premiers exercices",
       "minutes": 60,
       "pourquoi": "Premier de la file et socle des deux exercices suivants ; ses dépendances (#34, #9) sont mergées.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T23:11:20+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2311-creneau-6-dev-issue41.jsonl",
+      "resume": "L'étudiant peut désormais ouvrir un exercice depuis sa leçon et répondre aux exercices question et QCM (choix unique ou multiple). Il voit ensuite son score, le retour et les indices, et il peut réessayer. La PR #45 est approuvée par qa : les vérifications passent et le serveur n'est pas modifié. Le portier peut la merger, et le parcours connecté n'est pas filmé faute de compte de démonstration."
     },
     {
       "n": 7,
