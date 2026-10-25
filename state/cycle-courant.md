@@ -88,3 +88,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 1 (2026-10-25) : issue #11 (maîtrise des skills), branche feat/11-maitrise-skills, PR #36 ouverte (non brouillon), qa APPROUVÉE après une boucle de corrections (226 tests OK). Prochaine action : le portier merge #36.
 
 - Créneau 2 (2026-10-25) : issue #31, PR #37 ouverte (non brouillon), qa APPROUVÉE (tests, typecheck, lint, build OK). Non bloquant : restreindre `next` aux chemins relatifs (issue connexion), accents manquants dans quelques textes. Prochaine action : le portier merge #37.
+
+- Créneau 3 (2026-10-25) : issue #32, PR #38 ouverte (non brouillon), qa APPROUVÉE (pytest 226, tests frontend 9, typecheck et lint OK). Réserve non bloquante : textes côté client sans accents. Prochaine action : le portier merge #38.

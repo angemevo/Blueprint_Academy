@@ -42,8 +42,12 @@
       "titre": "Écrans d'inscription et de connexion",
       "minutes": 55,
       "pourquoi": "Dépend de #31, traitée plus tôt cette nuit.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-25T22:32:50+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-25_2232-creneau-3-dev-issue32.jsonl",
+      "resume": "Les pages d'inscription et de connexion sont écrites (PR #38). Les erreurs du serveur s'affichent sous le bon champ, et après connexion l'étudiant arrive sur son espace provisoire. La relecture qa est approuvée et toutes les vérifications passent. Un détail reste à corriger plus tard : certains textes affichés par le site n'ont pas leurs accents. Le portier peut maintenant fusionner la PR."
     },
     {
       "n": 4,
