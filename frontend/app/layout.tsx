@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 
+import { Navbar } from "@/components/navbar";
+import { SessionProvider } from "@/components/session-provider";
 import { AppProviders } from "./providers";
 
 import "./globals.css";
@@ -16,7 +18,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="min-h-screen font-sans antialiased">
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <SessionProvider>
+            <Navbar />
+            <main className="mx-auto max-w-5xl px-4 sm:px-6">{children}</main>
+          </SessionProvider>
+        </AppProviders>
       </body>
     </html>
   );
