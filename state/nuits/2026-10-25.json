@@ -204,6 +204,10 @@
     {
       "quand": "2026-10-25T23:24:51+00:00",
       "texte": "PR #48 mergée : Tableau de bord étudiant."
+    },
+    {
+      "quand": "2026-10-25T23:29:17+00:00",
+      "texte": "PR #52 mergée : Pins dans le catalogue de nodes et endpoint node-catalog."
     }
   ],
   "incidents": [
