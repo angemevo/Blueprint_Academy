@@ -1,0 +1,20 @@
+{
+  "nuit": "2026-10-26",
+  "equipes": [
+    {
+      "debut": "2026-10-26T23:45:32+00:00",
+      "run": "40420928636",
+      "fin": "2026-10-26T23:46:25+00:00",
+      "raison_fin": "part du quota Claude atteinte"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-10-26T23:46:25+00:00",
+      "texte": "23 h 46 — l'équipe a atteint sa part du quota Claude : elle s'arrête pour laisser ta part intacte."
+    }
+  ],
+  "rapporte": false
+}
