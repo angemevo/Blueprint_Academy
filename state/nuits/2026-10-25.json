@@ -268,7 +268,7 @@
       "texte": "1 h 36 — l'équipe a atteint sa part du quota Claude : elle s'arrête pour laisser ta part intacte."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
   "reapprovisionnements": 2
 }
