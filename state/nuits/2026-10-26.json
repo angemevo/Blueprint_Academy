@@ -6,6 +6,12 @@
       "run": "40420928636",
       "fin": "2026-10-26T23:46:25+00:00",
       "raison_fin": "part du quota Claude atteinte"
+    },
+    {
+      "debut": "2026-10-27T02:22:55+00:00",
+      "run": "40438040179",
+      "fin": "2026-10-27T02:23:52+00:00",
+      "raison_fin": "part du quota Claude atteinte"
     }
   ],
   "creneaux": [],
@@ -14,6 +20,10 @@
     {
       "quand": "2026-10-26T23:46:25+00:00",
       "texte": "23 h 46 — l'équipe a atteint sa part du quota Claude : elle s'arrête pour laisser ta part intacte."
+    },
+    {
+      "quand": "2026-10-27T02:23:52+00:00",
+      "texte": "2 h 23 — l'équipe a atteint sa part du quota Claude : elle s'arrête pour laisser ta part intacte."
     }
   ],
   "rapporte": false
