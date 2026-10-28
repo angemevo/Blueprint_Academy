@@ -121,3 +121,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Issue #51 / PR #54, 2e relecture : qa CORRECTIONS, un seul point restant (taille 465 lignes > 400, resserrer ou justifier dans le corps de la PR ; voir logs/revue-54.md). Points 1 à 3 corrigés.
 
 - Créneau 12 (2026-10-25) : issue #51, branche feat/51-canvas-edition, PR #54 ouverte (non brouillon), qa CORRECTIONS (2 passes). Points 1 à 3 corrigés ; reste la taille (465 lignes pour une cible de 400) : resserrer ou corriger le corps de la PR avec le chiffre réel. Prochaine action : reprise du développeur, puis qa.
+
+- Créneau 1 (2026-10-28) : reprise PR #54 (issue #51, canvas Blueprint éditable). Corps de PR mis à jour (taille réelle ~465 lignes, raison de ne pas découper), qa APPROUVÉE (230 tests backend, 46 tests frontend OK). Prochaine action : le portier merge #54.
