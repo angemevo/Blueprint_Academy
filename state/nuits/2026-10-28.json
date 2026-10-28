@@ -1,0 +1,35 @@
+{
+  "nuit": "2026-10-28",
+  "equipes": [
+    {
+      "debut": "2026-10-28T23:55:30+00:00",
+      "run": "40790577095"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "reprise",
+      "cible": "pr 54",
+      "titre": "Canvas Blueprint : corriger le dernier point de la relecture (taille de la PR) du canvas où l'on ajoute des nodes et des",
+      "minutes": 30,
+      "pourquoi": "Le dernier verdict est CORRECTIONS, après le dernier commit ; il ne reste que la taille à resserrer ou à justifier.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "revue",
+      "cible": "pr 54",
+      "titre": "Relecture du canvas Blueprint après corrections",
+      "minutes": 25,
+      "pourquoi": "Après la reprise, la PR doit recevoir un nouveau verdict pour que le portier puisse la livrer.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
