@@ -34,6 +34,26 @@
       "minutes_reelles": 1,
       "journal": "2026-10-29_0000-creneau-2-revue-pr54.jsonl",
       "resume": "La relecture du canvas Blueprint (PR 54) n'a pas été faite, car cette PR avait déjà été fusionnée avant le créneau. Si la relecture révèle des défauts, ils seront traités dans une nouvelle tâche à la prochaine planification."
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 55",
+      "titre": "Moteur qui vérifie les exercices de construction libre (E et G) : le serveur contrôle que le graphe de l'étudiant contie",
+      "minutes": 90,
+      "pourquoi": "Première tâche du plan, aucune dépendance, et elle débloque les exercices de construction sur le canvas.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "dev",
+      "cible": "issue 56",
+      "titre": "Extension du moteur : nodes verrouillés et exercices de correction/complétion (F et H)",
+      "minutes": 75,
+      "pourquoi": "Dépend de #55, traitée juste avant ; le portier la livre après son créneau.",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [
