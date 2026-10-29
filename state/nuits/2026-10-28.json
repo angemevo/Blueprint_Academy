@@ -42,8 +42,12 @@
       "titre": "Moteur qui vérifie les exercices de construction libre (E et G) : le serveur contrôle que le graphe de l'étudiant contie",
       "minutes": 90,
       "pourquoi": "Première tâche du plan, aucune dépendance, et elle débloque les exercices de construction sur le canvas.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-29T00:02:12+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-29_0002-creneau-3-dev-issue55.jsonl",
+      "resume": "Le serveur peut maintenant corriger les exercices où l'étudiant construit un graphe librement (types E et G). Il note sur 100 les nodes, connexions et variables demandés. Un node interdit ou un excédent de nodes empêche la note de dépasser 99. La PR #57 est ouverte et qa l'a approuvée (245 tests verts, ruff et migrations OK). Le portier peut la fusionner."
     },
     {
       "n": 4,

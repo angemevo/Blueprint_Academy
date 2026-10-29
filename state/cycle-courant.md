@@ -128,3 +128,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 
 ## Réapprovisionnement (2026-10-29)
 #49 à #51 mergées (PR #52 à #54), issues fermées. Cadrage de #4 validé par Ange (Q3) : le moteur est découpé en #55 (exercices E et G) puis #56 (nodes verrouillés, F et H, dépend de #55), toutes deux `ready`, fixtures synthétiques « à vérifier dans Unreal ». #4 reste ouverte comme référence du cadrage. Ensuite : exercices de construction sur le canvas (après #55).
+
+- Créneau 3 (2026-10-29) : issue #55, branche feat/55-validation-graphe-eg, PR #57 ouverte (non brouillon), qa APPROUVÉE (245 tests OK). Prochaine action : le portier merge #57.
