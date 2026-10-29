@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-10-29",
+  "equipes": [
+    {
+      "debut": "2026-10-29T23:50:11+00:00",
+      "run": "40975726107"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-10-29T23:51:19+00:00",
+      "texte": "23 h 51 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et une seule issue prête (#59), dont le travail est déjà livré : la PR #60 est mergée. L'issue reste ouverte sans doute faute de fermeture automatique. Il n'y a rien à développer avant que l'organisateur prépare de nouvelles tâches."
+    },
+    {
+      "quand": "2026-10-29T23:51:48+00:00",
+      "texte": "23 h 51 — l'organisateur a préparé la suite : Le site est maintenant complet : la dernière tâche de la phase 3 (envoi d'un graphe depuis le canvas et affichage du résultat) est livrée. Aucune tâche n'est prête pour l'équipe : 0 tâche prête.\n\nLa suite est la phase 4, l'administration pour créer parcours, leçons et exercices sans toucher au code. Je ne la prépare pas sans ton accord. Ta réponse à la question « passer à la phase 4 ? » (je recommande oui) débloquerait tout de suite le travail. Sans réponse, elle s'applique par défaut le 1er novembre."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}

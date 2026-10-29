@@ -240,7 +240,8 @@
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 59,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Tableau de bord étudiant",
