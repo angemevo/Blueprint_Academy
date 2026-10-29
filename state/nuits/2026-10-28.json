@@ -56,8 +56,12 @@
       "titre": "Extension du moteur : nodes verrouillés et exercices de correction/complétion (F et H)",
       "minutes": 75,
       "pourquoi": "Dépend de #55, traitée juste avant ; le portier la livre après son créneau.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-29T00:05:41+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-29_0005-creneau-4-dev-issue56.jsonl",
+      "resume": "La correction automatique des exercices de correction (F) et de complétion (H) est écrite et relue. Un node verrouillé supprimé ou modifié donne 0, et un node déplacé est accepté. Un exercice déjà résolu dès le départ est refusé à la sauvegarde, y compris depuis l'admin. La PR #58 est approuvée par qa, avec les tests, ruff et migrations verts, et le portier peut la fusionner. Pour l'étudiant, rien ne change à l'écran pour l'instant: c'est la base de la correction de ces exercices."
     }
   ],
   "merges": [
