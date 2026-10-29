@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-10-28T23:55:30+00:00",
-      "run": "40790577095"
+      "run": "40790577095",
+      "fin": "2026-10-29T00:14:06+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -112,6 +114,10 @@
     {
       "quand": "2026-10-29T00:10:09+00:00",
       "texte": "0 h 10 — l'organisateur a préparé la suite : Une tâche est prête pour l'équipe : permettre à l'étudiant d'envoyer ce qu'il a construit sur le canvas Blueprint et de voir son résultat, comme pour les autres exercices. C'est la dernière pièce de l'étape « écrans du site ».\nEnsuite, l'équipe aura besoin de ta décision : passer à l'étape suivante, l'administration (créer parcours, leçons et exercices sans toucher au code). Je recommande oui ; la question est dans ton bureau, et sans réponse le 1er novembre l'équipe suivra cette recommandation."
+    },
+    {
+      "quand": "2026-10-29T00:14:06+00:00",
+      "texte": "0 h 14 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et la seule issue prête (#59) a déjà été traitée cette nuit (PR #60 fusionnée). Il faut que l'organisateur prépare de nouvelles tâches."
     }
   ],
   "rapporte": false,
