@@ -6,6 +6,12 @@
       "run": "40790577095",
       "fin": "2026-10-29T00:14:06+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-10-29T02:45:52+00:00",
+      "run": "40808224202",
+      "fin": "2026-10-29T02:46:52+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -118,6 +124,10 @@
     {
       "quand": "2026-10-29T00:14:06+00:00",
       "texte": "0 h 14 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et la seule issue prête (#59) a déjà été traitée cette nuit (PR #60 fusionnée). Il faut que l'organisateur prépare de nouvelles tâches."
+    },
+    {
+      "quand": "2026-10-29T02:46:52+00:00",
+      "texte": "2 h 46 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte. La seule issue prête (#59) a déjà été traitée cette nuit (PR #60 fusionnée). Le reste attend la décision d'Ange sur la phase 4 (admin)."
     }
   ],
   "rapporte": false,
