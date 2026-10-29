@@ -11,7 +11,6 @@ import {
   type SubmissionPayload,
   type SubmissionResult,
 } from "@/lib/exercises";
-import { isGraphExerciseType } from "@/lib/node-catalog";
 
 const LazyOrdering = lazy(() => import("@/components/ordering-input"));
 const LazyMatching = lazy(() => import("@/components/matching-input"));
@@ -96,11 +95,19 @@ function MatchingWorkspace({ content, disabled, onChange }: InputProps) {
   );
 }
 
-const INPUTS: Record<string, (p: InputProps) => React.ReactElement> = {
+function GraphInput({ type, content, disabled, onChange }: InputProps & { type: string }) {
+  return <GraphWorkspace type={type} content={content} disabled={disabled} onChange={onChange} />;
+}
+
+const INPUTS: Record<string, (p: InputProps & { type: string }) => React.ReactElement> = {
   A: QuestionInput,
   B: McqInput,
   C: OrderingWorkspace,
   D: MatchingWorkspace,
+  E: GraphInput,
+  F: GraphInput,
+  G: GraphInput,
+  H: GraphInput,
 };
 
 function errorMessage(error: unknown): string {
@@ -148,12 +155,7 @@ export function ExerciseWorkspace({ exercise }: { exercise: ExerciseDetail }) {
   return (
     <section aria-label="Espace d'exercice" className="py-12">
       <h1 className="text-3xl font-semibold text-content-primary">{exercise.title}</h1>
-      {isGraphExerciseType(exercise.type) ? (
-        <div className="mt-6 space-y-4">
-          <p className="text-content-primary">{question}</p>
-          <GraphWorkspace type={exercise.type} content={exercise.content} />
-        </div>
-      ) : !Input ? (
+      {!Input ? (
         <p role="status" className="mt-6 text-content-secondary">
           Ce type d&apos;exercice sera bientôt disponible.
         </p>
@@ -168,6 +170,7 @@ export function ExerciseWorkspace({ exercise }: { exercise: ExerciseDetail }) {
           <p className="text-content-primary">{question}</p>
           <Input
             key={round}
+            type={exercise.type}
             content={exercise.content}
             disabled={mutation.isPending || result !== null}
             onChange={setSubmission}

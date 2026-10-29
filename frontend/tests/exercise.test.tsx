@@ -51,6 +51,29 @@ const renderWs = (ex: ExerciseDetail) => {
 const body = (spy: { mock: { calls: unknown[][] } }) =>
   JSON.parse(((spy.mock.calls[0]?.[1] as RequestInit).body as string));
 
+// Éditeur remplacé par un double : le canvas réel est testé dans blueprint-editor.test.tsx.
+vi.mock("@/components/blueprint-editor", () => ({
+  default: ({ graph, readOnly, onChange }: {
+    graph: { nodes: unknown[]; edges: unknown[] }; readOnly?: boolean;
+    onChange: (g: unknown) => void;
+  }) => (
+    <div>
+      <span data-testid="count">{graph.nodes.length}</span>
+      <span data-testid="ro">{String(!!readOnly)}</span>
+      <button onClick={() => onChange({ nodes: [], edges: [] })}>vider</button>
+      <button
+        onClick={() => onChange({
+          nodes: [{ id: "n1", type: "K2Node_Event", position: { x: 1, y: 2 } }],
+          edges: [{ from: "n1", to: "n1", from_pin: "then", to_pin: "execute" }],
+        })}
+      >
+        construire
+      </button>
+      <button onClick={() => onChange(graph)}>inchangé</button>
+    </div>
+  ),
+}));
+
 afterEach(() => vi.restoreAllMocks());
 
 describe("page d'exercice", () => {
@@ -127,8 +150,8 @@ describe("ExerciseWorkspace", () => {
     await waitFor(() => expect(screen.getByRole("alert")).toHaveTextContent(/L'envoi a échoué/));
   });
 
-  it("type non géré : message, pas de plantage", () => {
-    renderWs({ ...base, id: 7, type: "E", title: "Graphe", content: {} });
+  it("type inconnu : message, pas de plantage", () => {
+    renderWs({ ...base, id: 7, type: "Z", title: "Inconnu", content: {} });
     expect(screen.getByText(/bientôt disponible/)).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Valider" })).not.toBeInTheDocument();
   });
@@ -200,5 +223,73 @@ describe("ExerciseWorkspace", () => {
     fireEvent.click(screen.getByRole("button", { name: "Valider" }));
     await screen.findByText(/Raté/);
     expect(body(spy).submission).toEqual({ pairs: [{ left_id: "l2", right_id: "r1" }] });
+  });
+
+  describe("types de graphe", () => {
+    const graphEx = (type: string, content: Record<string, unknown> = {}): ExerciseDetail => ({
+      ...base, id: 9, type, title: "Graphe", content: { prompt: "Construis", ...content },
+    });
+    const mockFetch = (submit: Response) =>
+      vi.spyOn(globalThis, "fetch").mockImplementation(async (url) =>
+        String(url).includes("node-catalog") ? json(200, []) : submit,
+      );
+    const submitCall = (spy: { mock: { calls: unknown[][] } }) =>
+      spy.mock.calls.find((c) => String(c[0]).includes("submit"));
+
+    it("E : Valider inactif sur graphe vide, puis envoie le graphe normalisé", async () => {
+      const spy = mockFetch(json(200, {
+        is_correct: false, score: 40, feedback: ["Il manque un lien."], hints: ["Relie then."], attempt_number: 1,
+      }));
+      renderWs(graphEx("E"));
+      const valider = await screen.findByRole("button", { name: "Valider" });
+      expect(valider).toBeDisabled();
+      fireEvent.click(await screen.findByText("construire"));
+      expect(valider).toBeEnabled();
+      fireEvent.click(valider);
+      expect(await screen.findByText(/Raté · score 40\/100/)).toBeInTheDocument();
+      expect(screen.getByText("Il manque un lien.")).toBeInTheDocument();
+      expect(screen.getByText("Relie then.")).toBeInTheDocument();
+      const sent = JSON.parse((submitCall(spy)?.[1] as RequestInit).body as string);
+      expect(sent.submission.edges).toEqual([{ from: "n1", to: "n1", from_pin: "then", to_pin: "execute" }]);
+      expect(sent.submission.nodes[0].id).toBe("n1");
+      expect(typeof sent.duration_seconds).toBe("number");
+    });
+
+    it("vider le graphe désactive de nouveau Valider", async () => {
+      mockFetch(json(200, {}));
+      renderWs(graphEx("G"));
+      fireEvent.click(await screen.findByText("construire"));
+      expect(screen.getByRole("button", { name: "Valider" })).toBeEnabled();
+      fireEvent.click(screen.getByText("vider"));
+      expect(screen.getByRole("button", { name: "Valider" })).toBeDisabled();
+    });
+
+    it("H : inactif tant que le graphe de départ est inchangé ; Réessayer le remet", async () => {
+      mockFetch(json(200, {
+        is_correct: false, score: 0, feedback: ["Node verrouillé manquant."], hints: [], attempt_number: 1,
+      }));
+      const start = { nodes: [{ id: "s", type: "K2Node_Event" }], edges: [] };
+      renderWs(graphEx("H", { partial_graph: start }));
+      const valider = await screen.findByRole("button", { name: "Valider" });
+      fireEvent.click(await screen.findByText("inchangé"));
+      expect(valider).toBeDisabled();
+      fireEvent.click(screen.getByText("construire"));
+      fireEvent.click(valider);
+      expect(await screen.findByText("Node verrouillé manquant.")).toBeInTheDocument();
+      expect(screen.getByTestId("ro")).toHaveTextContent("true");
+      fireEvent.click(screen.getByRole("button", { name: "Réessayer" }));
+      expect(await screen.findByTestId("count")).toHaveTextContent("1");
+      expect(screen.getByTestId("ro")).toHaveTextContent("false");
+      expect(screen.queryByText("Node verrouillé manquant.")).not.toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Valider" })).toBeDisabled();
+    });
+
+    it("409 : message d'essais épuisés", async () => {
+      mockFetch(json(409, { detail: "max" }));
+      renderWs(graphEx("F", { broken_graph: { nodes: [{ id: "s", type: "K2Node_Event" }], edges: [] } }));
+      fireEvent.click(await screen.findByText("construire"));
+      fireEvent.click(screen.getByRole("button", { name: "Valider" }));
+      expect(await screen.findByRole("alert")).toHaveTextContent(/nombre maximum d'essais/);
+    });
   });
 });

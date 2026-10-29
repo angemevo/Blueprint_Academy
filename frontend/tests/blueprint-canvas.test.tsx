@@ -117,6 +117,6 @@ describe("ExerciseWorkspace (production)", () => {
     expect(screen.getByText(/Clic droit pour ajouter/)).toBeInTheDocument();
     expect(await screen.findByText("Print String")).toBeInTheDocument();
     expect(String(spy.mock.calls[0]?.[0])).toContain("node-catalog/");
-    expect(screen.queryByRole("button", { name: "Valider" })).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Valider" })).toBeDisabled();
   });
 });

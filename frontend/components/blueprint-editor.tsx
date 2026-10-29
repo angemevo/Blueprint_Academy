@@ -38,12 +38,14 @@ type Props = {
   /** Types autorisés par l'exercice ; null = tout le catalogue. */
   palette?: string[] | null;
   lockedNodeIds?: string[];
+  /** Canvas figé (envoi en cours ou exercice réussi). */
+  readOnly?: boolean;
   onChange?: (graph: NormalizedGraph) => void;
 };
 
 /** Canvas d'édition : ajout par clic droit, liens, suppression, compilation locale. */
 export default function BlueprintEditor({
-  graph, catalog, palette = null, lockedNodeIds = [], onChange,
+  graph, catalog, palette = null, lockedNodeIds = [], readOnly = false, onChange,
 }: Props) {
   const locked = useMemo(() => new Set(lockedNodeIds), [lockedNodeIds]);
   const initial = useMemo(() => {
@@ -82,6 +84,7 @@ export default function BlueprintEditor({
     [],
   );
   const commit = (ns: Node[], es: Edge[]) => {
+    if (readOnly) return;
     setNodes(ns);
     setEdges(es);
     onChange?.(toGraph(ns, es));
@@ -160,8 +163,11 @@ export default function BlueprintEditor({
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           onInit={(i) => (flowRef.current = i)}
+          nodesDraggable={!readOnly}
+          nodesConnectable={!readOnly}
           onPaneContextMenu={(e) => {
             e.preventDefault();
+            if (readOnly) return;
             const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
             const f = flowRef.current?.screenToFlowPosition({ x: e.clientX, y: e.clientY });
             setMenu({
@@ -170,7 +176,7 @@ export default function BlueprintEditor({
             });
           }}
           onPaneClick={() => setMenu(null)}
-          deleteKeyCode={["Delete", "Backspace"]}
+          deleteKeyCode={readOnly ? null : ["Delete", "Backspace"]}
           fitView
           minZoom={0.2}
           maxZoom={2}
