@@ -1,7 +1,6 @@
 import pytest
 from django.core.exceptions import ValidationError
 
-from apps.exercises.enums import ExerciseType
 from apps.exercises.models import Exercise, ExerciseAttempt
 from apps.exercises.tests.test_exercise_api import SPECS
 from apps.learning.models import LearningPath, Lesson, Module, Skill
@@ -21,6 +20,10 @@ def skill():
 @pytest.fixture
 def user():
     return User.objects.create_user(username="u", password="x")
+
+
+# Satisfait les solutions F et H de SPECS (le validateur de graphe est reel).
+GOOD_FH_GRAPH = {"nodes": [{"id": "p", "type": "K2Node_CallFunction:PrintString"}], "edges": []}
 
 
 def ex(skill, t, n=0, published=True):
@@ -72,27 +75,11 @@ def test_100_reachable_with_three_non_i_faster_than_average(user, skill):
     assert mastery(user, skill).is_mastered
 
 
-@pytest.fixture
-def fake_validators():
-    """Validateur factice (toujours correct) pour F et H ; registre nettoye ensuite."""
-    from apps.exercises.validators import default_registry, register
-    from apps.validation.interfaces import ValidationResult
-
-    @register("F", "H")
-    class AlwaysCorrect:
-        def validate(self, exercise, submission):
-            return ValidationResult(is_correct=True, score=100)
-
-    yield
-    default_registry._validators.pop(ExerciseType("F"), None)
-    default_registry._validators.pop(ExerciseType("H"), None)
-
-
-def test_submit_production_moves_mastery(user, skill, fake_validators):
+def test_submit_production_moves_mastery(user, skill):
     from apps.exercises.services.submission import submit_exercise
 
     for t in "FH":
-        submit_exercise(user, ex(skill, t, ord(t)), {}, duration_seconds=5)
+        submit_exercise(user, ex(skill, t, ord(t)), GOOD_FH_GRAPH, duration_seconds=5)
     assert mastery(user, skill).attempts_count == 2
     assert mastery(user, skill).successes_count == 2
     assert mastery(user, skill).mastery_score > 0
