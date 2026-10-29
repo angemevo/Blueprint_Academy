@@ -125,3 +125,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Créneau 1 (2026-10-28) : reprise PR #54 (issue #51, canvas Blueprint éditable). Corps de PR mis à jour (taille réelle ~465 lignes, raison de ne pas découper), qa APPROUVÉE (230 tests backend, 46 tests frontend OK). Prochaine action : le portier merge #54.
 
 - Créneau 2 (2026-10-29) : revue de la PR #54 (canvas Blueprint) annulée : la PR est déjà fusionnée (MERGED) ; aucune revue qa lancée. Prochaine action : si des corrections sont utiles, les planifier comme nouvelle issue.
+
+## Réapprovisionnement (2026-10-29)
+#49 à #51 mergées (PR #52 à #54), issues fermées. Cadrage de #4 validé par Ange (Q3) : le moteur est découpé en #55 (exercices E et G) puis #56 (nodes verrouillés, F et H, dépend de #55), toutes deux `ready`, fixtures synthétiques « à vérifier dans Unreal ». #4 reste ouverte comme référence du cadrage. Ensuite : exercices de construction sur le canvas (après #55).

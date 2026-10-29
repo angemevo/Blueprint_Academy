@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-10-25",
+  "maj": "2026-10-29",
   "par": "première estimation, à affiner par l'organisateur au pilotage",
   "echelle": {
     "1": "petite : un créneau",
@@ -100,12 +100,18 @@
       "fait_le": "2026-10-23"
     },
     {
-      "titre": "Correction des exercices de construction de graphe",
+      "titre": "Moteur de validation de graphe : exercices E et G",
       "phase": "2 · Backend",
-      "points": 5,
-      "issue": 4,
-      "etat": "a_faire",
-      "attend_ange": true
+      "points": 3,
+      "issue": 55,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Moteur de validation de graphe : nodes verrouillés, exercices F et H",
+      "phase": "2 · Backend",
+      "points": 2,
+      "issue": 56,
+      "etat": "a_faire"
     },
     {
       "titre": "Soumission d'un exercice et historique des tentatives",
@@ -208,21 +214,24 @@
       "phase": "3 · Écrans du site",
       "points": 2,
       "issue": 49,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Canvas Blueprint : pins du catalogue et lecture seule",
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 50,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Canvas Blueprint : ajout de nodes, liens et compilation locale",
       "phase": "3 · Écrans du site",
       "points": 3,
       "issue": 51,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Exercices de construction sur le canvas",
