@@ -114,3 +114,27 @@ def check_graph(graph: Any, solution: dict) -> GraphVerdict:
     if is_correct:
         feedback = ["Le graphe répond à toutes les exigences."]
     return GraphVerdict(score=score, is_correct=is_correct, feedback=feedback)
+
+
+def check_locked_nodes(starter: Any, locked_ids: list[str], graph: Any) -> list[str]:
+    """Messages pour chaque node verrouille supprime ou modifie (liste vide si tout va bien).
+
+    Un node verrouille est retrouve par son `id` dans la soumission : meme `type`,
+    memes `properties`. Le deplacement (position) n'est pas une modification.
+    Le message donne l'id du node, jamais la solution.
+    """
+    start_nodes, _, _ = _nodes(starter)
+    sent_nodes, _, _ = _nodes(graph)
+    sent = {node["id"]: node for node in sent_nodes}
+    problems: list[str] = []
+    for original in start_nodes:
+        if original["id"] not in locked_ids:
+            continue
+        current = sent.get(original["id"])
+        if current is None:
+            problems.append(f"Le node verrouillé « {original['id']} » a été supprimé.")
+        elif current["type"] != original["type"] or (
+            current.get("properties") or {}
+        ) != (original.get("properties") or {}):
+            problems.append(f"Le node verrouillé « {original['id']} » a été modifié.")
+    return problems

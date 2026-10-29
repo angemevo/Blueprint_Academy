@@ -429,8 +429,6 @@ def _check_debugging(
     content: Payload, solution: Payload, errors: ErrorCollector
 ) -> None:
     _check_locked_nodes(content, "broken_graph", errors)
-    # TODO(Phase 2b) : verifier aussi que le graphe casse ne satisfait pas deja
-    # la solution (voir le TODO en bas de module).
     if not any(
         solution.get(key)
         for key in ("forbidden_nodes", "forbidden_edges", "required_edges")
@@ -529,6 +527,34 @@ def get_exercise_schema(exercise_type: str) -> ExerciseSchema:
         ) from exc
 
 
+_START_GRAPH_KEYS = {
+    ExerciseType.DEBUGGING: "broken_graph",
+    ExerciseType.GRAPH_COMPLETE: "partial_graph",
+}
+
+
+def _reject_already_solved(
+    exercise_type: str, content: Payload, solution: Payload, errors: ErrorCollector
+) -> None:
+    graph_key = _START_GRAPH_KEYS.get(ExerciseType(exercise_type))
+    if graph_key is None:
+        return
+    # Import local : les validateurs dependent de `apps.validation` (app isolee)
+    # et ce module est importe au chargement des modeles.
+    from types import SimpleNamespace
+
+    from ..validators import get_validator
+
+    exercise = SimpleNamespace(type=exercise_type, content=content, solution=solution)
+    result = get_validator(exercise_type).validate(exercise, content.get(graph_key))
+    if result.score == 100:
+        errors.add(
+            CONTENT,
+            f"{graph_key} satisfait deja la solution : l'exercice serait reussi "
+            "sans modification.",
+        )
+
+
 def validate_exercise_payload(exercise_type: str, content: Any, solution: Any) -> None:
     """Valide `content` et `solution` pour un type donne.
 
@@ -578,31 +604,10 @@ def validate_exercise_payload(exercise_type: str, content: Any, solution: Any) -
     if schema.coherence is not None:
         schema.coherence(content, solution, errors)
 
+    # 3c. F/H : le graphe de depart ne doit pas deja etre la reponse. Apres les
+    # controles precedents : le validateur suppose une structure saine.
+    if not errors:
+        _reject_already_solved(exercise_type, content, solution, errors)
+
     if errors:
         raise ValidationError(errors.as_dict())
-
-
-# ---------------------------------------------------------------------------
-# TODO(Phase 2b) - a brancher des que le validateur de graphe existera
-# ---------------------------------------------------------------------------
-# Refuser a la sauvegarde un exercice F (debugging) ou H (completer) dont le
-# graphe de depart satisfait DEJA la solution : l'eleve le reussirait sans rien
-# faire. C'est l'erreur d'auteur la plus couteuse, parce qu'elle est invisible a
-# la relecture - le contenu semble correct, seul le comportement est faux.
-#
-# Implementation prevue, une fois le validateur de graphe enregistre :
-#
-#     from apps.exercises.validators import get_validator
-#
-#     def _reject_already_solved(exercise_type, content, solution, errors):
-#         graph_key = {"F": "broken_graph", "H": "partial_graph"}[exercise_type]
-#         result = get_validator(exercise_type).validate_graph(
-#             solution, content.get(graph_key) or {"nodes": [], "edges": []}
-#         )
-#         if result.is_correct:
-#             errors.add(CONTENT, f"{graph_key} satisfait deja la solution : "
-#                                 "l'exercice serait reussi sans modification")
-#
-# A appeler depuis `validate_exercise_payload`, apres l'etape 3b. L'import doit
-# rester LOCAL a la fonction : les validateurs dependent de `apps.validation`,
-# app isolee, et `apps.exercises.schemas` est importe au chargement des modeles.
