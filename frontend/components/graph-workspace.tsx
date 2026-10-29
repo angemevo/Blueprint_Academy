@@ -3,10 +3,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { Suspense, lazy, useMemo } from "react";
 
+import { paletteTypes } from "@/lib/graph-editing";
 import { fetchNodeCatalog, startGraph } from "@/lib/node-catalog";
 
 // Chargé à la demande : le canvas n'est jamais dans le bundle initial.
-const LazyCanvas = lazy(() => import("@/components/blueprint-canvas"));
+const LazyEditor = lazy(() => import("@/components/blueprint-editor"));
 
 /** Espace des types de production : graphe de départ en lecture seule. */
 export function GraphWorkspace({
@@ -21,8 +22,8 @@ export function GraphWorkspace({
 
   return (
     <div className="space-y-3">
-      <p role="status" className="text-sm text-content-secondary">
-        Édition bientôt disponible : pour l&apos;instant, tu peux observer le graphe de départ.
+      <p className="text-sm text-content-secondary">
+        Clic droit pour ajouter un node, tire depuis un pin pour relier, Suppr pour effacer. L&apos;envoi de ta solution sera bientôt disponible.
       </p>
       {catalog.isError ? (
         <p role="alert" className="text-content-secondary">
@@ -32,7 +33,14 @@ export function GraphWorkspace({
         <p role="status" className="text-content-muted">Chargement...</p>
       ) : (
         <Suspense fallback={<p role="status" className="text-content-muted">Chargement...</p>}>
-          <LazyCanvas graph={graph} catalog={catalog.data} />
+          <LazyEditor
+            graph={graph}
+            catalog={catalog.data}
+            palette={paletteTypes(content)}
+            lockedNodeIds={
+              Array.isArray(content.locked_node_ids) ? (content.locked_node_ids as string[]) : []
+            }
+          />
         </Suspense>
       )}
     </div>
