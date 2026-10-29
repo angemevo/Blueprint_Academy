@@ -28,8 +28,12 @@
       "titre": "Relecture du canvas Blueprint après corrections",
       "minutes": 25,
       "pourquoi": "Après la reprise, la PR doit recevoir un nouveau verdict pour que le portier puisse la livrer.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-29T00:00:40+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-10-29_0000-creneau-2-revue-pr54.jsonl",
+      "resume": "La relecture du canvas Blueprint (PR 54) n'a pas été faite, car cette PR avait déjà été fusionnée avant le créneau. Si la relecture révèle des défauts, ils seront traités dans une nouvelle tâche à la prochaine planification."
     }
   ],
   "merges": [
