@@ -3,7 +3,7 @@
 Un validateur concret se declare avec `@register(ExerciseType.MCQ)` ; le
 service de soumission appelle `get_validator(exercise.type).validate(...)`.
 Les validateurs concrets sont charges par `ExercisesConfig.ready()`
-(`load_validators`) : recall.py pour A, B, C, D.
+(`load_validators`) : recall.py pour A, B, C, D ; graph.py pour E, G.
 """
 
 from .registry import (
@@ -28,4 +28,4 @@ __all__ = [
 
 def load_validators() -> None:
     """Importe les modules de validateurs concrets (enregistrement par decorateur)."""
-    from . import recall  # noqa: F401
+    from . import graph, recall  # noqa: F401
