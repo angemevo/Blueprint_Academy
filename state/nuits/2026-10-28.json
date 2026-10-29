@@ -72,6 +72,10 @@
     {
       "quand": "2026-10-29T00:05:37+00:00",
       "texte": "PR #57 mergée : Moteur de validation de graphe : exercices E et G."
+    },
+    {
+      "quand": "2026-10-29T00:09:03+00:00",
+      "texte": "PR #58 mergée : Moteur de graphe : nodes verrouillés, exercices F et H."
     }
   ],
   "incidents": [
