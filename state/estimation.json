@@ -104,14 +104,16 @@
       "phase": "2 · Backend",
       "points": 3,
       "issue": 55,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Moteur de validation de graphe : nodes verrouillés, exercices F et H",
       "phase": "2 · Backend",
       "points": 2,
       "issue": 56,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-10-29"
     },
     {
       "titre": "Soumission d'un exercice et historique des tentatives",
@@ -234,10 +236,10 @@
       "fait_le": "2026-10-29"
     },
     {
-      "titre": "Exercices de construction sur le canvas",
+      "titre": "Canvas : envoi du graphe et résultat (types E, F, G, H)",
       "phase": "3 · Écrans du site",
-      "points": 5,
-      "issue": null,
+      "points": 3,
+      "issue": 59,
       "etat": "a_faire"
     },
     {

@@ -134,3 +134,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 - Issue #56 : branche feat/56-graphe-fh, PR #58, en attente de revue qa.
 
 - Créneau 4 (2026-10-28) : issue #56, branche feat/56-*, PR #58 ouverte (non brouillon), qa APPROUVÉE (252 tests OK, ruff OK). Prochaine action : le portier merge #58.
+
+## Réapprovisionnement (2026-10-29, 2e passe)
+#55 et #56 mergées (PR #57, #58) et fermées. Nouvelle issue `ready` : #59 (canvas : envoi du graphe et résultat, types E/F/G/H). Seule tâche prête. Phase 3 terminée après #59 ; question « passer à la phase 4 (admin) ? » posée (Q3bis, défaut le 2026-11-01). #4 reste ouverte comme référence du cadrage.

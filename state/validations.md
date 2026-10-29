@@ -8,6 +8,8 @@ Mise à jour : pilotage du 2026-10-25 (semaine 2026-S43). Réponses d'Ange du 23
 - **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (protégé, seul Ange le modifie). Options : A (Ange modifie, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A. Sans réponse le 2026-11-01 : B (consigne du 2026-10-25 déjà appliquée).
 - **Q2** : adoucir la formulation de la PR #14 sur l'indice. Options : A oui / B non. Recommandation : A. Sans réponse le 2026-11-01 : A.
 
+- **Q3bis** : passer à la phase 4 (administration : créer parcours, leçons et exercices sans toucher au code, avec contrôle à la publication) ? Contexte : toute la phase 3 est livrée ou prête (la dernière tâche, l'envoi d'un graphe depuis le canvas, est en cours). Options : A oui / B non, on continue à peaufiner le site. Recommandation : A, sans l'admin personne ne peut créer de contenu. Sans réponse le 2026-11-01 : A.
+
 ## Traité
 - [x] 2026-10-25 : Q6 (phase 3) : Ange répond oui. Issues #31 à #34 `ready`.
 - [x] 2026-10-25 : Q7 / Q4bis (formule de maîtrise) : validée par Ange. #11 `ready`.

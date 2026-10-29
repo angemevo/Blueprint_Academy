@@ -86,9 +86,17 @@
     {
       "quand": "2026-10-29T00:01:58+00:00",
       "texte": "0 h 01 — l'organisateur a préparé la suite : Le canvas Blueprint est terminé et livré. Deux nouvelles tâches sont prêtes pour l'équipe : le moteur qui corrige les exercices de construction de graphe (d'abord les exercices libres, puis ceux où l'on corrige ou complète un graphe fourni). Elles suivent le cadrage que vous avez validé. Les cas de test sont des exemples fabriqués par l'équipe, marqués « à vérifier dans Unreal » : aucun ne sera présenté comme juste avant votre vérification. Aucune décision de votre part n'est nécessaire pour l'instant."
+    },
+    {
+      "quand": "2026-10-29T00:09:15+00:00",
+      "texte": "0 h 09 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte. Les deux seules issues prêtes (#55 et #56) ont déjà été traitées cette nuit et leurs PR (#57, #58) sont fusionnées. Il n'y a plus de tâche prête : l'organisateur doit en préparer de nouvelles (exercices de construction sur le canvas, après #55 et #56)."
+    },
+    {
+      "quand": "2026-10-29T00:10:09+00:00",
+      "texte": "0 h 10 — l'organisateur a préparé la suite : Une tâche est prête pour l'équipe : permettre à l'étudiant d'envoyer ce qu'il a construit sur le canvas Blueprint et de voir son résultat, comme pour les autres exercices. C'est la dernière pièce de l'étape « écrans du site ».\nEnsuite, l'équipe aura besoin de ta décision : passer à l'étape suivante, l'administration (créer parcours, leçons et exercices sans toucher au code). Je recommande oui ; la question est dans ton bureau, et sans réponse le 1er novembre l'équipe suivra cette recommandation."
     }
   ],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
