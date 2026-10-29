@@ -90,6 +90,10 @@
     {
       "quand": "2026-10-29T00:09:03+00:00",
       "texte": "PR #58 mergée : Moteur de graphe : nodes verrouillés, exercices F et H."
+    },
+    {
+      "quand": "2026-10-29T00:13:55+00:00",
+      "texte": "PR #60 mergée : Canvas : envoyer le graphe et afficher le résultat (E, F, G, H)."
     }
   ],
   "incidents": [

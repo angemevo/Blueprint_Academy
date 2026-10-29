@@ -31,3 +31,4 @@
 | 2026-10-29 | #54 | Canvas Blueprint : ajout de nodes, liens et compilation locale | #51 |
 | 2026-10-29 | #57 | Moteur de validation de graphe : exercices E et G | #55 |
 | 2026-10-29 | #58 | Moteur de graphe : nodes verrouillés, exercices F et H | #56 |
+| 2026-10-29 | #60 | Canvas : envoyer le graphe et afficher le résultat (E, F, G, H) | #59 |
