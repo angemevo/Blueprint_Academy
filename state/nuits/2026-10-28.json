@@ -64,6 +64,10 @@
     {
       "quand": "2026-10-29T00:00:36+00:00",
       "texte": "PR #54 mergée : Canvas Blueprint : ajout de nodes, liens et compilation locale."
+    },
+    {
+      "quand": "2026-10-29T00:05:37+00:00",
+      "texte": "PR #57 mergée : Moteur de validation de graphe : exercices E et G."
     }
   ],
   "incidents": [
