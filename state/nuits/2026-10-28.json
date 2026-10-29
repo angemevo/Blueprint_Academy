@@ -62,6 +62,16 @@
       "minutes_reelles": 2,
       "journal": "2026-10-29_0005-creneau-4-dev-issue56.jsonl",
       "resume": "La correction automatique des exercices de correction (F) et de complétion (H) est écrite et relue. Un node verrouillé supprimé ou modifié donne 0, et un node déplacé est accepté. Un exercice déjà résolu dès le départ est refusé à la sauvegarde, y compris depuis l'admin. La PR #58 est approuvée par qa, avec les tests, ruff et migrations verts, et le portier peut la fusionner. Pour l'étudiant, rien ne change à l'écran pour l'instant: c'est la base de la correction de ces exercices."
+    },
+    {
+      "n": 5,
+      "type": "dev",
+      "cible": "issue 59",
+      "titre": "Canvas : envoyer le graphe construit et afficher le résultat (exercices E, F, G, H)",
+      "minutes": 90,
+      "pourquoi": "Seule issue prête, dernière brique de la phase 3 ; aucune PR ouverte à reprendre ou relire.",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [
