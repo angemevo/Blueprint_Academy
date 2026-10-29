@@ -137,3 +137,5 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 
 ## Réapprovisionnement (2026-10-29, 2e passe)
 #55 et #56 mergées (PR #57, #58) et fermées. Nouvelle issue `ready` : #59 (canvas : envoi du graphe et résultat, types E/F/G/H). Seule tâche prête. Phase 3 terminée après #59 ; question « passer à la phase 4 (admin) ? » posée (Q3bis, défaut le 2026-11-01). #4 reste ouverte comme référence du cadrage.
+
+- Créneau 5 (2026-10-29) : issue #59, branche feat/59-canvas-soumission, PR #60 ouverte (non brouillon), qa APPROUVÉE (backend 252 tests, frontend 50 tests, typecheck et lint OK). Prochaine action : le portier merge #60.

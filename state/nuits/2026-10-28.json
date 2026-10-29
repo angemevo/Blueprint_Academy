@@ -70,8 +70,12 @@
       "titre": "Canvas : envoyer le graphe construit et afficher le résultat (exercices E, F, G, H)",
       "minutes": 90,
       "pourquoi": "Seule issue prête, dernière brique de la phase 3 ; aucune PR ouverte à reprendre ou relire.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-10-29T00:10:21+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-10-29_0010-creneau-5-dev-issue59.jsonl",
+      "resume": "Les étudiants peuvent maintenant envoyer le graphe qu'ils ont construit dans le canvas pour les exercices de construction, de débogage, de challenge et de graphe à compléter (types E, F, G, H). Le score, les retours, les indices, le message d'essais épuisés et le bouton « Réessayer » s'affichent comme pour les autres exercices. La PR #60 est ouverte, la relecture qualité l'approuve et toutes les vérifications passent. Elle attend le portier. Rien n'est visible à l'écran pour l'instant, car aucun exercice de ces types n'existe encore dans le contenu."
     }
   ],
   "merges": [
