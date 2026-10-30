@@ -145,3 +145,6 @@ Voir `gh pr view 36` / revue : ajouter un test de bout en bout de `submit_exerci
 
 ## Réapprovisionnement (2026-10-29, 4e passe)
 Rien de nouveau : phase 3 terminée, aucune issue `ready`. Les réserves non bloquantes des revues (mélange du type D, restriction du paramètre `next`) sont déjà traitées dans le code. Phase 4 (admin) non écrite : Q3bis sans réponse (défaut le 2026-11-01), règle « attendre validation ».
+
+## Réapprovisionnement (2026-10-30)
+Rien de nouveau : aucune issue `ready`. Phase 4 (admin) non écrite : Q3bis sans réponse (défaut le 2026-11-01), règle « attendre validation ». #4 reste ouverte comme référence.
