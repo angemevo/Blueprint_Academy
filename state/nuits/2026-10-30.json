@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-10-30T23:29:51+00:00",
-      "run": "41144766411"
+      "run": "41144766411",
+      "fin": "2026-10-30T23:31:53+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-10-30T23:31:43+00:00",
       "texte": "23 h 31 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout le travail de la phase en cours est livré. La prochaine étape est l'administration (créer parcours, leçons et exercices sans toucher au code), mais elle attend ton accord. Une réponse « oui » à la question sur le passage à la phase suivante débloquerait tout de suite plusieurs tâches. Sans réponse, l'équipe l'engagera d'elle-même le 1er novembre."
+    },
+    {
+      "quand": "2026-10-30T23:31:53+00:00",
+      "texte": "23 h 31 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready. La phase 4 (admin) attend l'accord d'Ange (question Q3bis, défaut le 2026-11-01) ; #4 reste a-cadrer."
     }
   ],
   "rapporte": false,
