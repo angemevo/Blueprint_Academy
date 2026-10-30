@@ -148,3 +148,6 @@ Rien de nouveau : phase 3 terminée, aucune issue `ready`. Les réserves non blo
 
 ## Réapprovisionnement (2026-10-30)
 Rien de nouveau : aucune issue `ready`. Phase 4 (admin) non écrite : Q3bis sans réponse (défaut le 2026-11-01), règle « attendre validation ». #4 reste ouverte comme référence.
+
+## Réapprovisionnement (2026-10-30, 2e passe)
+Rien de nouveau : aucune issue `ready`. Q3bis (phase 4, admin) sans réponse, défaut le 2026-11-01 ; règle « attendre validation ».

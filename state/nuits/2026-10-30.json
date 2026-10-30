@@ -16,8 +16,16 @@
     {
       "quand": "2026-10-30T23:31:15+00:00",
       "texte": "23 h 31 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout le site étudiant (phases 1 à 3) est livré. La suite est l'administration, qui permet de créer parcours, leçons et exercices sans toucher au code. Je ne peux pas l'écrire avant ton accord (question Q3bis, recommandation : oui). Une simple réponse « Q3bis : A » dans ton bureau débloque immédiatement plusieurs jours de travail ; sans réponse, ce sera appliqué par défaut le 1er novembre."
+    },
+    {
+      "quand": "2026-10-30T23:31:26+00:00",
+      "texte": "23 h 31 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête (ready). La phase 3 est terminée ; la phase 4 (admin) attend l'accord d'Ange (question Q3bis, défaut le 2026-11-01)."
+    },
+    {
+      "quand": "2026-10-30T23:31:43+00:00",
+      "texte": "23 h 31 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout le travail de la phase en cours est livré. La prochaine étape est l'administration (créer parcours, leçons et exercices sans toucher au code), mais elle attend ton accord. Une réponse « oui » à la question sur le passage à la phase suivante débloquerait tout de suite plusieurs tâches. Sans réponse, l'équipe l'engagera d'elle-même le 1er novembre."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
