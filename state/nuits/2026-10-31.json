@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-10-31",
+  "equipes": [
+    {
+      "debut": "2026-10-31T23:09:21+00:00",
+      "run": "41251250819"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-10-31T23:11:03+00:00",
+      "texte": "23 h 11 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête (étiquette ready). La phase 4 (admin) attend la réponse d'Ange (Q3bis, défaut le 2026-11-01) ; #4 reste à cadrer."
+    },
+    {
+      "quand": "2026-10-31T23:11:27+00:00",
+      "texte": "23 h 11 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout ce qui était écrit est livré. La suite, c'est la phase 4 (l'administration, pour créer parcours, leçons et exercices sans toucher au code). Elle attend votre accord, et le règlement du projet nous interdit de l'anticiper.\n\nUne réponse « oui » à la question sur la phase 4 débloquerait tout de suite le travail. Sans réponse, nous appliquerons « oui » demain dimanche et les tâches seront écrites au bilan."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
