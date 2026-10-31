@@ -154,3 +154,6 @@ Rien de nouveau : aucune issue `ready`. Q3bis (phase 4, admin) sans réponse, d�
 
 ## Réapprovisionnement (2026-10-31)
 Rien de nouveau : aucune issue `ready`. Q3bis (phase 4, admin) sans réponse, défaut le 2026-11-01 (demain) ; règle « attendre validation ». Le pilotage du dimanche appliquera A par défaut et écrira les issues de l'admin.
+
+## Réapprovisionnement (2026-10-31, 2e passe)
+Rien de nouveau : aucune issue `ready`, aucune réponse d'Ange. Q3bis (phase 4, admin) : défaut le 2026-11-01 (demain), règle « attendre validation ».
