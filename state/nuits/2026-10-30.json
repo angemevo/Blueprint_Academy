@@ -6,6 +6,12 @@
       "run": "41144766411",
       "fin": "2026-10-30T23:31:53+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-10-31T02:41:12+00:00",
+      "run": "41161074694",
+      "fin": "2026-10-31T02:42:56+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -30,6 +36,10 @@
     {
       "quand": "2026-10-30T23:31:53+00:00",
       "texte": "23 h 31 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready. La phase 4 (admin) attend l'accord d'Ange (question Q3bis, défaut le 2026-11-01) ; #4 reste a-cadrer."
+    },
+    {
+      "quand": "2026-10-31T02:42:56+00:00",
+      "texte": "2 h 42 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 3 est terminée, et la phase 4 (admin) attend la réponse d Ange à la question Q3bis (défaut le 2026-11-01)."
     }
   ],
   "rapporte": false,
