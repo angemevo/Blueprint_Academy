@@ -32,7 +32,12 @@
       "tentatives": 0
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "quand": "2026-11-01T23:30:28+00:00",
+      "texte": "PR #64 mergée : Admin de contenu : parcours, modules, leçons, exercices."
+    }
+  ],
   "incidents": [],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"

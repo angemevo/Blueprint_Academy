@@ -32,3 +32,4 @@
 | 2026-10-29 | #57 | Moteur de validation de graphe : exercices E et G | #55 |
 | 2026-10-29 | #58 | Moteur de graphe : nodes verrouillés, exercices F et H | #56 |
 | 2026-10-29 | #60 | Canvas : envoyer le graphe et afficher le résultat (E, F, G, H) | #59 |
+| 2026-11-01 | #64 | Admin de contenu : parcours, modules, leçons, exercices | #61 |
