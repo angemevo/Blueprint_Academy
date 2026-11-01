@@ -40,6 +40,10 @@
     {
       "quand": "2026-11-01T23:30:28+00:00",
       "texte": "PR #64 mergée : Admin de contenu : parcours, modules, leçons, exercices."
+    },
+    {
+      "quand": "2026-11-01T23:33:52+00:00",
+      "texte": "PR #65 mergée : Admin : publication avec contrôle d'intégrité."
     }
   ],
   "incidents": [],
