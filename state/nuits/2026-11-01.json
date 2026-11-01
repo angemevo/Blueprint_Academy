@@ -54,9 +54,17 @@
     {
       "quand": "2026-11-01T23:34:35+00:00",
       "texte": "23 h 34 — l'organisateur a préparé la suite : La phase 4 (administration du contenu avec contrôle avant publication) est terminée : tout ce qui était prêt est livré. L'équipe n'a donc plus de tâche prête, et je n'en ai pas ajouté, car la phase suivante (le parcours de départ « Blueprint Fundamentals ») demande ton accord.\n\nTa réponse à la question Q3 débloquerait tout de suite le travail : je recommande « oui », l'équipe préparerait des propositions de leçons que tu valides une par une. Sans réponse, cette option s'applique le 8 novembre."
+    },
+    {
+      "quand": "2026-11-01T23:34:46+00:00",
+      "texte": "23 h 34 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte. Les issues 61 et 62 (phase 4) sont déjà traitées cette nuit et la PR 65 est mergée. Plus aucune issue prête : la phase 5 attend la réponse d'Ange (échéance 2026-11-08)."
+    },
+    {
+      "quand": "2026-11-01T23:35:10+00:00",
+      "texte": "23 h 35 — l'organisateur a préparé la suite : Aucune tâche n'est prête pour l'équipe : la phase 4 (administration du contenu) est terminée, et la suite (le parcours de départ « Blueprint Fundamentals ») ne peut pas commencer sans ton accord.\n\nLa décision qui débloquerait le plus de travail est la question Q3 de ton bureau : passer à la phase 5 ? Ma recommandation est oui. L'équipe rédigerait alors des propositions de leçons, que tu validerais une par une. Rien ne serait publié sans toi, et tout ce qui touche à Unreal serait marqué « à vérifier dans Unreal ».\n\nSans réponse de ta part, l'option oui s'applique d'elle-même le 8 novembre."
     }
   ],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
