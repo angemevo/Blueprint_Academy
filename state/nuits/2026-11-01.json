@@ -28,8 +28,12 @@
       "titre": "Admin : publication d'une leçon ou d'un parcours avec contrôle d'intégrité",
       "minutes": 90,
       "pourquoi": "Deuxième tâche du plan ; dépend de #61, livrée juste avant.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-01T23:30:33+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-11-01_2330-creneau-2-dev-issue62.jsonl",
+      "resume": "Les administrateurs peuvent maintenant publier ou dépublier parcours, modules, leçons et exercices. La publication est refusée avec un message clair quand une compétence n'a pas assez d'exercices de production. La PR #65 est approuvée par la relecture et attend le portier pour être livrée."
     }
   ],
   "merges": [

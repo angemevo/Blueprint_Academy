@@ -14,7 +14,7 @@ Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-08).
 
 ## Dernière tâche traitée
 
-- Tâche : #61 « Admin de contenu : parcours, modules, leçons, exercices » (créneau 1, 2026-11-01).
-- PR : #64 (non brouillon, `Closes #61`).
-- Verdict de qa : APPROUVÉ. Remarques non bloquantes à traiter avec #62 : message « modifié avec succès » trompeur quand la publication est refusée ; test de publication refusée trop permissif ; une leçon publiée créée dans l'admin saute le contrôle d'intégrité (clé primaire absente).
-- Prochaine action : le portier merge #64, puis #62.
+- Tâche : #62 « Admin : publication avec contrôle d'intégrité » (créneau 2, 2026-11-01).
+- PR : #65 (non brouillon, `Closes #62`).
+- Verdict de qa : APPROUVÉE. Remarques non bloquantes : le contrôle voit les anciens skills si on les modifie dans le même formulaire que la case « publié » ; trois lignes vides dans `common/admin.py`. Hors périmètre : publication d'un exercice non contrôlée.
+- Prochaine action : le portier merge #65.
