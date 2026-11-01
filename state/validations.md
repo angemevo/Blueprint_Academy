@@ -8,6 +8,8 @@ Mise à jour : pilotage du 2026-11-01 (semaine 2026-S44).
 - **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (fichier protégé, seul Ange le modifie). Contexte : la consigne du 2026-10-25 est déjà appliquée par l'équipe (option B par défaut). Options : A (Ange modifie le document, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A, pour que le document reflète la décision. Sans réponse le 2026-11-08 : B.
 - **Q2** : parcours de départ « Blueprint Fundamentals » (phase 5, plus tard). Qui prépare le contenu des leçons ? Options : A (l'équipe rédige des propositions, Ange valide leçon par leçon, tout ce qui touche à Unreal marqué « à vérifier dans Unreal ») / B (Ange fournit le plan et les textes). Recommandation : A, plus rapide pour Ange. Sans réponse le 2026-11-08 : A (rédaction de propositions seulement ; rien n'est publié sans validation d'Ange).
 
+- **Q3** : la phase 4 (administration du contenu) est terminée. Passer à la phase 5 (parcours de départ « Blueprint Fundamentals ») ? Contexte : l'équipe n'a plus de tâche prête ; sans accord, elle attend. Options : A (oui : l'équipe prépare le parcours en propositions de leçons, rien n'est publié sans ta validation, et ce qui touche à Unreal est marqué « à vérifier dans Unreal ») / B (non, on attend). Recommandation : A. Sans réponse le 2026-11-08 : A.
+
 ## Traité
 - [x] 2026-11-01 : Q3bis (phase 4, admin) : sans réponse à l'échéance, option A appliquée par défaut. Issues #61 et #62 `ready`.
 - [x] 2026-11-01 : ancienne Q2 (adoucir la PR #14, déjà mergée) : option A appliquée par défaut, sans objet.

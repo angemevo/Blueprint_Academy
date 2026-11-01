@@ -256,14 +256,16 @@
       "phase": "4 · Admin",
       "points": 3,
       "issue": 61,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-01"
     },
     {
       "titre": "Contrôle d'intégrité à la publication d'une leçon",
       "phase": "4 · Admin",
       "points": 2,
       "issue": 62,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-01"
     },
     {
       "titre": "Parcours de départ « Blueprint Fundamentals »",

@@ -18,3 +18,7 @@ Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-08).
 - PR : #65 (non brouillon, `Closes #62`).
 - Verdict de qa : APPROUVÉE. Remarques non bloquantes : le contrôle voit les anciens skills si on les modifie dans le même formulaire que la case « publié » ; trois lignes vides dans `common/admin.py`. Hors périmètre : publication d'un exercice non contrôlée.
 - Prochaine action : le portier merge #65.
+
+## Réapprovisionnement 2026-11-01
+
+Phase 4 terminée. Aucune issue `ready` : la phase 5 attend Ange (Q3). Rien à planifier avant sa réponse ou le 2026-11-08.

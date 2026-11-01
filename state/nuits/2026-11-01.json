@@ -46,7 +46,17 @@
       "texte": "PR #65 mergée : Admin : publication avec contrôle d'intégrité."
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "quand": "2026-11-01T23:34:04+00:00",
+      "texte": "23 h 34 — Le chef d'équipe n'a plus de tâche prête : Les deux issues prêtes (#61 et #62) ont déjà été traitées cette nuit et aucune PR n'est ouverte. Il n'y a plus de tâche prête : l'organisateur doit en préparer de nouvelles (tests de bout en bout, Docker, documentation). #4 reste à cadrer et la phase 5 attend Ange."
+    },
+    {
+      "quand": "2026-11-01T23:34:35+00:00",
+      "texte": "23 h 34 — l'organisateur a préparé la suite : La phase 4 (administration du contenu avec contrôle avant publication) est terminée : tout ce qui était prêt est livré. L'équipe n'a donc plus de tâche prête, et je n'en ai pas ajouté, car la phase suivante (le parcours de départ « Blueprint Fundamentals ») demande ton accord.\n\nTa réponse à la question Q3 débloquerait tout de suite le travail : je recommande « oui », l'équipe préparerait des propositions de leçons que tu valides une par une. Sans réponse, cette option s'applique le 8 novembre."
+    }
+  ],
   "rapporte": false,
-  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
+  "reapprovisionnements": 1
 }
