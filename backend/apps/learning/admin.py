@@ -2,7 +2,7 @@
 
 from django.contrib import admin
 
-from common.admin import ContentAdmin
+from common.admin import ContentAdmin, PublishableAdmin
 
 from .models import LearningPath, Lesson, Module, Skill
 
@@ -33,7 +33,7 @@ class LessonInline(admin.TabularInline):
 
 
 @admin.register(LearningPath)
-class LearningPathAdmin(ContentAdmin):
+class LearningPathAdmin(PublishableAdmin):
     list_display = ("title", "difficulty", "order", "is_published")
     list_filter = ("is_published", "difficulty")
     list_editable = ("order",)
@@ -44,7 +44,7 @@ class LearningPathAdmin(ContentAdmin):
 
 
 @admin.register(Module)
-class ModuleAdmin(ContentAdmin):
+class ModuleAdmin(PublishableAdmin):
     list_display = ("title", "learning_path", "order", "is_published")
     list_filter = ("is_published", "learning_path")
     list_editable = ("order",)
@@ -54,7 +54,7 @@ class ModuleAdmin(ContentAdmin):
 
 
 @admin.register(Lesson)
-class LessonAdmin(ContentAdmin):
+class LessonAdmin(PublishableAdmin):
     list_display = ("title", "module", "order", "is_published")
     list_filter = ("is_published", "module__learning_path", "module")
     list_editable = ("order",)

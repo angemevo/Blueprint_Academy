@@ -34,3 +34,45 @@ class ContentAdmin(admin.ModelAdmin):
             super().save_model(request, obj, form, change)
         except ValidationError as exc:
             self.message_user(request, " ".join(exc.messages), level=messages.ERROR)
+
+    def save_formset(self, request, form, formset, change):
+        # Cases is_published des inlines : meme regle, message au lieu d'un 500.
+        instances = formset.save(commit=False)
+        for obj in formset.deleted_objects:
+            obj.delete()
+        for obj in instances:
+            try:
+                obj.save()
+            except ValidationError as exc:
+                self.message_user(
+                    request, f"« {obj} » : " + " ".join(exc.messages), level=messages.ERROR
+                )
+        formset.save_m2m()
+
+
+
+class PublishableAdmin(ContentAdmin):
+    """Admin des contenus publiables : actions Publier / Depublier."""
+
+    actions = ["publier", "depublier"]
+
+    @admin.action(description="Publier (avec controle d'integrite)")
+    def publier(self, request, queryset):
+        from apps.learning.services.publication import publish
+
+        done = 0
+        for obj in queryset:
+            problems = publish(obj)
+            for p in problems:
+                self.message_user(request, p, level=messages.ERROR)
+            done += not problems
+        if done:
+            self.message_user(request, f"{done} element(s) publie(s).")
+
+    @admin.action(description="Depublier")
+    def depublier(self, request, queryset):
+        from apps.learning.services.publication import unpublish
+
+        for obj in queryset:
+            unpublish(obj)
+        self.message_user(request, f"{queryset.count()} element(s) depublie(s).")
