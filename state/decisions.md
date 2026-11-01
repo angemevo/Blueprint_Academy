@@ -40,3 +40,5 @@ Les décisions d'architecture et de produit verrouillées sont dans `CLAUDE.md` 
 Pins obligatoires absents du catalogue : avertissement sur entrée exec non reliée, `required` optionnel prévu. Libellés à vérifier dans Unreal.
 
 - 2026-10-29 — Réapprovisionnement : #4 découpée en #55 (E/G) et #56 (F/H) `ready`, car le cadrage a été validé par Ange le 2026-10-23 et les cas de test n'exigent plus d'export Unreal (décision du 2026-10-25) ; fixtures synthétiques marquées « à vérifier dans Unreal », aucune valeur Unreal présentée comme juste — agent (organisateur)
+
+- 2026-11-01 — Phase 4 (admin) : sans réponse d'Ange à l'échéance du 2026-11-01, recommandation appliquée par défaut ; issues #61 (admin de contenu) et #62 (publication avec contrôle d'intégrité) créées `ready`. Ancienne Q2 (PR #14) : A par défaut, sans objet. Q1 (CLAUDE.md, type I) : B par défaut, reposée avec échéance 2026-11-08 — agent (organisateur)

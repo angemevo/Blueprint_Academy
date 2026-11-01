@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-10-29",
+  "maj": "2026-11-01",
   "par": "première estimation, à affiner par l'organisateur au pilotage",
   "echelle": {
     "1": "petite : un créneau",
@@ -255,14 +255,14 @@
       "titre": "Création du contenu depuis l'admin",
       "phase": "4 · Admin",
       "points": 3,
-      "issue": null,
+      "issue": 61,
       "etat": "a_faire"
     },
     {
       "titre": "Contrôle d'intégrité à la publication d'une leçon",
       "phase": "4 · Admin",
       "points": 2,
-      "issue": null,
+      "issue": 62,
       "etat": "a_faire"
     },
     {

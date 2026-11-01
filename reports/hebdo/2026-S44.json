@@ -1,0 +1,56 @@
+{
+  "semaine": "2026-S44",
+  "meteo": "orange",
+  "en_bref": [
+    "Tout le site étudiant est livré : inscription, catalogue, leçons, exercices de rappel, tableau de bord, et le canvas Blueprint qui envoie un graphe et affiche le résultat de la correction.",
+    "Les nuits du 30 et du 31 octobre sont restées vides : l'équipe attendait ta réponse sur la phase suivante. Sans réponse au 1er novembre, nous avons lancé la phase 4 (administration) comme prévu.",
+    "Il nous reste à te demander deux choses, non bloquantes (voir les questions)."
+  ],
+  "livre": [
+    {"titre": "Mesure de la maîtrise des compétences", "pour_l_utilisateur": "L'étudiant progresse sur une compétence uniquement en réussissant des exercices de construction, avec la formule que tu as validée. Un contrôle vérifie aussi que chaque compétence peut être maîtrisée sans l'import Unreal.", "pr": 36, "issue": 11},
+    {"titre": "Socle du site : thème sombre, navigation, session", "pour_l_utilisateur": "Le site a son identité sombre et sa navigation ; la session de l'étudiant est conservée.", "pr": 37, "issue": 31},
+    {"titre": "Écrans d'inscription et de connexion", "pour_l_utilisateur": "Un étudiant peut créer un compte et se connecter depuis le site.", "pr": 38, "issue": 32},
+    {"titre": "Vitrine publique : accueil, catalogue et détail d'un parcours", "pour_l_utilisateur": "Un visiteur découvre les parcours avant de s'inscrire.", "pr": 39, "issue": 33},
+    {"titre": "Page de leçon et navigation dans le module", "pour_l_utilisateur": "L'étudiant lit une leçon et passe à la suivante dans son module.", "pr": 40, "issue": 34},
+    {"titre": "Espace d'exercice et exercices question / QCM", "pour_l_utilisateur": "L'étudiant répond à une question ou un QCM et voit sa correction.", "pr": 45, "issue": 41},
+    {"titre": "Exercice « remettre dans l'ordre »", "pour_l_utilisateur": "L'étudiant range des éléments par glisser-déposer ; score partiel selon ton choix.", "pr": 46, "issue": 42},
+    {"titre": "Exercice d'association", "pour_l_utilisateur": "L'étudiant relie des paires par glisser-déposer ; score partiel selon ton choix.", "pr": 47, "issue": 43},
+    {"titre": "Tableau de bord étudiant", "pour_l_utilisateur": "L'étudiant voit son niveau, ses points et sa progression.", "pr": 48, "issue": 44},
+    {"titre": "Description des nodes avec leurs pins", "pour_l_utilisateur": "Prépare un canvas fidèle à Unreal : chaque node connaît ses entrées et sorties. Les libellés exacts restent à vérifier dans Unreal.", "pr": 52, "issue": 49},
+    {"titre": "Canvas Blueprint en lecture seule", "pour_l_utilisateur": "L'étudiant voit un graphe Blueprint avec des nodes et des pins colorés comme dans l'éditeur.", "pr": 53, "issue": 50},
+    {"titre": "Canvas : ajout de nodes, liens et compilation", "pour_l_utilisateur": "L'étudiant ajoute des nodes, les relie et compile, comme dans l'éditeur.", "pr": 54, "issue": 51},
+    {"titre": "Correction des exercices de construction (E, G)", "pour_l_utilisateur": "Le serveur vérifie qu'un graphe construit répond à l'objectif, sans exiger un graphe identique. Cas de test à vérifier dans Unreal.", "pr": 57, "issue": 55},
+    {"titre": "Correction des exercices de débogage et de complétion (F, H)", "pour_l_utilisateur": "Les nodes verrouillés ne peuvent pas être contournés ; un exercice déjà résolu au départ est refusé.", "pr": 58, "issue": 56},
+    {"titre": "Canvas : envoi du graphe et résultat", "pour_l_utilisateur": "L'étudiant envoie son graphe depuis le canvas et voit le résultat de la correction. C'est le premier vrai exercice de pratique jouable.", "pr": 60, "issue": 59}
+  ],
+  "en_cours": [
+    {"titre": "Admin de contenu : parcours, modules, leçons, exercices", "etat": "en développement"},
+    {"titre": "Admin : publication avec contrôle d'intégrité", "etat": "en développement"},
+    {"titre": "Validation des cas de test du moteur de graphe", "etat": "en attente d'Ange"}
+  ],
+  "semaine_prochaine": [
+    "Créer parcours, modules, leçons et exercices depuis l'administration, sans toucher au code.",
+    "Refuser la publication d'une leçon si une compétence n'a pas assez d'exercices de construction.",
+    "Préparer la suite : tests de bout en bout, mise en ligne, documentation."
+  ],
+  "decisions_prises": [
+    {"decision": "Passage à la phase 4 (administration), faute de réponse à l'échéance du 1er novembre.", "pourquoi": "Sans administration, personne ne peut créer de contenu ; c'était notre recommandation."},
+    {"decision": "Ancienne question sur l'indice de la PR #14 : réponse A appliquée.", "pourquoi": "Sans objet, la livraison est faite depuis longtemps."},
+    {"decision": "Le document de référence garde, pour l'instant, le type I dans le MVP ; l'équipe suit ta consigne (pas de type I).", "pourquoi": "Ce fichier est protégé, toi seul peux le modifier (voir Q1)."}
+  ],
+  "risques": [
+    {"risque": "Deux nuits sans travail pendant l'attente de la phase 4 (30 et 31 octobre).", "ce_qu_on_fait": "Les tâches de la phase 4 sont prêtes. Pour la suite, nous préparerons à l'avance les tâches de la phase suivante en les gardant en attente de ton accord."},
+    {"risque": "Les cas de test du moteur de graphe ne sont pas encore confirmés dans le vrai Unreal.", "ce_qu_on_fait": "Ils restent marqués « à vérifier dans Unreal » ; aucun n'est présenté comme juste."},
+    {"risque": "Le parcours de départ « Blueprint Fundamentals » dépend de ton validation pédagogique.", "ce_qu_on_fait": "Nous proposons de rédiger des propositions leçon par leçon (voir Q2)."}
+  ],
+  "questions": [
+    {"id": "Q1", "question": "Peux-tu retirer le type I (import Unreal) du MVP dans le document de référence du projet ?",
+     "contexte": "Tu as décidé le 25 octobre qu'il n'y aurait pas d'import Unreal au MVP. L'équipe applique cette consigne, mais le document que toi seul peux modifier le cite encore.",
+     "options": ["A : tu modifies le document, type I en V3", "B : le document reste inchangé, l'équipe suit ta consigne"],
+     "recommandation": "A, pour que le document reflète ta décision.", "sans_reponse_le": "2026-11-08"},
+    {"id": "Q2", "question": "Qui prépare le contenu des leçons du parcours de départ « Blueprint Fundamentals » ?",
+     "contexte": "C'est la prochaine phase après l'administration. Le contenu doit être juste dans Unreal ; tu es seul à pouvoir le vérifier.",
+     "options": ["A : l'équipe rédige des propositions, tu valides leçon par leçon, tout ce qui touche à Unreal étant marqué « à vérifier dans Unreal »", "B : tu fournis le plan et les textes"],
+     "recommandation": "A, c'est plus rapide pour toi ; rien n'est publié sans ta validation.", "sans_reponse_le": "2026-11-08"}
+  ]
+}

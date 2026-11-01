@@ -31,3 +31,8 @@ Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #
 - Phase 3 : frontend applicatif (canvas React Flow)
 - Phases 4 à 8 : admin, seed, tests, Docker, documentation
 - P1, V2, V3, V4 : voir `CLAUDE.md`
+
+## Mise à jour 2026-11-01 (pilotage S44)
+- Phase 3 (écrans du site) : terminée. Phase 2b : terminée (#4 reste ouverte pour la validation par Ange des cas « à vérifier dans Unreal »).
+- Phase en cours : 4, administration. En cours : #61 (admin de contenu), puis #62 (publication avec contrôle d'intégrité).
+- Ensuite : phase 5 (parcours de départ, attend Ange, Q2), 6 tests de bout en bout, 7 Docker, 8 documentation. Ne pas anticiper sans accord.

@@ -2,15 +2,15 @@
 
 Tenu par l'organisateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont posées à Ange dans son bureau (rapport du dimanche et rapport du matin), où il répond en commentaire.
 
-Mise à jour : pilotage du 2026-10-25 (semaine 2026-S43). Réponses d'Ange du 23 et du 25 octobre appliquées.
+Mise à jour : pilotage du 2026-11-01 (semaine 2026-S44).
 
 ## En attente
-- **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (protégé, seul Ange le modifie). Options : A (Ange modifie, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A. Sans réponse le 2026-11-01 : B (consigne du 2026-10-25 déjà appliquée).
-- **Q2** : adoucir la formulation de la PR #14 sur l'indice. Options : A oui / B non. Recommandation : A. Sans réponse le 2026-11-01 : A.
-
-- **Q3bis** : passer à la phase 4 (administration : créer parcours, leçons et exercices sans toucher au code, avec contrôle à la publication) ? Contexte : toute la phase 3 est livrée ou prête (la dernière tâche, l'envoi d'un graphe depuis le canvas, est en cours). Options : A oui / B non, on continue à peaufiner le site. Recommandation : A, sans l'admin personne ne peut créer de contenu. Sans réponse le 2026-11-01 : A.
+- **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (fichier protégé, seul Ange le modifie). Contexte : la consigne du 2026-10-25 est déjà appliquée par l'équipe (option B par défaut). Options : A (Ange modifie le document, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A, pour que le document reflète la décision. Sans réponse le 2026-11-08 : B.
+- **Q2** : parcours de départ « Blueprint Fundamentals » (phase 5, plus tard). Qui prépare le contenu des leçons ? Options : A (l'équipe rédige des propositions, Ange valide leçon par leçon, tout ce qui touche à Unreal marqué « à vérifier dans Unreal ») / B (Ange fournit le plan et les textes). Recommandation : A, plus rapide pour Ange. Sans réponse le 2026-11-08 : A (rédaction de propositions seulement ; rien n'est publié sans validation d'Ange).
 
 ## Traité
+- [x] 2026-11-01 : Q3bis (phase 4, admin) : sans réponse à l'échéance, option A appliquée par défaut. Issues #61 et #62 `ready`.
+- [x] 2026-11-01 : ancienne Q2 (adoucir la PR #14, déjà mergée) : option A appliquée par défaut, sans objet.
 - [x] 2026-10-25 : Q6 (phase 3) : Ange répond oui. Issues #31 à #34 `ready`.
 - [x] 2026-10-25 : Q7 / Q4bis (formule de maîtrise) : validée par Ange. #11 `ready`.
 - [x] 2026-10-23 : Q3 (cadrage du moteur de validation, #4) : Ange suit la recommandation, option A, cadrage validé. #4 reste `a-cadrer` jusqu'aux exports Unreal du samedi 24 octobre (cas de test à vérifier dans Unreal).
