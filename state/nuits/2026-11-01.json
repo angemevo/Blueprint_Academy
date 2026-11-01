@@ -14,8 +14,12 @@
       "titre": "Admin de contenu : créer parcours, modules, leçons et exercices sans toucher au code",
       "minutes": 90,
       "pourquoi": "Première tâche du plan de la semaine, sans dépendance.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-01T23:26:49+00:00",
+      "minutes_reelles": 3,
+      "journal": "2026-11-01_2326-creneau-1-dev-issue61.jsonl",
+      "resume": "Les formateurs peuvent maintenant créer parcours, modules, leçons et exercices depuis l'espace d'administration, sans développeur. Une solution d'exercice mal formée est refusée avec un message sur le bon champ. La PR #64 est approuvée par la relecture (tests et vérifications au vert) et attend le portier. Trois défauts mineurs sont à régler avec la tâche suivante, #62 (publication), dont un message « modifié avec succès » trompeur quand une publication est refusée."
     },
     {
       "n": 2,
