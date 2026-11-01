@@ -1,0 +1,23 @@
+{
+  "titre": "Créer du contenu depuis l'admin",
+  "date": "2026-11-01 23:29",
+  "captures": [
+    {
+      "fichier": "01-l-accueil-de-l-admin-parcours-modules-le.png",
+      "legende": "L'accueil de l'admin : Parcours, Modules, Leçons, Exercices et Skills sont maintenant gérables sans développeur",
+      "adresse": "http://localhost:8000/admin/"
+    },
+    {
+      "fichier": "02-creation-d-un-parcours-les-modules-se-re.png",
+      "legende": "Création d'un parcours : les modules se règlent dans le même écran",
+      "adresse": "http://localhost:8000/admin/learning/learningpath/add/"
+    },
+    {
+      "fichier": "03-un-exercice-incomplet-est-refuse-avec-un.png",
+      "legende": "Un exercice incomplet est refusé avec un message sur le champ concerné, au lieu d'une page d'erreur",
+      "adresse": "http://localhost:8000/admin/exercises/exercise/add/"
+    }
+  ],
+  "video": "video.webm",
+  "erreurs": []
+}

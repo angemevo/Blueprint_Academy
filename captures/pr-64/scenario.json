@@ -1,0 +1,16 @@
+{
+  "titre": "Créer du contenu depuis l'admin",
+  "connexion_admin": true,
+  "etapes": [
+    {"aller": "/admin/"},
+    {"capture": "L'accueil de l'admin : Parcours, Modules, Leçons, Exercices et Skills sont maintenant gérables sans développeur"},
+    {"aller": "/admin/learning/learningpath/add/"},
+    {"capture": "Création d'un parcours : les modules se règlent dans le même écran", "pleine_page": true},
+    {"aller": "/admin/exercises/exercise/add/"},
+    {"choisir": "#id_type", "valeur": "B"},
+    {"remplir": "#id_title", "texte": "QCM test"},
+    {"cliquer": "text=Enregistrer"},
+    {"attendre": 1500},
+    {"capture": "Un exercice incomplet est refusé avec un message sur le champ concerné, au lieu d'une page d'erreur", "pleine_page": true}
+  ]
+}
