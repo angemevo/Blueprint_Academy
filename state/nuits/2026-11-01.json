@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-01T23:24:53+00:00",
-      "run": "41361944281"
+      "run": "41361944281",
+      "fin": "2026-11-01T23:35:20+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -62,6 +64,10 @@
     {
       "quand": "2026-11-01T23:35:10+00:00",
       "texte": "23 h 35 — l'organisateur a préparé la suite : Aucune tâche n'est prête pour l'équipe : la phase 4 (administration du contenu) est terminée, et la suite (le parcours de départ « Blueprint Fundamentals ») ne peut pas commencer sans ton accord.\n\nLa décision qui débloquerait le plus de travail est la question Q3 de ton bureau : passer à la phase 5 ? Ma recommandation est oui. L'équipe rédigerait alors des propositions de leçons, que tu validerais une par une. Rien ne serait publié sans toi, et tout ce qui touche à Unreal serait marqué « à vérifier dans Unreal ».\n\nSans réponse de ta part, l'option oui s'applique d'elle-même le 8 novembre."
+    },
+    {
+      "quand": "2026-11-01T23:35:20+00:00",
+      "texte": "23 h 35 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte. Les seules issues prêtes (#61 et #62) ont déjà été traitées cette nuit et mergées (PR #65). La phase 5 (parcours de départ) attend la réponse d'Ange (échéance 2026-11-08), et #4 reste à cadrer."
     }
   ],
   "rapporte": false,
