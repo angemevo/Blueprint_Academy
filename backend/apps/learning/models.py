@@ -112,6 +112,10 @@ class LearningPath(TimeStampedModel, PublishableModel, OrderedModel):
 
             ensure_publishable(self)
 
+    def clean(self) -> None:
+        super().clean()
+        self._check_publishable()  # Meme regle pour la case du formulaire.
+
     def save(self, *args, **kwargs):
         self._check_publishable()
         return super().save(*args, **kwargs)
@@ -205,6 +209,7 @@ class Lesson(TimeStampedModel, PublishableModel, OrderedModel):
             validate_lesson_content(self.content)
         except ValidationError as exc:
             raise ValidationError({"content": exc.messages}) from exc
+        self._check_publishable()  # Meme regle pour la case du formulaire.
 
     def save(self, *args, **kwargs):
         # Le contenu est valide a la sauvegarde, quelle que soit la porte

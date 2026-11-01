@@ -7,13 +7,13 @@ La validation (schema + coherence) vit dans `Exercise.clean`, qui appelle
 
 from django.contrib import admin
 
-from common.admin import ContentAdmin
+from common.admin import PublishableAdmin
 
 from .models import Exercise
 
 
 @admin.register(Exercise)
-class ExerciseAdmin(ContentAdmin):
+class ExerciseAdmin(PublishableAdmin):
     list_display = ("title", "type", "lesson", "difficulty", "order", "is_published")
     list_filter = ("is_published", "type", "difficulty", "is_practice")
     list_editable = ("order",)

@@ -111,3 +111,98 @@ def test_publishing_refused_by_integrity_is_not_a_500(admin, django_user_model):
     assert r.status_code in (200, 302)
     lesson.refresh_from_db()
     assert lesson.is_published is False
+
+
+# --- Publication avec controle d'integrite -------------------------------
+
+
+def _taught_lesson(slug, with_exercises):
+    from apps.learning.models import Skill
+
+    p = LearningPath.objects.create(title=f"P-{slug}", slug=f"p-{slug}")
+    m = Module.objects.create(learning_path=p, title="M", slug=f"m-{slug}")
+    s = Skill.objects.create(name=f"Skill {slug}", slug=f"s-{slug}")
+    lesson = Lesson.objects.create(module=m, title="L", slug=f"l-{slug}")
+    lesson.skills_taught.add(s)
+    if with_exercises:
+        from django.conf import settings
+
+        n = settings.MASTERY_SETTINGS["min_production_exercises"]
+        ctypes = settings.MASTERY_SETTINGS["constrained_types"]
+        for i in range(n):
+            e = Exercise(
+                lesson=lesson, type="E", title=f"e{i}", slug=f"e{i}-{slug}",
+                content=E_CONTENT, solution=E_SOLUTION, is_published=True,
+            )
+            e.save()
+            e.skills.add(s)
+        # Exercice contraint : on force le type via update (contenu non pertinent ici).
+        Exercise.objects.filter(pk=Exercise.objects.filter(lesson=lesson).first().pk).update(type=ctypes[0])
+    return p, m, lesson
+
+
+def _run(admin, name, obj):
+    return admin.post(
+        reverse(f"admin:learning_{name}_changelist"),
+        {"action": "publier", "_selected_action": [obj.pk]},
+        follow=True,
+    )
+
+
+def test_publish_lesson_refused_with_explicit_message(admin):
+    _, _, lesson = _taught_lesson("ko", False)
+    r = _run(admin, "lesson", lesson)
+    assert r.status_code == 200
+    lesson.refresh_from_db()
+    assert lesson.is_published is False
+    assert "Skill ko" in r.content.decode()
+
+
+def test_publish_complete_lesson_succeeds(admin):
+    _, _, lesson = _taught_lesson("ok", True)
+    _run(admin, "lesson", lesson)
+    lesson.refresh_from_db()
+    assert lesson.is_published is True
+
+
+def test_publish_path_checked_through_its_lessons(admin):
+    p, _, _ = _taught_lesson("pko", False)
+    r = _run(admin, "learningpath", p)
+    p.refresh_from_db()
+    assert p.is_published is False
+    assert "Skill pko" in r.content.decode()
+    p2, _, _ = _taught_lesson("pok", True)
+    _run(admin, "learningpath", p2)
+    p2.refresh_from_db()
+    assert p2.is_published is True
+
+
+def test_publish_module_checked_and_unpublish(admin):
+    _, m, _ = _taught_lesson("mko", False)
+    _run(admin, "module", m)
+    m.refresh_from_db()
+    assert m.is_published is False
+    _, m2, _ = _taught_lesson("mok", True)
+    _run(admin, "module", m2)
+    m2.refresh_from_db()
+    assert m2.is_published is True
+    admin.post(
+        reverse("admin:learning_module_changelist"),
+        {"action": "depublier", "_selected_action": [m2.pk]},
+    )
+    m2.refresh_from_db()
+    assert m2.is_published is False
+
+
+def test_form_checkbox_follows_same_rule(admin):
+    p, m, lesson = _taught_lesson("frm", False)
+    r = admin.post(reverse("admin:learning_lesson_change", args=[lesson.pk]), {
+        "module": m.pk, "title": "L", "slug": lesson.slug, "order": 0, "is_published": "on",
+        "content": json.dumps({"version": 1, "blocks": []}),
+        "estimated_minutes": 5, "xp_reward": 10,
+        "skills_taught": [lesson.skills_taught.first().pk],
+    })
+    assert r.status_code == 200
+    assert "Skill frm" in r.content.decode()
+    lesson.refresh_from_db()
+    assert lesson.is_published is False
