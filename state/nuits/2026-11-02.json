@@ -1,0 +1,30 @@
+{
+  "nuit": "2026-11-02",
+  "equipes": [
+    {
+      "debut": "2026-11-03T02:02:47+00:00",
+      "run": "41563583749"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "auto",
+      "cible": "auto",
+      "titre": "tâche prioritaire",
+      "minutes": 60,
+      "pourquoi": "planning de secours",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-03T02:04:08+00:00",
+      "texte": "2 h 04 — le planning du chef d'équipe était illisible (session interrompue) : l'équipe continue avec un créneau au choix du chef."
+    }
+  ],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
