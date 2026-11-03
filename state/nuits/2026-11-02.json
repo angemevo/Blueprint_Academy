@@ -154,8 +154,23 @@
       "titre": "tâche prioritaire",
       "minutes": 60,
       "pourquoi": "planning de secours",
+      "statut": "echec",
+      "tentatives": 1,
+      "debut": "2026-11-03T02:05:36+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-03_0205-creneau-11-auto-auto.jsonl",
+      "dernier_probleme": "erreur de la session (code 1)"
+    },
+    {
+      "n": 12,
+      "type": "auto",
+      "cible": "auto",
+      "titre": "tâche prioritaire",
+      "minutes": 60,
+      "pourquoi": "planning de secours",
       "statut": "a_faire",
-      "tentatives": 0
+      "tentatives": 1,
+      "dernier_probleme": "erreur de la session (code 1)"
     }
   ],
   "merges": [],
@@ -223,6 +238,10 @@
     {
       "quand": "2026-11-03T02:05:34+00:00",
       "texte": "2 h 05 — le planning du chef d'équipe était illisible (session interrompue) : l'équipe continue avec un créneau au choix du chef."
+    },
+    {
+      "quand": "2026-11-03T02:05:38+00:00",
+      "texte": "2 h 05 — Créneau 11 (auto) : erreur de la session (code 1). Le chef d'équipe le relance une fois."
     }
   ],
   "rapporte": false,
