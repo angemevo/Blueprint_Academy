@@ -320,6 +320,16 @@
       "debut": "2026-11-03T04:03:43+00:00",
       "minutes_reelles": 1,
       "journal": "2026-11-03_0403-creneau-22-auto-auto.jsonl"
+    },
+    {
+      "n": 23,
+      "type": "auto",
+      "cible": "auto",
+      "titre": "tâche prioritaire",
+      "minutes": 60,
+      "pourquoi": "planning de secours",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [],
@@ -455,6 +465,10 @@
     {
       "quand": "2026-11-03T04:03:44+00:00",
       "texte": "4 h 03 — Créneau 22 (auto) : erreur de la session (code 1), deuxième fois. Tâche mise de côté pour l'organisateur ; l'équipe passe à la suivante."
+    },
+    {
+      "quand": "2026-11-03T04:03:51+00:00",
+      "texte": "4 h 03 — le planning du chef d'équipe était illisible (session interrompue) : l'équipe continue avec un créneau au choix du chef."
     }
   ],
   "rapporte": false,
