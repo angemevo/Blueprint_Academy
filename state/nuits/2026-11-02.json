@@ -6,6 +6,10 @@
       "run": "41563583749",
       "fin": "2026-11-03T02:05:48+00:00",
       "raison_fin": "planning épuisé"
+    },
+    {
+      "debut": "2026-11-03T04:00:16+00:00",
+      "run": "41575432036"
     }
   ],
   "creneaux": [
@@ -176,6 +180,16 @@
       "debut": "2026-11-03T02:05:43+00:00",
       "minutes_reelles": 1,
       "journal": "2026-11-03_0205-creneau-12-auto-auto.jsonl"
+    },
+    {
+      "n": 13,
+      "type": "auto",
+      "cible": "auto",
+      "titre": "tâche prioritaire",
+      "minutes": 60,
+      "pourquoi": "planning de secours",
+      "statut": "a_faire",
+      "tentatives": 0
     }
   ],
   "merges": [],
@@ -251,6 +265,10 @@
     {
       "quand": "2026-11-03T02:05:44+00:00",
       "texte": "2 h 05 — Créneau 12 (auto) : erreur de la session (code 1), deuxième fois. Tâche mise de côté pour l'organisateur ; l'équipe passe à la suivante."
+    },
+    {
+      "quand": "2026-11-03T04:02:12+00:00",
+      "texte": "4 h 02 — le planning du chef d'équipe était illisible (session interrompue) : l'équipe continue avec un créneau au choix du chef."
     }
   ],
   "rapporte": false,
