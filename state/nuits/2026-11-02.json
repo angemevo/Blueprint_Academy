@@ -342,9 +342,12 @@
       "titre": "tâche prioritaire",
       "minutes": 60,
       "pourquoi": "planning de secours",
-      "statut": "a_faire",
-      "tentatives": 1,
-      "dernier_probleme": "erreur de la session (code 1)"
+      "statut": "bloque",
+      "tentatives": 2,
+      "dernier_probleme": "erreur de la session (code 1)",
+      "debut": "2026-11-03T04:04:01+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-03_0404-creneau-24-auto-auto.jsonl"
     }
   ],
   "merges": [],
@@ -488,6 +491,10 @@
     {
       "quand": "2026-11-03T04:03:55+00:00",
       "texte": "4 h 03 — Créneau 23 (auto) : erreur de la session (code 1). Le chef d'équipe le relance une fois."
+    },
+    {
+      "quand": "2026-11-03T04:04:03+00:00",
+      "texte": "4 h 04 — Créneau 24 (auto) : erreur de la session (code 1), deuxième fois. Tâche mise de côté pour l'organisateur ; l'équipe passe à la suivante."
     }
   ],
   "rapporte": false,
