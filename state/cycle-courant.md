@@ -22,3 +22,7 @@ Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-08).
 ## Réapprovisionnement 2026-11-01
 
 Phase 4 terminée. Aucune issue `ready` : la phase 5 attend Ange (Q3). Rien à planifier avant sa réponse ou le 2026-11-08. (Revérifié en fin de journée du 2026-11-01 : aucune réponse d'Ange, aucune issue `ready` restante ; #61 et #62 sont faites et seront refermées par leur PR.)
+
+## Réapprovisionnement 2026-11-04
+
+Aucune issue `ready` possible : phase 4 finie, Q3 (phase 5) sans réponse avant le 2026-11-08, #4 attend Ange. Aucun changement au plan.
