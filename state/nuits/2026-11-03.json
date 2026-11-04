@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-03",
+  "equipes": [
+    {
+      "debut": "2026-11-04T00:26:44+00:00",
+      "run": "41746791679"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-04T00:28:34+00:00",
+      "texte": "0 h 28 — Le chef d'équipe n'a plus de tâche prête : Les deux seules issues prêtes (#61 et #62) sont déjà livrées par les PR #64 et #65, mergées le 1er novembre ; elles sont restées ouvertes par erreur. Aucune PR ouverte, et la phase 5 attend la réponse d'Ange (échéance 8 novembre)."
+    },
+    {
+      "quand": "2026-11-04T00:29:04+00:00",
+      "texte": "0 h 29 — l'organisateur a préparé la suite : Il n'y a rien de nouveau à confier à l'équipe pour l'instant. Le travail d'administration du contenu est entièrement livré, et la suite (le parcours de départ « Blueprint Fundamentals ») attend ton accord pour passer à la phase suivante. Ta réponse débloquerait tout : si tu réponds « Q3 : A », l'équipe prépare des propositions de leçons que tu valides une à une, rien n'est publié sans toi. Sans réponse, cet accord sera appliqué par défaut le 8 novembre."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
