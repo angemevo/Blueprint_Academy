@@ -26,3 +26,7 @@ Phase 4 terminée. Aucune issue `ready` : la phase 5 attend Ange (Q3). Rien à p
 ## Réapprovisionnement 2026-11-04
 
 Aucune issue `ready` possible : phase 4 finie, Q3 (phase 5) sans réponse avant le 2026-11-08, #4 attend Ange. Aucun changement au plan.
+
+## Réapprovisionnement 2026-11-05
+
+Toujours aucune réponse d'Ange (Q1 à Q3), aucune issue `ready` possible. Aucun changement au plan ; décisions par défaut le 2026-11-08.
