@@ -34,3 +34,7 @@ Revérifié : bureau sans message d'Ange, seules #4 (`a-cadrer`) et le bureau so
 ## Réapprovisionnement 2026-11-05
 
 Toujours aucune réponse d'Ange (Q1 à Q3), aucune issue `ready` possible. Aucun changement au plan ; décisions par défaut le 2026-11-08.
+
+## Réapprovisionnement 2026-11-06
+
+Bureau sans message d'Ange, Q1 à Q3 sans réponse (échéance 2026-11-08, pas encore passée). Aucune issue `ready` possible. Plan inchangé.
