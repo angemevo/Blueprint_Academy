@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-06T01:00:55+00:00",
       "texte": "1 h 00 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe : l'administration du contenu est terminée, et la suite (le parcours de départ « Blueprint Fundamentals ») attend ton accord. Tu n'as pas encore répondu aux trois questions du bureau ; sans réponse le 8 novembre, l'équipe applique mes recommandations et prépare des propositions de leçons, rien n'étant publié sans ta validation. Pour débloquer du travail tout de suite, il suffit de répondre « Q3 : A » dans ton bureau."
+    },
+    {
+      "quand": "2026-11-06T01:01:06+00:00",
+      "texte": "1 h 01 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 4 est terminée, la phase 5 et l'issue #4 attendent une réponse d'Ange (échéance 2026-11-08)."
+    },
+    {
+      "quand": "2026-11-06T01:01:29+00:00",
+      "texte": "1 h 01 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. La phase d'administration est terminée, et la suite (le parcours de départ « Blueprint Fundamentals ») attend ton accord sur la question Q3. Les trois questions en attente (Q1 à Q3) ont pour échéance le 8 novembre ; sans réponse, la recommandation s'applique ce jour-là.\n\nTa réponse « Q3 : A » débloquerait le plus de travail : l'équipe pourrait aussitôt préparer les leçons en propositions, sans rien publier sans ta validation."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }

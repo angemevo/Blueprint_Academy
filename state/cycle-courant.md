@@ -38,3 +38,7 @@ Toujours aucune réponse d'Ange (Q1 à Q3), aucune issue `ready` possible. Aucun
 ## Réapprovisionnement 2026-11-06
 
 Bureau sans message d'Ange, Q1 à Q3 sans réponse (échéance 2026-11-08, pas encore passée). Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-06 (second passage)
+
+Même constat : seules #4 (`a-cadrer`) et le bureau sont ouvertes, échéance des questions non passée. Aucune issue `ready` possible. Plan inchangé.
