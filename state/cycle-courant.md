@@ -46,3 +46,7 @@ Même constat : seules #4 (`a-cadrer`) et le bureau sont ouvertes, échéance de
 ## Réapprovisionnement 2026-11-07
 
 Bureau sans message d'Ange, Q1 à Q3 sans réponse (échéance 2026-11-08, pas encore passée). Aucune issue `ready` possible ; les phases 6 à 8 ne sont pas lancées sans l'accord pour la phase suivante. Plan inchangé.
+
+## Réapprovisionnement 2026-11-07 (second passage)
+
+Même constat : seules #4 (`a-cadrer`) et le bureau sont ouvertes, échéance des questions (2026-11-08) non passée. Aucune issue `ready` possible. Plan inchangé.

@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-07T00:00:51+00:00",
       "texte": "0 h 00 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe : la phase 4 est terminée et la suite attend ton accord pour passer à la phase suivante (le parcours de départ). Tu n'as pas encore répondu aux questions Q1 à Q3, dont l'échéance est demain, le 8 novembre. Sans réponse de ta part, l'équipe appliquera alors les recommandations et commencera à préparer le parcours en propositions. Répondre « Q3 : A » dans ton bureau débloquerait le travail tout de suite."
+    },
+    {
+      "quand": "2026-11-07T00:01:01+00:00",
+      "texte": "0 h 01 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 5 et les questions Q1 à Q3 attendent Ange (échéance 2026-11-08), #4 attend la validation des cas à vérifier dans Unreal."
+    },
+    {
+      "quand": "2026-11-07T00:01:20+00:00",
+      "texte": "0 h 01 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe en ce moment : la phase 4 est terminée et la suite (le parcours de départ) attend ton accord. Tes trois questions en attente ont pour date limite demain, le 8 novembre. Sans réponse de ta part, l'équipe appliquera mes recommandations et lancera la préparation du parcours sous forme de propositions de leçons, sans rien publier sans ta validation. Une réponse « oui » à la question sur le passage à la phase suivante débloquerait le plus de travail dès cette nuit."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
