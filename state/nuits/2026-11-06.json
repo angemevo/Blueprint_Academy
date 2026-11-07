@@ -42,6 +42,6 @@
       "texte": "3 h 09 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 4 est terminée, la phase 5 et l'issue #4 attendent les réponses d'Ange (échéance 2026-11-08)."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
