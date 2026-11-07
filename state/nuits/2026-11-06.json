@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-06T23:58:58+00:00",
-      "run": "42315309554"
+      "run": "42315309554",
+      "fin": "2026-11-07T00:01:31+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-11-07T00:01:20+00:00",
       "texte": "0 h 01 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe en ce moment : la phase 4 est terminée et la suite (le parcours de départ) attend ton accord. Tes trois questions en attente ont pour date limite demain, le 8 novembre. Sans réponse de ta part, l'équipe appliquera mes recommandations et lancera la préparation du parcours sous forme de propositions de leçons, sans rien publier sans ta validation. Une réponse « oui » à la question sur le passage à la phase suivante débloquerait le plus de travail dès cette nuit."
+    },
+    {
+      "quand": "2026-11-07T00:01:31+00:00",
+      "texte": "0 h 01 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 5 et les phases suivantes attendent la réponse d'Ange (échéance 2026-11-08), et l'issue #4 attend sa validation."
     }
   ],
   "rapporte": false,
