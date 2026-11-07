@@ -54,3 +54,7 @@ Même constat : seules #4 (`a-cadrer`) et le bureau sont ouvertes, échéance de
 ## Réapprovisionnement 2026-11-07 (troisième passage)
 
 Bureau sans message d'Ange, aucune PR ouverte, échéance des questions (2026-11-08) non passée. Aucune issue `ready` possible. Plan inchangé ; au prochain passage après le 2026-11-08, décisions par défaut (Q3 : phase 5 en propositions).
+
+## Réapprovisionnement 2026-11-07 (quatrième passage)
+
+Rien de nouveau : échéance des questions (2026-11-08) non passée, aucune issue `ready` possible. Plan inchangé.
