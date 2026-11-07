@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-07",
+  "equipes": [
+    {
+      "debut": "2026-11-07T23:29:18+00:00",
+      "run": "42425426126"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-07T23:31:26+00:00",
+      "texte": "23 h 31 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : la phase 4 est livrée, la phase 5 et la suite attendent la réponse d'Ange (échéance 2026-11-08), et #4 attend sa validation des cas à vérifier dans Unreal."
+    },
+    {
+      "quand": "2026-11-07T23:31:53+00:00",
+      "texte": "23 h 31 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : la phase d'administration est terminée, et la suite (le parcours de départ) attend ta réponse à la question sur le passage à la phase suivante. Sans réponse de ta part, l'équipe appliquera ma recommandation (oui, en propositions seulement) dès le 8 novembre. Répondre « Q3 : A » dans ton bureau débloquerait le travail tout de suite."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
