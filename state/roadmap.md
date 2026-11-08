@@ -36,3 +36,7 @@ Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #
 - Phase 3 (écrans du site) : terminée. Phase 2b : terminée (#4 reste ouverte pour la validation par Ange des cas « à vérifier dans Unreal »).
 - Phase en cours : 4, administration. En cours : #61 (admin de contenu), puis #62 (publication avec contrôle d'intégrité).
 - Ensuite : phase 5 (parcours de départ, attend Ange, Q2), 6 tests de bout en bout, 7 Docker, 8 documentation. Ne pas anticiper sans accord.
+
+## Mise à jour 2026-11-08 (pilotage S45)
+- Phase 4 (administration) : terminée. Phase en cours : 5, parcours de départ, acceptée par défaut en propositions. Plan : #66 (commande seed et structure), #67 (premier module). Modules suivants après validation d'Ange.
+- Ensuite : 6 tests de bout en bout (Q2 : en parallèle ? défaut oui au 2026-11-15), 7 Docker, 8 documentation.

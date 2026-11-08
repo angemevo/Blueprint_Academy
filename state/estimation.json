@@ -1,7 +1,7 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-01",
-  "par": "première estimation, à affiner par l'organisateur au pilotage",
+  "maj": "2026-11-08",
+  "par": "organisateur, pilotage S45",
   "echelle": {
     "1": "petite : un créneau",
     "2": "moyenne : un ou deux créneaux",
@@ -268,9 +268,23 @@
       "fait_le": "2026-11-01"
     },
     {
-      "titre": "Parcours de départ « Blueprint Fundamentals »",
+      "titre": "Seed : commande et structure du parcours (non publié)",
       "phase": "5 · Contenu de départ",
-      "points": 5,
+      "points": 2,
+      "issue": 66,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Seed : premier module en propositions de leçons et d'exercices",
+      "phase": "5 · Contenu de départ",
+      "points": 3,
+      "issue": 67,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Seed : modules suivants, validation et publication par Ange",
+      "phase": "5 · Contenu de départ",
+      "points": 3,
       "issue": null,
       "etat": "a_faire",
       "attend_ange": true

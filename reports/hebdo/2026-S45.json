@@ -1,0 +1,39 @@
+{
+  "semaine": "2026-S45",
+  "meteo": "orange",
+  "en_bref": [
+    "Aucune nouvelle fonctionnalité cette semaine : l'administration du contenu était terminée et l'équipe attendait ta réponse sur la phase suivante.",
+    "Sans réponse à l'échéance du 8 novembre, nous lançons la phase 5 (parcours de départ) comme prévu, en propositions : rien n'est publié sans toi.",
+    "Nous te demandons deux choses, non bloquantes (voir les questions)."
+  ],
+  "livre": [],
+  "en_cours": [
+    {"titre": "Parcours de départ : structure du parcours, non publié", "etat": "en développement"},
+    {"titre": "Parcours de départ : premier module en propositions de leçons et d'exercices", "etat": "en développement"},
+    {"titre": "Validation des cas de test du moteur de correction des graphes", "etat": "en attente d'Ange"}
+  ],
+  "semaine_prochaine": [
+    "Mettre en place la commande qui crée le parcours « Blueprint Fundamentals » et ses modules, sans rien publier.",
+    "Rédiger en propositions le premier module : leçons courtes et exercices de construction, avec ce qui touche à Unreal marqué « à vérifier dans Unreal ».",
+    "Te présenter ce premier module pour validation avant d'écrire les suivants."
+  ],
+  "decisions_prises": [
+    {"decision": "Passage à la phase 5 (parcours de départ), faute de réponse à l'échéance du 8 novembre.", "pourquoi": "C'était notre recommandation ; sans cela l'équipe n'a plus de travail."},
+    {"decision": "L'équipe rédige des propositions de leçons, tu valides leçon par leçon.", "pourquoi": "Plus rapide pour toi ; le contenu doit être juste dans Unreal et seul toi peux le confirmer."}
+  ],
+  "risques": [
+    {"risque": "Cinq nuits sans travail (3 au 7 novembre) en attendant ta réponse.", "ce_qu_on_fait": "La phase 5 est maintenant prête. Nous te proposons aussi de lancer les tests en parallèle (Q2) pour que l'équipe ne manque plus de travail."},
+    {"risque": "Le contenu du parcours doit être juste dans le vrai Unreal Engine.", "ce_qu_on_fait": "Tout point incertain est marqué « à vérifier dans Unreal » ; rien n'est publié sans ta validation."},
+    {"risque": "Les cas de test du moteur de correction ne sont pas confirmés dans Unreal.", "ce_qu_on_fait": "Ils restent marqués « à vérifier dans Unreal » ; aucun n'est présenté comme juste."}
+  ],
+  "questions": [
+    {"id": "Q1", "question": "Peux-tu retirer le type I (import Unreal) du MVP dans le document de référence du projet ?",
+     "contexte": "Tu as décidé le 25 octobre qu'il n'y aurait pas d'import Unreal au MVP. L'équipe applique cette consigne, mais le document que toi seul peux modifier le cite encore.",
+     "options": ["A : tu modifies le document, type I en V3", "B : le document reste inchangé, l'équipe suit ta consigne"],
+     "recommandation": "A, pour que le document reflète ta décision.", "sans_reponse_le": "2026-11-15"},
+    {"id": "Q2", "question": "Lancer dès maintenant les tests de bout en bout du parcours étudiant, en parallèle du parcours de départ ?",
+     "contexte": "Le parcours de départ avance en propositions et attendra tes validations. Les tests ne dépendent pas du contenu et occupent l'équipe utilement.",
+     "options": ["A : oui, en parallèle", "B : non, une phase à la fois"],
+     "recommandation": "A, l'équipe avance sans attendre et la fin du projet n'est pas retardée.", "sans_reponse_le": "2026-11-15"}
+  ]
+}
