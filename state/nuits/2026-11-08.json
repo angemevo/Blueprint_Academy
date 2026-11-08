@@ -14,8 +14,12 @@
       "titre": "Commande de remplissage du parcours de départ : la structure du parcours, non publiée",
       "minutes": 75,
       "pourquoi": "Première tâche du plan de la semaine, sans dépendance.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-08T23:29:19+00:00",
+      "minutes_reelles": 30,
+      "journal": "2026-11-08_2329-creneau-1-dev-issue66.jsonl",
+      "resume": "Le travail sur la commande de remplissage du parcours de départ a déjà été fait dans ce créneau. La PR #69 a été relue et approuvée, et il ne manque que la fusion par le portier. Je n'ai rien relancé pour éviter un doublon."
     },
     {
       "n": 2,

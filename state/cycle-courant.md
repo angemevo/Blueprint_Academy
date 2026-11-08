@@ -14,10 +14,10 @@ Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-15).
 
 ## Dernière tâche traitée
 
-- Tâche : #62 « Admin : publication avec contrôle d'intégrité » (créneau 2, 2026-11-01).
-- PR : #65 (non brouillon, `Closes #62`).
-- Verdict de qa : APPROUVÉE. Remarques non bloquantes : le contrôle voit les anciens skills si on les modifie dans le même formulaire que la case « publié » ; trois lignes vides dans `common/admin.py`. Hors périmètre : publication d'un exercice non contrôlée.
-- Prochaine action : le portier merge #65.
+- Tâche : #66 « Seed : commande seed_blueprint et structure du parcours (non publié) » (créneau 1, 2026-11-08).
+- PR : #69 (non brouillon, `Closes #66`).
+- Verdict de qa : APPROUVÉE. Remarque non bloquante : noms sans accents (« editeur »), à corriger quand Ange validera les noms.
+- Prochaine action : le portier merge #69.
 
 ## Réapprovisionnement 2026-11-01
 
@@ -58,3 +58,5 @@ Bureau sans message d'Ange, aucune PR ouverte, échéance des questions (2026-11
 ## Réapprovisionnement 2026-11-07 (quatrième passage)
 
 Rien de nouveau : échéance des questions (2026-11-08) non passée, aucune issue `ready` possible. Plan inchangé.
+
+- Issue #66 : branche feat/66-seed-structure, PR ouverte, en attente de revue.
