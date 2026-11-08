@@ -1,0 +1,35 @@
+{
+  "nuit": "2026-11-08",
+  "equipes": [
+    {
+      "debut": "2026-11-08T23:27:30+00:00",
+      "run": "42535232450"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 66",
+      "titre": "Commande de remplissage du parcours de départ : la structure du parcours, non publiée",
+      "minutes": 75,
+      "pourquoi": "Première tâche du plan de la semaine, sans dépendance.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "dev",
+      "cible": "issue 67",
+      "titre": "Premier module du parcours : propositions de leçons et d'exercices",
+      "minutes": 90,
+      "pourquoi": "Suite du plan ; dépend de la 66, traitée juste avant et livrée par le portier.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
