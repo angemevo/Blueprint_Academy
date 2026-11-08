@@ -6,6 +6,12 @@
       "run": "42425426126",
       "fin": "2026-11-07T23:32:34+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-11-08T02:40:03+00:00",
+      "run": "42439475452",
+      "fin": "2026-11-08T02:41:51+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -30,6 +36,10 @@
     {
       "quand": "2026-11-07T23:32:34+00:00",
       "texte": "23 h 32 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : seule #4 est ouverte, elle attend la validation d Ange (cas à vérifier dans Unreal) ; la phase 5 attend sa réponse (échéance 2026-11-08)."
+    },
+    {
+      "quand": "2026-11-08T02:41:51+00:00",
+      "texte": "2 h 41 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : la phase 5 et #4 attendent Ange (échéance des questions 2026-11-08), les phases 6 à 8 ne sont pas lancées sans son accord."
     }
   ],
   "rapporte": false,
