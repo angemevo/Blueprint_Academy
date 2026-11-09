@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-08T23:27:30+00:00",
-      "run": "42535232450"
+      "run": "42535232450",
+      "fin": "2026-11-09T00:05:32+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -62,6 +64,10 @@
     {
       "quand": "2026-11-09T00:05:21+00:00",
       "texte": "0 h 05 — l'organisateur a préparé la suite : Le premier module du parcours est prêt en propositions : leçons et exercices existent, mais rien n'est visible des étudiants. L'équipe n'a plus de tâche à lancer sans toi. Ta relecture de ce premier module (question Q3) débloquerait le plus de travail, car les modules suivants en dépendent. Ta réponse sur les tests de bout en bout (Q2) permettrait aussi de les lancer tout de suite ; sans réponse, ils démarreront le 15 novembre."
+    },
+    {
+      "quand": "2026-11-09T00:05:32+00:00",
+      "texte": "0 h 05 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : #66 et #67 sont livrées, les modules suivants attendent la validation d Ange (Q3), les tests de bout en bout attendent Q2 (défaut au 15 novembre) et #4 reste à cadrer."
     }
   ],
   "rapporte": false,
