@@ -14,10 +14,10 @@ Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-15).
 
 ## Dernière tâche traitée
 
-- Tâche : #66 « Seed : commande seed_blueprint et structure du parcours (non publié) » (créneau 1, 2026-11-08).
-- PR : #69 (non brouillon, `Closes #66`).
-- Verdict de qa : APPROUVÉE. Remarque non bloquante : noms sans accents (« editeur »), à corriger quand Ange validera les noms.
-- Prochaine action : le portier merge #69.
+- Tâche : #67 « Seed : premier module en propositions de leçons et d'exercices » (créneau 2, 2026-11-09).
+- PR : #70 (non brouillon, `Closes #67`).
+- Verdict de qa : APPROUVÉE. Remarque non bloquante : le test des exercices « non résolus au départ » ne le vérifie pas encore (attend le validateur de graphe).
+- Prochaine action : le portier merge #70.
 
 ## Réapprovisionnement 2026-11-01
 
@@ -60,3 +60,6 @@ Bureau sans message d'Ange, aucune PR ouverte, échéance des questions (2026-11
 Rien de nouveau : échéance des questions (2026-11-08) non passée, aucune issue `ready` possible. Plan inchangé.
 
 - Issue #66 : branche feat/66-seed-structure, PR ouverte, en attente de revue.
+
+## Dernière tâche (développeur)
+- Issue #67, branche feat/67-seed-module, PR #70, état : ouverte, prête pour qa.

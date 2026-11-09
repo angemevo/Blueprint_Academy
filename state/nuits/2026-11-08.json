@@ -28,8 +28,12 @@
       "titre": "Premier module du parcours : propositions de leçons et d'exercices",
       "minutes": 90,
       "pourquoi": "Suite du plan ; dépend de la 66, traitée juste avant et livrée par le portier.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-09T00:00:27+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-11-09_0000-creneau-2-dev-issue67.jsonl",
+      "resume": "Le premier module du parcours, « Prise en main de l'éditeur », est préparé en brouillon. Il compte 2 leçons et 6 exercices d'entraînement, tous non publiés, et les points incertains sont marqués « à vérifier dans Unreal ». La PR #70 est approuvée par la relecture (qa) et attend le portier. Rien n'est visible pour les étudiants tant qu'Ange n'a pas relu, vérifié dans Unreal et publié le module."
     }
   ],
   "merges": [
