@@ -34,3 +34,4 @@
 | 2026-10-29 | #60 | Canvas : envoyer le graphe et afficher le résultat (E, F, G, H) | #59 |
 | 2026-11-01 | #64 | Admin de contenu : parcours, modules, leçons, exercices | #61 |
 | 2026-11-01 | #65 | Admin : publication avec contrôle d'intégrité | #62 |
+| 2026-11-09 | #69 | Seed : commande seed_blueprint et structure du parcours (non publié) | #66 |
