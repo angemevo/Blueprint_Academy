@@ -67,3 +67,7 @@ Rien de nouveau : échéance des questions (2026-11-08) non passée, aucune issu
 ## Réapprovisionnement 2026-11-09
 
 #66 et #67 sont mergées (PR #69, #70) ; lots marqués faits. Aucune issue `ready` possible : modules suivants attendent la validation du premier (Q3), phase 6 attend Q2 (défaut oui au 2026-11-15), #4 reste `a-cadrer`. Plan inchangé.
+
+## Réapprovisionnement 2026-11-09 (second passage)
+
+Issues #66 et #67 refermées (livrées par les PR #69 et #70, l'étiquette `ready` retirée pour que l'équipe ne les reprenne pas). Aucune nouvelle issue `ready` possible : modules suivants et phase 6 attendent Ange (Q3, Q2), #4 reste `a-cadrer`. Plan inchangé.
