@@ -35,3 +35,4 @@
 | 2026-11-01 | #64 | Admin de contenu : parcours, modules, leçons, exercices | #61 |
 | 2026-11-01 | #65 | Admin : publication avec contrôle d'intégrité | #62 |
 | 2026-11-09 | #69 | Seed : commande seed_blueprint et structure du parcours (non publié) | #66 |
+| 2026-11-09 | #70 | Seed : premier module en propositions de leçons et d'exercices | #67 |

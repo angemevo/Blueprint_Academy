@@ -40,6 +40,10 @@
     {
       "quand": "2026-11-09T00:00:23+00:00",
       "texte": "PR #69 mergée : Seed : commande seed_blueprint et structure du parcours (non publié)."
+    },
+    {
+      "quand": "2026-11-09T00:03:54+00:00",
+      "texte": "PR #70 mergée : Seed : premier module en propositions de leçons et d'exercices."
     }
   ],
   "incidents": [],
