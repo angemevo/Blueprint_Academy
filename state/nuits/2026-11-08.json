@@ -6,6 +6,12 @@
       "run": "42535232450",
       "fin": "2026-11-09T00:05:32+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-11-09T02:56:15+00:00",
+      "run": "42553550357",
+      "fin": "2026-11-09T02:58:26+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -68,6 +74,10 @@
     {
       "quand": "2026-11-09T00:05:32+00:00",
       "texte": "0 h 05 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : #66 et #67 sont livrées, les modules suivants attendent la validation d Ange (Q3), les tests de bout en bout attendent Q2 (défaut au 15 novembre) et #4 reste à cadrer."
+    },
+    {
+      "quand": "2026-11-09T02:58:26+00:00",
+      "texte": "2 h 58 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les issues 66 et 67 sont livrées, les modules suivants et la phase 6 attendent la réponse d'Ange (Q3, Q2), et l'issue 4 reste à cadrer."
     }
   ],
   "rapporte": false,

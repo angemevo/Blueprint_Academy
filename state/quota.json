@@ -5,10 +5,10 @@
     "status": "allowed"
   },
   "seven_day": {
-    "utilization": 0.1,
+    "utilization": 0.11,
     "resetsAt": 1794423600,
     "status": "allowed"
   },
   "status": "allowed",
-  "maj": "2026-11-09T00:05:32+00:00"
+  "maj": "2026-11-09T02:58:26+00:00"
 }
