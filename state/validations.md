@@ -24,3 +24,6 @@ Mise à jour : pilotage du 2026-11-08 (semaine 2026-S45).
 - [x] Épingler ruff : issue #16 créée, `ready`.
 - [x] PR #12 mergée (issue #1).
 - [x] Questions techniques d'avant l'autonomie : traitées ci-dessus.
+
+## Ajout du 2026-11-09 (réapprovisionnement)
+- **Q3** : relire le premier module proposé (leçons et exercices, non publiés) et le valider ? Contexte : les propositions sont dans la base de démarrage, rien n'est visible des étudiants ; les points qui touchent à Unreal sont marqués « à vérifier dans Unreal ». Options : A (tu relis et tu valides ou corriges) / B (autre ordre : on passe d'abord aux tests). Recommandation : A, car les modules suivants en dépendent. Pas d'application par défaut : le contenu ne se publie jamais sans ton accord.

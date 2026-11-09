@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-08",
+  "maj": "2026-11-09",
   "par": "organisateur, pilotage S45",
   "echelle": {
     "1": "petite : un créneau",
@@ -272,14 +272,16 @@
       "phase": "5 · Contenu de départ",
       "points": 2,
       "issue": 66,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-09"
     },
     {
       "titre": "Seed : premier module en propositions de leçons et d'exercices",
       "phase": "5 · Contenu de départ",
       "points": 3,
       "issue": 67,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-09"
     },
     {
       "titre": "Seed : modules suivants, validation et publication par Ange",

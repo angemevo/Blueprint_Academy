@@ -63,3 +63,7 @@ Rien de nouveau : échéance des questions (2026-11-08) non passée, aucune issu
 
 ## Dernière tâche (développeur)
 - Issue #67, branche feat/67-seed-module, PR #70, état : ouverte, prête pour qa.
+
+## Réapprovisionnement 2026-11-09
+
+#66 et #67 sont mergées (PR #69, #70) ; lots marqués faits. Aucune issue `ready` possible : modules suivants attendent la validation du premier (Q3), phase 6 attend Q2 (défaut oui au 2026-11-15), #4 reste `a-cadrer`. Plan inchangé.
