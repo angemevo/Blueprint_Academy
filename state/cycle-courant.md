@@ -75,3 +75,7 @@ Issues #66 et #67 refermées (livrées par les PR #69 et #70, l'étiquette `read
 ## Réapprovisionnement 2026-11-10
 
 Bureau sans réponse d'Ange, aucune PR ouverte, Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 toujours `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-10 (second passage)
+
+Même constat : aucune réponse d'Ange, aucune PR ouverte, Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.

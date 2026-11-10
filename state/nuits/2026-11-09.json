@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-10T02:37:59+00:00",
       "texte": "2 h 37 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : le premier module du parcours est livré, et la suite attend toi. La décision qui débloquerait le plus de travail est la relecture du premier module proposé (question Q3 : les modules suivants en dépendent). Répondre oui à la question Q2 permettrait aussi de lancer tout de suite les tests de bout en bout, sans attendre le 15 novembre."
+    },
+    {
+      "quand": "2026-11-10T02:38:09+00:00",
+      "texte": "2 h 38 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les modules suivants attendent la validation d Ange (Q3), la phase 6 attend Q2 (défaut oui au 2026-11-15), et #4 reste à cadrer."
+    },
+    {
+      "quand": "2026-11-10T02:38:29+00:00",
+      "texte": "2 h 38 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Le premier module du parcours est livré en propositions, et la suite dépend de toi.\n\nTa réponse à la question sur le premier module (le relire et le valider) débloquerait le plus de travail : les modules suivants en dépendent. Dire « oui » à la question sur les tests de bout en bout les lancerait tout de suite ; sans réponse, ils démarrent d'eux-mêmes le 15 novembre."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
