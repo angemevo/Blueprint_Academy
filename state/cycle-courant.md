@@ -83,3 +83,7 @@ Même constat : aucune réponse d'Ange, aucune PR ouverte, Q2 (échéance 2026-1
 ## Réapprovisionnement 2026-11-11
 
 Aucune réponse d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-11 (second passage)
+
+Revérifié : aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible (phase 6 non lancée sans accord). Plan inchangé.
