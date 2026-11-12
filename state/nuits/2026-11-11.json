@@ -42,6 +42,6 @@
       "texte": "4 h 08 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : #4 est a-cadrer, les modules suivants et la phase 6 attendent Ange (Q2 et Q3)."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
