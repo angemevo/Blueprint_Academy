@@ -6,6 +6,12 @@
       "run": "43137108144",
       "fin": "2026-11-12T01:52:34+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-11-12T04:06:14+00:00",
+      "run": "43152499765",
+      "fin": "2026-11-12T04:08:05+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -30,6 +36,10 @@
     {
       "quand": "2026-11-12T01:52:34+00:00",
       "texte": "1 h 52 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les modules suivants et la phase 6 attendent les réponses d Ange (Q2, Q3), et #4 reste à cadrer."
+    },
+    {
+      "quand": "2026-11-12T04:08:05+00:00",
+      "texte": "4 h 08 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : #4 est a-cadrer, les modules suivants et la phase 6 attendent Ange (Q2 et Q3)."
     }
   ],
   "rapporte": false,
