@@ -99,3 +99,7 @@ Revérifié : aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15
 ## Réapprovisionnement 2026-11-13
 
 Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-13 (second passage)
+
+Revérifié : aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
