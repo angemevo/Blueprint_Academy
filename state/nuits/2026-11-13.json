@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-14T00:44:25+00:00",
-      "run": "43536153660"
+      "run": "43536153660",
+      "fin": "2026-11-14T00:47:14+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-11-14T00:47:04+00:00",
       "texte": "0 h 47 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout le travail possible est livré, et la suite attend une décision de ta part ou une échéance.\n\nCe qui débloquerait le plus de travail : relire le premier module proposé (question Q3), puis répondre à Q2 sur les tests de bout en bout. Sans réponse de ta part, Q2 passe à « oui » le 15 novembre et l'équipe pourra alors écrire ces tests."
+    },
+    {
+      "quand": "2026-11-14T00:47:14+00:00",
+      "texte": "0 h 47 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : #4 est a-cadrer, les modules suivants et la phase 6 attendent les réponses d Ange (Q2, Q3, échéance 2026-11-15)."
     }
   ],
   "rapporte": false,

@@ -1,6 +1,6 @@
 {
   "five_hour": {
-    "utilization": 0.9,
+    "utilization": 0.91,
     "resetsAt": 1794622800,
     "status": "allowed_warning",
     "surpassedThreshold": 0.9
@@ -11,5 +11,5 @@
     "status": "allowed"
   },
   "status": "allowed_warning",
-  "maj": "2026-11-14T00:47:04+00:00"
+  "maj": "2026-11-14T00:47:14+00:00"
 }
