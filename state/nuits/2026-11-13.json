@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-13",
+  "equipes": [
+    {
+      "debut": "2026-11-14T00:44:25+00:00",
+      "run": "43536153660"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-14T00:46:14+00:00",
+      "texte": "0 h 46 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : #4 attend le cadrage validé par Ange, et la phase 6 et les modules suivants attendent ses réponses (Q2, Q3)."
+    },
+    {
+      "quand": "2026-11-14T00:46:34+00:00",
+      "texte": "0 h 46 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Le premier module du parcours est livré en propositions, et les tâches suivantes attendent tes réponses.\n\nLa décision qui débloquerait le plus de travail : répondre à la question Q2 (lancer dès maintenant les tests de bout en bout). Sans réponse de ta part demain, dimanche 15 novembre, l'équipe applique « oui » et prépare ces tests. Relire le premier module (Q3) permettrait aussi d'écrire les modules suivants."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}

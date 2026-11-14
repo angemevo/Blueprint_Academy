@@ -103,3 +103,7 @@ Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans r
 ## Réapprovisionnement 2026-11-13 (second passage)
 
 Revérifié : aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-14
+
+Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15, demain) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé ; à la prochaine passe après le 2026-11-15, Q2 passe en option A par défaut et les tests de bout en bout (phase 6) pourront être écrits.
