@@ -14,10 +14,10 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
 ## Dernière tâche traitée
 
-- Tâche : #71 « Tests de bout en bout : parcours étudiant par l'API (rappel) » (créneau 1, 2026-11-15).
-- PR : #74 (non brouillon, `Closes #71`).
-- Verdict de qa : APPROUVÉE. Remarque non bloquante : le test anonyme accepte 401 ou 403 sans trancher.
-- Prochaine action : PR #74 mergée ; créneau 2 (revue) sans objet. L'issue #71 reste ouverte : vérifier à la prochaine planification si elle doit être fermée.
+- Tâche : #72 « Tests de bout en bout : production, maîtrise et verrouillage » (créneau 3, 2026-11-15).
+- PR : #75 (non brouillon, `Closes #72`, un seul fichier de test).
+- Verdict de qa : APPROUVÉE. Remarque non bloquante : variable `path` et assertion `is_published` inutiles dans le test de verrouillage.
+- Prochaine action : le portier merge la PR #75.
 
 ## Réapprovisionnement 2026-11-01
 
@@ -122,4 +122,4 @@ Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans r
 
 ## Dernière tâche (développeur)
 
-Issue #71, branche feat/71-e2e-parcours-etudiant, PR #74, état : ouverte, en attente de QA.
+Issue #72, branche feat/72-e2e-production-maitrise, PR #75, état : ouverte, en attente de QA.

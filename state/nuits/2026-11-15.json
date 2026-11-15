@@ -42,8 +42,12 @@
       "titre": "Tests de bout en bout : exercices de production, maîtrise et verrouillage",
       "minutes": 90,
       "pourquoi": "Deuxième tâche du plan, dépend des outils de test de la précédente.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-15T23:56:09+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-11-15_2356-creneau-3-dev-issue72.jsonl",
+      "resume": "J'ai ajouté les tests de bout en bout pour la production, la maîtrise et le verrouillage (PR #75). Ils vérifient qu'un étudiant qui se trompe puis réussit progresse bien. Ils vérifient aussi que la maîtrise atteint 100 % sans exercice dans Unreal, que les exercices de rappel ne la font pas monter, qu'une leçon reste verrouillée tant que le Skill n'est pas maîtrisé, et qu'un parcours incomplet ne peut pas être publié. La relecture qa a approuvé la PR et les vérifications passent. Le portier peut la merger."
     },
     {
       "n": 4,
