@@ -52,7 +52,12 @@
       "tentatives": 0
     }
   ],
-  "merges": [],
+  "merges": [
+    {
+      "quand": "2026-11-15T23:55:46+00:00",
+      "texte": "PR #74 mergée : Tests de bout en bout du parcours étudiant par l'API."
+    }
+  ],
   "incidents": [],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
