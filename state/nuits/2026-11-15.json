@@ -1,0 +1,55 @@
+{
+  "nuit": "2026-11-15",
+  "equipes": [
+    {
+      "debut": "2026-11-15T23:49:52+00:00",
+      "run": "43776866441"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 71",
+      "titre": "Tests de bout en bout du parcours étudiant (questions, QCM, progression) par l'API",
+      "minutes": 75,
+      "pourquoi": "Première tâche du plan de la semaine ; ses outils de test servent à la suivante.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 2,
+      "type": "revue",
+      "cible": "issue 71",
+      "titre": "Relecture des tests de bout en bout du parcours étudiant",
+      "minutes": 25,
+      "pourquoi": "Vérifier le travail avant de bâtir la suite dessus.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 3,
+      "type": "dev",
+      "cible": "issue 72",
+      "titre": "Tests de bout en bout : exercices de production, maîtrise et verrouillage",
+      "minutes": 90,
+      "pourquoi": "Deuxième tâche du plan, dépend des outils de test de la précédente.",
+      "statut": "a_faire",
+      "tentatives": 0
+    },
+    {
+      "n": 4,
+      "type": "revue",
+      "cible": "issue 72",
+      "titre": "Relecture des tests de production et de maîtrise",
+      "minutes": 25,
+      "pourquoi": "Contrôle qualité avant livraison.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
