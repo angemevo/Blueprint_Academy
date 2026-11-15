@@ -14,8 +14,12 @@
       "titre": "Tests de bout en bout du parcours étudiant (questions, QCM, progression) par l'API",
       "minutes": 75,
       "pourquoi": "Première tâche du plan de la semaine ; ses outils de test servent à la suivante.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-15T23:52:09+00:00",
+      "minutes_reelles": 2,
+      "journal": "2026-11-15_2352-creneau-1-dev-issue71.jsonl",
+      "resume": "Un test automatique suit maintenant le parcours complet d'un étudiant par l'API : inscription, connexion, catalogue, leçon, bonnes et mauvaises réponses aux quatre types d'exercices de rappel, puis tableau de bord. Il vérifie que la solution n'est jamais visible avant la réponse, que les points ne sont donnés qu'une fois et qu'un parcours non publié reste invisible. La PR #74 est relue et approuvée par qa, sans aucun code de la plateforme modifié. Il reste au portier à la livrer."
     },
     {
       "n": 2,

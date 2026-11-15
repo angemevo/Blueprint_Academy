@@ -14,10 +14,10 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
 ## Dernière tâche traitée
 
-- Tâche : #67 « Seed : premier module en propositions de leçons et d'exercices » (créneau 2, 2026-11-09).
-- PR : #70 (non brouillon, `Closes #67`).
-- Verdict de qa : APPROUVÉE. Remarque non bloquante : le test des exercices « non résolus au départ » ne le vérifie pas encore (attend le validateur de graphe).
-- Prochaine action : le portier merge #70.
+- Tâche : #71 « Tests de bout en bout : parcours étudiant par l'API (rappel) » (créneau 1, 2026-11-15).
+- PR : #74 (non brouillon, `Closes #71`).
+- Verdict de qa : APPROUVÉE. Remarque non bloquante : le test anonyme accepte 401 ou 403 sans trancher.
+- Prochaine action : le portier merge #74.
 
 ## Réapprovisionnement 2026-11-01
 
@@ -119,3 +119,7 @@ Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans r
 ## Réapprovisionnement 2026-11-14 (quatrième passage)
 
 Aucun message d'Ange, aucune PR ouverte. Q2 (échéance 2026-11-15) et Q3 sans réponse, #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
+## Dernière tâche (développeur)
+
+Issue #71, branche feat/71-e2e-parcours-etudiant, PR #74, état : ouverte, en attente de QA.
