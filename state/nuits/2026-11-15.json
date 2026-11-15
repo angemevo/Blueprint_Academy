@@ -28,8 +28,12 @@
       "titre": "Relecture des tests de bout en bout du parcours étudiant",
       "minutes": 25,
       "pourquoi": "Vérifier le travail avant de bâtir la suite dessus.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-15T23:55:51+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-15_2355-creneau-2-revue-issue71.jsonl",
+      "resume": "La relecture prévue n'avait plus lieu d'être. Les tests de bout en bout du parcours étudiant (PR #74) avaient déjà été relus par qa, approuvés puis ajoutés à la plateforme pendant le créneau précédent. L'issue #71 reste ouverte alors que son travail est fusionné. La prochaine planification vérifiera s'il faut la fermer."
     },
     {
       "n": 3,

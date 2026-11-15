@@ -17,7 +17,7 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 - Tâche : #71 « Tests de bout en bout : parcours étudiant par l'API (rappel) » (créneau 1, 2026-11-15).
 - PR : #74 (non brouillon, `Closes #71`).
 - Verdict de qa : APPROUVÉE. Remarque non bloquante : le test anonyme accepte 401 ou 403 sans trancher.
-- Prochaine action : le portier merge #74.
+- Prochaine action : PR #74 mergée ; créneau 2 (revue) sans objet. L'issue #71 reste ouverte : vérifier à la prochaine planification si elle doit être fermée.
 
 ## Réapprovisionnement 2026-11-01
 
