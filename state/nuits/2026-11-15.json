@@ -64,6 +64,10 @@
     {
       "quand": "2026-11-15T23:55:46+00:00",
       "texte": "PR #74 mergée : Tests de bout en bout du parcours étudiant par l'API."
+    },
+    {
+      "quand": "2026-11-15T23:59:46+00:00",
+      "texte": "PR #75 mergée : Tests de bout en bout : production, maîtrise et verrouillage."
     }
   ],
   "incidents": [],
