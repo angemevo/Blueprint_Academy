@@ -1,16 +1,16 @@
 # Cycle courant
 
-## Plan de la semaine (2026-S46, du 9 au 15 novembre) : pilotage du 2026-11-08
+## Plan de la semaine (2026-S47, du 16 au 22 novembre) : pilotage du 2026-11-15
 
-Phase 5 (parcours de départ) acceptée par défaut, en propositions (rien publié sans Ange). Quota hebdo à 6 % : pas de limite sur le plan.
+Q2 (phase 6 en parallèle) acceptée par défaut le 2026-11-15. Quota hebdo à 25 % : pas de limite sur le plan.
 
 Ordre de traitement (toutes `ready`) :
-1. **#66 « Seed : commande seed_blueprint et structure du parcours (non publié) »** (backend). Dépend de : aucune.
-2. **#67 « Seed : premier module en propositions de leçons et d'exercices »** (backend). Dépend de : #66.
+1. **#71 « Tests de bout en bout : parcours étudiant par l'API (rappel) »** (backend). Dépend de : aucune ouverte.
+2. **#72 « Tests de bout en bout : production, maîtrise et verrouillage »** (backend). Dépend de : #71 (outils de test).
 
-Hors plan : #4 (`a-cadrer`, attend la validation par Ange des cas « à vérifier dans Unreal »). Pas de type I au MVP.
-Prochains lots (pas encore d'issue) : modules suivants du parcours (après validation d'Ange du premier), tests de bout en bout (phase 6, Q2 en attente, défaut oui au 2026-11-15), Docker (7), documentation (8).
-Questions en attente d'Ange : Q1, Q2 (non bloquantes, échéance 2026-11-15).
+Hors plan : #4 (`a-cadrer`, attend Ange, Q4). Modules suivants du parcours : attendent la validation du premier module (Q3). Pas de type I au MVP.
+Prochains lots (pas encore d'issue) : Docker (7), documentation (8) : à écrire quand la phase 6 est mergée, avec accord pour la phase suivante.
+Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
 ## Dernière tâche traitée
 

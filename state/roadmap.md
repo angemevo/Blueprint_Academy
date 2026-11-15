@@ -40,3 +40,8 @@ Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #
 ## Mise à jour 2026-11-08 (pilotage S45)
 - Phase 4 (administration) : terminée. Phase en cours : 5, parcours de départ, acceptée par défaut en propositions. Plan : #66 (commande seed et structure), #67 (premier module). Modules suivants après validation d'Ange.
 - Ensuite : 6 tests de bout en bout (Q2 : en parallèle ? défaut oui au 2026-11-15), 7 Docker, 8 documentation.
+
+## Mise à jour 2026-11-15 (pilotage S46)
+- Phase 5 : structure et premier module en propositions faits (#66, #67). Modules suivants : attendent la validation d'Ange (Q3).
+- Phase 6 (tests de bout en bout) lancée en parallèle (Q2 par défaut) : #71, #72 `ready`.
+- Ensuite : 7 Docker, 8 documentation. #4 attend Ange (Q4).

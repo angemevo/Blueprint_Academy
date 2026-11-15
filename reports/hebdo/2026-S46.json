@@ -1,0 +1,47 @@
+{
+  "semaine": "2026-S46",
+  "meteo": "orange",
+  "en_bref": [
+    "Le premier module du parcours de départ a été rédigé en propositions et livré le 9 novembre (non publié, invisible des étudiants). Depuis, l'équipe n'a plus de travail prêt.",
+    "Faute de réponse à l'échéance du 15 novembre, nous lançons les tests de bout en bout du parcours étudiant : l'équipe retrouve du travail dès cette semaine.",
+    "Nous attendons ta relecture du premier module et ta validation des cas de test du moteur de correction."
+  ],
+  "livre": [
+    {"titre": "Parcours de départ « Blueprint Fundamentals » : structure",
+     "pour_l_utilisateur": "Le parcours et ses modules existent dans la base, non publiés. Les étudiants ne les voient pas encore ; ils seront visibles après ta validation.",
+     "pr": 69, "issue": 66},
+    {"titre": "Parcours de départ : premier module en propositions",
+     "pour_l_utilisateur": "Les premières leçons et exercices sont rédigés, prêts à être relus par toi. Rien n'est visible des étudiants avant ton accord ; ce qui touche à Unreal est marqué à vérifier.",
+     "pr": 70, "issue": 67}
+  ],
+  "en_cours": [
+    {"titre": "Tests de bout en bout : parcours de l'étudiant (réponses, points, tableau de bord)", "etat": "en développement"},
+    {"titre": "Tests de bout en bout : exercices de construction, maîtrise et déverrouillage", "etat": "en développement"},
+    {"titre": "Modules suivants du parcours de départ", "etat": "en attente d'Ange"},
+    {"titre": "Validation des cas de test du moteur de correction des graphes", "etat": "en attente d'Ange"}
+  ],
+  "semaine_prochaine": [
+    "Vérifier par des tests automatiques tout le parcours d'un étudiant, de l'inscription au tableau de bord.",
+    "Vérifier la progression : maîtrise des compétences, déverrouillage des leçons, refus de publier un parcours incomplet.",
+    "Préparer la mise en ligne et la documentation une fois les tests terminés."
+  ],
+  "decisions_prises": [
+    {"decision": "Lancement des tests de bout en bout en parallèle du parcours de départ (sans réponse à l'échéance du 15 novembre).", "pourquoi": "Ils ne dépendent pas du contenu et évitent que l'équipe reste sans travail."},
+    {"decision": "Le document de référence reste inchangé sur l'import Unreal ; l'équipe suit ta consigne du 25 octobre (pas d'import au MVP).", "pourquoi": "Sans réponse, nous appliquons le choix prudent ; tu peux modifier le document quand tu veux."}
+  ],
+  "risques": [
+    {"risque": "Plus de travail prêt pour l'équipe de nuit après le 9 novembre, en attendant tes validations.", "ce_qu_on_fait": "Les tests de bout en bout sont lancés ; ensuite la mise en ligne et la documentation."},
+    {"risque": "La fin du projet dépend de ta relecture du premier module : les modules suivants ne peuvent pas être écrits avant.", "ce_qu_on_fait": "Nous te relançons le 22 novembre ; sans ta validation, la date de fin glisse."},
+    {"risque": "Les cas de test du moteur de correction ne sont pas confirmés dans Unreal.", "ce_qu_on_fait": "Ils restent marqués à vérifier ; aucun n'est présenté comme juste."}
+  ],
+  "questions": [
+    {"id": "Q1", "question": "Relire le premier module proposé (leçons et exercices non publiés) et le valider ?",
+     "contexte": "Les propositions sont prêtes mais invisibles des étudiants. Ce qui touche à Unreal est marqué à vérifier. Les modules suivants en dépendent.",
+     "options": ["A : tu relis et tu valides ou corriges", "B : autre ordre, on passe d'abord aux tests"],
+     "recommandation": "A, car les modules suivants en dépendent. Rien n'est publié sans ton accord.", "sans_reponse_le": "2026-11-22"},
+    {"id": "Q2", "question": "Valider les cas de test du moteur de correction des graphes ?",
+     "contexte": "Ils sont rédigés à partir de tes captures et marqués à vérifier dans Unreal. Seul toi peux les confirmer.",
+     "options": ["A : tu les vérifies dans Unreal et tu confirmes ou corriges", "B : on les garde comme provisoires"],
+     "recommandation": "A, pour être sûrs que la correction est fidèle à Unreal. Pas d'application par défaut.", "sans_reponse_le": "2026-11-22"}
+  ]
+}

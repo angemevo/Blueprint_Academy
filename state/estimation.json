@@ -1,7 +1,7 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-09",
-  "par": "organisateur, pilotage S45",
+  "maj": "2026-11-15",
+  "par": "organisateur, pilotage S46",
   "echelle": {
     "1": "petite : un créneau",
     "2": "moyenne : un ou deux créneaux",
@@ -292,10 +292,17 @@
       "attend_ange": true
     },
     {
-      "titre": "Tests de bout en bout du parcours étudiant",
+      "titre": "Tests de bout en bout : parcours étudiant par l'API (rappel)",
       "phase": "6 · Tests",
-      "points": 2,
-      "issue": null,
+      "points": 1,
+      "issue": 71,
+      "etat": "a_faire"
+    },
+    {
+      "titre": "Tests de bout en bout : production, maîtrise et verrouillage",
+      "phase": "6 · Tests",
+      "points": 1,
+      "issue": 72,
       "etat": "a_faire"
     },
     {

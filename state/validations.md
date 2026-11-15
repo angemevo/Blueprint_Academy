@@ -2,13 +2,15 @@
 
 Tenu par l'organisateur. Seules les questions qui reviennent à Ange y figurent (voir « Qui décide quoi » dans `.claude/equipe.md`), chacune avec options, recommandation et date. Elles sont posées à Ange dans son bureau (rapport du dimanche et rapport du matin), où il répond en commentaire.
 
-Mise à jour : pilotage du 2026-11-08 (semaine 2026-S45).
+Mise à jour : pilotage du 2026-11-15 (semaine 2026-S46).
 
 ## En attente
-- **Q1** : retirer le type I (import Unreal) du MVP dans `CLAUDE.md` (fichier protégé, seul Ange le modifie). Contexte : la consigne du 2026-10-25 est appliquée par l'équipe. Options : A (Ange modifie le document, type I en V3) / B (document inchangé, l'équipe suit la consigne). Recommandation : A, pour que le document reflète la décision. Sans réponse le 2026-11-15 : B (déjà appliquée dans les faits).
-- **Q2** : lancer dès maintenant la phase 6 (tests de bout en bout du parcours étudiant), en parallèle de la phase 5 ? Contexte : la phase 5 avance en propositions et attendra tes validations ; l'équipe aurait sinon peu à faire. Options : A (oui, phase 6 en parallèle) / B (non, une phase à la fois). Recommandation : A, les tests ne dépendent pas du contenu. Sans réponse le 2026-11-15 : A.
+- **Q3** : relire le premier module proposé (leçons et exercices, non publiés) et le valider ? Contexte : les propositions sont dans la base de démarrage, rien n'est visible des étudiants ; les points qui touchent à Unreal sont marqués « à vérifier dans Unreal ». Options : A (tu relis et tu valides ou corriges) / B (autre ordre : on passe d'abord aux tests). Recommandation : A, car les modules suivants en dépendent. Pas d'application par défaut : le contenu ne se publie jamais sans ton accord. Date de relance : 2026-11-22.
+- **Q4** : cas de test du moteur de correction des graphes (#4) : les valider ? Contexte : rédigés à partir de tes captures, tous marqués « à vérifier dans Unreal » ; seul toi peux les confirmer. Options : A (tu les vérifies dans Unreal et tu confirmes ou corriges) / B (on les garde comme provisoires). Recommandation : A. Pas d'application par défaut (vérification dans Unreal). Date de relance : 2026-11-22.
 
 ## Traité
+- [x] 2026-11-15 : Q2 (phase 6 en parallèle) : sans réponse à l'échéance, option A appliquée par défaut. Issues #71 et #72 `ready`.
+- [x] 2026-11-15 : Q1 (type I dans CLAUDE.md) : sans réponse à l'échéance, option B appliquée par défaut.
 - [x] 2026-11-08 : Q3 (phase 5) : sans réponse à l'échéance, option A appliquée par défaut. Issues #66 et #67 `ready`.
 - [x] 2026-11-08 : Q2 (contenu du parcours de départ) : sans réponse à l'échéance, option A appliquée par défaut (propositions, rien publié sans Ange).
 - [x] 2026-11-01 : Q3bis (phase 4, admin) : sans réponse à l'échéance, option A appliquée par défaut. Issues #61 et #62 `ready`.
@@ -24,6 +26,3 @@ Mise à jour : pilotage du 2026-11-08 (semaine 2026-S45).
 - [x] Épingler ruff : issue #16 créée, `ready`.
 - [x] PR #12 mergée (issue #1).
 - [x] Questions techniques d'avant l'autonomie : traitées ci-dessus.
-
-## Ajout du 2026-11-09 (réapprovisionnement)
-- **Q3** : relire le premier module proposé (leçons et exercices, non publiés) et le valider ? Contexte : les propositions sont dans la base de démarrage, rien n'est visible des étudiants ; les points qui touchent à Unreal sont marqués « à vérifier dans Unreal ». Options : A (tu relis et tu valides ou corriges) / B (autre ordre : on passe d'abord aux tests). Recommandation : A, car les modules suivants en dépendent. Pas d'application par défaut : le contenu ne se publie jamais sans ton accord.

@@ -48,3 +48,6 @@ Pins obligatoires absents du catalogue : avertissement sur entrée exec non reli
 - 2026-11-08 — Phase 5 (parcours de départ) : sans réponse d'Ange à l'échéance, option A appliquée par défaut pour Q3 (passage) et Q2 (l'équipe rédige des propositions, Ange valide, rien publié sans lui, « à vérifier dans Unreal » pour tout ce qui touche à Unreal). Issues #66 (commande seed_blueprint, structure non publiée) et #67 (premier module en propositions) `ready`. Q1 (CLAUDE.md, type I) reposée au 2026-11-15, défaut B. Nouvelle Q2 : phase 6 en parallèle ? (défaut A au 2026-11-15) — agent (organisateur)
 
 - 2026-11-09 — Réapprovisionnement : #66 et #67 mergées, aucune nouvelle issue (modules suivants et phase 6 attendent Ange) ; question Q3 posée pour valider le premier module — agent (organisateur)
+
+- 2026-11-15 — Q2 : sans réponse d'Ange à l'échéance, option A appliquée par défaut : phase 6 (tests de bout en bout) lancée en parallèle de la phase 5. Lot scindé en deux, issues #71 (parcours de rappel) et #72 (production, maîtrise, verrouillage) `ready` — agent (organisateur)
+- 2026-11-15 — Q1 (CLAUDE.md, type I) : sans réponse, option B par défaut (document inchangé, l'équipe suit la consigne du 2026-10-25). Reste à Ange de modifier le document s'il le souhaite — agent (organisateur)
