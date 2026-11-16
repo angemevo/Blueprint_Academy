@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-15T23:49:52+00:00",
-      "run": "43776866441"
+      "run": "43776866441",
+      "fin": "2026-11-16T00:01:22+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -90,6 +92,10 @@
     {
       "quand": "2026-11-16T00:01:12+00:00",
       "texte": "0 h 01 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe pour le moment. Les tests de bout en bout sont terminés ; les deux dernières phases (mise en ligne, documentation) attendent ton accord (question Q5). Sans réponse de ta part, elles démarrent le 22 novembre.\n\nTa réponse à Q5 (oui) ferait repartir l'équipe tout de suite. Ta relecture du premier module (Q3) et la vérification des cas de test dans Unreal (Q4) débloqueraient le reste du contenu."
+    },
+    {
+      "quand": "2026-11-16T00:01:22+00:00",
+      "texte": "0 h 01 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les tests de bout en bout (#71, #72) sont livrés. La suite (phases 7 et 8, modules suivants, #4) attend une réponse d'Ange (questions Q3, Q4, Q5)."
     }
   ],
   "rapporte": false,
