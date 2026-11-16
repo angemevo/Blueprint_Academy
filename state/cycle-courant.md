@@ -12,6 +12,10 @@ Hors plan : #4 (`a-cadrer`, attend Ange, Q4). Modules suivants du parcours : att
 Prochains lots (pas encore d'issue) : Docker (7), documentation (8) : à écrire quand la phase 6 est mergée, avec accord pour la phase suivante.
 Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
+## Réapprovisionnement 2026-11-16
+
+#71 et #72 sont livrées (PR #74 et #75) : issues refermées, `ready` retiré, lots marqués faits. Phase 6 terminée. Plan : plus rien de prêt ; Q5 (phases 7 et 8) posée à Ange, défaut option A au 2026-11-22. Rien d'autre à planifier (Q3 et Q4 attendent Ange).
+
 ## Dernière tâche traitée
 
 - Tâche : #72 « Tests de bout en bout : production, maîtrise et verrouillage » (créneau 3, 2026-11-15).

@@ -1,7 +1,7 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-15",
-  "par": "organisateur, pilotage S46",
+  "maj": "2026-11-16",
+  "par": "organisateur, réapprovisionnement",
   "echelle": {
     "1": "petite : un créneau",
     "2": "moyenne : un ou deux créneaux",
@@ -296,14 +296,16 @@
       "phase": "6 · Tests",
       "points": 1,
       "issue": 71,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-15"
     },
     {
       "titre": "Tests de bout en bout : production, maîtrise et verrouillage",
       "phase": "6 · Tests",
       "points": 1,
       "issue": 72,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-15"
     },
     {
       "titre": "Mise en ligne avec Docker",
