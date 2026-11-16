@@ -56,8 +56,12 @@
       "titre": "Relecture des tests de production et de maîtrise",
       "minutes": 25,
       "pourquoi": "Contrôle qualité avant livraison.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-15T23:59:51+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-15_2359-creneau-4-revue-issue72.jsonl",
+      "resume": "Le créneau 4 n'avait plus d'objet. La PR #75 (tests de production, de maîtrise et de verrouillage) était déjà relue, approuvée et fusionnée, et aucune autre PR n'est ouverte, donc il n'y avait rien à relire. L'issue #72 est restée ouverte alors que la PR la ferme. J'ai noté ce point dans `state/cycle-courant.md` pour que la prochaine planification le vérifie."
     }
   ],
   "merges": [

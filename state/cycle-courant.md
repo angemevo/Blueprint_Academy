@@ -17,7 +17,7 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 - Tâche : #72 « Tests de bout en bout : production, maîtrise et verrouillage » (créneau 3, 2026-11-15).
 - PR : #75 (non brouillon, `Closes #72`, un seul fichier de test).
 - Verdict de qa : APPROUVÉE. Remarque non bloquante : variable `path` et assertion `is_published` inutiles dans le test de verrouillage.
-- Prochaine action : le portier merge la PR #75.
+- Prochaine action : PR #75 mergée (créneau 4 : revue sans objet, aucune PR ouverte ; l'issue #72 est restée ouverte alors que la PR la ferme — à vérifier à la prochaine planification).
 
 ## Réapprovisionnement 2026-11-01
 
