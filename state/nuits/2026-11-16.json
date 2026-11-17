@@ -42,6 +42,6 @@
       "texte": "5 h 15 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les phases 7 et 8 attendent la réponse d'Ange (Q5, défaut au 2026-11-22), et Q3 et Q4 attendent aussi."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
