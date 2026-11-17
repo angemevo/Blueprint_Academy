@@ -132,6 +132,10 @@ Issue #72, branche feat/72-e2e-production-maitrise, PR #75, état : ouverte, en 
 
 Aucun message d'Ange, aucune PR ouverte. Q5 (phases 7 et 8, défaut option A au 2026-11-22), Q3 et Q4 sans réponse ; #4 `a-cadrer`. Aucune issue `ready` possible (règle « attendre validation » pour la phase suivante). Plan inchangé.
 
+## Réapprovisionnement 2026-11-17 (second passage)
+
+Revérifié : aucun message d'Ange, aucune PR ouverte. Q5 (échéance 2026-11-22), Q3 et Q4 sans réponse ; #4 `a-cadrer`. Aucune issue `ready` possible. Plan inchangé.
+
 ## Réapprovisionnement 2026-11-17
 
 Aucun message d'Ange, aucune PR ouverte. Q5 (échéance 2026-11-22), Q3 et Q4 sans réponse ; #4 `a-cadrer`. Aucune issue `ready` possible (phases 7 et 8 attendent l'accord de Q5). Plan inchangé.
