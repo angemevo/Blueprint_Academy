@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-16",
+  "equipes": [
+    {
+      "debut": "2026-11-17T02:48:58+00:00",
+      "run": "44005645148"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-17T02:51:11+00:00",
+      "texte": "2 h 51 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : phase 6 livrée, phases 7 et 8 attendent Ange (Q5, défaut option A au 2026-11-22), #4 reste a-cadrer."
+    },
+    {
+      "quand": "2026-11-17T02:51:30+00:00",
+      "texte": "2 h 51 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe en ce moment. Les tests sont terminés. Les deux dernières étapes (mise en ligne, puis documentation) attendent ton accord : sans réponse de ta part le 22 novembre, nous les lançons.\n\nCe qui débloquerait le plus de travail : répondre à la question Q5 (oui, on lance la mise en ligne et la documentation), et relire le premier module du parcours (Q3), dont dépendent les modules suivants."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
