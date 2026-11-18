@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-18T02:14:08+00:00",
       "texte": "2 h 14 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe pour l'instant : toutes les tâches autorisées sont terminées, y compris les tests de bout en bout.\n\nCe qui reste attend ta décision : la mise en ligne et la documentation (Q5, appliquée par défaut le 22 novembre), la relecture du premier module (Q3) et la vérification des cas de test dans Unreal (Q4). Ta réponse à Q5 débloquerait le plus de travail tout de suite."
+    },
+    {
+      "quand": "2026-11-18T02:14:17+00:00",
+      "texte": "2 h 14 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les phases 7 et 8 attendent la réponse d'Ange à Q5 (défaut le 2026-11-22), Q3 et Q4 attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-18T02:14:34+00:00",
+      "texte": "2 h 14 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Le travail de test est terminé, et les deux dernières étapes (mise en ligne, documentation) attendent ton accord (question Q5, appliquée d'office le 22 novembre sans réponse de ta part). La relecture du premier module (Q3) et la validation des cas de test du moteur de correction (Q4) dépendent aussi de toi.\nTa réponse à Q5 (A) débloquerait le plus de travail dès cette nuit."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
