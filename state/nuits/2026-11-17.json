@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-17",
+  "equipes": [
+    {
+      "debut": "2026-11-18T02:11:29+00:00",
+      "run": "44221353321"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-18T02:13:48+00:00",
+      "texte": "2 h 13 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête. Les phases 7 et 8 attendent la réponse d Ange (Q5, échéance 2026-11-22) ; #4 attend son cadrage."
+    },
+    {
+      "quand": "2026-11-18T02:14:08+00:00",
+      "texte": "2 h 14 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe pour l'instant : toutes les tâches autorisées sont terminées, y compris les tests de bout en bout.\n\nCe qui reste attend ta décision : la mise en ligne et la documentation (Q5, appliquée par défaut le 22 novembre), la relecture du premier module (Q3) et la vérification des cas de test dans Unreal (Q4). Ta réponse à Q5 débloquerait le plus de travail tout de suite."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
