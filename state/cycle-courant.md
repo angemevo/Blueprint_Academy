@@ -155,3 +155,7 @@ Aucun message d'Ange, aucune PR ouverte. Q5 (phases 7 et 8, échéance 2026-11-2
 ## Réapprovisionnement 2026-11-19 (second passage)
 
 Revérifié : aucune réponse d'Ange, aucune PR ouverte, seules #4 (`a-cadrer`) et le bureau sont ouvertes. Q5 (échéance 2026-11-22), Q3 et Q4 sans réponse. Aucune issue `ready` possible. Plan inchangé.
+
+## Réapprovisionnement 2026-11-20
+
+Aucune réponse d'Ange, aucune PR ouverte, seules #4 (`a-cadrer`) et le bureau sont ouvertes. Q5 (phases 7 et 8, défaut option A au 2026-11-22), Q3 et Q4 sans réponse. Aucune issue `ready` possible. Plan inchangé.
