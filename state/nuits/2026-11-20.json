@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-20",
+  "equipes": [
+    {
+      "debut": "2026-11-21T01:08:38+00:00",
+      "run": "44848290455"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-21T01:11:00+00:00",
+      "texte": "1 h 11 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue prête : les phases 7 et 8 attendent la réponse d Ange (Q5, défaut le 2026-11-22), le module suivant attend Q3, et #4 attend son cadrage (Q4)."
+    },
+    {
+      "quand": "2026-11-21T01:11:20+00:00",
+      "texte": "1 h 11 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Toutes les tâches de la phase en cours sont livrées. Les deux dernières phases (mise en ligne et documentation) attendent ton accord (Q5) : sans réponse de ta part demain, on les lance automatiquement. Ta relecture du premier module (Q3) et la validation des cas de test du moteur de correction (Q4) débloqueraient aussi du travail."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
