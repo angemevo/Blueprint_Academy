@@ -53,3 +53,5 @@ Pins obligatoires absents du catalogue : avertissement sur entrée exec non reli
 - 2026-11-15 — Q1 (CLAUDE.md, type I) : sans réponse, option B par défaut (document inchangé, l'équipe suit la consigne du 2026-10-25). Reste à Ange de modifier le document s'il le souhaite — agent (organisateur)
 
 - 2026-11-22 — Q5 : sans réponse d'Ange à l'échéance, option A appliquée par défaut : phases 7 (Docker) et 8 (documentation) lancées. Issues #76 (configuration Docker de production, sans aucune mise en ligne : cela reste à Ange) et #77 (documentation) `ready`. #76 touche des fichiers protégés (compose, Dockerfile, requirements) : sa PR sera relue par Ange avant livraison — agent (organisateur)
+
+- 2026-11-22 — Pilotage S47 : aucune réponse d'Ange dans le bureau. #76 (Docker de production) bloquée par la protection des Dockerfile et de .env.example : `ready` retiré, question Q6 posée à Ange (pas de défaut). #77 refermée (PR #79). Issue #80 créée `ready` (deux retouches du README signalées par qa). Q3 et Q4 reposées (relance 2026-11-29, aucun défaut possible) — agent (organisateur)

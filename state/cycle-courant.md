@@ -1,16 +1,15 @@
 # Cycle courant
 
-## Plan de la semaine (2026-S47, du 16 au 22 novembre) : pilotage du 2026-11-15
+## Plan de la semaine (2026-S48, du 23 au 29 novembre) : pilotage du 2026-11-22
 
-Q2 (phase 6 en parallèle) acceptée par défaut le 2026-11-15. Quota hebdo à 25 % : pas de limite sur le plan.
+Aucune réponse d'Ange cette semaine. Quota hebdo à 3 % : pas de limite sur le plan.
 
-Ordre de traitement (toutes `ready`) :
-1. **#71 « Tests de bout en bout : parcours étudiant par l'API (rappel) »** (backend). Dépend de : aucune ouverte.
-2. **#72 « Tests de bout en bout : production, maîtrise et verrouillage »** (backend). Dépend de : #71 (outils de test).
+Ordre de traitement :
+1. **#80 « Documentation : retouches après revue (commande dangereuse, état des phases) »** (`ready`, documentation seulement). Dépend de : #79 (mergée).
 
+Bloquée, hors plan : **#76 « Docker de production »** (PR #78 en brouillon) : les Dockerfile de production et .env.example sont protégés ; attend Ange (Q6). Ne pas la relancer sans nouvelle consigne.
 Hors plan : #4 (`a-cadrer`, attend Ange, Q4). Modules suivants du parcours : attendent la validation du premier module (Q3). Pas de type I au MVP.
-Prochains lots (pas encore d'issue) : Docker (7), documentation (8) : à écrire quand la phase 6 est mergée, avec accord pour la phase suivante.
-Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
+Questions en attente d'Ange : Q3, Q4, Q6 (relance 2026-11-29).
 
 ## Réapprovisionnement 2026-11-16
 

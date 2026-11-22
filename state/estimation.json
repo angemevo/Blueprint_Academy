@@ -1,7 +1,7 @@
 {
   "objectif": "MVP",
   "maj": "2026-11-22",
-  "par": "organisateur, réapprovisionnement",
+  "par": "organisateur, pilotage",
   "echelle": {
     "1": "petite : un créneau",
     "2": "moyenne : un ou deux créneaux",
@@ -312,7 +312,9 @@
       "phase": "7 · Mise en production",
       "points": 2,
       "issue": 76,
-      "etat": "a_faire"
+      "etat": "bloque",
+      "note": "Dockerfile de production et .env.example : fichiers protégés, à ajouter par Ange (Q6)",
+      "attend_ange": true
     },
     {
       "titre": "Documentation",
@@ -321,6 +323,13 @@
       "issue": 77,
       "etat": "fait",
       "fait_le": "2026-11-22"
+    },
+    {
+      "titre": "Documentation : retouches après revue",
+      "phase": "8 · Documentation",
+      "points": 1,
+      "issue": 80,
+      "etat": "a_faire"
     }
   ]
 }

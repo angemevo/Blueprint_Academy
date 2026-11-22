@@ -1,0 +1,103 @@
+{
+  "semaine": "2026-S47",
+  "meteo": "orange",
+  "en_bref": [
+    "La documentation du projet est livrée et les tests de bout en bout du parcours étudiant le sont aussi : le MVP est à 94 %.",
+    "La préparation de la mise en ligne est bloquée : l'équipe n'a pas le droit d'écrire deux fichiers de construction, seul toi peux les ajouter (Q1).",
+    "Nous attendons aussi ta relecture du premier module (Q2) et la confirmation des cas de test dans Unreal (Q3)."
+  ],
+  "livre": [
+    {
+      "titre": "Tests de bout en bout du parcours étudiant",
+      "pour_l_utilisateur": "Le parcours complet d'un étudiant (réponses, points, tableau de bord) est vérifié automatiquement, ce qui évite qu'une modification casse l'expérience sans que personne ne le voie.",
+      "pr": 74,
+      "issue": 71
+    },
+    {
+      "titre": "Tests de bout en bout : exercices de construction, maîtrise et déverrouillage",
+      "pour_l_utilisateur": "Le calcul de la maîtrise et le déverrouillage des compétences sont vérifiés automatiquement. Rien de nouveau à l'écran, mais la progression des étudiants est mieux protégée.",
+      "pr": 75,
+      "issue": 72
+    },
+    {
+      "titre": "Documentation du projet",
+      "pour_l_utilisateur": "Le projet a un guide à jour, une présentation de son fonctionnement et un guide pour les formateurs qui créent des leçons depuis l'espace d'administration, sans toucher au code.",
+      "pr": 79,
+      "issue": 77
+    }
+  ],
+  "en_cours": [
+    {
+      "titre": "Mise en ligne : configuration de production",
+      "etat": "en attente d'Ange"
+    },
+    {
+      "titre": "Retouches de la documentation (deux points signalés en revue)",
+      "etat": "en développement"
+    },
+    {
+      "titre": "Modules suivants du parcours de départ",
+      "etat": "en attente d'Ange"
+    }
+  ],
+  "semaine_prochaine": [
+    "Corriger deux points mineurs de la documentation.",
+    "Reprendre la configuration de mise en ligne dès que les deux fichiers manquants sont ajoutés.",
+    "Rédiger les modules suivants du parcours dès que tu as relu le premier."
+  ],
+  "decisions_prises": [
+    {
+      "decision": "Lancer la préparation de la mise en ligne et la documentation, sans réponse de ta part à la date du 22 novembre.",
+      "pourquoi": "C'était la recommandation de la question Q5 ; ces deux phases ne dépendent pas du contenu et rapprochent la fin du projet. Rien n'est mis en ligne : cela reste à toi."
+    },
+    {
+      "decision": "Mettre la configuration de mise en ligne en attente et ne plus la relancer chaque nuit.",
+      "pourquoi": "Les deux fichiers manquants sont protégés : l'équipe ne peut pas les écrire, relancer ne servirait à rien."
+    }
+  ],
+  "risques": [
+    {
+      "risque": "La fin du MVP glisse si le premier module n'est pas relu : les modules suivants en dépendent.",
+      "ce_qu_on_fait": "Relance dans ce rapport ; l'équipe ne peut pas publier du contenu sans ton accord."
+    },
+    {
+      "risque": "Le contenu touchant à Unreal n'est pas encore vérifié dans l'éditeur réel.",
+      "ce_qu_on_fait": "Tout est marqué à vérifier dans Unreal et rien n'est présenté comme juste avant ta confirmation."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Peux-tu ajouter toi-même les deux fichiers de construction de la mise en ligne ?",
+      "contexte": "L'équipe n'a pas le droit d'écrire ces fichiers (protégés). Le fichier principal est prêt (brouillon #78) avec la marche à suivre exacte.",
+      "options": [
+        "A : tu ajoutes ou fais ajouter les deux fichiers et le fichier d'exemple des réglages, en suivant la marche à suivre de la #78",
+        "B : on laisse la mise en ligne de côté, le MVP se termine sans"
+      ],
+      "recommandation": "A, parce que c'est la dernière pièce technique avant la fin du MVP.",
+      "sans_reponse_le": "2026-11-29"
+    },
+    {
+      "id": "Q2",
+      "question": "Peux-tu relire le premier module proposé (leçons et exercices, non publiés) et le valider ?",
+      "contexte": "Les propositions sont dans la base de démarrage, invisibles des étudiants. Les points qui touchent à Unreal sont marqués à vérifier dans Unreal.",
+      "options": [
+        "A : tu relis et tu valides ou corriges",
+        "B : on passe d'abord à autre chose"
+      ],
+      "recommandation": "A, parce que les modules suivants en dépendent. Aucune application par défaut : le contenu ne se publie jamais sans ton accord.",
+      "sans_reponse_le": "2026-11-29"
+    },
+    {
+      "id": "Q3",
+      "question": "Peux-tu valider les cas de test du moteur de correction des graphes ?",
+      "contexte": "Ils sont rédigés à partir de tes captures et tous marqués à vérifier dans Unreal ; seul toi peux les confirmer.",
+      "options": [
+        "A : tu les vérifies dans Unreal et tu confirmes ou corriges",
+        "B : on les garde comme provisoires"
+      ],
+      "recommandation": "A. Aucune application par défaut (vérification dans Unreal).",
+      "sans_reponse_le": "2026-11-29"
+    }
+  ]
+}

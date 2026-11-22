@@ -45,3 +45,8 @@ Mise à jour : 2026-10-20 (pilotage S43). Lu sur GitHub : issues #1 à #16, PR #
 - Phase 5 : structure et premier module en propositions faits (#66, #67). Modules suivants : attendent la validation d'Ange (Q3).
 - Phase 6 (tests de bout en bout) lancée en parallèle (Q2 par défaut) : #71, #72 `ready`.
 - Ensuite : 7 Docker, 8 documentation. #4 attend Ange (Q4).
+
+## Mise à jour 2026-11-22 (pilotage S47)
+- Phase 8 (documentation) : livrée (#77, PR #79) ; retouches mineures en #80 (`ready`).
+- Phase 7 (Docker de production) : #76 bloquée, fichiers protégés à ajouter par Ange (Q6) ; PR #78 en brouillon.
+- Phase 5 : modules suivants en attente de la relecture du premier module par Ange (Q3). #4 : cas de test à confirmer dans Unreal (Q4).
