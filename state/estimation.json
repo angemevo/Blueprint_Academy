@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-16",
+  "maj": "2026-11-22",
   "par": "organisateur, réapprovisionnement",
   "echelle": {
     "1": "petite : un créneau",
@@ -308,17 +308,17 @@
       "fait_le": "2026-11-15"
     },
     {
-      "titre": "Mise en ligne avec Docker",
+      "titre": "Docker de production (configuration)",
       "phase": "7 · Mise en production",
       "points": 2,
-      "issue": null,
+      "issue": 76,
       "etat": "a_faire"
     },
     {
       "titre": "Documentation",
       "phase": "8 · Documentation",
       "points": 1,
-      "issue": null,
+      "issue": 77,
       "etat": "a_faire"
     }
   ]

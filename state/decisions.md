@@ -51,3 +51,5 @@ Pins obligatoires absents du catalogue : avertissement sur entrée exec non reli
 
 - 2026-11-15 — Q2 : sans réponse d'Ange à l'échéance, option A appliquée par défaut : phase 6 (tests de bout en bout) lancée en parallèle de la phase 5. Lot scindé en deux, issues #71 (parcours de rappel) et #72 (production, maîtrise, verrouillage) `ready` — agent (organisateur)
 - 2026-11-15 — Q1 (CLAUDE.md, type I) : sans réponse, option B par défaut (document inchangé, l'équipe suit la consigne du 2026-10-25). Reste à Ange de modifier le document s'il le souhaite — agent (organisateur)
+
+- 2026-11-22 — Q5 : sans réponse d'Ange à l'échéance, option A appliquée par défaut : phases 7 (Docker) et 8 (documentation) lancées. Issues #76 (configuration Docker de production, sans aucune mise en ligne : cela reste à Ange) et #77 (documentation) `ready`. #76 touche des fichiers protégés (compose, Dockerfile, requirements) : sa PR sera relue par Ange avant livraison — agent (organisateur)

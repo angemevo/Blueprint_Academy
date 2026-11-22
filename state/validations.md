@@ -5,11 +5,13 @@ Tenu par l'organisateur. Seules les questions qui reviennent à Ange y figurent 
 Mise à jour : pilotage du 2026-11-15 (semaine 2026-S46).
 
 ## En attente
-- **Q5** : passer à la phase suivante (mise en ligne avec Docker, puis documentation) ? Contexte : la phase des tests de bout en bout est terminée ; il ne reste que le contenu du parcours (qui attend ta relecture, Q3) et ces deux dernières phases. Options : A (oui, on les lance) / B (on attend d'abord ta relecture du contenu). Recommandation : A, car elles ne dépendent pas du contenu et rapprochent la fin du projet. Sans réponse le 2026-11-22, option A appliquée.
+- (Q5 traitée le 2026-11-22 : option A appliquée par défaut, voir « Traité ».)
+- ~~Q5~~ : passer à la phase suivante (mise en ligne avec Docker, puis documentation) ? Contexte : la phase des tests de bout en bout est terminée ; il ne reste que le contenu du parcours (qui attend ta relecture, Q3) et ces deux dernières phases. Options : A (oui, on les lance) / B (on attend d'abord ta relecture du contenu). Recommandation : A, car elles ne dépendent pas du contenu et rapprochent la fin du projet. Sans réponse le 2026-11-22, option A appliquée.
 - **Q3** : relire le premier module proposé (leçons et exercices, non publiés) et le valider ? Contexte : les propositions sont dans la base de démarrage, rien n'est visible des étudiants ; les points qui touchent à Unreal sont marqués « à vérifier dans Unreal ». Options : A (tu relis et tu valides ou corriges) / B (autre ordre : on passe d'abord aux tests). Recommandation : A, car les modules suivants en dépendent. Pas d'application par défaut : le contenu ne se publie jamais sans ton accord. Date de relance : 2026-11-22.
 - **Q4** : cas de test du moteur de correction des graphes (#4) : les valider ? Contexte : rédigés à partir de tes captures, tous marqués « à vérifier dans Unreal » ; seul toi peux les confirmer. Options : A (tu les vérifies dans Unreal et tu confirmes ou corriges) / B (on les garde comme provisoires). Recommandation : A. Pas d'application par défaut (vérification dans Unreal). Date de relance : 2026-11-22.
 
 ## Traité
+- [x] 2026-11-22 : Q5 (phases 7 et 8) : sans réponse à l'échéance, option A appliquée par défaut. Issues #76 (Docker de production, configuration seulement) et #77 (documentation) `ready`.
 - [x] 2026-11-15 : Q2 (phase 6 en parallèle) : sans réponse à l'échéance, option A appliquée par défaut. Issues #71 et #72 `ready`.
 - [x] 2026-11-15 : Q1 (type I dans CLAUDE.md) : sans réponse à l'échéance, option B appliquée par défaut.
 - [x] 2026-11-08 : Q3 (phase 5) : sans réponse à l'échéance, option A appliquée par défaut. Issues #66 et #67 `ready`.

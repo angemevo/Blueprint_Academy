@@ -171,3 +171,7 @@ Aucun message d'Ange, aucune PR ouverte, seules #4 (`a-cadrer`) et le bureau son
 ## Réapprovisionnement 2026-11-21
 
 Aucun message d'Ange, aucune PR ouverte. Q5 (échéance 2026-11-22, demain), Q3 et Q4 sans réponse ; #4 `a-cadrer`. Aucune issue `ready` possible (phases 7 et 8 attendent Q5). Plan inchangé ; au prochain passage après le 2026-11-22, Q5 passe en option A et les issues Docker et documentation pourront être écrites.
+
+## Réapprovisionnement 2026-11-22
+
+Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : configuration reproductible » (touche des fichiers protégés : PR relue par Ange) ; 2. #77 « Documentation : README à jour, architecture et guide du contenu » (indépendante). Q3 et Q4 attendent toujours Ange ; #4 reste `a-cadrer`.

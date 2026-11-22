@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-21",
+  "equipes": [
+    {
+      "debut": "2026-11-22T00:08:28+00:00",
+      "run": "44965124561"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-22T00:10:51+00:00",
+      "texte": "0 h 10 — Le chef d'équipe n'a plus de tâche prête : Aucune PR ouverte et aucune issue ready : les phases 7 et 8 attendent la réponse d'Ange à Q5 (défaut option A au 2026-11-22), Q3 et Q4 sans réponse, #4 reste a-cadrer."
+    },
+    {
+      "quand": "2026-11-22T00:11:45+00:00",
+      "texte": "0 h 11 — l'organisateur a préparé la suite : Faute de réponse de ta part à la date prévue, nous lançons les deux dernières phases techniques, comme recommandé : la préparation de la mise en ligne avec Docker (configuration seulement, rien n'est mis en ligne) et la documentation. Deux tâches sont maintenant prêtes pour l'équipe.\n\nLa première touche des fichiers sensibles : elle te sera soumise avant d'être livrée. Pour la suite, ce qui débloquerait le plus de travail est ta relecture du premier module (Q3) et la vérification dans Unreal des cas de test (Q4)."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
