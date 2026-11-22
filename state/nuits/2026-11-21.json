@@ -28,8 +28,12 @@
       "titre": "Documentation : README à jour, architecture et guide pour écrire le contenu",
       "minutes": 75,
       "pourquoi": "Seconde issue du plan, indépendante de la première.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-22T00:13:21+00:00",
+      "minutes_reelles": 4,
+      "journal": "2026-11-22_0013-creneau-2-dev-issue77.jsonl",
+      "resume": "La documentation est à jour dans la PR #79. Le README donne l'état réel du projet, et deux guides sont ajoutés : un sur l'architecture et un pour les formateurs qui créent du contenu depuis l'admin. Aucun code n'a changé, les commandes citées ont été exécutées, et qa a approuvé la PR. Le portier peut la fusionner. Deux petites retouches restent à faire après l'issue Docker : retirer du README la commande qui supprime les volumes, et mettre à jour la mention « phases 7 et 8 en cours »."
     }
   ],
   "merges": [],

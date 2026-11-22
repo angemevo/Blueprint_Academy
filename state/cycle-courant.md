@@ -18,6 +18,13 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
 ## Dernière tâche traitée
 
+- Tâche : #77 « Documentation » (créneau 2, 2026-11-22).
+- PR : #79 (prête, 3 fichiers de doc, aucun code).
+- Verdict de qa : APPROUVÉE (remarques non bloquantes : `down -v` cité dans le README ; mention « phases 7 et 8 en cours » à mettre à jour après l'issue Docker).
+- Prochaine action : le portier merge #79.
+
+## Tâche précédente (créneau 1)
+
 - Tâche : #76 « Docker de production » (créneau 1, 2026-11-22).
 - PR : #78 (BROUILLON, seul `docker-compose.prod.yml` livré).
 - Verdict de qa : aucun (PR en brouillon, qa non lancé).
@@ -176,3 +183,7 @@ Aucun message d'Ange, aucune PR ouverte. Q5 (échéance 2026-11-22, demain), Q3 
 ## Réapprovisionnement 2026-11-22
 
 Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : configuration reproductible » (touche des fichiers protégés : PR relue par Ange) ; 2. #77 « Documentation : README à jour, architecture et guide du contenu » (indépendante). Q3 et Q4 attendent toujours Ange ; #4 reste `a-cadrer`.
+
+## Tâche #77 (documentation)
+
+- Branche feat/77-documentation, PR #79 (non brouillon), vérifications passées, en attente de qa.
