@@ -184,6 +184,10 @@ Aucun message d'Ange, aucune PR ouverte. Q5 (échéance 2026-11-22, demain), Q3 
 
 Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : configuration reproductible » (touche des fichiers protégés : PR relue par Ange) ; 2. #77 « Documentation : README à jour, architecture et guide du contenu » (indépendante). Q3 et Q4 attendent toujours Ange ; #4 reste `a-cadrer`.
 
+## Réapprovisionnement 2026-11-22 (second passage)
+
+#77 livrée (PR #79) : `ready` retiré, lot fait. Reste #76 (`ready`) : PR #78 en brouillon, bloquée par le contrôleur sur les Dockerfile de production et `.env.example` ; rien d'autre à écrire (Q3 et Q4 attendent Ange, #4 `a-cadrer`, phases suivantes non existantes au MVP).
+
 ## Tâche #77 (documentation)
 
 - Branche feat/77-documentation, PR #79 (non brouillon), vérifications passées, en attente de qa.

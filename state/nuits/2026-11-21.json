@@ -54,9 +54,17 @@
     {
       "quand": "2026-11-22T00:13:10+00:00",
       "texte": "0 h 13 — Créneau 1 (issue 76) bloqué : Pour la mise en production de la plateforme, seul le fichier qui décrit les trois services (base de données, serveur, site) est écrit. Il est dans une demande de modification ouverte en brouillon (#78). Le système de contrôle a refusé la création des L'équipe passe à la suite ; le blocage est dans le plan pour l'organisateur."
+    },
+    {
+      "quand": "2026-11-22T00:18:36+00:00",
+      "texte": "0 h 18 — Le chef d'équipe n'a plus de tâche prête : Plus rien de prêt : la documentation (#77) est livrée par la PR #79 ; Docker de production (#76, PR #78 en brouillon) est bloqué cette nuit, car le contrôleur refuse l'écriture des Dockerfile de production et de .env.example, ce qui demande une décision d'Ange via l'organisateur. Les autres sujets ("
+    },
+    {
+      "quand": "2026-11-22T00:19:00+00:00",
+      "texte": "0 h 19 — l'organisateur a préparé la suite : La documentation est livrée. Il ne reste qu'une tâche côté équipe, la mise en production avec Docker : elle est bloquée, car le garde-fou automatique refuse d'écrire trois fichiers de configuration pourtant autorisés par la tâche. Elle devra être terminée à la main ou le garde-fou assoupli. Rien d'autre n'est prêt : le reste du MVP attend ta relecture du premier module (Q3) et la validation des cas de test du moteur de correction (Q4). Ta réponse à ces deux questions débloquerait le plus de travail."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1,
+  "reapprovisionnements": 2,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
 }
