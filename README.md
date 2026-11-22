@@ -6,9 +6,14 @@ Philosophie : **Learn → Practice → Build → Validate → Progress**.
 La source de vérité du projet (vision, stack verrouillée, architecture, modèle
 de données, roadmap) est le fichier [CLAUDE.md](CLAUDE.md).
 
-> **État : Phase 2a terminée** — architecture, configuration et modèle de
-> données. La couche service, les validateurs et l'API arrivent en Phase 2b ;
-> l'interface applicative en Phase 3.
+> **État** : phases 1 à 4 (architecture, backend, frontend, admin) et phase 6
+> (tests) terminées. Le contenu de départ (phase 5) est en place sous forme de
+> **proposition non publiée**, en attente de validation. Docker de production
+> et documentation (phases 7 et 8) en cours.
+
+Pour aller plus loin : [architecture](docs/architecture.md) (comment le code
+est organisé) et [guide du contenu](docs/contenu.md) (créer un parcours depuis
+l'admin).
 
 ## Stack
 
@@ -62,15 +67,19 @@ docker compose logs -f backend       # suivre les logs d'un service
 docker compose exec backend python manage.py makemigrations
 docker compose exec backend python manage.py migrate
 docker compose exec backend python manage.py createsuperuser
-docker compose exec backend python manage.py seed_blueprint   # à partir de la Phase 5
+docker compose exec backend python manage.py seed_blueprint   # crée le parcours de départ (non publié, idempotent)
+docker compose exec backend python manage.py recompute_xp     # recalcule total_xp et niveau depuis le ledger
 
 # Tests
 docker compose exec backend pytest
-docker compose exec frontend npm test   # à partir de la Phase 6
+docker compose exec frontend npm test        # Vitest
 
-# Frontend
+# Qualité
+docker compose exec backend ruff check .
+docker compose exec backend python manage.py makemigrations --check --dry-run
 docker compose exec frontend npm run typecheck
-docker compose exec frontend npm audit
+docker compose exec frontend npm run lint
+docker compose exec frontend npm audit       # signale aujourd'hui des vulnérabilités dans les dépendances de développement
 ```
 
 ### Après un changement de dépendances
@@ -103,12 +112,13 @@ build. Le dossier peut rester vide sur un réseau sans proxy.
 ├── docker-compose.yml
 ├── .env.example
 ├── CLAUDE.md                  # source de vérité du projet
+├── docs/                      # architecture.md, contenu.md
 ├── certs/                     # CA d'entreprise optionnels (proxy TLS)
 ├── backend/
 │   ├── Dockerfile
 │   ├── entrypoint.sh          # attente PostgreSQL + migrations
-│   ├── requirements.txt
-│   ├── manage.py
+│   ├── requirements.txt, requirements-dev.txt
+│   ├── manage.py, pytest.ini, ruff.toml
 │   ├── config/
 │   │   ├── settings/          # base.py, dev.py, prod.py, env_utils.py
 │   │   ├── urls.py            # racine
@@ -118,27 +128,30 @@ build. Le dossier peut rester vide sur un réseau sans proxy.
 │   │   ├── models.py          # TimeStampedModel, PublishableModel, OrderedModel
 │   │   ├── enums.py           # Difficulty, CompletionStatus
 │   │   ├── schemas.py         # graphe normalisé + helper de validation JSON
-│   │   └── content_blocks.py  # grammaire des blocs de contenu rédactionnel
+│   │   ├── content_blocks.py  # blocs de contenu des leçons
+│   │   ├── blueprint_catalog.py  # vocabulaire de nodes (source unique)
+│   │   └── admin.py           # briques d'admin (publication, JSON lisible)
+│   ├── tests/                 # tests de bout en bout par l'API
 │   └── apps/                  # une app par domaine métier
-│       ├── users/             # User (AUTH_USER_MODEL), rôle, Profile
-│       ├── learning/          # Skill, LearningPath, Module, Lesson
-│       ├── exercises/         # Exercise (types A–I), ExerciseAttempt
+│       ├── users/             # User (rôles), Profile, auth JWT
+│       ├── learning/          # Skill, LearningPath, Module, Lesson, publication, seed
+│       ├── exercises/         # Exercise (types A–I), ExerciseAttempt, validateurs
 │       │                      #   enums.py = taxonomie, schemas/ = contrats JSON
-│       │                      #   validators/ = registre (Phase 2b)
-│       ├── progress/          # LessonProgress, CourseProgress, SkillMastery
+│       ├── progress/          # LessonProgress, CourseProgress, SkillMastery, dashboard
 │       ├── gamification/      # XPTransaction (ledger), Achievement
-│       ├── projects/          # Project, ProjectProgress
-│       └── validation/        # service isolé (interfaces, Phase 2b)
+│       ├── projects/          # Project, ProjectProgress (modèles seulement)
+│       └── validation/        # service isolé (contrat Validator / ValidationResult)
 └── frontend/
     ├── Dockerfile
-    ├── app/                   # App Router
-    ├── components/
-    ├── lib/                   # client API, hooks
-    └── stores/                # Zustand
+    ├── app/                   # App Router : catalogue, connexion, inscription, mon-espace
+    ├── components/            # ExerciseWorkspace, canvas React Flow, vues
+    ├── lib/                   # client API, accès aux données, hooks
+    ├── stores/                # Zustand (session)
+    └── tests/                 # Vitest
 ```
 
-Chaque app backend suit la même arborescence : `models.py`, `admin.py`,
-`services/` (**toute** la logique métier), `tests/`.
+Chaque app backend suit globalement la même arborescence : `models.py`,
+`admin.py`, `services/` (**toute** la logique métier), `tests/`.
 
 ## Conventions
 
