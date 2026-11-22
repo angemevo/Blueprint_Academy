@@ -80,7 +80,7 @@
       "texte": "3 h 27 — Le chef d'équipe n'a plus de tâche prête : La seule tâche prête est l'issue 76 (Docker de production, PR 78 en brouillon), déjà marquée bloquée cette nuit : le contrôleur refuse l'écriture des Dockerfile de production et de .env.example, ce qui attend une décision d'Ange. La documentation (issue 77) est livrée. Les autres issues attendent An"
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
 }
