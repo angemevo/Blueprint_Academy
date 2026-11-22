@@ -18,10 +18,11 @@ Questions en attente d'Ange : Q3, Q4 (relance 2026-11-22).
 
 ## Dernière tâche traitée
 
-- Tâche : #72 « Tests de bout en bout : production, maîtrise et verrouillage » (créneau 3, 2026-11-15).
-- PR : #75 (non brouillon, `Closes #72`, un seul fichier de test).
-- Verdict de qa : APPROUVÉE. Remarque non bloquante : variable `path` et assertion `is_published` inutiles dans le test de verrouillage.
-- Prochaine action : PR #75 mergée (créneau 4 : revue sans objet, aucune PR ouverte ; l'issue #72 est restée ouverte alors que la PR la ferme — à vérifier à la prochaine planification).
+- Tâche : #76 « Docker de production » (créneau 1, 2026-11-22).
+- PR : #78 (BROUILLON, seul `docker-compose.prod.yml` livré).
+- Verdict de qa : aucun (PR en brouillon, qa non lancé).
+- Blocage : le contrôleur refuse l'écriture de `backend/Dockerfile.prod`, `frontend/Dockerfile.prod` et l'accès à `.env.example`, bien que l'issue les autorise. Restent à faire : ces 2 Dockerfile, `.env.example`, section README « Production », puis build et test de `/api/health/`. Limite connue : gunicorn ne sert pas les statiques de l'admin (whitenoise ou serveur web, issue séparée).
+- Prochaine action : décision d'Ange via l'organisateur (assouplir le contrôleur pour ces fichiers, ou les créer à la main), puis reprise de #78.
 
 ## Réapprovisionnement 2026-11-01
 

@@ -14,8 +14,12 @@
       "titre": "Docker de production : une configuration qui se lance toujours pareil, sans mise en ligne",
       "minutes": 90,
       "pourquoi": "Première issue du plan de la semaine, prête et sans dépendance ; la PR sera relue par Ange car elle touche des fichiers protégés.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "bloque",
+      "tentatives": 1,
+      "debut": "2026-11-22T00:11:59+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-22_0011-creneau-1-dev-issue76.jsonl",
+      "resume": "Pour la mise en production de la plateforme, seul le fichier qui décrit les trois services (base de données, serveur, site) est écrit. Il est dans une demande de modification ouverte en brouillon (#78). Le système de contrôle a refusé la création des deux fichiers de construction des images et l'accès au fichier d'exemple des variables, bien que l'issue les autorise. Rien n'a donc été construit ni testé. Il faut qu'Ange décide, via l'organisateur, d'assouplir ce contrôle pour ces fichiers ou de les faire créer autrement. Ensuite la reprise de #78 pourra aboutir."
     },
     {
       "n": 2,
@@ -37,6 +41,10 @@
     {
       "quand": "2026-11-22T00:11:45+00:00",
       "texte": "0 h 11 — l'organisateur a préparé la suite : Faute de réponse de ta part à la date prévue, nous lançons les deux dernières phases techniques, comme recommandé : la préparation de la mise en ligne avec Docker (configuration seulement, rien n'est mis en ligne) et la documentation. Deux tâches sont maintenant prêtes pour l'équipe.\n\nLa première touche des fichiers sensibles : elle te sera soumise avant d'être livrée. Pour la suite, ce qui débloquerait le plus de travail est ta relecture du premier module (Q3) et la vérification dans Unreal des cas de test (Q4)."
+    },
+    {
+      "quand": "2026-11-22T00:13:10+00:00",
+      "texte": "0 h 13 — Créneau 1 (issue 76) bloqué : Pour la mise en production de la plateforme, seul le fichier qui décrit les trois services (base de données, serveur, site) est écrit. Il est dans une demande de modification ouverte en brouillon (#78). Le système de contrôle a refusé la création des L'équipe passe à la suite ; le blocage est dans le plan pour l'organisateur."
     }
   ],
   "rapporte": false,
