@@ -38,3 +38,4 @@
 | 2026-11-09 | #70 | Seed : premier module en propositions de leçons et d'exercices | #67 |
 | 2026-11-15 | #74 | Tests de bout en bout du parcours étudiant par l'API | #71 |
 | 2026-11-15 | #75 | Tests de bout en bout : production, maîtrise et verrouillage | #72 |
+| 2026-11-22 | #79 | Documentation : README à jour, architecture et guide du contenu | #77 |
