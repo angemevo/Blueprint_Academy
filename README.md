@@ -6,10 +6,10 @@ Philosophie : **Learn → Practice → Build → Validate → Progress**.
 La source de vérité du projet (vision, stack verrouillée, architecture, modèle
 de données, roadmap) est le fichier [CLAUDE.md](CLAUDE.md).
 
-> **État** : phases 1 à 4 (architecture, backend, frontend, admin) et phase 6
-> (tests) terminées. Le contenu de départ (phase 5) est en place sous forme de
+> **État** : phases 1 à 4 (architecture, backend, frontend, admin) phase 6
+> (tests) et phase 8 (documentation) terminées. Le contenu de départ (phase 5) est en place sous forme de
 > **proposition non publiée**, en attente de validation. Docker de production
-> et documentation (phases 7 et 8) en cours.
+> (phase 7) en attente de fichiers que seul Ange peut ajouter.
 
 Pour aller plus loin : [architecture](docs/architecture.md) (comment le code
 est organisé) et [guide du contenu](docs/contenu.md) (créer un parcours depuis
@@ -60,7 +60,6 @@ docker compose exec backend python manage.py createsuperuser
 # Développement
 docker compose up --build            # démarrer les trois services
 docker compose down                  # arrêter
-docker compose down -v               # arrêter et supprimer les volumes (reset DB)
 docker compose logs -f backend       # suivre les logs d'un service
 
 # Django
