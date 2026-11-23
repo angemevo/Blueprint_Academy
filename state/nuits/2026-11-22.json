@@ -6,6 +6,12 @@
       "run": "45089831625",
       "fin": "2026-11-23T00:43:42+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-11-23T03:57:11+00:00",
+      "run": "45108872334",
+      "fin": "2026-11-23T03:59:03+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -50,6 +56,10 @@
     {
       "quand": "2026-11-23T00:43:42+00:00",
       "texte": "0 h 43 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (question Q6). Le plan de la semaine interdit de la relancer sans nouvelle consigne."
+    },
+    {
+      "quand": "2026-11-23T03:59:03+00:00",
+      "texte": "3 h 59 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. Seule PR ouverte : #78 (Docker de production, brouillon), bloquée parce que les Dockerfile de production et .env.example sont des fichiers protégés ; elle attend la réponse d'Ange (question Q6) et le plan de la semaine interdit de la relancer sans nouvelle consigne. #4 attend Ang"
     }
   ],
   "rapporte": false,
