@@ -1,0 +1,25 @@
+{
+  "nuit": "2026-11-22",
+  "equipes": [
+    {
+      "debut": "2026-11-23T00:37:40+00:00",
+      "run": "45089831625"
+    }
+  ],
+  "creneaux": [
+    {
+      "n": 1,
+      "type": "dev",
+      "cible": "issue 80",
+      "titre": "Corriger deux remarques de relecture dans la documentation (commande dangereuse et état des phases)",
+      "minutes": 30,
+      "pourquoi": "Seule tâche prête du plan de la semaine ; la documentation de base est déjà livrée.",
+      "statut": "a_faire",
+      "tentatives": 0
+    }
+  ],
+  "merges": [],
+  "incidents": [],
+  "rapporte": false,
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+}
