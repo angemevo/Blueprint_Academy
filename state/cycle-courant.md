@@ -17,10 +17,10 @@ Questions en attente d'Ange : Q3, Q4, Q6 (relance 2026-11-29).
 
 ## Dernière tâche traitée
 
-- Tâche : #77 « Documentation » (créneau 2, 2026-11-22).
-- PR : #79 (prête, 3 fichiers de doc, aucun code).
-- Verdict de qa : APPROUVÉE (remarques non bloquantes : `down -v` cité dans le README ; mention « phases 7 et 8 en cours » à mettre à jour après l'issue Docker).
-- Prochaine action : le portier merge #79.
+- Tâche : #80 « Documentation : retouches après revue » (créneau 1, 2026-11-23).
+- PR : #82 (prête, README seul, 3 lignes ajoutées / 4 retirées).
+- Verdict de qa : APPROUVÉE (remarque non bloquante : une virgule manquante dans l'encadré « État »).
+- Prochaine action : le portier merge #82.
 
 ## Tâche précédente (créneau 1)
 

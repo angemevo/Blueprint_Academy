@@ -14,8 +14,12 @@
       "titre": "Corriger deux remarques de relecture dans la documentation (commande dangereuse et état des phases)",
       "minutes": 30,
       "pourquoi": "Seule tâche prête du plan de la semaine ; la documentation de base est déjà livrée.",
-      "statut": "a_faire",
-      "tentatives": 0
+      "statut": "fait",
+      "tentatives": 1,
+      "debut": "2026-11-23T00:40:17+00:00",
+      "minutes_reelles": 1,
+      "journal": "2026-11-23_0040-creneau-1-dev-issue80.jsonl",
+      "resume": "Le README ne propose plus la commande d'arrêt qui effaçait la base de données. Il reste `docker compose down` sans option. L'encadré sur l'état du projet est aussi corrigé : la documentation est terminée, et le Docker de production attend des fichiers que seul Ange peut ajouter. La PR #82 (README seul, rien de protégé) est approuvée par qa. Elle attend maintenant le portier pour être fusionnée. Aucun test n'a été lancé, parce qu'aucun code n'est touché."
     }
   ],
   "merges": [],
