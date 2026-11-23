@@ -62,7 +62,7 @@
       "texte": "3 h 59 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. Seule PR ouverte : #78 (Docker de production, brouillon), bloquée parce que les Dockerfile de production et .env.example sont des fichiers protégés ; elle attend la réponse d'Ange (question Q6) et le plan de la semaine interdit de la relancer sans nouvelle consigne. #4 attend Ang"
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
   "reapprovisionnements": 2
 }
