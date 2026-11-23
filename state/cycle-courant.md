@@ -194,3 +194,7 @@ Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : conf
 ## Réapprovisionnement 2026-11-23
 
 #80 livrée (PR #82) : issue refermée, `ready` retiré, lot fait. Plus rien de prêt. Reste #76 (bloquée, Q6), Q3 et Q4 attendent Ange, #4 `a-cadrer`. Plan : aucune issue à jouer avant la réponse d'Ange.
+
+## Réapprovisionnement 2026-11-23 (second passage)
+
+Revérifié : aucune réponse d'Ange. Seules #76 (bloquée, Q6), #4 (`a-cadrer`) et le bureau sont ouvertes. Q3, Q4, Q6 sans réponse (relance 2026-11-29), aucune échéance passée. Aucune issue `ready` possible ; plan inchangé.

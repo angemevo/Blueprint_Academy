@@ -36,9 +36,17 @@
     {
       "quand": "2026-11-23T00:43:05+00:00",
       "texte": "0 h 43 — l'organisateur a préparé la suite : Les dernières retouches de documentation sont livrées. L'équipe n'a plus rien de prêt à faire.\n\nCe qui reste dépend de toi. La décision qui débloque le plus : Q6, la mise en ligne. Il faut que tu ajoutes toi-même deux fichiers de construction que l'équipe n'a pas le droit d'écrire ; la marche à suivre est dans la PR #78. Ensuite, la relecture du premier module (Q3) débloquerait les modules suivants, et la validation des cas de test du moteur de correction (Q4) fermerait le dernier point ouvert de la correction des graphes."
+    },
+    {
+      "quand": "2026-11-23T00:43:14+00:00",
+      "texte": "0 h 43 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : les Dockerfile de production et .env.example sont protégés, elle attend la réponse d'Ange (Q6). Q3 et Q4 attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-23T00:43:32+00:00",
+      "texte": "0 h 43 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Tout ce qui pouvait avancer sans toi est fait, y compris la documentation. Ce qui reste attend tes réponses : trois questions sont ouvertes dans ton bureau (Q3, Q4 et Q6).\n\nLa décision qui débloquerait le plus de travail est Q6. Il s'agit d'ajouter les deux fichiers de mise en ligne que l'équipe n'a pas le droit d'écrire : c'est la dernière pièce technique avant la fin du MVP. Ensuite vient Q3, la relecture du premier module de cours, dont dépendent les modules suivants."
     }
   ],
   "rapporte": false,
   "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
