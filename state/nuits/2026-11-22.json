@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-23T00:37:40+00:00",
-      "run": "45089831625"
+      "run": "45089831625",
+      "fin": "2026-11-23T00:43:42+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [
@@ -44,6 +46,10 @@
     {
       "quand": "2026-11-23T00:43:32+00:00",
       "texte": "0 h 43 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Tout ce qui pouvait avancer sans toi est fait, y compris la documentation. Ce qui reste attend tes réponses : trois questions sont ouvertes dans ton bureau (Q3, Q4 et Q6).\n\nLa décision qui débloquerait le plus de travail est Q6. Il s'agit d'ajouter les deux fichiers de mise en ligne que l'équipe n'a pas le droit d'écrire : c'est la dernière pièce technique avant la fin du MVP. Ensuite vient Q3, la relecture du premier module de cours, dont dépendent les modules suivants."
+    },
+    {
+      "quand": "2026-11-23T00:43:42+00:00",
+      "texte": "0 h 43 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (question Q6). Le plan de la semaine interdit de la relancer sans nouvelle consigne."
     }
   ],
   "rapporte": false,
