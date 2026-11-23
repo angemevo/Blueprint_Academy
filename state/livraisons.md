@@ -39,3 +39,4 @@
 | 2026-11-15 | #74 | Tests de bout en bout du parcours étudiant par l'API | #71 |
 | 2026-11-15 | #75 | Tests de bout en bout : production, maîtrise et verrouillage | #72 |
 | 2026-11-22 | #79 | Documentation : README à jour, architecture et guide du contenu | #77 |
+| 2026-11-23 | #82 | Documentation : retouches après revue (#80) | #80 |
