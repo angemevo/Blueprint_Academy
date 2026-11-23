@@ -28,7 +28,17 @@
       "texte": "PR #82 mergée : Documentation : retouches après revue (#80)."
     }
   ],
-  "incidents": [],
+  "incidents": [
+    {
+      "quand": "2026-11-23T00:42:33+00:00",
+      "texte": "0 h 42 — Le chef d'équipe n'a plus de tâche prête : La seule issue prête (#80) est déjà livrée cette nuit (PR #82). La PR #78 (Docker de production) est en brouillon mais bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (Q6), le plan interdit de la relancer. Aucune autre PR ouverte ni issue prête."
+    },
+    {
+      "quand": "2026-11-23T00:43:05+00:00",
+      "texte": "0 h 43 — l'organisateur a préparé la suite : Les dernières retouches de documentation sont livrées. L'équipe n'a plus rien de prêt à faire.\n\nCe qui reste dépend de toi. La décision qui débloque le plus : Q6, la mise en ligne. Il faut que tu ajoutes toi-même deux fichiers de construction que l'équipe n'a pas le droit d'écrire ; la marche à suivre est dans la PR #78. Ensuite, la relecture du premier module (Q3) débloquerait les modules suivants, et la validation des cas de test du moteur de correction (Q4) fermerait le dernier point ouvert de la correction des graphes."
+    }
+  ],
   "rapporte": false,
-  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2"
+  "empreinte_consignes": "1498b73e30c3662cc43423d64b49b6d0de7bb217e688db4f97c4f830f9768be2",
+  "reapprovisionnements": 1
 }

@@ -1,6 +1,6 @@
 {
   "objectif": "MVP",
-  "maj": "2026-11-22",
+  "maj": "2026-11-23",
   "par": "organisateur, pilotage",
   "echelle": {
     "1": "petite : un créneau",
@@ -329,7 +329,8 @@
       "phase": "8 · Documentation",
       "points": 1,
       "issue": 80,
-      "etat": "a_faire"
+      "etat": "fait",
+      "fait_le": "2026-11-23"
     }
   ]
 }

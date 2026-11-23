@@ -190,3 +190,7 @@ Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : conf
 ## Tâche #77 (documentation)
 
 - Branche feat/77-documentation, PR #79 (non brouillon), vérifications passées, en attente de qa.
+
+## Réapprovisionnement 2026-11-23
+
+#80 livrée (PR #82) : issue refermée, `ready` retiré, lot fait. Plus rien de prêt. Reste #76 (bloquée, Q6), Q3 et Q4 attendent Ange, #4 `a-cadrer`. Plan : aucune issue à jouer avant la réponse d'Ange.
