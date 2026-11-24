@@ -32,6 +32,6 @@
       "texte": "4 h 48 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête (#76 est bloquée : ses fichiers protégés attendent la réponse d'Ange à Q6 ; #4 est à cadrer). La seule PR ouverte, #78, est un brouillon bloqué que le plan interdit de relancer. Q3, Q4 et Q6 attendent Ange (relance 2026-11-29)."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
