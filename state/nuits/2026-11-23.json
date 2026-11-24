@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-24T04:45:23+00:00",
-      "run": "45327828478"
+      "run": "45327828478",
+      "fin": "2026-11-24T04:48:12+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-11-24T04:48:00+00:00",
       "texte": "4 h 48 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit, et rien ne peut l'être sans toi. Tout ce qui reste attend une réponse d'Ange : la relecture du premier module de cours (Q3), la vérification des cas de test dans Unreal (Q4), et l'ajout des deux fichiers de mise en ligne (Q6). La décision qui débloquerait le plus de travail est Q3 : les modules suivants du parcours en dépendent."
+    },
+    {
+      "quand": "2026-11-24T04:48:12+00:00",
+      "texte": "4 h 48 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête (#76 est bloquée : ses fichiers protégés attendent la réponse d'Ange à Q6 ; #4 est à cadrer). La seule PR ouverte, #78, est un brouillon bloqué que le plan interdit de relancer. Q3, Q4 et Q6 attendent Ange (relance 2026-11-29)."
     }
   ],
   "rapporte": false,
