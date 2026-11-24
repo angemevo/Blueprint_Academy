@@ -198,3 +198,7 @@ Q5 passée en option A par défaut. Plan : 1. #76 « Docker de production : conf
 ## Réapprovisionnement 2026-11-23 (second passage)
 
 Revérifié : aucune réponse d'Ange. Seules #76 (bloquée, Q6), #4 (`a-cadrer`) et le bureau sont ouvertes. Q3, Q4, Q6 sans réponse (relance 2026-11-29), aucune échéance passée. Aucune issue `ready` possible ; plan inchangé.
+
+## Réapprovisionnement 2026-11-24
+
+Aucun message d'Ange, seule la PR #78 (brouillon, bloquée) est ouverte. Q3, Q4, Q6 sans réponse (relance 2026-11-29). Aucune issue `ready` possible ; plan inchangé.

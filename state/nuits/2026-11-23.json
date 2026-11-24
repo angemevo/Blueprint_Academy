@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-23",
+  "equipes": [
+    {
+      "debut": "2026-11-24T04:45:23+00:00",
+      "run": "45327828478"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-24T04:47:13+00:00",
+      "texte": "4 h 47 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête (#80 livrée, PR #82 mergée). La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la décision d'Ange (Q6). #4 reste à cadrer, Q3 et Q4 attendent Ange."
+    },
+    {
+      "quand": "2026-11-24T04:47:33+00:00",
+      "texte": "4 h 47 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe de nuit, et je n'ai pas pu écrire de nouvelle tâche. Tout ce qui reste attend une décision de ta part : relire le premier module du parcours (Q3), confirmer les cas de test du moteur de correction dans Unreal (Q4), et ajouter les deux fichiers de mise en ligne que l'équipe n'a pas le droit d'écrire (Q6).\nLa réponse qui débloquerait le plus de travail est Q3. Dès que tu valides le premier module, l'équipe peut écrire les modules suivants. La Q6 permet de terminer la mise en ligne, dernière pièce technique avant la fin du MVP."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
