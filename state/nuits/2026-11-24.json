@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-25T03:27:41+00:00",
       "texte": "3 h 27 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit, et je n'ai pas le droit d'inventer de travail : tout ce qui reste attend ta décision.\n\nCe qui débloquerait le plus de travail : relire le premier module du parcours (Q3), qui ouvre la rédaction des modules suivants. Ensuite, ajouter les deux fichiers de mise en ligne protégés (Q6). Le projet est à 95 % ; la fin dépend de ces deux réponses."
+    },
+    {
+      "quand": "2026-11-25T03:27:51+00:00",
+      "texte": "3 h 27 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : les Dockerfile de production et .env.example sont des fichiers protégés, elle attend la réponse d'Ange (question Q6). Les autres sujets (Q3, Q4) attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-25T03:28:09+00:00",
+      "texte": "3 h 28 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit. Tout ce qui reste attend une décision de ta part.\n\nTrois points la débloqueraient. Le plus utile est la mise en ligne (Q6). Il faut que tu ajoutes toi-même deux fichiers de construction que l'équipe n'a pas le droit d'écrire. La marche à suivre est dans la PR #78. C'est la dernière pièce technique avant la fin du MVP. Les deux autres sont la relecture du premier module de contenu (Q3) et la validation des cas de test du moteur de correction (Q4)."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
