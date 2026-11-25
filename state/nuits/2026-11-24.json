@@ -42,6 +42,6 @@
       "texte": "5 h 41 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête : #80 est livrée (PR #82 mergée). La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle attend la décision d'Ange (Q6) sur les fichiers protégés. #4 attend Ange (a-cadrer)."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
