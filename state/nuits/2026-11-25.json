@@ -6,6 +6,12 @@
       "run": "45743996433",
       "fin": "2026-11-26T02:44:21+00:00",
       "raison_fin": "plus de tâche prête"
+    },
+    {
+      "debut": "2026-11-26T05:23:22+00:00",
+      "run": "45761202658",
+      "fin": "2026-11-26T05:25:52+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -30,6 +36,10 @@
     {
       "quand": "2026-11-26T02:44:21+00:00",
       "texte": "2 h 44 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête : la seule PR ouverte (#78, Docker de production) est en brouillon et bloquée par les fichiers protégés, elle attend la réponse d'Ange (Q6) ; les autres sujets (#4, modules suivants) attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-26T05:25:52+00:00",
+      "texte": "5 h 25 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (Q6). Les autres sujets (Q3, Q4) attendent aussi Ange."
     }
   ],
   "rapporte": false,
