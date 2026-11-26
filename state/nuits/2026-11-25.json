@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-25",
+  "equipes": [
+    {
+      "debut": "2026-11-26T02:41:01+00:00",
+      "run": "45743996433"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-26T02:43:21+00:00",
+      "texte": "2 h 43 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (Q6). La consigne du plan est de ne pas la relancer. Les autres sujets (Q3, Q4) attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-26T02:43:41+00:00",
+      "texte": "2 h 43 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout ce qui reste attend une réponse d'Ange. Les trois questions en attente (relire le premier module, confirmer les cas de test, ajouter les deux fichiers de mise en ligne) n'ont pas encore de réponse, et leur date de relance est le 29 novembre. La réponse qui débloquerait le plus de travail est la relecture du premier module : les modules suivants en dépendent."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
