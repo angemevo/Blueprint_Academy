@@ -16,8 +16,16 @@
     {
       "quand": "2026-11-27T02:44:44+00:00",
       "texte": "2 h 44 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit, et rien ne peut l'être sans toi : tout ce qui reste du MVP attend une réponse d'Ange. La décision qui débloquerait le plus de travail est Q3 : relire le premier module du parcours, car les modules suivants en dépendent. Q6 (ajouter les deux fichiers de la mise en ligne) et Q4 (vérifier les cas de test dans Unreal) attendent aussi ta réponse ; relance prévue le 29 novembre."
+    },
+    {
+      "quand": "2026-11-27T02:44:54+00:00",
+      "texte": "2 h 44 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (Q6). Les autres sujets (#4, Q3, Q4) attendent aussi Ange."
+    },
+    {
+      "quand": "2026-11-27T02:45:13+00:00",
+      "texte": "2 h 45 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout ce qui reste attend une réponse de ta part. Le projet est à 95 %, fin estimée la semaine du 14 décembre.\n\nTa décision qui débloquerait le plus de travail est la relecture du premier module (Q3) : les modules suivants en dépendent. Ensuite, la question sur la mise en ligne (Q6, ajout de deux fichiers protégés) et la vérification des cas de test dans Unreal (Q4)."
     }
   ],
   "rapporte": false,
-  "reapprovisionnements": 1
+  "reapprovisionnements": 2
 }
