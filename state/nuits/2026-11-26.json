@@ -42,6 +42,6 @@
       "texte": "5 h 20 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est un brouillon bloqué : elle touche des fichiers protégés et attend la décision d'Ange (question Q6, relance le 2026-11-29). #4 reste à cadrer, Q3 et Q4 attendent aussi Ange."
     }
   ],
-  "rapporte": false,
+  "rapporte": true,
   "reapprovisionnements": 2
 }
