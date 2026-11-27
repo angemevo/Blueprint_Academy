@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-26",
+  "equipes": [
+    {
+      "debut": "2026-11-27T02:41:55+00:00",
+      "run": "45929798866"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-27T02:44:27+00:00",
+      "texte": "2 h 44 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête (étiquette ready) et aucune PR à relire. La seule PR ouverte, #78 (Docker de production), est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d'Ange (question Q6). Le plan de la semaine interdit de la relancer sans nouvelle consigne."
+    },
+    {
+      "quand": "2026-11-27T02:44:44+00:00",
+      "texte": "2 h 44 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit, et rien ne peut l'être sans toi : tout ce qui reste du MVP attend une réponse d'Ange. La décision qui débloquerait le plus de travail est Q3 : relire le premier module du parcours, car les modules suivants en dépendent. Q6 (ajouter les deux fichiers de la mise en ligne) et Q4 (vérifier les cas de test dans Unreal) attendent aussi ta réponse ; relance prévue le 29 novembre."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}
