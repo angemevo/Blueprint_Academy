@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-27T02:41:55+00:00",
-      "run": "45929798866"
+      "run": "45929798866",
+      "fin": "2026-11-27T02:45:23+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-11-27T02:45:13+00:00",
       "texte": "2 h 45 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout ce qui reste attend une réponse de ta part. Le projet est à 95 %, fin estimée la semaine du 14 décembre.\n\nTa décision qui débloquerait le plus de travail est la relecture du premier module (Q3) : les modules suivants en dépendent. Ensuite, la question sur la mise en ligne (Q6, ajout de deux fichiers protégés) et la vérification des cas de test dans Unreal (Q4)."
+    },
+    {
+      "quand": "2026-11-27T02:45:23+00:00",
+      "texte": "2 h 45 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête : la seule PR ouverte (#78, Docker de production) est en brouillon et bloquée en attendant la réponse d'Ange (question Q6), et le plan interdit de la relancer. L'issue #4 attend aussi Ange."
     }
   ],
   "rapporte": false,
