@@ -3,7 +3,9 @@
   "equipes": [
     {
       "debut": "2026-11-28T02:30:52+00:00",
-      "run": "46098396526"
+      "run": "46098396526",
+      "fin": "2026-11-28T02:34:09+00:00",
+      "raison_fin": "plus de tâche prête"
     }
   ],
   "creneaux": [],
@@ -24,6 +26,10 @@
     {
       "quand": "2026-11-28T02:33:59+00:00",
       "texte": "2 h 33 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit, et aucune réponse d'Ange n'est arrivée. Tout le travail restant attend une décision de sa part.\n\nLa décision qui débloquerait le plus : la relecture du premier module du parcours (Q3). Les modules suivants en dépendent. Ensuite, la mise en ligne (Q6) : il suffit qu'il ajoute lui-même deux fichiers protégés, dont la marche à suivre est déjà prête. Les questions seront relancées dimanche."
+    },
+    {
+      "quand": "2026-11-28T02:34:09+00:00",
+      "texte": "2 h 34 — Le chef d'équipe n'a plus de tâche prête : Aucune issue prête. La seule PR ouverte (#78, Docker de production) est en brouillon et bloquée : elle touche des fichiers protégés et attend la réponse d Ange (Q6). Les questions Q3 et Q4 attendent aussi Ange, et #4 reste à cadrer."
     }
   ],
   "rapporte": false,
