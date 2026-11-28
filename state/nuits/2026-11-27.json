@@ -1,0 +1,23 @@
+{
+  "nuit": "2026-11-27",
+  "equipes": [
+    {
+      "debut": "2026-11-28T02:30:52+00:00",
+      "run": "46098396526"
+    }
+  ],
+  "creneaux": [],
+  "merges": [],
+  "incidents": [
+    {
+      "quand": "2026-11-28T02:33:14+00:00",
+      "texte": "2 h 33 — Le chef d'équipe n'a plus de tâche prête : Aucune issue ready. La seule PR ouverte (#78, Docker de production, brouillon) est bloquée sur les fichiers protégés et attend la réponse d Ange (Q6) ; #4 attend Ange (a-cadrer)."
+    },
+    {
+      "quand": "2026-11-28T02:33:30+00:00",
+      "texte": "2 h 33 — l'organisateur a préparé la suite : Rien n'est prêt pour l'équipe cette nuit : tout ce qui reste attend une décision d'Ange. Les trois questions en attente (relire le premier module, valider les cas de test du moteur de correction, ajouter les fichiers protégés pour la mise en ligne) ont pour date de relance demain, dimanche 29 novembre. La réponse qui débloquerait le plus de travail est la relecture du premier module : les modules suivants en dépendent."
+    }
+  ],
+  "rapporte": false,
+  "reapprovisionnements": 1
+}

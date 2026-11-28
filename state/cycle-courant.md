@@ -230,3 +230,7 @@ Aucun message d'Ange, seules #76 (bloquée, Q6), #4 (`a-cadrer`) et le bureau so
 ## Réapprovisionnement 2026-11-27 (second passage)
 
 Revérifié : aucun message d'Ange, seule la PR #78 (brouillon, bloquée) est ouverte. Q3, Q4, Q6 sans échéance passée (relance 2026-11-29). Aucune issue `ready` possible ; plan inchangé.
+
+## Réapprovisionnement 2026-11-28
+
+Aucun message d'Ange. Seules #76 (bloquée, Q6), #4 (`a-cadrer`) et le bureau sont ouvertes ; PR #78 en brouillon. Q3, Q4, Q6 sans échéance passée (relance 2026-11-29). Aucune issue `ready` possible ; plan inchangé.
